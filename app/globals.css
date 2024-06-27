@@ -13,6 +13,15 @@
     --popover: 0 0% 100%;
     --popover-foreground: 224 71.4% 4.1%;
 
+    --theme-primary: #f1b00b;
+    --theme-primary-foreground: #000;
+
+    --theme-tertiary: #faddb2;
+    --theme-tertiary-foreground: #000;
+
+    --theme-secondary: #468966;
+    --theme-secondary-foreground: #fff;
+
     --primary: 220.9 39.3% 11%;
     --primary-foreground: 210 20% 98%;
 
@@ -45,6 +54,15 @@
     --popover: 224 71.4% 4.1%;
     --popover-foreground: 210 20% 98%;
 
+    --theme-primary: #f1b00b;
+    --theme-primary-foreground: #fff;
+
+    --theme-tertiary: #faddb2;
+    --theme-tertiary-foreground: #000;
+
+    --theme-secondary: #468966;
+    --theme-secondary-foreground: #fff;
+
     --primary: 210 20% 98%;
     --primary-foreground: 220.9 39.3% 11%;
 
@@ -73,7 +91,9 @@
   body {
     @apply bg-background text-foreground font-sulphur;
   }
-  
+  ::placeholder {
+    @apply text-base;
+  }
   h1,
   h2,
   h3,

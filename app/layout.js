@@ -1,5 +1,9 @@
+import { ThemeProvider } from "@/components/Header/ThemeProvider";
 import { asul, sulphur } from "./fonts";
 import "./globals.css";
+import HeaderTop from "@/components/Header/HeaderTop";
+import Header from "@/components/Header/Header"; 
+import Navbar from "@/components/Navbar/Navbar";
 
 export const metadata = {
   title: "Book Nest",
@@ -8,8 +12,20 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${asul.variable} ${sulphur.variable}`}>
-      <body>{children}</body>
+    <html lang="en" suppressHydrationWarning={true}>
+      <body className={`${asul.variable} ${sulphur.variable}`} >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <HeaderTop/>
+          <Header/>
+          <Navbar/>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
