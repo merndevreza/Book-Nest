@@ -1,12 +1,17 @@
-import { Heart } from "lucide-react"; 
-import Link from "next/link";
+import { Heart } from "lucide-react";
+import { Button } from "../ui/button";
 
-const WishlistIcon = () => {
+const WishlistIcon = ({className,showTitle}) => {
   return (
-    <Link className="inline-block p-2 relative" href="#">
-      <Heart  size={24}/>
-      <span className="inline-block w-5 h-5 rounded-full bg-themeSecondary text-themeSecondary-foreground absolute top-0 -right-1 text-sm text-center">9</span>
-    </Link>
+    <Button className={className} variant="secondary" size="icon">
+      <span className="relative inline-block">
+        <Heart size={24} />
+        <span className="inline-block w-5 h-5 rounded-full bg-themeSecondary text-themeSecondary-foreground absolute -top-2 -right-3 text-sm text-center">
+          5
+        </span>
+      </span>
+      {showTitle && <span className="font-semibold">Wishlist</span>}
+    </Button>
   );
 };
 

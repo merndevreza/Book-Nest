@@ -9,21 +9,14 @@ import UserIcon from "./UserIcon";
 import WishlistIcon from "./WishlistIcon";
 
 const Header = () => {
-  const [isSticky, setIsSticky] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);  
 
   const handleScroll = () => {
     if (window.scrollY > 0) {
       setIsSticky(true); 
     } else {
       setIsSticky(false);
-    }
-
-    if (window.screen.width < 768) {
-      setIsMobile(true);
-    } else {
-      setIsMobile(false);
-    }
+    } 
   };
 
   useEffect(() => {

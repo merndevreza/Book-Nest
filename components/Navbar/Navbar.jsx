@@ -3,7 +3,7 @@ import MainMenu from "./MainMenu";
 
 const Navbar = () => {
   return (
-    <nav className="bg-tertiary hidden md:block">
+    <nav className="bg-tertiary text-tertiary-foreground  hidden md:block">
       <div className="container flex justify-start items-center relative">
         <CategoryListMenu toggleTitle={true}/>
         <MainMenu vertical={false}/>

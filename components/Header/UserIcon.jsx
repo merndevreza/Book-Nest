@@ -1,11 +1,14 @@
-import { User } from "lucide-react";
-import Link from "next/link";
+import { User } from "lucide-react"; 
+import { Button } from "../ui/button";
 
-const UserIcon = ({className}) => {
+const UserIcon = ({className,showTitle}) => {
    return (
-      <Link className={`inline-block p-2 ${className}`} href="#">
-         <User  size={24}/>
-      </Link>
+      <Button className={className} variant="secondary" size="icon">
+      <span className="inline-block">
+        <User size={24} /> 
+      </span>
+      {showTitle && <span className="font-semibold">Account</span>}
+    </Button> 
    );
 };
 
