@@ -5,7 +5,7 @@ const MenuWidget = ({ menu, vertical, menuTitle }) => {
   return (
     <nav className="px-4 ">
       {menuTitle &&(<>
-         <h4 className="text-xl font-semibold mb-2">{menuTitle}</h4>
+         <h4 className="text-md md:text-xl font-semibold mb-2">{menuTitle}</h4>
          <Separator className="bg-themeSecondary h-[2px] mb-4"/>
 
       </>)}

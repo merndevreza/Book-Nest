@@ -7,7 +7,7 @@ const FooterInfoWidget = ({ className }) => {
     <div className={cn(` ${className}`)}>
       <div className="mb-10 md:mb-0">
         <Logo
-          className="w-[200px] mx-auto md:mx-0"
+          className="w-[120px] md:w-[200px] mx-auto md:mx-0"
           logoTextClassName="hidden"
         />
         <ContactInfoWidget className="pt-3 flex flex-col gap-2 items-center md:items-start" />
