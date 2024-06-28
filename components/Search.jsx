@@ -79,7 +79,7 @@ const Search = ({className}) => {
         />
 
         <Button type="submit" className=" w-20 bg-themePrimary text-themePrimary-foreground rounded-none border-none hover:bg-theme hidden md:block">
-        <SearchIconMain  size={20}/>
+        <SearchIconMain className="mx-auto"  size={20}/>
         </Button> 
       </div>
     </form>
