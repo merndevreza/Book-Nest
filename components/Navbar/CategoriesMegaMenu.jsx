@@ -6,6 +6,7 @@ import ads3 from "@/public/assets/images/ads/product3.jpg";
 import ads4 from "@/public/assets/images/ads/product4.jpg"; 
 import CategoryListMenu from "../CategoryListMenu";
 import ImageCarousel from "../ImageCarousel";
+import { cn } from "@/lib/utils";
 
 const ads = [
   {
@@ -27,7 +28,7 @@ const ads = [
 ];
 const CategoriesMegaMenu = ({ className, toggleTitle }) => {
   return (
-    <nav className={`px-8 py-4 bg-themeSecondary flex category-center cursor-pointer group ${className}`}>
+    <nav className={cn(`px-8 py-4 bg-themeSecondary flex category-center cursor-pointer group ${className}`)}>
       <div className="flex items-center">
         <span className="text-themeSecondary-foreground">
           <Menu size={24} />

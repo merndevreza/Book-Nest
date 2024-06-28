@@ -30,7 +30,7 @@ const Header = () => {
     <div className={`bg-secondary text-secondary-foreground sticky w-full left-0 top-0 z-50 ${isSticky && "shadow-lg"}`}>
       <div className="container py-5 md:py-3 grid grid-cols-5 items-center gap-3">
         <MobileDrawer className="md:hidden block order-1" />
-        <Logo className="order-2 md:order-1 col-span-3 md:col-span-1" />
+        <Logo className="order-2 md:order-1 col-span-3 md:col-span-1 w-[120px] mx-auto md:mx-0" logoTextClassName="text-center" />
         <Search className="order-4 md:order-2 col-span-5 md:col-span-3" />
 
         <div className="flex gap-2 justify-end order-3 col-span-1">

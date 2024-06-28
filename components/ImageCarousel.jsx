@@ -4,6 +4,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 import { Card, CardContent } from "./ui/card";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 const ImageCarousel = ({
   imageArray,
@@ -26,7 +27,7 @@ const ImageCarousel = ({
       }}
       // orientation="vertical | horizontal"
       orientation={orientation}
-      className={`w-full max-w-xl ${className}`}
+      className={cn(`w-full max-w-xl ${className}`)}
     >
       <CarouselContent className={`-mt-1 h-[${height}px]`}>
         {imageArray.map((item, index) => (

@@ -16,6 +16,7 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
+import ContactInfoWidget from "../ContactInfoWidget";
 
 export function MobileDrawer({ className }) {
   return (
@@ -26,29 +27,18 @@ export function MobileDrawer({ className }) {
       <SheetContent className="overflow-scroll" side="left">
         <SheetHeader>
           <div>
-            <Logo />
+          <Logo className="  w-[120px] mx-auto md:mx-0" logoTextClassName="text-center" />
             <Separator className="mb-6" />
           </div>
         </SheetHeader>
-        <MainMenu vertical={true} />
+        <MainMenu mobile={true}/>
         <SheetFooter className="mt-8">
           <Card>
             <CardHeader className="p-3">
               <CardTitle className="text-md mb-0">Contact Info</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3 px-3">
-              <div className="flex gap-3">
-                <MapPin  className="text-themePrimary" size={24} />
-                <span> <strong>Address:</strong> Khilkhet, Dhaka, Bangladesh.</span>
-              </div>
-              <div  className="flex gap-3">
-                <Headphones className="text-themePrimary" size={24} />
-                <span><strong>Support:</strong> +8801780572272</span>
-              </div>
-              <div className="flex gap-3">
-                <Mail className="text-themePrimary" size={24} />
-                <span><strong>Email:</strong> rezaulkarimpstu@gmail.com</span>
-              </div>
+              <ContactInfoWidget/>
             </CardContent> 
           </Card>
         </SheetFooter>

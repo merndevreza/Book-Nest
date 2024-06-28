@@ -1,9 +1,10 @@
+import { cn } from "@/lib/utils";
 import { Facebook, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
 
 const SocialProfiles = ({ className }) => {
   return (
-   <ul className={`flex items-center justify-center md:justify-end gap-2 text-2xl ${className}`}>
+   <ul className={cn(`flex items-center justify-center md:justify-end gap-2 text-2xl ${className}`)}>
    <li>
      <Link href="https://www.facebook.com/webdevreza/">
        <Facebook size={20} />

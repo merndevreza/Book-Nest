@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { Separator } from "../ui/separator";
+import MenuWidget from "../MenuWidget";
 
 const menu = [
   {
@@ -28,18 +27,15 @@ const menu = [
   },
 ];
 
-const MainMenu = ({vertical}) => {
+const MainMenu = ({mobile}) => {
+  let vertical;
+  if (mobile) {
+    vertical=true
+  }else{
+    vertical=false
+  }
   return (
-    <nav>
-      <ul className={`${vertical?"flex flex-col gap-5":"flex gap-5 px-5"}`}>
-        {menu.map((item) => (
-          <li key={item?.id}>
-            <Link className="text-md font-semibold hover:text-themeSecondary" href={item?.pathname}>{item?.nameEn}</Link>
-            <Separator className="block md:hidden" />
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <MenuWidget mobile={mobile} menu={menu} vertical={vertical}/>
   );
 };
 

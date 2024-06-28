@@ -6,6 +6,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel"
+import { cn } from "@/lib/utils"
 
 const allAnnouncement=[
    "Welcome to BookNest!",
@@ -26,7 +27,7 @@ const Announcements = ({className}) => {
         loop: true,
       }}
       orientation="vertical"
-      className={`w-full max-w-xl ${className}`}
+      className={cn(`w-full max-w-xl ${className}`)}
     >
       <CarouselContent className="-mt-1 h-[50px]">
         {allAnnouncement.map((item, index) => (

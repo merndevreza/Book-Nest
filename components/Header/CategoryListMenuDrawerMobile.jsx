@@ -52,8 +52,8 @@ const CategoryListMenuDrawerMobile = () => {
       </DrawerTrigger>
       <DrawerContent>
         <div className="mx-auto w-full max-w-sm">
-          <DrawerHeader>
-          <Logo />
+          <DrawerHeader> 
+          <Logo className="  w-[120px] mx-auto md:mx-0" logoTextClassName="text-center" />
           <Separator className="mb-3" />
             <DrawerTitle>Categories</DrawerTitle>
           </DrawerHeader>
