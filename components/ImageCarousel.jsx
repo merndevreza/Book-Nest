@@ -2,12 +2,11 @@
 import * as React from "react";
 import Autoplay from "embla-carousel-autoplay";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
-import { Card, CardContent } from "./ui/card";
-import Image from "next/image";
-import { cn } from "@/lib/utils";
+import Image from "next/image"; 
 
 const ImageCarousel = ({
   imageArray,
+  width,
   height,
   className,
   isLoop,
@@ -27,20 +26,18 @@ const ImageCarousel = ({
       }}
       // orientation="vertical | horizontal"
       orientation={orientation}
-      className={cn(`w-full max-w-xl ${className}`)}
+      className="w-full max-w-xl"
     >
-      <CarouselContent className={`-mt-1 h-[${height}px]`}>
+      <CarouselContent className={` h-[${height}px]`}>
         {imageArray.map((item, index) => (
           <CarouselItem key={index}>
-            <div className="p-1">
-              <Card className="rounded-sm bg-tertiary border-none">
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <span className="text-4xl font-semibold">
-                    <Image src={item.src} alt={item.alt} />
-                  </span>
-                </CardContent>
-              </Card>
-            </div>
+            <Image
+              className={className}
+              width={width}
+              height={height}
+              src={item.src}
+              alt={item.alt}
+            />
           </CarouselItem>
         ))}
       </CarouselContent>

@@ -46,7 +46,8 @@ const CategoriesMegaMenu = ({ className, toggleTitle }) => {
             imageArray={ads}
             isLoop={true}
             orientation="horizontal"
-            height={300}
+            height={300} 
+            className="rounded-lg"
           />
         </div>
       </div>

@@ -103,3 +103,30 @@
     @apply font-asul;
   }
 }
+.primary-btn {
+  @apply relative inline-block align-middle transition-colors duration-500 rounded-lg px-8 py-3 cursor-pointer bg-themePrimary text-black text-lg font-semibold hover:dark:text-themeSecondary-foreground;
+   
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0); 
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1;
+}
+.primary-btn:before {
+  @apply rounded-lg absolute top-0 left-0 right-0 bottom-0 bg-themeSecondary dark:bg-black;
+  content: ""; 
+  z-index: -1; 
+  transform: scaleY(0);
+  transform-origin: 50% 100%;
+  transition-property: transform;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
+}
+
+.primary-btn:hover::before,
+.primary-btn:focus::before,
+.primary-btn:active::before {
+  transform: scaleY(1);
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}

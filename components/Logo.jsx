@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import logo from "@/public/assets/images/logo-2.png";
+import logo from "@/public/assets/images/logo/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 const Logo = ({className,logoTextClassName}) => {

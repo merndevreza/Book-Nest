@@ -7,7 +7,6 @@ const MenuWidget = ({ menu, vertical, menuTitle }) => {
       {menuTitle &&(<>
          <h4 className="text-md md:text-xl font-semibold mb-2">{menuTitle}</h4>
          <Separator className="bg-themeSecondary h-[2px] mb-4"/>
-
       </>)}
 
       <ul className={`${vertical ? "flex flex-col gap-3" : "flex gap-5 px-5"}`}>
