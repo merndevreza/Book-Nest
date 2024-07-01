@@ -68,11 +68,11 @@ const Hero = () => {
       opts={{
         align: "start",
       }}
-      className="w-full sm:max-w-[90%] container my-5 overflow-hidden"
+      className="w-full sm:max-w-[90%] px-1 sm:px-2 container overflow-hidden mt-6 mb-3 sm:mt-10 sm:mb-5"
     >
       <CarouselContent className="h-[450px] sm:h-[300px] lg:h-[400px]">
         {banners.map((item) => ( 
-            <CarouselItem key={item.id}>
+            <CarouselItem key={item.id} >
               <div className="h-full rounded-lg overflow-hidden grid grid-cols-3 bg-tertiary dark:bg-themeSecondary">
                 <Image
                   className="h-[280px] lg:h-[380px] mx-auto sm:mr-auto mt-auto object-contain order-2 sm:order-1 col-span-3 sm:col-span-1"

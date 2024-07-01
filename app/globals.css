@@ -103,30 +103,58 @@
     @apply font-asul;
   }
 }
+.section-margin{
+  @apply my-3 sm:my-5
+}
+.section-padding{
+  @apply py-3 sm:py-5
+}
+/* primary-btn  */
 .primary-btn {
-  @apply relative inline-block align-middle transition-colors duration-500 rounded-lg px-8 py-3 cursor-pointer bg-themePrimary text-black text-lg font-semibold hover:dark:text-themeSecondary-foreground;
-   
+  @apply relative inline-block align-middle transition-colors duration-500 rounded-lg px-4 md:px-8 py-3 cursor-pointer bg-themePrimary text-black text-base font-semibold hover:dark:text-themeSecondary-foreground;
+
   -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0); 
+  transform: perspective(1px) translateZ(0);
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1;
 }
 .primary-btn:before {
-  @apply rounded-lg absolute top-0 left-0 right-0 bottom-0 bg-themeSecondary dark:bg-black;
-  content: ""; 
-  z-index: -1; 
+  @apply rounded-lg absolute top-0 left-0 right-0 bottom-0 bg-themeSecondary dark:bg-secondary;
+  content: "";
+  z-index: -1;
   transform: scaleY(0);
   transform-origin: 50% 100%;
   transition-property: transform;
   transition-duration: 0.5s;
   transition-timing-function: ease-out;
 }
-
 .primary-btn:hover::before,
 .primary-btn:focus::before,
 .primary-btn:active::before {
   transform: scaleY(1);
   transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+
+/* flip image */
+.flip-box:hover .flip {
+  transform: rotateY(180deg);
+}
+.flip {
+  @apply relative w-full h-[200px] cursor-pointer;
+  transition: 1s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.flip .flip__face {
+  @apply absolute top-0 left-0 w-full h-full;
+  backface-visibility: hidden;
+  transition: 1s ease-in-out;
+}
+.flip .flip__face .img {
+  @apply w-full h-full object-contain;
+}
+.flip .flip__face--back {
+  transform: rotateY(180deg);
 }
