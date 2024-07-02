@@ -20,7 +20,7 @@ const AvailableTypes = ({ type }) => {
         <TooltipContent>
           <p>
             Available: {type === "printed" && "Printed"}
-            {type === "pdf" && "PDF"} {type === "audio" && "Audio Book"}
+            {type === "pdf" && "ebook"} {type === "audio" && "Audio Book"}
           </p>
         </TooltipContent>
       </Tooltip>

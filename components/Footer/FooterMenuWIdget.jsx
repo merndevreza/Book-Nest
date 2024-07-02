@@ -57,9 +57,9 @@ const policyMenu= [
 const FooterMenuWIdget = ({className}) => {
   return (
     <div className={cn(`grid grid-cols-3 ${className}`)}>
-      <MenuWidget menu={supportMenu} vertical={true} menuTitle="Support" />
-      <MenuWidget menu={policyMenu} vertical={true} menuTitle="Policies" />
-      <MenuWidget menu={policyMenu} vertical={true} menuTitle="Policies" />
+      <MenuWidget menu={supportMenu} vertical={true} menuTitle="Support" footerMenu={true}/>
+      <MenuWidget menu={policyMenu} vertical={true} menuTitle="Policies" footerMenu={true}/>
+      <MenuWidget menu={policyMenu} vertical={true} menuTitle="Policies" footerMenu={true}/>
     </div>
   );
 };

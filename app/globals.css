@@ -5,8 +5,8 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 224 71.4% 4.1%;
-
+    --foreground:#353535;
+    
     --card: 0 0% 100%;
     --card-foreground: 224 71.4% 4.1%;
 
@@ -104,10 +104,10 @@
   }
 }
 .section-margin{
-  @apply my-3 sm:my-5
+  @apply mt-8 sm:mt-14
 }
 .section-padding{
-  @apply py-3 sm:py-5
+  @apply pt-8 sm:pt-14
 }
 /* primary-btn  */
 .primary-btn {

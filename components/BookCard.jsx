@@ -7,7 +7,7 @@ import AvailableTypes from "./AvailableTypes";
 
 const BookCard = ({ book }) => {
   return (
-    <Card className="bg-secondary dark:bg-transparent flex flex-col items-center justify-between h-full">
+    <Card className="bg-secondary dark:bg-transparent flex flex-col items-center justify-between sm:h-full">
       <CardContent className="p-3">
         <div className="book-card">
           <div className="book-card-img-wrapper">
@@ -39,11 +39,11 @@ const BookCard = ({ book }) => {
             </div>
             <div className="w-full h-[2px] bg-gray-300 dark:bg-secondary  my-3"></div>
             <div className="text-center space-y-2">
-              <h2 className="text-xl font-bold text-themeSecondary dark:text-themePrimary">
+              <h2 className="text-lg sm:text-xl font-bold text-themeSecondary dark:text-themePrimary">
                 {book?.title}
               </h2>
               <div className="flex justify-center items-baseline mb-1 space-x-2">
-                <p className="text-xl text-themePrimary dark:text-themeSecondary-foreground  font-semibold">
+                <p className="text-base sm:text-lg text-themePrimary dark:text-themeSecondary-foreground  font-semibold">
                   ${book?.discountedPrice || book?.regularPrice}
                 </p>
                 {book?.discountedPrice && (

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Separator } from "./ui/separator";
 
-const MenuWidget = ({ menu, vertical, menuTitle }) => {
+const MenuWidget = ({ menu, vertical, menuTitle,footerMenu }) => {
   return (
     <nav className="px-4 ">
       {menuTitle &&(<>
@@ -18,7 +18,7 @@ const MenuWidget = ({ menu, vertical, menuTitle }) => {
             >
               {item?.nameEn}
             </Link>
-            <Separator className="block md:hidden" />
+            {!footerMenu &&(<Separator className="block md:hidden" />)} 
           </li>
         ))}
       </ul>
