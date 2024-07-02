@@ -1,8 +1,9 @@
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
-const FlipImage = ({ frontImage, backImage, frontImageAlt, backImageAlt }) => {
+const FlipImage = ({ frontImage, backImage, frontImageAlt, backImageAlt,className }) => {
   return (
-    <div className="flip">
+    <div className={cn(`flip ${className}`)}>
       <div className="flip__face flip__face--front">
         <Image className="img" src={frontImage} alt={frontImageAlt} />
       </div>

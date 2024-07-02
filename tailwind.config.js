@@ -82,6 +82,10 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "3d-book": {
+          from: { transform: "rotateY(0deg)" },
+          to: { transform: "rotateY(-30deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",

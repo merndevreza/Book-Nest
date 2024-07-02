@@ -4,7 +4,7 @@ import paymentImg from "@/public/assets/images/payments.png";
 
 const Copyright = () => {
   return (
-    <div className="bg-slate-700 py-2">
+    <div className="dark:bg-gray-950 bg-gray-700 text-white py-2">
       <div className="flex gap-2 items-center justify-center  md:justify-between h-[50px] container flex-col md:flex-row">
         <p className="text-sm md:text-base">
           &copy; 2024 - All right reserved by{"   "}

@@ -57,7 +57,7 @@
     --theme-primary: #f1b00b;
     --theme-primary-foreground: #fff;
 
-    --theme-tertiary: #faddb2;
+    --theme-tertiary: #e9cfa9;
     --theme-tertiary-foreground: #000;
 
     --theme-secondary: #468966;
@@ -137,24 +137,126 @@
   transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
 }
 
+
 /* flip image */
 .flip-box:hover .flip {
   transform: rotateY(180deg);
 }
 .flip {
-  @apply relative w-full h-[200px] cursor-pointer;
-  transition: 1s ease-in-out;
+  @apply relative w-full h-[200px] cursor-pointer ease-in-out duration-1000; 
   transform-style: preserve-3d;
 }
 
 .flip .flip__face {
-  @apply absolute top-0 left-0 w-full h-full;
-  backface-visibility: hidden;
-  transition: 1s ease-in-out;
+  @apply absolute top-0 left-0 w-full h-full ease-in-out duration-1000	;
+  backface-visibility: hidden; 
 }
 .flip .flip__face .img {
   @apply w-full h-full object-contain;
 }
 .flip .flip__face--back {
   transform: rotateY(180deg);
+}
+
+
+/* Book Card*/
+
+.book-card:hover .book-card-img-back {
+  @apply left-[18px] opacity-100;
+}
+.book-card-img-wrapper {
+  @apply p-0
+}
+.book-card-img {
+  @apply transition-all ease-in-out duration-300 relative;
+}
+
+.book-card-img .img {
+  @apply max-h-[350px] w-full object-cover object-top;
+} 
+.book-card-img-front {
+  @apply relative z-20; 
+}
+.book-card-img-front::before {
+  @apply block  absolute w-full h-full left-0 top-0 z-50; 
+ content: ""; 
+ background-image: linear-gradient(
+   to right,
+   rgba(0, 0, 0, 0) 8%,
+   rgba(0, 0, 0, 0.1) 5%,
+   rgba(0, 0, 0, 0) 13%
+ ); 
+}
+.book-card-img-back {
+  @apply absolute left-0 top-[2%] z-10 w-full h-[96%] overflow-hidden bg-secondary opacity-0 transition-all ease-in-out duration-200;  
+}
+.book-card-img-back img{
+  @apply opacity-50;
+}
+.book-card-img-back:after {
+  @apply absolute top-[4%] right-[3px] z-20 w-[15px] h-[98%] bg-cover; 
+  content: ''; 
+  background: url(../public/assets/images/bookpattren.png); 
+}
+.book-card:hover .book-card-img {
+ transform-style: preserve-3d;
+ transform: perspective(1000px) rotateY(-30deg) rotateZ(0deg);
+}
+
+/* testimonial */
+.book-container {
+  @apply flex items-center justify-center; 
+  perspective: 600px;
+}
+
+.book-sm {
+  @apply w-[160px] sm:w-[200px] h-[240px] sm:h-[300px] relative ease-linear duration-1000 animate-[3d-book_1s_ease_1];
+  transform-style: preserve-3d;
+  transform: rotateY(-30deg);  
+}
+
+.book-container:hover .book-sm, 
+.book-container:focus .book-sm {
+  transform: rotateY(0deg);
+}
+
+.book-sm > :first-child {
+  @apply absolute left-0 top-0 bg-themePrimary w-[160px] sm:w-[200px] h-[240px] sm:h-[300px] rounded-l-none rounded-r ; 
+  transform: translateZ(15px);  
+  box-shadow: 5px 5px 20px #6666665c;
+}
+
+.book-sm::before {
+  @apply absolute left-0 top-px w-[28px] h-[298px] bg-themePrimary content-none;
+  transform: translateX(184px) rotateY(90deg);
+  background: linear-gradient(90deg, 
+    #fff 0%,
+    #f9f9f9 5%,
+    #fff 10%,
+    #f9f9f9 15%,
+    #fff 20%,
+    #f9f9f9 25%,
+    #fff 30%,
+    #f9f9f9 35%,
+    #fff 40%,
+    #f9f9f9 45%,
+    #fff 50%,
+    #f9f9f9 55%,
+    #fff 60%,
+    #f9f9f9 65%,
+    #fff 70%,
+    #f9f9f9 75%,
+    #fff 80%,
+    #f9f9f9 85%,
+    #fff 90%,
+    #f9f9f9 95%,
+    #fff 100%
+    );
+}
+
+.book-sm::after {
+  @apply absolute left-0 top-0 w-[160px] sm:w-[200px] h-[240px] sm:h-[300px] bg-[#9c9c9c] rounded-l-none rounded-r ; 
+  content: ' '; 
+  transform: translateZ(-15px);  
+  box-shadow: -10px 0 50px 10px #6666663c;
 }

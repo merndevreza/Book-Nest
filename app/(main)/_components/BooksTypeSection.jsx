@@ -55,7 +55,7 @@ const BooksTypeSection = () => {
   );
 
   return (
-    <section className="px-1 sm:px-2 container section-padding">
+    <section className=" px-1 sm:px-4 lg:px-8 container section-padding">
       <Carousel
         plugins={[plugin.current]}
         onMouseEnter={plugin.current.stop}
@@ -66,11 +66,12 @@ const BooksTypeSection = () => {
       >
         <CarouselContent>
           {bookTypes.map((type) => (
-            <CarouselItem key={type.id} className="md:basis-1/2 lg:basis-1/3">
+            <CarouselItem key={type.id} className="md:basis-1/2 lg:basis-1/3 ">
               <CardWithFlipImg
                 frontImage={type.frontImg}
                 backImage={type.backImg}
                 frontImageAlt={type.frontImgAlt}
+                backImageAlt={type.backImgAlt}
               >
                 <>
                   <h3 className="text-xl font-semibold text-themePrimary mb-2">

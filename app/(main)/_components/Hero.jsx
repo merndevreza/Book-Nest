@@ -68,7 +68,7 @@ const Hero = () => {
       opts={{
         align: "start",
       }}
-      className="w-full sm:max-w-[90%] px-1 sm:px-2 container overflow-hidden mt-6 mb-3 sm:mt-10 sm:mb-5"
+      className="w-full sm:max-w-[90%] px-1 sm:px-4 lg:px-8 container overflow-hidden mt-6 mb-3 sm:mt-10 sm:mb-5"
     >
       <CarouselContent className="h-[450px] sm:h-[300px] lg:h-[400px]">
         {banners.map((item) => ( 
