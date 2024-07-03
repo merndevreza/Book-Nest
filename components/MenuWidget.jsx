@@ -5,7 +5,7 @@ const MenuWidget = ({ menu, vertical, menuTitle,footerMenu }) => {
   return (
     <nav className="px-4 ">
       {menuTitle &&(<>
-         <h4 className="text-md md:text-xl font-semibold mb-2">{menuTitle}</h4>
+         <h4 className="text-base md:text-xl font-semibold mb-2">{menuTitle}</h4>
          <Separator className="bg-gray-300 dark:bg-slate-700 h-[2px] mb-4"/>
       </>)}
 
@@ -13,7 +13,7 @@ const MenuWidget = ({ menu, vertical, menuTitle,footerMenu }) => {
         {menu.map((item) => (
           <li key={item?.id}>
             <Link
-              className="text-md font-semibold hover:text-themePrimary"
+              className="text-base font-semibold text-foreground hover:text-themeSecondary"
               href={item?.pathname}
             >
               {item?.nameEn}

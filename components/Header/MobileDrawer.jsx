@@ -35,7 +35,7 @@ export function MobileDrawer({ className }) {
         <SheetFooter className="mt-8">
           <Card>
             <CardHeader className="p-3">
-              <CardTitle className="text-md mb-0">Contact Info</CardTitle>
+              <CardTitle className="text-base mb-0">Contact Info</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3 px-3">
               <ContactInfoWidget/>

@@ -113,7 +113,7 @@
 .primary-btn,
 .secondary-btn,
 .outline-btn {
-  @apply relative inline-block align-middle transition-colors duration-500 rounded-lg px-4 md:px-8 py-3 cursor-pointer leading-none text-base font-semibold;
+  @apply relative inline-block align-middle transition-colors duration-500 rounded-lg px-4 md:px-6 py-3 cursor-pointer leading-none text-base font-semibold;
 
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
@@ -128,12 +128,12 @@
   @apply bg-themeSecondary text-black hover:dark:text-themeSecondary-foreground;
 }
 .outline-btn {
-  @apply bg-transparent text-black  dark:text-themePrimary hover:dark:text-themeSecondary-foreground border-2 border-themePrimary rounded-none;
+  @apply bg-transparent text-black  dark:text-themePrimary hover:dark:text-themeSecondary-foreground border-2 border-themePrimary;
 }
 .primary-btn:before,
 .secondary-btn:before,
 .outline-btn:before {
-  @apply rounded-lg absolute top-0 left-0 right-0 bottom-0 -z-10 duration-500 ease-out transition-transform origin-[50%_100%] scale-y-0 content-[""];
+  @apply rounded-md absolute top-0 left-0 right-0 bottom-0 -z-10 duration-500 ease-out transition-transform origin-[50%_100%] scale-y-0 content-[""];
 }
 .primary-btn:before{
 @apply bg-themeSecondary dark:bg-secondary ;
@@ -142,7 +142,7 @@
 @apply bg-themePrimary dark:bg-secondary ;
 }
 .outline-btn:before{
-@apply bg-themePrimary rounded-none;
+@apply bg-themePrimary rounded-sm;
 }
 .primary-btn:hover::before,
 .secondary-btn:hover::before,

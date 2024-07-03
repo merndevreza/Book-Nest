@@ -32,7 +32,7 @@ const CategoryListMenu = () => {
       {allCategories.map((category) => (
         <li key={category?.id}>
           <Link
-            className="hover:text-themePrimary text-md"
+            className="hover:text-themePrimary text-base"
             href={`/category/${category?.id}`}
           >
             {category?.name}

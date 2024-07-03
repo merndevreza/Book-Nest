@@ -80,7 +80,7 @@ const Testimonials = () => {
                   <p className="text-lg font-bold  mt-1">
                     Sakib Al Hasan
                   </p>
-                  <p className="text-md font-bold  mt-4 text-foreground">
+                  <p className="text-base font-bold  mt-4 text-foreground">
                     {testimonial?.review}
                   </p>
                 </div>

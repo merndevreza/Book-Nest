@@ -1,9 +1,22 @@
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
 const LanguageSwitcher = () => {
   return (
-    <select className="bg-white border-none rounded py-1 pr-8 pl-2 ml-auto">
-      <option value="en">English</option>
-      <option value="bn">Bangla</option>
-    </select>
+    <Select>
+      <SelectTrigger className="w-[120px] dark:bg-secondary dark:text-secondary-foreground">
+        <SelectValue placeholder="Language" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="en">English</SelectItem>
+        <SelectItem value="bn">Bangla</SelectItem>
+      </SelectContent>
+    </Select>
   );
 };
 

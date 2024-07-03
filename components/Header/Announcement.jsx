@@ -27,12 +27,12 @@ const Announcements = ({className}) => {
         loop: true,
       }}
       orientation="vertical"
-      className={cn(`w-full max-w-xl ${className}`)}
+      className={cn(`w-full ${className}`)}
     >
-      <CarouselContent className="-mt-1 h-[50px]">
+      <CarouselContent className="-mt-1 h-[80px] md:h-[50px]">
         {allAnnouncement.map((item, index) => (
           <CarouselItem key={index} className="pt-1">
-            <div className="p-1 flex flex-col justify-center items-center  h-[50px]">
+            <div className="p-1 flex flex-col justify-center items-center  h-[80px] md:h-[50px]">
             <p className=" text-center">{item}</p>
             </div>
           </CarouselItem>

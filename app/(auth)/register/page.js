@@ -12,9 +12,12 @@ const RegistrationPage = () => {
       <div className="max-w-3xl mx-auto space-y-6">
         <GoHomeBtn/>
         <div className="bg-white dark:bg-gray-700 px-6 md:px-12 py-12 ">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl dark:text-white  text-themePrimary mb-6 font-semibold">
-            Register
-          </h2>
+        <div className="mb-6 space-y-2">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl dark:text-white  text-themePrimary font-semibold">
+              Register
+            </h2>
+            <p className="text-lg">Become a happy book lover</p>
+          </div>
           <RegistrationForm />
           <SocialLogin/>
         </div>

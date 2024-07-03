@@ -59,7 +59,7 @@ const Testimonial = () => {
                 <p className="text-lg font-bold dark:text-white mt-1">
                   Sakib Al Hasan
                 </p>
-                <p className="text-md font-bold dark:text-white mt-4">
+                <p className="text-base font-bold dark:text-white mt-4">
                   Adventures in the Kitchen is an absolute culinary masterpiece.
                   The author descriptions transport you into a world of
                   delectable flavors and fragrant aromas. This book is not just
@@ -106,7 +106,7 @@ const Testimonial = () => {
                 <p className="text-lg font-bold dark:text-white mt-1">
                   John Doe
                 </p>
-                <p className="text-md font-bold dark:text-white mt-4">
+                <p className="text-base font-bold dark:text-white mt-4">
                   Adventures in the Kitchen is an absolute culinary masterpiece.
                   The author descriptions transport you into a world of
                   delectable flavors and fragrant aromas. This book is not just
@@ -153,7 +153,7 @@ const Testimonial = () => {
                 <p className="text-lg font-bold dark:text-white mt-1">
                   Sakib Al Hasan
                 </p>
-                <p className="text-md font-bold dark:text-white mt-4">
+                <p className="text-base font-bold dark:text-white mt-4">
                   Adventures in the Kitchen is an absolute culinary masterpiece.
                   The author descriptions transport you into a world of
                   delectable flavors and fragrant aromas. This book is not just
@@ -200,7 +200,7 @@ const Testimonial = () => {
                 <p className="text-lg font-bold dark:text-white mt-1">
                   John Doe
                 </p>
-                <p className="text-md font-bold dark:text-white mt-4">
+                <p className="text-base font-bold dark:text-white mt-4">
                   Adventures in the Kitchen is an absolute culinary masterpiece.
                   The author descriptions transport you into a world of
                   delectable flavors and fragrant aromas. This book is not just
