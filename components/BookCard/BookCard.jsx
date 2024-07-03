@@ -1,9 +1,9 @@
-
+import "./book-card.css"
 import Image from "next/image";
-import { Button } from "./ui/button";
-import { Card, CardContent, CardFooter } from "./ui/card";
-import AddWishlistBtn from "./AddWishlistBtn"; 
-import AvailableTypes from "./AvailableTypes";
+import { Button } from "../ui/button";
+import { Card, CardContent, CardFooter } from "../ui/card";
+import AddWishlistBtn from "../AddWishlistBtn"; 
+import AvailableTypes from "../AvailableTypes";
 
 const BookCard = ({ book }) => {
   return (
@@ -63,7 +63,7 @@ const BookCard = ({ book }) => {
       </CardContent>
       <CardFooter className="py-3">
         <div>
-          <Button variant="primary">Details</Button>
+          <Button variant="themePrimary">Details</Button>
         </div>
       </CardFooter>
     </Card>

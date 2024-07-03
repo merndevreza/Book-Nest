@@ -1,4 +1,5 @@
-import BookCard from "@/components/BookCard";
+import BookCard from "@/components/BookCard/BookCard";
+
 import SectionTitle from "@/components/SectionTitle";
 import {
   Carousel,

@@ -70,7 +70,7 @@ const BooksTypeSection = () => {
                       {type?.title}
                     </h3>
                     <p>{type?.subTitle}</p>
-                    <Button variant="primary">Explore Books</Button>
+                    <Button variant="themePrimary">Explore Books</Button>
                   </div>
                 </CardContent>
               </Card>

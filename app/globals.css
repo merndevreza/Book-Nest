@@ -5,8 +5,8 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground:#353535;
-    
+    --foreground: #353535;
+
     --card: 0 0% 100%;
     --card-foreground: 224 71.4% 4.1%;
 
@@ -103,160 +103,56 @@
     @apply font-asul;
   }
 }
-.section-margin{
-  @apply mt-8 sm:mt-14
+.section-margin {
+  @apply mt-8 sm:mt-14;
 }
-.section-padding{
-  @apply pt-8 sm:pt-14
+.section-padding {
+  @apply pt-8 sm:pt-14;
 }
 /* primary-btn  */
-.primary-btn {
-  @apply relative inline-block align-middle transition-colors duration-500 rounded-lg px-4 md:px-8 py-3 cursor-pointer bg-themePrimary text-black text-base font-semibold hover:dark:text-themeSecondary-foreground;
+.primary-btn,
+.secondary-btn,
+.outline-btn {
+  @apply relative inline-block align-middle transition-colors duration-500 rounded-lg px-4 md:px-8 py-3 cursor-pointer leading-none text-base font-semibold;
 
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1;
 }
-.primary-btn:before {
-  @apply rounded-lg absolute top-0 left-0 right-0 bottom-0 bg-themeSecondary dark:bg-secondary;
-  content: "";
-  z-index: -1;
-  transform: scaleY(0);
-  transform-origin: 50% 100%;
-  transition-property: transform;
-  transition-duration: 0.5s;
-  transition-timing-function: ease-out;
+.primary-btn {
+  @apply bg-themePrimary text-black hover:dark:text-themeSecondary-foreground;
+}
+.secondary-btn {
+  @apply bg-themeSecondary text-black hover:dark:text-themeSecondary-foreground;
+}
+.outline-btn {
+  @apply bg-transparent text-black  dark:text-themePrimary hover:dark:text-themeSecondary-foreground border-2 border-themePrimary rounded-none;
+}
+.primary-btn:before,
+.secondary-btn:before,
+.outline-btn:before {
+  @apply rounded-lg absolute top-0 left-0 right-0 bottom-0 -z-10 duration-500 ease-out transition-transform origin-[50%_100%] scale-y-0 content-[""];
+}
+.primary-btn:before{
+@apply bg-themeSecondary dark:bg-secondary ;
+}
+.secondary-btn:before{
+@apply bg-themePrimary dark:bg-secondary ;
+}
+.outline-btn:before{
+@apply bg-themePrimary rounded-none;
 }
 .primary-btn:hover::before,
+.secondary-btn:hover::before,
+.outline-btn:hover::before,
 .primary-btn:focus::before,
-.primary-btn:active::before {
-  transform: scaleY(1);
+.secondary-btn:focus::before,
+.outline-btn:focus::before,
+.primary-btn:active::before,
+.secondary-btn:active::before,
+.outline-btn:active::before {
+  @apply scale-y-100;
   transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
-}
-
-
-/* flip image */
-.flip-box:hover .flip {
-  transform: rotateY(180deg);
-}
-.flip {
-  @apply relative w-full h-[200px] cursor-pointer ease-in-out duration-1000; 
-  transform-style: preserve-3d;
-}
-
-.flip .flip__face {
-  @apply absolute top-0 left-0 w-full h-full ease-in-out duration-1000	;
-  backface-visibility: hidden; 
-}
-.flip .flip__face .img {
-  @apply w-full h-full object-contain;
-}
-.flip .flip__face--back {
-  transform: rotateY(180deg);
-}
-
-
-/* Book Card*/
-
-.book-card:hover .book-card-img-back {
-  @apply left-[18px] opacity-100;
-}
-.book-card-img-wrapper {
-  @apply p-0
-}
-.book-card-img {
-  @apply transition-all ease-in-out duration-300 relative;
-}
-
-.book-card-img .img {
-  @apply max-h-[350px] w-full object-cover object-top;
-} 
-.book-card-img-front {
-  @apply relative z-20; 
-}
-.book-card-img-front::before {
-  @apply block  absolute w-full h-full left-0 top-0 z-50; 
- content: ""; 
- background-image: linear-gradient(
-   to right,
-   rgba(0, 0, 0, 0) 8%,
-   rgba(0, 0, 0, 0.1) 5%,
-   rgba(0, 0, 0, 0) 13%
- ); 
-}
-.book-card-img-back {
-  @apply absolute left-0 top-[2%] z-10 w-full h-[96%] overflow-hidden bg-secondary opacity-0 transition-all ease-in-out duration-200;  
-}
-.book-card-img-back img{
-  @apply opacity-50;
-}
-.book-card-img-back:after {
-  @apply absolute top-[4%] right-[3px] z-20 w-[15px] h-[98%] bg-cover; 
-  content: ''; 
-  background: url(../public/assets/images/bookpattren.png); 
-}
-.book-card:hover .book-card-img {
- transform-style: preserve-3d;
- transform: perspective(1000px) rotateY(-30deg) rotateZ(0deg);
-}
-
-/* testimonial */
-.book-container {
-  @apply flex items-center justify-center; 
-  perspective: 600px;
-}
-
-.book-sm {
-  @apply w-[160px] sm:w-[200px] h-[240px] sm:h-[300px] relative ease-linear duration-1000 animate-[3d-book_1s_ease_1];
-  transform-style: preserve-3d;
-  transform: rotateY(-30deg);  
-}
-
-.book-container:hover .book-sm, 
-.book-container:focus .book-sm {
-  transform: rotateY(0deg);
-}
-
-.book-sm > :first-child {
-  @apply absolute left-0 top-0 bg-themePrimary w-[160px] sm:w-[200px] h-[240px] sm:h-[300px] rounded-l-none rounded-r ; 
-  transform: translateZ(15px);  
-  box-shadow: 5px 5px 20px #6666665c;
-}
-
-.book-sm::before {
-  @apply absolute left-0 top-px w-[28px] h-[298px] bg-themePrimary content-none;
-  transform: translateX(184px) rotateY(90deg);
-  background: linear-gradient(90deg, 
-    #fff 0%,
-    #f9f9f9 5%,
-    #fff 10%,
-    #f9f9f9 15%,
-    #fff 20%,
-    #f9f9f9 25%,
-    #fff 30%,
-    #f9f9f9 35%,
-    #fff 40%,
-    #f9f9f9 45%,
-    #fff 50%,
-    #f9f9f9 55%,
-    #fff 60%,
-    #f9f9f9 65%,
-    #fff 70%,
-    #f9f9f9 75%,
-    #fff 80%,
-    #f9f9f9 85%,
-    #fff 90%,
-    #f9f9f9 95%,
-    #fff 100%
-    );
-}
-
-.book-sm::after {
-  @apply absolute left-0 top-0 w-[160px] sm:w-[200px] h-[240px] sm:h-[300px] bg-[#9c9c9c] rounded-l-none rounded-r ; 
-  content: ' '; 
-  transform: translateZ(-15px);  
-  box-shadow: -10px 0 50px 10px #6666663c;
 }

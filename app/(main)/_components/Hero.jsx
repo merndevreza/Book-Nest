@@ -86,7 +86,7 @@ const Hero = () => {
                   <p className="text-base sm:text-lg md:text-xl">{item.subtitle}</p>
                   <Button
                     className="self-start mx-auto sm:mx-0"
-                    variant="primary"
+                    variant="themePrimary"
                     onClick={() => handleClick(item?.link || "#")}
                   >
                     Explore

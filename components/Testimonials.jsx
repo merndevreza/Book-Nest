@@ -3,6 +3,7 @@ import Ratings from "./Ratings";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
 import book1Front from "@/public/assets/images/books/img-01.jpg";
 import user1 from "@/public/assets/images/user-1.jpg";
+import Book3dView from "./Book3dView/Book3dView";
 
 const testimonials = [
   {
@@ -52,14 +53,7 @@ const Testimonials = () => {
           <CarouselItem key={testimonial.id}>
             <div className="flex flex-col sm:flex-row p-4 pt-8 md:p-8 gap-8 rounded-md  bg-[#f7f7f7] dark:bg-secondary">
               <div className="flex justify-center items-center">
-                <div className="book-container">
-                  <div className="book-sm">
-                    <Image
-                      src={testimonial?.bookThumbnail}
-                      alt={testimonial?.bookTitle}
-                    />
-                  </div>
-                </div>
+                <Book3dView bookImg={testimonial?.bookThumbnail} bookAlt={testimonial?.bookTitle}/>
               </div>
               <div className="flex flex-col justify-center w-full">
                 <div>

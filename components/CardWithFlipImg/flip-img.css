@@ -1,0 +1,21 @@
+
+.flip-box:hover .flip {
+   transform: rotateY(180deg);
+ }
+ .flip {
+   @apply relative w-full h-[200px] cursor-pointer ease-in-out duration-1000; 
+   transform-style: preserve-3d;
+ }
+ 
+ .flip .flip__face {
+   @apply absolute top-0 left-0 w-full h-full ease-in-out duration-1000	;
+   backface-visibility: hidden; 
+ }
+ .flip .flip__face .img {
+   @apply w-full h-full object-contain;
+ }
+ .flip .flip__face--back {
+   transform: rotateY(180deg);
+ }
+ 
+ 

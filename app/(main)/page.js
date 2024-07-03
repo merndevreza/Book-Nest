@@ -1,3 +1,4 @@
+
 import BestSellingBooksSection from "./_components/BestSellingBooksSection";
 import BooksTypeSection from "./_components/BooksTypeSection";
 import CTASection from "./_components/CTASection";
@@ -15,7 +16,7 @@ export default function Home() {
       <NewArrivalsSection/>
       <CTASection/>
       <BestSellingBooksSection/>
-      <TestimonialSection/>
+      <TestimonialSection/> 
      </main>
   );
 }
