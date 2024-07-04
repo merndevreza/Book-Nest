@@ -1,33 +1,16 @@
-import "./book-card.css"
-import Image from "next/image";
 import { Button } from "../ui/button";
 import { Card, CardContent, CardFooter } from "../ui/card";
 import AddWishlistBtn from "../AddWishlistBtn"; 
-import AvailableTypes from "../AvailableTypes";
+import AvailableTypes from "../AvailableTypes"; 
+import Book3dForCard from "../Book3dForCard/Book3dForCard";
 
 const BookCard = ({ book }) => {
   return (
     <Card className="bg-secondary dark:bg-transparent flex flex-col items-center justify-between sm:h-full">
       <CardContent className="p-3">
         <div className="book-card">
-          <div className="book-card-img-wrapper">
-            <div className="book-card-img">
-              <div className="book-card-img-front">
-                <Image
-                  className="img"
-                  src={book?.thumbnail}
-                  alt={book?.title}
-                />
-              </div>
-              <div className="book-card-img-back">
-                <Image
-                  className="img"
-                  src={book?.thumbnail}
-                  alt={book?.title}
-                />
-              </div>
-            </div>
-          </div>
+          
+          <Book3dForCard thumbnail={book?.thumbnail} alt={book?.title} className="p-0"/>
           <div className="pt-3 ">
             <div className="flex justify-between items-center">
               <p className=" inline-block px-3 py-1 bg-themeSecondary text-themeSecondary-foreground text-sm rounded-full font-semibold ">

@@ -1,11 +1,12 @@
 import { Trash2 } from "lucide-react";
-import { Button } from "./ui/button";
+ 
 import {
    Tooltip,
    TooltipContent,
    TooltipProvider,
    TooltipTrigger,
- } from "./ui/tooltip";
+ } from "@/components/ui/tooltip";
+import { Button } from "@/components/ui/button";      
 const RemoveFromWishlistBtn = ({ bookId }) => {
   return (
    <TooltipProvider>

@@ -44,7 +44,7 @@ const CTASection = () => {
       opts={{
         align: "start",
       }}
-      className="container lg:max-w-6xl px-1 sm:px-10 overflow-hidden section-margin"
+      className="container lg:max-w-6xl 2xl:max-w-[1400px] px-1 sm:px-10 overflow-hidden section-margin"
     >
       <CarouselContent>
         {banners.map((item) => (

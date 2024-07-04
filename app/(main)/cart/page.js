@@ -1,58 +1,64 @@
-import BookCardVertical from "@/components/BookCard/BookCardVertical";
-import BreadCrumb from "@/components/BreadCrumb";
 import book1Front from "@/public/assets/images/books/img-01.jpg";
 import book1Back from "@/public/assets/images/books/img-02.jpg";
 import book2Front from "@/public/assets/images/books/img-03.jpg";
 import book2Back from "@/public/assets/images/books/img-04.jpg";
+import CartProductsTable from "./_components/CartProductsTable";
+import CartSummary from "./_components/CartSummary";
+import BreadCrumb from "@/components/BreadCrumb";
 const books = [
   {
     id: crypto.randomUUID(),
     title: "Ognibina",
+    stock: 2,
     thumbnail: book1Front,
     category: "Drama",
     authorName: "Kaji Nozrul Islam",
     regularPrice: 200,
     discountedPrice: 180,
     rating: 4,
-    types: ["printed", "pdf", "audio"],
+    types: ["printed"],
   },
   {
     id: crypto.randomUUID(),
     title: "Ognibina",
+    stock: 0,
     thumbnail: book2Front,
     category: "Drama",
     authorName: "Kaji Nozrul Islam",
     regularPrice: 200,
     discountedPrice: null,
     rating: 4,
-    types: ["printed", "audio"],
+    types: ["audio"],
   },
   {
     id: crypto.randomUUID(),
     title: "ইংলিশে দুর্বলদের জন্য English Therapy",
     thumbnail: book1Back,
     category: "Drama",
+    stock: 22,
     authorName: "Kaji Nozrul Islam",
     regularPrice: 200,
     discountedPrice: 180,
     rating: 3,
-    types: ["printed", "pdf"],
+    types: ["pdf"],
   },
   {
     id: crypto.randomUUID(),
     title: "Ognibina",
+    stock: 12,
     thumbnail: book2Back,
     category: "Drama",
     authorName: "Kaji Nozrul Islam",
     regularPrice: 200,
     discountedPrice: 180,
     rating: 4,
-    types: ["pdf", "audio"],
+    types: ["audio"],
   },
   {
     id: crypto.randomUUID(),
     title: "জার্মান ব্যাকরণ A1 থেকে B1 ( বাংলা ভার্সন )",
     thumbnail: book1Back,
+    stock: 0,
     category: "Drama",
     authorName: "Kaji Nozrul Islam",
     regularPrice: 200,
@@ -63,19 +69,22 @@ const books = [
 ];
 
 const paths = [
-  { href: "/wishlist", label: "Wishlist" }
+  {
+    label: "Cart",
+    href: "/cart",
+  },
 ];
-const WishlistPage = () => {
+const CartPage = () => {
   return (
-    <main className="px-1 sm:px-4 lg:px-8 max-w-4xl container section-padding ">
+    <main className="px-1 sm:px-16 lg:px-8  container section-padding">
       <BreadCrumb paths={paths} />
-      <div className="space-y-3">
-        {books.map((book) => (
-          <BookCardVertical key={book.id} book={book} />
-        ))}
+
+      <div className=" grid grid-cols-5 gap-8 xl:gap-16 ">
+        <CartProductsTable className="col-span-5 lg:col-span-3" books={books} />
+        <CartSummary books={books} />
       </div>
     </main>
   );
 };
 
-export default WishlistPage;
+export default CartPage;
