@@ -55,7 +55,7 @@ const CTASection = () => {
                   {item?.title}
                 </h2>
                 <p className="text-base  text-foreground">{item?.subtitle}</p>
-                <Link className="primary-btn self-start mx-auto sm:mr-auto sm:ml-0 " href={item?.link}>{item?.buttonTitle}</Link>
+                <Link className="primary-btn  mx-auto sm:mr-auto sm:ml-0 py-3 rounded-md px-3" href={item?.link}>{item?.buttonTitle}</Link>
               </div>
               <Image
                 className="h-full mx-auto sm:ml-auto object-cover rounded-lg col-span-2 sm:col-span-1 "

@@ -113,7 +113,7 @@
 .primary-btn,
 .secondary-btn,
 .outline-btn {
-  @apply relative inline-block align-middle transition-colors duration-500 rounded-lg px-4 md:px-6 py-3 cursor-pointer leading-none text-base font-semibold;
+  @apply relative inline-block align-middle transition-colors duration-500 rounded-lg cursor-pointer leading-none text-base font-semibold;
 
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const HomeIcon = ({showTitle}) => {
    return (
-      <Link className=" flex flex-col items-center"  href="/">
+      <Link className=" flex flex-col items-center  text-sm"  href="/">
          <House size={24}/>
          {
             showTitle && <span className="font-semibold">Home</span>

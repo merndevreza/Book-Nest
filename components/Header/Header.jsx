@@ -33,10 +33,10 @@ const Header = () => {
         <Logo className="order-2 md:order-1 col-span-3 md:col-span-1 w-[120px] mx-auto md:mx-0" logoTextClassName="text-center" />
         <Search className="order-4 md:order-2 col-span-5 md:col-span-3" />
 
-        <div className="flex gap-2 justify-end order-3 col-span-1">
+        <div className="flex gap-4 justify-end order-3 col-span-1">
           <WishlistIcon />
           <CartIcon className="hidden md:block" />
-          <UserIcon className="hidden md:block" />
+          <UserIcon/>
           <ThemeToggle className="hidden md:inline-flex  bg-tertiary hover:bg-tertiary text-tertiary-foreground" />
         </div>
       </div>
