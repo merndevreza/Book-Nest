@@ -3,7 +3,7 @@
 }
 
 .book-card-img .img {
-  @apply max-h-[350px] w-full object-cover object-top;
+  @apply max-h-[300px] w-auto mx-auto object-top;
 }
 .book-card-img-front {
   @apply relative z-20;

@@ -16,7 +16,7 @@
  }
  
  .book-sm > :first-child {
-   @apply absolute left-0 top-0 bg-themePrimary w-[160px] sm:w-[200px] h-[240px] sm:h-[300px] rounded-l-none rounded-r ; 
+   @apply absolute left-0 top-0 bg-themePrimary w-[160px] sm:w-[200px] h-[240px] sm:h-[300px] ; 
    transform: translateZ(15px);  
    box-shadow: 5px 5px 20px #6666665c;
  }
@@ -50,7 +50,7 @@
  }
  
  .book-sm::after {
-   @apply absolute left-0 top-0 w-[160px] sm:w-[200px] h-[240px] sm:h-[300px] bg-[#9c9c9c] rounded-l-none rounded-r ; 
+   @apply absolute left-0 top-0 w-[160px] sm:w-[200px] h-[240px] sm:h-[300px] bg-gray-300; 
    content: ' '; 
    transform: translateZ(-15px);  
    box-shadow: -10px 0 50px 10px #6666663c;

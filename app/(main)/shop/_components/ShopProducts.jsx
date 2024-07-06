@@ -1,12 +1,5 @@
+
 import BookCard from "@/components/BookCard/BookCard";
-
-import SectionTitle from "@/components/SectionTitle";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem, 
-} from "@/components/ui/carousel";
-
 import book1Front from "@/public/assets/images/books/img-01.jpg";
 import book1Back from "@/public/assets/images/books/img-02.jpg";
 import book2Front from "@/public/assets/images/books/img-03.jpg";
@@ -68,32 +61,14 @@ const books = [
     types: ["printed"],
   },
 ];
-const BestSellingBooksSection = () => {
+const ShopProducts = ({search,category,author,min,max,rating,sortBy}) => {
    return (
-      <section className="section-padding">
-        <SectionTitle
-          title="Best Selling Books"
-          subTitle="Get all popular books in printed format"
-        />
-        <Carousel 
-        opts={{
-          align: "start",
-        }}
-        className=" px-1 sm:px-4 lg:px-8 container "
-        >
-          <CarouselContent>
-            {books.map((book) => (
-              <CarouselItem
-                key={book.id}
-                className="basis-1/2 sm:basis-1/3 lg:basis-1/4 xl:basis-1/5"
-              >
-                <BookCard book={book} />
-              </CarouselItem>
+      <div className="col-span-3 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-4">
+          {books.map((book) => (
+              <BookCard key={book.id} book={book} />
             ))}
-          </CarouselContent> 
-        </Carousel>
-      </section>
-    );
+      </div>
+   );
 };
 
-export default BestSellingBooksSection;
+export default ShopProducts;
