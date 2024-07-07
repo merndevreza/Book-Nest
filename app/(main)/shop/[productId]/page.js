@@ -5,6 +5,7 @@ import AddToCartWidget from "./_components/AddToCartWidget";
 import ReviewSection from "@/components/ReviewSection/ReviewSection";
 
 import book1Front from "@/public/assets/images/books/img-01.jpg";
+import SocialProfiles from "@/components/SocialProfiles";
 const book = {
   id: crypto.randomUUID(),
   title:
@@ -27,6 +28,7 @@ const ProductDetailsPage = () => {
             <div className="text-center pt-6">
               <ReadBookBtn />
             </div>
+            <SocialProfiles/>
           </div>
           <div className="col-span-3 md:col-span-2">
             <ProductDetails book={book} />

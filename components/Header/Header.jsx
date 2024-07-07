@@ -37,7 +37,7 @@ const Header = () => {
           <WishlistIcon />
           <CartIcon className="hidden md:block" />
           <UserIcon/>
-          <ThemeToggle className="hidden md:inline-flex  bg-tertiary hover:bg-tertiary text-tertiary-foreground" />
+          <ThemeToggle className="hidden md:inline-flex  bg-tertiary hover:bg-tertiary text-tertiary-foreground min-w-10 min-h-10" />
         </div>
       </div>
     </div>
