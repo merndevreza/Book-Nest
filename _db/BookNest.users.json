@@ -1,0 +1,55 @@
+[{
+  "_id": {
+    "$oid": "668b8402829608c69a464e36"
+  },
+  "firstName": "John",
+  "lastName": "Smith",
+  "email": "john.smith@example.com",
+  "password": "1234",
+  "role": "author",
+  "avatar": "https://i.ibb.co/4ppfJrw/alexander-hipp-i-EEBWg-Y-6l-A-unsplash.jpg"
+},
+{
+  "_id": {
+    "$oid": "668b8402829608c69a464e37"
+  },
+  "firstName": "Jane",
+  "lastName": "Doe",
+  "email": "jane.doe@example.com",
+  "password": "1234",
+  "role": "author",
+  "avatar": "https://i.ibb.co/4ppfJrw/alexander-hipp-i-EEBWg-Y-6l-A-unsplash.jpg"
+},
+{
+  "_id": {
+    "$oid": "668b8402829608c69a464e38"
+  },
+  "firstName": "Michael",
+  "lastName": "Johnson",
+  "email": "michael.johnson@example.com",
+  "password": "1234",
+  "role": "author",
+  "avatar": "https://i.ibb.co/4ppfJrw/alexander-hipp-i-EEBWg-Y-6l-A-unsplash.jpg"
+},
+{
+  "_id": {
+    "$oid": "668b8402829608c69a464e39"
+  },
+  "firstName": "Emily",
+  "lastName": "Davis",
+  "email": "emily.davis@example.com",
+  "password": "1234",
+  "role": "author",
+  "avatar": "https://i.ibb.co/4ppfJrw/alexander-hipp-i-EEBWg-Y-6l-A-unsplash.jpg"
+},
+{
+  "_id": {
+    "$oid": "668b8402829608c69a464e3a"
+  },
+  "firstName": "William",
+  "lastName": "Brown",
+  "email": "william.brown@example.com",
+  "password": "1234",
+  "role": "author",
+  "avatar": "https://i.ibb.co/4ppfJrw/alexander-hipp-i-EEBWg-Y-6l-A-unsplash.jpg"
+}]

@@ -1,0 +1,122 @@
+[
+   {
+     "userId": "668b8402829608c69a464e36",
+     "billingAddress": {
+       "phone": "123-456-7890",
+       "street": "123 Main St",
+       "city": "Springfield",
+       "country": "USA",
+       "zip": "12345"
+     },
+     "shippingAddress": {
+       "phone": "123-456-7890",
+       "street": "123 Main St",
+       "city": "Springfield",
+       "country": "USA",
+       "zip": "12345"
+     }
+   },
+   {
+     "userId": "668b8402829608c69a464e37",
+     "billingAddress": {
+       "phone": "987-654-3210",
+       "street": "456 Elm St",
+       "city": "Shelbyville",
+       "country": "USA",
+       "zip": "54321"
+     },
+     "shippingAddress": {
+       "phone": "987-654-3210",
+       "street": "456 Elm St",
+       "city": "Shelbyville",
+       "country": "USA",
+       "zip": "54321"
+     }
+   },
+   {
+     "userId": "668b8402829608c69a464e38",
+     "billingAddress": {
+       "phone": "555-123-4567",
+       "street": "789 Oak St",
+       "city": "Capital City",
+       "country": "USA",
+       "zip": "67890"
+     },
+     "shippingAddress": {
+       "phone": "555-123-4567",
+       "street": "789 Oak St",
+       "city": "Capital City",
+       "country": "USA",
+       "zip": "67890"
+     }
+   },
+   {
+     "userId": "668b8402829608c69a464e39",
+     "billingAddress": {
+       "phone": "321-654-9870",
+       "street": "101 Pine St",
+       "city": "Ogdenville",
+       "country": "USA",
+       "zip": "09876"
+     },
+     "shippingAddress": {
+       "phone": "321-654-9870",
+       "street": "101 Pine St",
+       "city": "Ogdenville",
+       "country": "USA",
+       "zip": "09876"
+     }
+   },
+   {
+     "userId": "668b8402829608c69a464e3a",
+     "billingAddress": {
+       "phone": "444-555-6666",
+       "street": "202 Maple St",
+       "city": "North Haverbrook",
+       "country": "USA",
+       "zip": "11223"
+     },
+     "shippingAddress": {
+       "phone": "444-555-6666",
+       "street": "202 Maple St",
+       "city": "North Haverbrook",
+       "country": "USA",
+       "zip": "11223"
+     }
+   },
+   {
+     "userId": "668b862a829608c69a464e3d",
+     "billingAddress": {
+       "phone": "999-888-7777",
+       "street": "303 Cedar St",
+       "city": "Brockway",
+       "country": "USA",
+       "zip": "33445"
+     },
+     "shippingAddress": {
+       "phone": "999-888-7777",
+       "street": "303 Cedar St",
+       "city": "Brockway",
+       "country": "USA",
+       "zip": "33445"
+     }
+   },
+   {
+     "userId": "668b862a829608c69a464e3e",
+     "billingAddress": {
+       "phone": "555-666-7777",
+       "street": "404 Birch St",
+       "city": "Ogdenville",
+       "country": "USA",
+       "zip": "44556"
+     },
+     "shippingAddress": {
+       "phone": "555-666-7777",
+       "street": "404 Birch St",
+       "city": "Ogdenville",
+       "country": "USA",
+       "zip": "44556"
+     }
+   }
+ ]
+ 

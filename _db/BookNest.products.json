@@ -1,0 +1,906 @@
+[
+  {
+  "_id": {
+    "$oid": "668b7435829608c69a464e1f"
+  },
+  "title": "The Great Adventure",
+  "stock": 12,
+  "categoryId": {
+    "$oid": "668b553017617fce4a589c68"
+  },
+  "authorId": {
+    "$oid": "668b6fa0829608c69a464e1c"
+  },
+  "formats": [
+    "printedOldBook",
+    "printedNewBook",
+    "ebook"
+  ],
+  "edition": "1st",
+  "publisher": "Adventure Publishing",
+  "page": 350,
+  "language": "English",
+  "country": "USA",
+  "price": {
+    "printedNewBook": {
+      "regularPrice": 25.99,
+      "discountedPrice": 20.99
+    },
+    "printedOldBook": {
+      "regularPrice": 15.99,
+      "discountedPrice": 12.99
+    },
+    "ebook": {
+      "regularPrice": 9.99,
+      "discountedPrice": 7.99
+    },
+    "audioBook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    }
+  },
+  "sku": "BOOK001",
+  "shortDescription": "An exhilarating journey through uncharted territories.",
+  "thumbnail": "https://i.ibb.co/NS5Y6HJ/book-1.jpg",
+  "createdAt": "2023-01-01T00:00:00Z",
+  "status": "published"
+},
+{
+  "_id": {
+    "$oid": "668b7435829608c69a464e20"
+  },
+  "title": "Mystery of the Old Manor",
+  "stock": 8,
+  "categoryId": {
+    "$oid": "668b553017617fce4a589c68"
+  },
+  "authorId": {
+    "$oid": "668b6fa0829608c69a464e18"
+  },
+  "formats": [
+    "printedNewBook",
+    "audioBook"
+  ],
+  "edition": "2nd",
+  "publisher": "Mystery House",
+  "page": 280,
+  "language": "English",
+  "country": "UK",
+  "price": {
+    "printedNewBook": {
+      "regularPrice": 19.99,
+      "discountedPrice": 14.99
+    },
+    "printedOldBook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    },
+    "ebook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    },
+    "audioBook": {
+      "regularPrice": 12.99,
+      "discountedPrice": 9.99
+    }
+  },
+  "sku": "BOOK002",
+  "shortDescription": "A chilling mystery set in an ancient manor.",
+  "thumbnail": "https://i.ibb.co/wsw1c5G/book-2.jpg",
+  "createdAt": "2023-02-14T00:00:00Z",
+  "status": "published"
+},
+{
+  "_id": {
+    "$oid": "668b7435829608c69a464e21"
+  },
+  "title": "Science Fiction Galaxy",
+  "stock": 20,
+  "categoryId": {
+    "$oid": "668b553017617fce4a589c68"
+  },
+  "authorId": {
+    "$oid": "668b6fa0829608c69a464e18"
+  },
+  "formats": [
+    "printedNewBook",
+    "ebook"
+  ],
+  "edition": "1st",
+  "publisher": "Sci-Fi World",
+  "page": 420,
+  "language": "English",
+  "country": "Canada",
+  "price": {
+    "printedNewBook": {
+      "regularPrice": 27.99,
+      "discountedPrice": 21.99
+    },
+    "printedOldBook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    },
+    "ebook": {
+      "regularPrice": 11.99,
+      "discountedPrice": 8.99
+    },
+    "audioBook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    }
+  },
+  "sku": "BOOK003",
+  "shortDescription": "A thrilling journey across the galaxy.",
+  "thumbnail": "https://i.ibb.co/72t9vMX/book-3.jpg",
+  "createdAt": "2023-03-10T00:00:00Z",
+  "status": "published"
+},
+{
+  "_id": {
+    "$oid": "668b7435829608c69a464e22"
+  },
+  "title": "The Fantasy Realm",
+  "stock": 15,
+  "categoryId": {
+    "$oid": "668b553017617fce4a589c69"
+  },
+  "authorId": {
+    "$oid": "668b6fa0829608c69a464e18"
+  },
+  "formats": [
+    "printedOldBook",
+    "ebook",
+    "audioBook"
+  ],
+  "edition": "3rd",
+  "publisher": "Fantasy Books",
+  "page": 500,
+  "language": "English",
+  "country": "Australia",
+  "price": {
+    "printedNewBook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    },
+    "printedOldBook": {
+      "regularPrice": 18.99,
+      "discountedPrice": 14.99
+    },
+    "ebook": {
+      "regularPrice": 9.99,
+      "discountedPrice": 7.99
+    },
+    "audioBook": {
+      "regularPrice": 14.99,
+      "discountedPrice": 11.99
+    }
+  },
+  "sku": "BOOK004",
+  "shortDescription": "An epic tale of fantasy and adventure.",
+  "thumbnail": "https://i.ibb.co/dLq1YVr/book-4.jpg",
+  "createdAt": "2023-04-05T00:00:00Z",
+  "status": "published"
+},
+{
+  "_id": {
+    "$oid": "668b7435829608c69a464e23"
+  },
+  "title": "Biography of a Legend",
+  "stock": 10,
+  "categoryId": {
+    "$oid": "668b553017617fce4a589c69"
+  },
+  "authorId": {
+    "$oid": "668b6fa0829608c69a464e18"
+  },
+  "formats": [
+    "printedNewBook",
+    "audioBook"
+  ],
+  "edition": "1st",
+  "publisher": "Biography Press",
+  "page": 320,
+  "language": "English",
+  "country": "USA",
+  "price": {
+    "printedNewBook": {
+      "regularPrice": 22.99,
+      "discountedPrice": 18.99
+    },
+    "printedOldBook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    },
+    "ebook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    },
+    "audioBook": {
+      "regularPrice": 13.99,
+      "discountedPrice": 10.99
+    }
+  },
+  "sku": "BOOK005",
+  "shortDescription": "The life story of a remarkable individual.",
+  "thumbnail": "https://i.ibb.co/jWvbkZW/book-5.jpg",
+  "createdAt": "2023-05-01T00:00:00Z",
+  "status": "published"
+},
+{
+  "_id": {
+    "$oid": "668b7435829608c69a464e24"
+  },
+  "title": "History Unveiled",
+  "stock": 7,
+  "categoryId": {
+    "$oid": "668b553017617fce4a589c69"
+  },
+  "authorId": {
+    "$oid": "668b6fa0829608c69a464e1c"
+  },
+  "formats": [
+    "printedNewBook",
+    "printedOldBook"
+  ],
+  "edition": "2nd",
+  "publisher": "History House",
+  "page": 400,
+  "language": "English",
+  "country": "UK",
+  "price": {
+    "printedNewBook": {
+      "regularPrice": 24.99,
+      "discountedPrice": 19.99
+    },
+    "printedOldBook": {
+      "regularPrice": 14.99,
+      "discountedPrice": 11.99
+    },
+    "ebook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    },
+    "audioBook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    }
+  },
+  "sku": "BOOK006",
+  "shortDescription": "A deep dive into historical events.",
+  "thumbnail": "https://i.ibb.co/4FB103c/book-6.jpg",
+  "createdAt": "2023-06-15T00:00:00Z",
+  "status": "published"
+},
+{
+  "_id": {
+    "$oid": "668b7435829608c69a464e25"
+  },
+  "title": "Self-Help Guide",
+  "stock": 25,
+  "categoryId": {
+    "$oid": "668b553017617fce4a589c69"
+  },
+  "authorId": {
+    "$oid": "668b6fa0829608c69a464e1c"
+  },
+  "formats": [
+    "ebook",
+    "audioBook"
+  ],
+  "edition": "1st",
+  "publisher": "Self-Help Publishers",
+  "page": 150,
+  "language": "English",
+  "country": "Canada",
+  "price": {
+    "printedNewBook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    },
+    "printedOldBook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    },
+    "ebook": {
+      "regularPrice": 8.99,
+      "discountedPrice": 5.99
+    },
+    "audioBook": {
+      "regularPrice": 11.99,
+      "discountedPrice": 8.99
+    }
+  },
+  "sku": "BOOK007",
+  "shortDescription": "A practical guide to personal growth.",
+  "thumbnail": "https://i.ibb.co/ZSyBpFF/book-7.jpg",
+  "createdAt": "2023-07-20T00:00:00Z",
+  "status": "published"
+},
+{
+  "_id": {
+    "$oid": "668b7435829608c69a464e26"
+  },
+  "title": "Romantic Tales",
+  "stock": 18,
+  "categoryId": {
+    "$oid": "668b553017617fce4a589c6a"
+  },
+  "authorId": {
+    "$oid": "668b6fa0829608c69a464e19"
+  },
+  "formats": [
+    "printedOldBook",
+    "printedNewBook",
+    "ebook"
+  ],
+  "edition": "4th",
+  "publisher": "Romance Reads",
+  "page": 380,
+  "language": "English",
+  "country": "USA",
+  "price": {
+    "printedNewBook": {
+      "regularPrice": 26.99,
+      "discountedPrice": 22.99
+    },
+    "printedOldBook": {
+      "regularPrice": 16.99,
+      "discountedPrice": 13.99
+    },
+    "ebook": {
+      "regularPrice": 9.99,
+      "discountedPrice": 7.99
+    },
+    "audioBook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    }
+  },
+  "sku": "BOOK008",
+  "shortDescription": "A collection of heartwarming romance stories.",
+  "thumbnail": "https://i.ibb.co/pyYysbt/book-8.jpg",
+  "createdAt": "2023-08-05T00:00:00Z",
+  "status": "published"
+},
+{
+  "_id": {
+    "$oid": "668b7435829608c69a464e27"
+  },
+  "title": "Thriller Nights",
+  "stock": 22,
+  "categoryId": {
+    "$oid": "668b553017617fce4a589c6a"
+  },
+  "authorId": {
+    "$oid": "668b6fa0829608c69a464e19"
+  },
+  "formats": [
+    "printedNewBook",
+    "ebook",
+    "audioBook"
+  ],
+  "edition": "3rd",
+  "publisher": "Thriller Publishers",
+  "page": 450,
+  "language": "English",
+  "country": "UK",
+  "price": {
+    "printedNewBook": {
+      "regularPrice": 28.99,
+      "discountedPrice": 24.99
+    },
+    "printedOldBook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    },
+    "ebook": {
+      "regularPrice": 12.99,
+      "discountedPrice": 9.99
+    },
+    "audioBook": {
+      "regularPrice": 15.99,
+      "discountedPrice": 12.99
+    }
+  },
+  "sku": "BOOK009",
+  "shortDescription": "A spine-chilling collection of thrillers.",
+  "thumbnail": "https://i.ibb.co/J3FkBTp/book-9.jpg",
+  "createdAt": "2023-09-12T00:00:00Z",
+  "status": "draft"
+},
+{
+  "_id": {
+    "$oid": "668b7435829608c69a464e28"
+  },
+  "title": "Children's Fairy Tales",
+  "stock": 30,
+  "categoryId": {
+    "$oid": "668b553017617fce4a589c6c"
+  },
+  "authorId": {
+    "$oid": "668b6fa0829608c69a464e19"
+  },
+  "formats": [
+    "printedNewBook",
+    "ebook"
+  ],
+  "edition": "1st",
+  "publisher": "Kids Books",
+  "page": 120,
+  "language": "English",
+  "country": "Australia",
+  "price": {
+    "printedNewBook": {
+      "regularPrice": 18.99,
+      "discountedPrice": 15.99
+    },
+    "printedOldBook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    },
+    "ebook": {
+      "regularPrice": 7.99,
+      "discountedPrice": 5.99
+    },
+    "audioBook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    }
+  },
+  "sku": "BOOK010",
+  "shortDescription": "Enchanting fairy tales for children.",
+  "thumbnail": "https://i.ibb.co/5G2sknV/book-10.jpg",
+  "createdAt": "2023-10-01T00:00:00Z",
+  "status": "published"
+},
+{
+  "_id": {
+    "$oid": "668b7435829608c69a464e29"
+  },
+  "title": "Young Adult Adventures",
+  "stock": 17,
+  "categoryId": {
+    "$oid": "668b553017617fce4a589c6b"
+  },
+  "authorId": {
+    "$oid": "668b6fa0829608c69a464e19"
+  },
+  "formats": [
+    "printedNewBook",
+    "printedOldBook",
+    "ebook"
+  ],
+  "edition": "2nd",
+  "publisher": "YA Reads",
+  "page": 360,
+  "language": "English",
+  "country": "USA",
+  "price": {
+    "printedNewBook": {
+      "regularPrice": 23.99,
+      "discountedPrice": 19.99
+    },
+    "printedOldBook": {
+      "regularPrice": 13.99,
+      "discountedPrice": 10.99
+    },
+    "ebook": {
+      "regularPrice": 8.99,
+      "discountedPrice": 6.99
+    },
+    "audioBook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    }
+  },
+  "sku": "BOOK011",
+  "shortDescription": "Exciting adventures for young adults.",
+  "thumbnail": "https://i.ibb.co/hySY0DP/book-11.jpg",
+  "createdAt": "2023-11-20T00:00:00Z",
+  "status": "published"
+},
+{
+  "_id": {
+    "$oid": "668b7435829608c69a464e2a"
+  },
+  "title": "Classic Literature",
+  "stock": 5,
+  "categoryId": {
+    "$oid": "668b553017617fce4a589c6b"
+  },
+  "authorId": {
+    "$oid": "668b6fa0829608c69a464e19"
+  },
+  "formats": [
+    "printedNewBook",
+    "printedOldBook"
+  ],
+  "edition": "1st",
+  "publisher": "Literary Classics",
+  "page": 700,
+  "language": "English",
+  "country": "UK",
+  "price": {
+    "printedNewBook": {
+      "regularPrice": 29.99,
+      "discountedPrice": 25.99
+    },
+    "printedOldBook": {
+      "regularPrice": 19.99,
+      "discountedPrice": 16.99
+    },
+    "ebook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    },
+    "audioBook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    }
+  },
+  "sku": "BOOK012",
+  "shortDescription": "Timeless classics of literature.",
+  "thumbnail": "https://i.ibb.co/n6QHbhb/book-12.jpg",
+  "createdAt": "2023-12-15T00:00:00Z",
+  "status": "published"
+},
+{
+  "_id": {
+    "$oid": "668b7435829608c69a464e2b"
+  },
+  "title": "Modern Fiction",
+  "stock": 20,
+  "categoryId": {
+    "$oid": "668b553017617fce4a589c6c"
+  },
+  "authorId": {
+    "$oid": "668b6fa0829608c69a464e1a"
+  },
+  "formats": [
+    "printedNewBook",
+    "ebook"
+  ],
+  "edition": "1st",
+  "publisher": "Fiction Press",
+  "page": 340,
+  "language": "English",
+  "country": "Canada",
+  "price": {
+    "printedNewBook": {
+      "regularPrice": 22.99,
+      "discountedPrice": 18.99
+    },
+    "printedOldBook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    },
+    "ebook": {
+      "regularPrice": 9.99,
+      "discountedPrice": 7.99
+    },
+    "audioBook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    }
+  },
+  "sku": "BOOK013",
+  "shortDescription": "Compelling modern fiction stories.",
+  "thumbnail": "https://i.ibb.co/XYVGphZ/book-13.jpg",
+  "createdAt": "2024-01-10T00:00:00Z",
+  "status": "published"
+},
+{
+  "_id": {
+    "$oid": "668b7435829608c69a464e2c"
+  },
+  "title": "Epic Fantasy",
+  "stock": 12,
+  "categoryId": {
+    "$oid": "668b553017617fce4a589c6d"
+  },
+  "authorId": {
+    "$oid": "668b6fa0829608c69a464e1a"
+  },
+  "formats": [
+    "printedNewBook",
+    "ebook",
+    "audioBook"
+  ],
+  "edition": "1st",
+  "publisher": "Epic Reads",
+  "page": 600,
+  "language": "English",
+  "country": "Australia",
+  "price": {
+    "printedNewBook": {
+      "regularPrice": 27.99,
+      "discountedPrice": 23.99
+    },
+    "printedOldBook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    },
+    "ebook": {
+      "regularPrice": 12.99,
+      "discountedPrice": 9.99
+    },
+    "audioBook": {
+      "regularPrice": 15.99,
+      "discountedPrice": 12.99
+    }
+  },
+  "sku": "BOOK014",
+  "shortDescription": "An epic saga of fantasy and magic.",
+  "thumbnail": "https://i.ibb.co/3Cv5Q7G/book-14.jpg",
+  "createdAt": "2024-02-05T00:00:00Z",
+  "status": "published"
+},
+{
+  "_id": {
+    "$oid": "668b7435829608c69a464e2d"
+  },
+  "title": "Biography of a Pioneer",
+  "stock": 9,
+  "categoryId": {
+    "$oid": "668b553017617fce4a589c73"
+  },
+  "authorId": {
+    "$oid": "668b6fa0829608c69a464e1a"
+  },
+  "formats": [
+    "printedNewBook",
+    "printedOldBook"
+  ],
+  "edition": "2nd",
+  "publisher": "Biography House",
+  "page": 320,
+  "language": "English",
+  "country": "UK",
+  "price": {
+    "printedNewBook": {
+      "regularPrice": 23.99,
+      "discountedPrice": 19.99
+    },
+    "printedOldBook": {
+      "regularPrice": 14.99,
+      "discountedPrice": 11.99
+    },
+    "ebook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    },
+    "audioBook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    }
+  },
+  "sku": "BOOK015",
+  "shortDescription": "The inspiring biography of a trailblazer.",
+  "thumbnail": "https://i.ibb.co/GHH3Z20/book-15.jpg",
+  "createdAt": "2024-03-10T00:00:00Z",
+  "status": "published"
+},
+{
+  "_id": {
+    "$oid": "668b7435829608c69a464e2e"
+  },
+  "title": "Historical Insights",
+  "stock": 14,
+  "categoryId": {
+    "$oid": "668b553017617fce4a589c73"
+  },
+  "authorId": {
+    "$oid": "668b6fa0829608c69a464e1b"
+  },
+  "formats": [
+    "printedNewBook",
+    "ebook"
+  ],
+  "edition": "3rd",
+  "publisher": "History Publishers",
+  "page": 410,
+  "language": "English",
+  "country": "Canada",
+  "price": {
+    "printedNewBook": {
+      "regularPrice": 26.99,
+      "discountedPrice": 22.99
+    },
+    "printedOldBook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    },
+    "ebook": {
+      "regularPrice": 10.99,
+      "discountedPrice": 8.99
+    },
+    "audioBook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    }
+  },
+  "sku": "BOOK016",
+  "shortDescription": "Deep insights into historical events.",
+  "thumbnail": "https://i.ibb.co/wcpmvMv/book-16.jpg",
+  "createdAt": "2024-04-15T00:00:00Z",
+  "status": "published"
+},
+{
+  "_id": {
+    "$oid": "668b7435829608c69a464e2f"
+  },
+  "title": "Guide to Self-Improvement",
+  "stock": 22,
+  "categoryId": {
+    "$oid": "668b553017617fce4a589c72"
+  },
+  "authorId": {
+    "$oid": "668b6fa0829608c69a464e1b"
+  },
+  "formats": [
+    "printedNewBook",
+    "ebook"
+  ],
+  "edition": "1st",
+  "publisher": "Self-Help Press",
+  "page": 200,
+  "language": "English",
+  "country": "USA",
+  "price": {
+    "printedNewBook": {
+      "regularPrice": 20.99,
+      "discountedPrice": 17.99
+    },
+    "printedOldBook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    },
+    "ebook": {
+      "regularPrice": 9.99,
+      "discountedPrice": 6.99
+    },
+    "audioBook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    }
+  },
+  "sku": "BOOK017",
+  "shortDescription": "Steps and strategies for self-improvement.",
+  "thumbnail": "https://i.ibb.co/2KkVztN/book-17.jpg",
+  "createdAt": "2024-05-05T00:00:00Z",
+  "status": "published"
+},
+{
+  "_id": {
+    "$oid": "668b7435829608c69a464e30"
+  },
+  "title": "Romance Chronicles",
+  "stock": 15,
+  "categoryId": {
+    "$oid": "668b553017617fce4a589c72"
+  },
+  "authorId": {
+    "$oid": "668b6fa0829608c69a464e1b"
+  },
+  "formats": [
+    "printedOldBook",
+    "audioBook"
+  ],
+  "edition": "4th",
+  "publisher": "Romance Chronicles",
+  "page": 380,
+  "language": "English",
+  "country": "Australia",
+  "price": {
+    "printedNewBook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    },
+    "printedOldBook": {
+      "regularPrice": 17.99,
+      "discountedPrice": 14.99
+    },
+    "ebook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    },
+    "audioBook": {
+      "regularPrice": 14.99,
+      "discountedPrice": 11.99
+    }
+  },
+  "sku": "BOOK018",
+  "shortDescription": "Romantic stories through the ages.",
+  "thumbnail": "https://i.ibb.co/mN9M4Cj/book-18.jpg",
+  "createdAt": "2024-06-01T00:00:00Z",
+  "status": "published"
+},
+{
+  "_id": {
+    "$oid": "668b7435829608c69a464e31"
+  },
+  "title": "Thrills and Chills",
+  "stock": 8,
+  "categoryId": {
+    "$oid": "668b553017617fce4a589c70"
+  },
+  "authorId": {
+    "$oid": "668b6fa0829608c69a464e1c"
+  },
+  "formats": [
+    "printedNewBook"
+  ],
+  "edition": "1st",
+  "publisher": "Thrill Seekers",
+  "page": 360,
+  "language": "English",
+  "country": "UK",
+  "price": {
+    "printedNewBook": {
+      "regularPrice": 25.99,
+      "discountedPrice": 21.99
+    },
+    "printedOldBook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    },
+    "ebook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    },
+    "audioBook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    }
+  },
+  "sku": "BOOK019",
+  "shortDescription": "Heart-pounding thrillers for the brave.",
+  "thumbnail": "https://i.ibb.co/51Yj14p/book-19.jpg",
+  "createdAt": "2024-07-01T00:00:00Z",
+  "status": "published"
+},
+{
+  "_id": {
+    "$oid": "668b7435829608c69a464e32"
+  },
+  "title": "Kids' Magical Stories",
+  "stock": 28,
+  "categoryId": {
+    "$oid": "668b553017617fce4a589c70"
+  },
+  "authorId": {
+    "$oid": "668b6fa0829608c69a464e1c"
+  },
+  "formats": [
+    "printedNewBook",
+    "ebook"
+  ],
+  "edition": "2nd",
+  "publisher": "Magic Kids",
+  "page": 110,
+  "language": "English",
+  "country": "USA",
+  "price": {
+    "printedNewBook": {
+      "regularPrice": 19.99,
+      "discountedPrice": 16.99
+    },
+    "printedOldBook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    },
+    "ebook": {
+      "regularPrice": 6.99,
+      "discountedPrice": 4.99
+    },
+    "audioBook": {
+      "regularPrice": null,
+      "discountedPrice": null
+    }
+  },
+  "sku": "BOOK020",
+  "shortDescription": "Magical stories for children.",
+  "thumbnail": "https://i.ibb.co/k9JpSG5/book-20.jpg",
+  "createdAt": "2024-08-10T00:00:00Z",
+  "status": "published"
+}]

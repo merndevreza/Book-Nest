@@ -1,0 +1,123 @@
+[
+   {
+     "products": [
+       {
+         "productId": "668b7435829608c69a464e1f",
+         "productTitle": "The Great Adventure",
+         "author": "John Smith",
+         "quantity": 1,
+         "format": "Hardcover",
+         "price": 29.99
+       }
+     ],
+     "orderStatus": "order-placed",
+     "createdAt": "2024-07-08T12:00:00Z",
+     "amount": 29.99,
+     "userId": "668b6fa0829608c69a464e1a",
+     "shippingAddress": {
+       "phone": "+1234567890",
+       "street": "123 Main Street",
+       "city": "New York",
+       "country": "USA",
+       "zip": "10001"
+     },
+     "shippingCost": 0
+   },
+   {
+     "products": [
+       {
+         "productId": "668b7435829608c69a464e20",
+         "productTitle": "The Mystery of the Missing Key",
+         "author": "Emily Johnson",
+         "quantity": 2,
+         "format": "Paperback",
+         "price": 15.99
+       }
+     ],
+     "orderStatus": "order-placed",
+     "createdAt": "2024-07-08T13:00:00Z",
+     "amount": 31.98,
+     "userId": "668b6fa0829608c69a464e1b",
+     "shippingAddress": {
+       "phone": "+1987654321",
+       "street": "456 Oak Avenue",
+       "city": "Los Angeles",
+       "country": "USA",
+       "zip": "90001"
+     },
+     "shippingCost": 0
+   },
+   {
+     "products": [
+       {
+         "productId": "668b7435829608c69a464e21",
+         "productTitle": "Science Fiction Galaxy",
+         "author": "Michael Rogers",
+         "quantity": 1,
+         "format": "E-book",
+         "price": 12.99
+       }
+     ],
+     "orderStatus": "order-placed",
+     "createdAt": "2024-07-08T14:00:00Z",
+     "amount": 12.99,
+     "userId": "668b6fa0829608c69a464e1c",
+     "shippingAddress": {
+       "phone": "+1122334455",
+       "street": "789 Elm Street",
+       "city": "Chicago",
+       "country": "USA",
+       "zip": "60601"
+     },
+     "shippingCost": 0
+   },
+   {
+     "products": [
+       {
+         "productId": "668b7435829608c69a464e1f",
+         "productTitle": "The Great Adventure",
+         "author": "John Smith",
+         "quantity": 1,
+         "format": "Hardcover",
+         "price": 29.99
+       }
+     ],
+     "orderStatus": "order-placed",
+     "createdAt": "2024-07-08T15:00:00Z",
+     "amount": 29.99,
+     "userId": "668b6fa0829608c69a464e1d",
+     "shippingAddress": {
+       "phone": "+3344556677",
+       "street": "321 Pine Road",
+       "city": "Houston",
+       "country": "USA",
+       "zip": "77001"
+     },
+     "shippingCost": 0
+   },
+   {
+     "products": [
+       {
+         "productId": "668b7435829608c69a464e20",
+         "productTitle": "The Mystery of the Missing Key",
+         "author": "Emily Johnson",
+         "quantity": 3,
+         "format": "Paperback",
+         "price": 15.99
+       }
+     ],
+     "orderStatus": "order-placed",
+     "createdAt": "2024-07-08T16:00:00Z",
+     "amount": 47.97,
+     "userId": "668b6fa0829608c69a464e1e",
+     "shippingAddress": {
+       "phone": "+5566778899",
+       "street": "654 Maple Lane",
+       "city": "Miami",
+       "country": "USA",
+       "zip": "33101"
+     },
+     "shippingCost": 0
+   }
+ ]
+ 
