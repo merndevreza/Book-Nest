@@ -19,8 +19,11 @@ import Link from "next/link";
 
 const FormSchema = z
   .object({
-    name: z.string().min(2, {
-      message: "Name must be at least 2 characters.",
+    firstName: z.string().min(2, {
+      message: "First name must be at least 2 characters.",
+    }),
+    lastName: z.string().min(2, {
+      message: "Last name must be at least 2 characters.",
     }),
     email: z.string().email({
       message: "Email is required.",
@@ -53,7 +56,8 @@ export default function RegistrationForm() {
   const form = useForm({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      name: "",
+      firstName: "",
+      lastName: "",
       email: "",
       password: "",
       passwordConfirm: "",
@@ -68,19 +72,36 @@ export default function RegistrationForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
-        <FormField
+        <div className="flex  gap-2 "> 
+        <FormField 
           control={form.control}
-          name="name"
+          name="firstName"
           render={({ field }) => (
-            <FormItem>
-              <FormLabel className="text-base font-semibold"> Name</FormLabel>
+            <FormItem className="w-full">
+              <FormLabel className="text-base font-semibold"> First Name</FormLabel>
               <FormControl>
-                <Input className="w-full" placeholder="Full name" {...field} />
+                <Input className="w-full" placeholder="First name" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
+        <FormField
+          control={form.control}
+          name="lastName"
+          render={({ field }) => (
+            <FormItem className="w-full">
+              <FormLabel className="text-base font-semibold"> Last Name</FormLabel>
+              <FormControl>
+                <Input className="w-full" placeholder="Last name" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        </div>
+
+
         <FormField
           control={form.control}
           name="email"
@@ -120,27 +141,7 @@ export default function RegistrationForm() {
             </FormItem>
           )}
         />
-        <FormField
-          control={form.control}
-          name="passwordConfirm"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="text-base font-semibold">
-                {" "}
-                Confirm Password
-              </FormLabel>
-              <FormControl>
-                <Input
-                  type="password"
-                  className="w-full"
-                  placeholder="Re-enter the password"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        
         <FormField
           control={form.control}
           name="passwordConfirm"

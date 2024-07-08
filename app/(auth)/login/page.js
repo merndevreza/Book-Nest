@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import LoginForm from "./_components/LoginForm";
 import GoHomeBtn from "../_components/GoHomeBtn";
 
@@ -23,8 +22,8 @@ const LoginPage = () => {
             <h2 className="text-2xl font-semibold text-themeSecondary dark:text-themePrimary ">
               New User?
             </h2>
-            <Link href="/register">
-              <Button variant="themeOutline">Create account</Button>
+            <Link className="outline-btn py-2 rounded-md px-3" href="/register">
+            Register
             </Link>
           </div>
         </div>

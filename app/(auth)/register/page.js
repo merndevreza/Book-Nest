@@ -26,8 +26,8 @@ const RegistrationPage = () => {
             <h2 className="text-xl md:text-2xl font-semibold text-themeSecondary dark:text-themePrimary ">
               Already have account?
             </h2>
-            <Link href="/login">
-              <Button variant="themeOutline" >Login</Button>
+            <Link className="outline-btn py-2 rounded-md px-3" href="/login">
+            Login
             </Link>
           </div>
         </div>

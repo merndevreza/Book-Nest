@@ -4,7 +4,7 @@ import ProductDetails from "./_components/ProductDetails";
 import AddToCartWidget from "./_components/AddToCartWidget";
 import ReviewSection from "@/components/ReviewSection/ReviewSection";
 
-import book1Front from "@/public/assets/images/books/img-01.jpg";
+import book1Front from "@/public/assets/images/books/book-2.jpg";
 import SocialProfiles from "@/components/SocialProfiles";
 const book = {
   id: crypto.randomUUID(),
