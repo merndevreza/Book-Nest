@@ -10,7 +10,7 @@ const paths = [
      href: "dashboard",
    }, 
  ];
-const DashboardPage = () => {
+const DashboardPage = ({params:{lang}}) => {
   return (
     <div className="mb-6">
       <BreadCrumb lang={lang} paths={paths} />

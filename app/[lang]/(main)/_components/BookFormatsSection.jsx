@@ -1,7 +1,4 @@
-import * as React from "react";
-import printedBooks from "@/public/assets/images/book-types/printed-book-front.png";
-import ebooks from "@/public/assets/images/book-types/ebook-front.png";
-import audioBooks from "@/public/assets/images/book-types/audiobook-front.png"; 
+import * as React from "react"; 
 import {
   Carousel,
   CarouselContent,
@@ -10,31 +7,10 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
+import getBookFormatsContent from "@/public/static-data/bookFormats";
 
-const BooksTypeSection = ({ dictionary, lang }) => {
-  const bookTypes = [
-    {
-      id: 1,
-      title: dictionary?.type1Title,
-      subTitle: dictionary?.type1SubTitle,
-      thumbnail: printedBooks,
-      path: "shop",
-    },
-    {
-      id: 2,
-      title: dictionary?.type2Title,
-      subTitle: dictionary?.type2SubTitle,
-      thumbnail: ebooks,
-      path: "shop",
-    },
-    {
-      id: 3,
-      title: dictionary?.type3Title,
-      subTitle: dictionary?.type3SubTitle,
-      thumbnail: audioBooks,
-      path: "shop",
-    },
-  ];
+const BookFormatsSection = ({ dictionary, lang }) => {
+  const bookTypes =  getBookFormatsContent(dictionary)
   return (
     <section className=" px-1 sm:px-4 lg:px-8 container section-padding">
       <Carousel
@@ -76,4 +52,5 @@ const BooksTypeSection = ({ dictionary, lang }) => {
   );
 };
 
-export default BooksTypeSection;
+export default BookFormatsSection;
+ 

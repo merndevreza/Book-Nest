@@ -3,9 +3,6 @@ import * as React from "react";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 
-import banner1 from "@/public/assets/images/banners/banner-1.png";
-import banner2 from "@/public/assets/images/banners/banner-3.png";
-import banner3 from "@/public/assets/images/banners/banner-2.png";
 import {
   Carousel,
   CarouselContent,
@@ -13,7 +10,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import Link from "next/link";
+import Link from "next/link"; 
+import getHeroContent from "@/public/static-data/heroContent";
 
 const Hero = ({ dictionary, lang }) => {
   const [isMobile, setIsMobile] = React.useState(false);
@@ -28,30 +26,8 @@ const Hero = ({ dictionary, lang }) => {
       setIsMobile(false);
     }
   }, []);
-  
-  const banners = [
-    {
-      id: crypto.randomUUID(),
-      src: banner1,
-      title: dictionary?.slide1Title,
-      subtitle: dictionary?.slide1SubTitle,
-      path: "shop",
-    },
-    {
-      id: crypto.randomUUID(),
-      src: banner2,
-      title: dictionary?.slide2Title,
-      subtitle: dictionary?.slide2SubTitle,
-      path: "shop",
-    },
-    {
-      id: crypto.randomUUID(),
-      src: banner3,
-      title: dictionary?.slide3Title,
-      subtitle: dictionary?.slide3SubTitle,
-      path: "shop",
-    },
-  ];
+
+  const banners = getHeroContent(dictionary);
 
   return (
     <Carousel

@@ -17,7 +17,7 @@ const paths = [
      href: "dashboard/add-user",
    },
  ];
-const AddUserPage = () => {
+const AddUserPage = ({params:{lang}}) => {
   return (
     <div>
       <BreadCrumb lang={lang} paths={paths} />

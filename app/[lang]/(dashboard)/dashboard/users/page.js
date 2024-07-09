@@ -5,7 +5,7 @@ import { File, PlusCircle } from "lucide-react";
 import Link from "next/link";
 import AllUsersTable from "./_components/AllUsersTable";
 
-const UsersPage = () => {
+const UsersPage = ({params:{lang}}) => {
   return (
     <div>
       <PageHeader />

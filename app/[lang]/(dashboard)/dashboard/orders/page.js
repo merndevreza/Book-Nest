@@ -13,8 +13,7 @@ const paths = [
     href: "dashboard/users",
   },
 ];
-const OrdersPage = async({params:{lang}}) => {
-  const dictionary=await getDictionary(lang)
+const OrdersPage = ({params:{lang}}) => { 
    return (
       <div>
          <BreadCrumb lang={lang} paths={paths} />

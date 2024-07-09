@@ -1,6 +1,6 @@
 import { getDictionary } from "../dictionary/dictionary";
 import BestSellingBooksSection from "./_components/BestSellingBooksSection";
-import BooksTypeSection from "./_components/BooksTypeSection";
+import BookFormatsSection from "./_components/BookFormatsSection"; 
 import CTASection from "./_components/CTASection";
 import FeaturedBooksSection from "./_components/FeaturedBooksSection";
 import Hero from "./_components/Hero";
@@ -13,7 +13,7 @@ export default async function Home({ params: { lang } }) {
   return (
     <main>
       <Hero lang={lang} dictionary={dictionary} />
-      <BooksTypeSection lang={lang} dictionary={dictionary} />
+      <BookFormatsSection lang={lang} dictionary={dictionary}/> 
       <FeaturedBooksSection lang={lang} dictionary={dictionary} />
       <NewArrivalsSection lang={lang} dictionary={dictionary} />
       <CTASection lang={lang} dictionary={dictionary} />

@@ -4,10 +4,10 @@ import { cn } from "@/lib/utils";
 import { Home } from "lucide-react";
 import { useRouter } from "next/navigation";
 
-const DashboardGoHomeBtn = ({className}) => {
+const DashboardGoHomeBtn = ({className,lang}) => {
   const router = useRouter();
   const handleClick = () => {
-    router.push("/");
+    router.push(`/${lang}`);
   };
   return (
    <Button

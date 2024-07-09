@@ -5,7 +5,7 @@ import { File, PlusCircle } from "lucide-react";
 import AllProductsTabContent from "./_components/AllProductsTabContent";
 import Link from "next/link";
 
-const ProductsListPage = () => {
+const ProductsListPage = ({params:{lang}}) => {
    return (
       <div>
         <PageHeader/>

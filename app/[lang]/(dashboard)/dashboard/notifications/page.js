@@ -58,7 +58,7 @@ const notifications=[
       href:"#"
    },
 ]
-const NotificationsPage = () => {
+const NotificationsPage = ({params:{lang}}) => {
    return (
       <div className="space-y-3">
          {notifications.map(notification=><NotificationCard key={notification.id} notification={notification}/>)}

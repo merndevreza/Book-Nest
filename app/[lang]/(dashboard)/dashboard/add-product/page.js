@@ -1,6 +1,6 @@
 import { AddProduct } from "./all";
 
-const AddProductPage = () => {
+const AddProductPage = ({params:{lang}}) => {
    return (
       <div>
          <AddProduct/>

@@ -4,12 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import DashboardNav from "./DashboardNav";
 import DashboardNotifications from "./DashboardNotifications"; 
-import { ThemeToggle } from "@/components/Header/ThemeToggle"; 
-import DashboardSearch from "./DashboardSearch";
+import { ThemeToggle } from "@/components/Header/ThemeToggle";  
 import DashboardGoHomeBtn from "./DashboardGoHomeBtn";
-import DashboardSearchToggler from "./DashboardSearchToggler";
+ 
 
-export function Dashboard({ children }) {
+export function Dashboard({ children,lang }) {
   return (
     <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
       <aside className="hidden border-r bg-muted/40 md:block">
@@ -19,7 +18,7 @@ export function Dashboard({ children }) {
             <DashboardNotifications />
           </div>
           <div className="flex-1">
-            <DashboardNav />
+            <DashboardNav lang={lang}/>
           </div>
         </div>
       </aside>
@@ -41,10 +40,10 @@ export function Dashboard({ children }) {
             </div>
             <SheetContent side="left" className="flex flex-col">
               <span className="font-semibold pl-6">Dashboard</span>
-              <DashboardNav />
+              <DashboardNav  lang={lang}/>
             </SheetContent>
           </Sheet>
-          <DashboardGoHomeBtn/>  
+          <DashboardGoHomeBtn  lang={lang}/>  
           <ThemeToggle className="inline-flex  bg-tertiary hover:bg-tertiary text-tertiary-foreground min-w-10 min-h-10" />
         </header>
         <main className=" md:px-4 lg:px-6 py-0 max-h-screen overflow-y-scroll">
