@@ -1,19 +1,17 @@
 import Ratings from "../Ratings";
 import {
   Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
+  CardContent, 
   CardHeader,
   CardTitle,
 } from "../ui/card";
 import { Progress } from "../ui/progress";
 
-const ReviewSummary = () => {
+const ReviewSummary = ({dictionary}) => {
   return (
     <Card>
       <CardHeader className="px-4 pt-4 pb-0">
-        <CardTitle className="text-xl">Customer Review Stats</CardTitle>
+        <CardTitle className="text-xl">{dictionary?.customerReviewStats}</CardTitle>
         <div className="space-y-1 pt-4">
           <Ratings ratingNumber={5} />
           <p>0.0 out of 5</p>

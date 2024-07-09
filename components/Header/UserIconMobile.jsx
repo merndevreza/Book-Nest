@@ -3,10 +3,10 @@ import React from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import {User } from "lucide-react";
 
-const UserIconMobile = () => {
+const UserIconMobile = ({lang}) => {
   return (
     <Link
-      href="/account"
+    href={`/${lang}/account`} 
       className=" text-secondary-foreground hover:bg-secondary/80 flex flex-col items-center text-sm "
     >
       <Avatar>

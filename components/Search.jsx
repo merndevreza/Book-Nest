@@ -5,7 +5,7 @@ import Typewriter from "typewriter-effect/dist/core";
 import { Search as SearchIconMain } from "lucide-react"; 
 import { Button } from "./ui/button";
 
-const Search = ({className}) => {
+const Search = ({className,dictionary}) => {
   const inputRef = useRef(null);
   const typewriterRef = useRef(null);
 
@@ -34,10 +34,10 @@ const Search = ({className}) => {
       });
 
       typewriterRef.current
-        .typeString("Search books by name...")
+        .typeString(dictionary?.searchPlaceholder1)
         .pauseFor(1000)
         .deleteAll()
-        .typeString("Search books by Author...")
+        .typeString(dictionary?.searchPlaceholder2)
         .pauseFor(1000)
         .deleteAll()
         .start();

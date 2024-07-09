@@ -26,7 +26,7 @@ const ads = [
     alt: "Ghost Book",
   },
 ];
-const CategoriesMegaMenu = ({ className, toggleTitle }) => {
+const CategoriesMegaMenu = ({ className, toggleTitle,dictionary,lang }) => {
   return (
     <nav className={cn(`px-8 py-4 bg-themeSecondary flex category-center cursor-pointer group ${className}`)}>
       <div className="flex items-center">
@@ -34,12 +34,12 @@ const CategoriesMegaMenu = ({ className, toggleTitle }) => {
           <Menu size={24} />
         </span>
         {toggleTitle && (
-          <span className="capitalize ml-2 text-themeSecondary-foreground">All Categories</span>
+          <span className="capitalize ml-2 text-themeSecondary-foreground">{dictionary?.allCategories}</span>
         )}
       </div>
       <div className="grid grid-cols-4 absolute w-full bg-themeSecondary text-themeSecondary-foreground left-0 top-full shadow-md p-5 opacity-0 group-hover:opacity-100 transition duration-300 invisible group-hover:visible z-40 rounded">
         <div className="col-span-3 ">
-          <CategoryListMenu />
+          <CategoryListMenu lang={lang}/>
         </div>
         <div>
           <ImageCarousel

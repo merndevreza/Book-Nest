@@ -26,14 +26,14 @@ const allCategories = [
     name: "Arts",
   },
 ];
-const CategoryListMenu = () => {
+const CategoryListMenu = ({lang}) => {
   return (
     <ul className="grid gap-2 grid-cols-3  w-full bg-themeSecondary text-themeSecondary-foreground p-5 transition duration-300 rounded">
       {allCategories.map((category) => (
         <li key={category?.id}>
           <Link
             className="hover:text-themePrimary text-base"
-            href={`/category/${category?.id}`}
+            href={`/${lang}/category/${category?.id}`}
           >
             {category?.name}
           </Link>

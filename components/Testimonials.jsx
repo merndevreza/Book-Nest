@@ -1,9 +1,16 @@
 import Image from "next/image";
 import Ratings from "./Ratings";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "./ui/carousel";
 import book1Front from "@/public/assets/images/books/img-01.jpg";
 import user1 from "@/public/assets/images/user-1.jpg";
 import Book3dView from "./Book3dView/Book3dView";
+import Link from "next/link";
 
 const testimonials = [
   {
@@ -40,7 +47,7 @@ const testimonials = [
     userId: crypto.randomUUID(),
   },
 ];
-const Testimonials = () => {
+const Testimonials = ({ lang }) => {
   return (
     <Carousel
       opts={{
@@ -53,13 +60,20 @@ const Testimonials = () => {
           <CarouselItem key={testimonial.id}>
             <div className="flex flex-col sm:flex-row p-4 pt-8 md:p-8 gap-8 rounded-md  bg-[#f7f7f7] dark:bg-secondary">
               <div className="flex justify-center items-center">
-                <Book3dView bookImg={testimonial?.bookThumbnail} bookAlt={testimonial?.bookTitle}/>
+                <Link href={`/${lang}/shop/01`}>
+                  <Book3dView
+                    bookImg={testimonial?.bookThumbnail}
+                    bookAlt={testimonial?.bookTitle}
+                  />
+                </Link>
               </div>
               <div className="flex flex-col justify-center w-full">
                 <div>
                   <div className="flex justify-between ">
                     <h2 className="text-xl mb-3 md:text-3xl text-themePrimary dark:text-white">
-                      {testimonial?.bookTitle}
+                      <Link href={`/${lang}/shop/01`}>
+                        {testimonial?.bookTitle}
+                      </Link>
                     </h2>
                     <div className="text-xl">
                       <Ratings ratingNumber={testimonial?.rating}></Ratings>
@@ -77,9 +91,7 @@ const Testimonials = () => {
                       alt="User"
                     />
                   </div>
-                  <p className="text-lg font-bold  mt-1">
-                    Sakib Al Hasan
-                  </p>
+                  <p className="text-lg font-bold  mt-1">Sakib Al Hasan</p>
                   <p className="text-base font-bold  mt-4 text-foreground">
                     {testimonial?.review}
                   </p>
@@ -89,8 +101,8 @@ const Testimonials = () => {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselNext className="hidden md:inline-flex right-0 xl:-right-8"/>
-      <CarouselPrevious className="hidden md:inline-flex left-0 xl:-left-8"/>
+      <CarouselNext className="hidden md:inline-flex right-0 xl:-right-8" />
+      <CarouselPrevious className="hidden md:inline-flex left-0 xl:-left-8" />
     </Carousel>
   );
 };

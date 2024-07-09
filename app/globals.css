@@ -123,7 +123,7 @@
 .primary-btn,
 .secondary-btn,
 .outline-btn {
-  @apply relative inline-block align-middle transition-colors duration-500 rounded-lg cursor-pointer leading-none text-base font-semibold;
+  @apply relative inline-flex items-center justify-center transition-colors duration-500 rounded-lg cursor-pointer leading-none text-base font-semibold;
 
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);

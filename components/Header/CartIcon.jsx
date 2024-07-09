@@ -3,11 +3,11 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Badge } from "../ui/badge";
 
-const CartIcon = ({ className, showTitle }) => {
+const CartIcon = ({ className, showTitle,lang }) => {
   return (
     <div>
       <Link
-        href="/cart"
+        href={`/${lang}/cart`}
         className={cn(
           `bg-secondary text-secondary-foreground hover:bg-secondary/80 px-2 py-2 pt-3 ${className}`
         )}

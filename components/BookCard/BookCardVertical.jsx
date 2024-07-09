@@ -1,16 +1,19 @@
-
-import { Button } from "../ui/button";
-import { Card, CardContent} from "../ui/card";
-import AvailableTypes from "../AvailableTypes"; 
-import RemoveFromWishlistBtn from "../../app/(main)/wishlist/_components/RemoveFromWishlistBtn"; 
+import RemoveFromWishlistBtn from "@/app/[lang]/(main)/wishlist/_components/RemoveFromWishlistBtn";
+import AvailableTypes from "../AvailableTypes";
 import Book3dForCard from "../Book3dForCard/Book3dForCard";
+import { Card, CardContent } from "../ui/card";
+import Link from "next/link";
 
-const BookCardVertical = ({ book }) => {
+const BookCardVertical = ({ book, dictionary, lang }) => {
   return (
     <Card className="bg-secondary dark:bg-transparent flex flex-col items-center justify-between sm:h-full">
       <CardContent className="p-3">
         <div className="book-card grid grid-cols-5 gap-6 lg:gap-10 items-center">
-          <Book3dForCard thumbnail={book?.thumbnail} alt={book?.title} className="col-span-2 sm:col-span-1 p-0"/> 
+          <Book3dForCard
+            thumbnail={book?.thumbnail}
+            alt={book?.title}
+            className="col-span-2 sm:col-span-1 p-0"
+          />
           <div className="col-span-3 sm:col-span-4 flex flex-col lg:flex-row gap-3 justify-between items-start lg:items-center">
             <div className="space-y-2">
               <h2 className="text-lg sm:text-xl font-bold text-themeSecondary dark:text-themePrimary">
@@ -36,9 +39,14 @@ const BookCardVertical = ({ book }) => {
               </div>
             </div>
             <div className="flex items-center gap-2">
-            <Button variant="themePrimary">Details</Button>
+              <Link
+                href={`/${lang}/shop/01`}
+                className="primary-btn self-start mx-auto sm:mx-0 h-9 rounded-md px-3"
+              >
+                {dictionary?.details}
+              </Link>
               <RemoveFromWishlistBtn />
-            </div> 
+            </div>
           </div>
         </div>
       </CardContent>

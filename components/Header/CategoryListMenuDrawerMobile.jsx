@@ -9,40 +9,13 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/components/ui/drawer";
-import Link from "next/link";
+} from "@/components/ui/drawer"; 
 import { Menu } from "lucide-react";
 import Logo from "../Logo";
 import { Separator } from "../ui/separator";
 import CategoryListMenu from "../CategoryListMenu";
-const allCategories = [
-  {
-    id: 1,
-    name: "Magazine",
-  },
-  {
-    id: 2,
-    name: "Science",
-  },
-  {
-    id: 3,
-    name: "Arts",
-  },
-  {
-    id: 4,
-    name: "Magazine",
-  },
-  {
-    id: 5,
-    name: "Science",
-  },
-  {
-    id: 6,
-    name: "Arts",
-  },
-];
-
-const CategoryListMenuDrawerMobile = () => {
+ 
+const CategoryListMenuDrawerMobile = ({dictionary,lang}) => {
   return (
     <Drawer>
       <DrawerTrigger asChild className="bg-transparent  h-10 w-10 p-2">
@@ -53,11 +26,11 @@ const CategoryListMenuDrawerMobile = () => {
       <DrawerContent>
         <div className="mx-auto w-full max-w-sm">
           <DrawerHeader> 
-          <Logo className="  w-[120px] mx-auto md:mx-0" logoTextClassName="text-center" />
+          <Logo  lang={lang} className="  w-[120px] mx-auto md:mx-0" logoTextClassName="text-center" />
           <Separator className="mb-3" />
-            <DrawerTitle>Categories</DrawerTitle>
+            <DrawerTitle>{dictionary?.allCategories}</DrawerTitle>
           </DrawerHeader>
-          <CategoryListMenu/>
+          <CategoryListMenu lang={lang}/>
           <DrawerFooter>
             <DrawerClose asChild>
               <Button variant="outline">Close</Button>

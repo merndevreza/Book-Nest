@@ -4,10 +4,10 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Badge } from "../ui/badge";
 
-const WishlistIcon = ({ className, showTitle }) => {
+const WishlistIcon = ({ className, showTitle,lang }) => {
   return (
     <Link
-      href="/wishlist"
+      href={`/${lang}/wishlist`}
       className={cn(
         `bg-secondary text-secondary-foreground hover:bg-secondary/80 px-2 py-2 pt-3 ${className}`
       )}

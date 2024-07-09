@@ -8,12 +8,13 @@ import {
 } from "@/components/ui/carousel"
 import { cn } from "@/lib/utils"
 
-const allAnnouncement=[
-   "Welcome to BookNest!",
-   "Explore Latest Books, E-books and Audiobooks.",
-   "Contact us if you could not find your books.",
-]
-const Announcements = ({className}) => {
+
+const Announcements = ({className,dictionary}) => {
+  const allAnnouncement=[
+    dictionary?.announcement1, 
+    dictionary?.announcement2, 
+    dictionary?.announcement3, 
+ ]
    const plugin = React.useRef(
       Autoplay({ delay: 3000, stopOnInteraction: true })
     )

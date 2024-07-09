@@ -27,7 +27,7 @@ const menu = [
   },
 ];
 
-const MainMenu = ({mobile}) => {
+const MainMenu = ({mobile,lang}) => {
   let vertical;
   if (mobile) {
     vertical=true
@@ -35,7 +35,7 @@ const MainMenu = ({mobile}) => {
     vertical=false
   }
   return (
-    <MenuWidget mobile={mobile} menu={menu} vertical={vertical}/>
+    <MenuWidget mobile={mobile} menu={menu} vertical={vertical} lang={lang}/>
   );
 };
 

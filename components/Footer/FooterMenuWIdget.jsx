@@ -54,12 +54,12 @@ const policyMenu= [
    },
  ];
 
-const FooterMenuWIdget = ({className}) => {
+const FooterMenuWIdget = ({className,lang}) => {
   return (
     <div className={cn(`grid grid-cols-3 ${className}`)}>
-      <MenuWidget menu={supportMenu} vertical={true} menuTitle="Support" footerMenu={true}/>
-      <MenuWidget menu={policyMenu} vertical={true} menuTitle="Policies" footerMenu={true}/>
-      <MenuWidget menu={policyMenu} vertical={true} menuTitle="Policies" footerMenu={true}/>
+      <MenuWidget lang={lang} menu={supportMenu} vertical={true} menuTitle="Support" footerMenu={true}/>
+      <MenuWidget  lang={lang} menu={policyMenu} vertical={true} menuTitle="Policies" footerMenu={true}/>
+      <MenuWidget  lang={lang} menu={policyMenu} vertical={true} menuTitle="Policies" footerMenu={true}/>
     </div>
   );
 };

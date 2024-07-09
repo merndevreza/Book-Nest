@@ -12,7 +12,7 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import LogoutBtn from "../LogOut";
 
-const UserIcon = () => {
+const UserIcon = ({ lang }) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild className="hidden md:block">
@@ -31,10 +31,10 @@ const UserIcon = () => {
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <Link href="/account">Profile</Link>
+          <Link href={`/${lang}/account`}>Profile</Link>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <Link href="/account/orders">Orders</Link>
+          <Link href={`/${lang}/account/orders`}>Orders</Link>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem>

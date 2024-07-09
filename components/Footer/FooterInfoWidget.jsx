@@ -2,11 +2,11 @@ import { cn } from "@/lib/utils";
 import ContactInfoWidget from "../ContactInfoWidget";
 import Logo from "../Logo";
 
-const FooterInfoWidget = ({ className }) => {
+const FooterInfoWidget = ({ className,lang }) => {
   return (
     <div className={cn(` ${className}`)}>
       <div className="mb-10 md:mb-0">
-        <Logo
+        <Logo lang={lang}
           className="w-[120px] md:w-[200px] mx-auto md:mx-0"
           logoTextClassName="hidden"
         />

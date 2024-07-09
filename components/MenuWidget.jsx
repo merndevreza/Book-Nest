@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Separator } from "./ui/separator";
 
-const MenuWidget = ({ menu, vertical, menuTitle,footerMenu }) => {
+const MenuWidget = ({ menu, vertical, menuTitle,footerMenu,lang }) => {
   return (
     <nav className="px-4 ">
       {menuTitle &&(<>
@@ -14,7 +14,7 @@ const MenuWidget = ({ menu, vertical, menuTitle,footerMenu }) => {
           <li key={item?.id}>
             <Link
               className="text-base font-semibold text-foreground hover:text-themeSecondary"
-              href={item?.pathname}
+              href={`/${lang}${item?.pathname}`}
             >
               {item?.nameEn}
             </Link>
