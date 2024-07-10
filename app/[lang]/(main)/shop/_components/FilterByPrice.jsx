@@ -36,7 +36,7 @@ const FilterByPrice = ({dictionary}) => {
     if (minPrice && maxPrice) {
       setQuery({ min: minPrice, max: maxPrice });
     }
-  }, []);
+  }, [params]);
 
   useEffect(() => {
     if (query.min && query.max) {
@@ -47,7 +47,7 @@ const FilterByPrice = ({dictionary}) => {
       params.delete("max");
     }
     replace(`${pathname}?${params.toString()}`);
-  }, [query, pathname, replace]);
+  }, [query, pathname, replace,params]);
   return (
     <Collapsible open={isOpen} onOpenChange={setIsOpen}>
       <CollapsibleTrigger className="rounded-lg px-3 py-2 bg-muted text-primary w-full flex justify-between items-center">

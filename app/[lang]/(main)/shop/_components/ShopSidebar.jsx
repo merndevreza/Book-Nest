@@ -1,10 +1,10 @@
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { FilterByAuthor } from "./FilterByAuthor";
-import { FilterByCategory } from "./FilterByCategory";
-import FilterByPrice from "./FilterBYPrice";
-import FilterByRating from "./FilterByRating";
+import { FilterByCategory } from "./FilterByCategory"; 
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
+import FilterByPrice from "./FilterByPrice";
+import FilterByRating from "./FilterByRating";
 
 const ShopSidebar = ({ dictionary }) => {
   return (
