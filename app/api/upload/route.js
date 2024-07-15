@@ -14,7 +14,6 @@ export async function POST(request) {
   if (file.type !== "application/pdf") {
     return NextResponse.json({ success: false, message: "Only PDF files are allowed." });
   }
-
   const bytes = await file.arrayBuffer();
   const buffer = Buffer.from(bytes);
 

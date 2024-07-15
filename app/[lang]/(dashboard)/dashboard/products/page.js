@@ -8,7 +8,7 @@ import Link from "next/link";
 const ProductsListPage = ({params:{lang}}) => {
    return (
       <div>
-        <PageHeader/>
+        <PageHeader lang={lang}/>
         <main className="grid flex-1 items-start gap-4    md:gap-8 mt-4 md:mt-0">
           <Tabs defaultValue="all">
             <div className="flex items-center">

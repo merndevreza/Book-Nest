@@ -145,14 +145,14 @@
 .outline-btn:before {
   @apply rounded-md absolute top-0 left-0 right-0 bottom-0 -z-10 duration-500 ease-out transition-transform origin-[50%_100%] scale-y-0 content-[""];
 }
-.primary-btn:before{
-@apply bg-themeSecondary dark:bg-secondary ;
+.primary-btn:before {
+  @apply bg-themeSecondary dark:bg-secondary;
 }
-.secondary-btn:before{
-@apply bg-themePrimary dark:bg-secondary ;
+.secondary-btn:before {
+  @apply bg-themePrimary dark:bg-secondary;
 }
-.outline-btn:before{
-@apply bg-themePrimary rounded-sm;
+.outline-btn:before {
+  @apply bg-themePrimary rounded-sm;
 }
 .primary-btn:hover::before,
 .secondary-btn:hover::before,
@@ -166,3 +166,4 @@
   @apply scale-y-100;
   transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
 }
+ 

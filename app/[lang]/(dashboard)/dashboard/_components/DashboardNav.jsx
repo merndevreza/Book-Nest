@@ -1,6 +1,7 @@
 "use client";
 import { Badge } from "@/components/ui/badge";
 import {
+  Images,
   LineChart,
   Package,
   PackagePlus,
@@ -48,6 +49,15 @@ const DashboardNav = ({ lang }) => {
         <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
           6
         </Badge>
+      </Link>
+      <Link
+        href={`/${lang}/dashboard/media`}
+        className={`flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary ${
+          pathname.includes("media") && " bg-muted text-primary"
+        }`}
+      >
+        <Images className="h-5 w-5" />
+        Media
       </Link>
       <Link
         href={`/${lang}/dashboard/add-product`}
