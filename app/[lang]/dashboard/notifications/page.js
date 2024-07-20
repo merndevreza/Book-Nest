@@ -60,7 +60,7 @@ const notifications=[
 ]
 const NotificationsPage = ({params:{lang}}) => {
    return (
-      <div className="space-y-3">
+      <div className="space-y-3 mt-8">
          {notifications.map(notification=><NotificationCard key={notification.id} notification={notification}/>)}
       </div>
    );

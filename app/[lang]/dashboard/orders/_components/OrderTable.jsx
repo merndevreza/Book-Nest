@@ -27,8 +27,8 @@ export default function OrderTable() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Book</TableHead>
-              <TableHead className="hidden sm:table-cell">Type</TableHead>
+              <TableHead>Product</TableHead>
+              <TableHead className="hidden sm:table-cell">Formats</TableHead>
               <TableHead className="hidden sm:table-cell">Status</TableHead>
               <TableHead className="text-right">Amount</TableHead>
             </TableRow>

@@ -30,8 +30,8 @@ const AllProductsTabContent = () => {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead className="hidden w-[100px] sm:table-cell">
-                  <span className="sr-only">Image</span>
+                <TableHead className="hidden w-[150px] sm:table-cell">
+                Image
                 </TableHead>
                 <TableHead>Title</TableHead>
                 <TableHead>Status</TableHead>
@@ -52,12 +52,7 @@ const AllProductsTabContent = () => {
               <ProductTableRow />
             </TableBody>
           </Table>
-        </CardContent>
-        <CardFooter>
-          <div className="text-xs text-muted-foreground">
-            Showing <strong>1-10</strong> of <strong>32</strong> products
-          </div>
-        </CardFooter>
+        </CardContent> 
       </Card>
     </TabsContent>
   );

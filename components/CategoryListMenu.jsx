@@ -28,7 +28,7 @@ const allCategories = [
 ];
 const CategoryListMenu = ({lang}) => {
   return (
-    <ul className="grid gap-2 grid-cols-3  w-full bg-themeSecondary text-themeSecondary-foreground p-5 transition duration-300 rounded">
+    <ul className="grid gap-2 grid-cols-3  w-full bg-themeSecondary dark:bg-secondary  text-themeSecondary-foreground p-5 transition duration-300 rounded">
       {allCategories.map((category) => (
         <li key={category?.id}>
           <Link

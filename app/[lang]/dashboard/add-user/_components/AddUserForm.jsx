@@ -168,9 +168,12 @@ export default function AddUserForm() {
             </FormItem>
           )}
         />
-        <Button variant="themePrimary" type="submit">
+        <div className="pt-8 flex justify-end">
+        <Button variant="themePrimary" size="lg" type="submit">
           Submit
         </Button>
+        </div>
+       
       </form>
     </Form>
   );

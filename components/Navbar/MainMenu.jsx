@@ -1,16 +1,16 @@
 import { getMainMenu } from "@/public/static-data/menu";
-import MenuWidget from "../MenuWidget";
+import MenuLinks from "../MenuLinks";
 
-const menu =  getMainMenu()
-const MainMenu = ({mobile,lang}) => {
+const menu = getMainMenu();
+const MainMenu = ({ mobile, lang }) => {
   let vertical;
   if (mobile) {
-    vertical=true
-  }else{
-    vertical=false
+    vertical = true;
+  } else {
+    vertical = false;
   }
   return (
-    <MenuWidget mobile={mobile} menu={menu} vertical={vertical} lang={lang}/>
+    <MenuLinks lang={lang} menu={menu} vertical={vertical} />
   );
 };
 

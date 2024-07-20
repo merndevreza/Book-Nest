@@ -9,7 +9,7 @@ import Link from "next/link";
 
 const NotificationCard = ({ notification }) => {
   return (
-    <Card className="sm:col-span-2" x-chunk="dashboard-05-chunk-0">
+    <Card className="sm:col-span-2 bg-gray-50 dark:bg-gray-900" x-chunk="dashboard-05-chunk-0">
       <CardHeader className="pb-3">
         <CardTitle className="text-lg">{notification?.title}</CardTitle>
         <CardDescription className="leading-relaxed">

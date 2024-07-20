@@ -9,70 +9,57 @@ import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react"; 
 import { Input } from "@/components/ui/input";
 
-const categories = [
+const formats = [
   {
-    id: "recents",
-    label: "Recents",
+    id: "printedBook",
+    label: "Printed Books",
   },
   {
-    id: "home",
-    label: "Home",
+    id: "ebook",
+    label: "E-Books",
   },
   {
-    id: "applications",
-    label: "Applications",
-  },
-  {
-    id: "desktop",
-    label: "Desktop",
-  },
-  {
-    id: "downloads",
-    label: "Downloads",
-  },
-  {
-    id: "documents",
-    label: "Documents",
-  },
+    id: "audioBook",
+    label: "Audio Books",
+  }, 
 ];
 
  
-export function FilterByCategory({ dictionary}) {
+export function FilterByFormat({ dictionary}) {
   const [isOpen, setIsOpen] = useState(true);
  
   return (
     <Collapsible open={isOpen} onOpenChange={setIsOpen}>
       <CollapsibleTrigger className="rounded-lg px-3 py-2 bg-muted text-primary w-full flex justify-between items-center">
-        <span>{dictionary?.category}</span>
+        <span>{dictionary?.format}</span>
         <span className="w-7 h-7 border rounded-full flex justify-center items-center">
           {isOpen ? <ChevronDown size={20} /> : <ChevronUp size={20} />}
         </span>
       </CollapsibleTrigger>
       <CollapsibleContent className="mt-3 pl-3">
-        {categories.map((category) => (
-          <div key={category.id} className="flex items-center gap-2">
+        {formats.map((item) => (
+          <div key={item.id} className="flex items-center gap-2">
             <span>
               <Input
                 type="checkbox"
-                name={category.id}
-                id={category.id}
-                // checked={query.includes(category.name)}
+                name={item.id}
+                id={item.id}
+                // checked={query.includes(item.name)}
                 className="cursor-pointer text-themePrimary"
               />
             </span>
             <label
-              htmlFor={category.id}
+              htmlFor={item.id}
               className=" inline-block cursor-pointer"
             >
-              {category.label}
+              {item.label}
             </label>
             {/* <div className="ml-auto md:text-gray-600 text-sm">
-              ({category.productsId.length})
+              ({item.productsId.length})
             </div> */}
           </div>
         ))}
       </CollapsibleContent>
     </Collapsible>
   );
-}
- 
+} 

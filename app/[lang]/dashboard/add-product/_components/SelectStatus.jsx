@@ -19,6 +19,7 @@ const SelectStatus = ({formData,handleChange}) => {
             <Label htmlFor="status" className="sr-only">
               Status
             </Label>
+            {/* FormField > FormItem */}
             <Select >
               <SelectTrigger id="status" aria-label="Select status">
                 <SelectValue placeholder="Select status" />

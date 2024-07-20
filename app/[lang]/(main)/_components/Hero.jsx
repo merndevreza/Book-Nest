@@ -48,11 +48,11 @@ const Hero = ({ dictionary, lang }) => {
                 src={item.src}
                 alt={item.title}
               />
-              <div className="col-span-3 sm:col-span-2 flex flex-col justify-center gap-2 sm:gap-3 order-1 sm:order-2 p-5 pt-8 md:p-0 text-center sm:text-left">
+              <div className="col-span-3 sm:col-span-2 flex flex-col justify-center gap-2 sm:gap-4 order-1 sm:order-2 p-5 pt-8 md:p-0 text-center sm:text-left">
                 <h2 className="text-2xl md:text-4xl xl:text-5xl font-semibold text-themeSecondary dark:text-themeSecondary-foreground">
                   {item.title}
                 </h2>
-                <p className="text-base sm:text-lg md:text-xl">
+                <p className="text-base sm:text-lg dark:text-[#f6f6f6]">
                   {item.subtitle}
                 </p>
                 <Link

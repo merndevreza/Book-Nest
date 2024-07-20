@@ -37,7 +37,7 @@ const CategoriesMegaMenu = ({ className, toggleTitle,dictionary,lang }) => {
           <span className="capitalize ml-2 text-themeSecondary-foreground">{dictionary?.allCategories}</span>
         )}
       </div>
-      <div className="grid grid-cols-4 absolute w-full bg-themeSecondary text-themeSecondary-foreground left-0 top-full shadow-md p-5 opacity-0 group-hover:opacity-100 transition duration-300 invisible group-hover:visible z-40 rounded">
+      <div className="grid grid-cols-4 absolute w-full bg-themeSecondary dark:bg-secondary text-themeSecondary-foreground left-0 top-full shadow-md p-5 opacity-0 group-hover:opacity-100 transition duration-300 invisible group-hover:visible z-40 rounded">
         <div className="col-span-3 ">
           <CategoryListMenu lang={lang}/>
         </div>
