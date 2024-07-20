@@ -5,10 +5,10 @@ const Book3dForCard = ({ className,thumbnail,alt }) => {
     <div className={className}>
       <div className="book-card-img">
         <div className="book-card-img-front">
-          <Image className="img" src={thumbnail} alt={alt} />
+          <Image width="200" height="300"  className="img" src={thumbnail} alt={alt} />
         </div>
         <div className="book-card-img-back">
-          <Image className="img" src={thumbnail} alt={alt} />
+          <Image width="200" height="300"  className="img" src={thumbnail} alt={alt} />
         </div>
       </div>
     </div>

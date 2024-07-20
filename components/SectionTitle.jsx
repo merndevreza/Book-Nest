@@ -5,7 +5,7 @@ const SectionTitle = ({ title, subTitle }) => {
         {title}
       </h4>
       <div className="h-[2px] my-4 w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 bg-themePrimary mx-auto">
-        <span className="w-[10px] h-[10px] bg-themePrimary inline-block rotate-45 relative -top-[11px]"></span>
+        <span className="w-[10px] h-[10px] bg-themePrimary inline-block rotate-45 relative -top-[12px]"></span>
       </div>
       <p className="text-base sm:text-lg lg:text-xl dark:text-white max-w-lg mx-auto">{subTitle}</p>
     </div>

@@ -160,7 +160,6 @@ export default function AddUserForm() {
                   <SelectGroup>
                     <SelectItem value="admin">Admin</SelectItem>
                     <SelectItem value="author">Author</SelectItem>
-                    <SelectItem value="publisher">Publisher</SelectItem>
                     <SelectItem value="user">User</SelectItem>
                   </SelectGroup>
                 </SelectContent>

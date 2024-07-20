@@ -36,6 +36,9 @@ const UserIcon = ({ lang }) => {
         <DropdownMenuItem>
           <Link href={`/${lang}/account/orders`}>Orders</Link>
         </DropdownMenuItem>
+        <DropdownMenuItem>
+          <Link href={`/${lang}/dashboard`}>Dashboard</Link>
+        </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
           <LogoutBtn variant="ghost" className="h-5 pl-0" />

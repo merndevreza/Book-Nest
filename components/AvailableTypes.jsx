@@ -11,16 +11,16 @@ const AvailableTypes = ({ type }) => {
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
-        <span className="h-8 w-8 rounded-full  bg-gray-300 dark:bg-secondary text-themeSecondary dark:text-themeSecondary-foreground flex justify-center items-center cursor-pointer">
-              {type === "printed" && <Book size={20} />}
-              {type === "pdf" && <FileText size={20} />}
-              {type === "audio" && <FileAudio size={20} />}
-            </span>
+          <span className="h-8 w-8 rounded-full  bg-gray-300 dark:bg-secondary text-themeSecondary dark:text-themeSecondary-foreground flex justify-center items-center cursor-pointer">
+            {type === "printedBook" && <Book size={20} />}
+            {type === "ebook" && <FileText size={20} />}
+            {type === "audioBook" && <FileAudio size={20} />}
+          </span>
         </TooltipTrigger>
         <TooltipContent>
           <p>
-            Available: {type === "printed" && "Printed"}
-            {type === "pdf" && "ebook"} {type === "audio" && "Audio Book"}
+            Available: {type === "printedBook" && "Printed"}
+            {type === "ebook" && "ebook"} {type === "audioBook" && "Audio Book"}
           </p>
         </TooltipContent>
       </Tooltip>

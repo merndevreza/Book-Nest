@@ -13,19 +13,13 @@ import Link from "next/link";
 const OrderDetails = ({ lang }) => {
   return (
     <Card className="overflow-hidden" x-chunk="dashboard-05-chunk-4">
-      <CardHeader className="flex flex-row items-start bg-muted/50">
+      <CardHeader className=" bg-muted/50">
         <div className="grid gap-0.5">
           <CardTitle className="flex items-center gap-2 text-lg">
             Order Oe31b70H
           </CardTitle>
           <CardDescription>Date: November 23, 2023</CardDescription>
-        </div>
-        <div className="ml-auto flex items-center gap-1">
-          <Link className="outline-btn h-8 px-2" href={`/${lang}/track-order`}>
-            <Truck className="h-3.5 w-3.5" />
-            <span className="hidden md:inline-block">Track Order</span>
-          </Link>
-        </div>
+        </div> 
       </CardHeader>
       <CardContent className="p-6 text-sm">
         <div className="grid gap-3">

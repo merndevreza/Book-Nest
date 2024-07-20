@@ -7,12 +7,12 @@
  .book-sm {
    @apply w-[160px] sm:w-[200px] h-[240px] sm:h-[300px] relative ease-linear duration-700 animate-[3d-book_1s_ease_1];
    transform-style: preserve-3d;
-   transform: rotateY(-30deg);  
+   transform: rotateY(0deg);
  }
  
  .book-container:hover .book-sm, 
  .book-container:focus .book-sm {
-   transform: rotateY(0deg);
+  transform: rotateY(-30deg);  
  }
  
  .book-sm > :first-child {

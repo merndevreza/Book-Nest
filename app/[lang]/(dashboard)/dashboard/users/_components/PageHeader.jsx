@@ -11,7 +11,7 @@ const paths = [
     href: "dashboard/users",
   },
 ];
-const PageHeader = () => {
+const PageHeader = ({lang}) => {
   return (
     <div className="flex justify-between items-center">
       <div className="hidden md:block">

@@ -11,7 +11,7 @@ import DashboardGoHomeBtn from "./DashboardGoHomeBtn";
 export function Dashboard({ children,lang }) {
   return (
     <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
-      <aside className="hidden border-r bg-muted/40 md:block">
+      <aside className="hidden border-r bg-muted/40 lg:block">
         <div className="flex h-full max-h-screen flex-col gap-2">
           <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
             <span className="font-semibold">Dashboard</span>
@@ -46,7 +46,7 @@ export function Dashboard({ children,lang }) {
           <DashboardGoHomeBtn  lang={lang}/>  
           <ThemeToggle className="inline-flex  bg-tertiary hover:bg-tertiary text-tertiary-foreground min-w-10 min-h-10" />
         </header>
-        <main className=" md:px-4 lg:px-6 py-0 max-h-screen overflow-y-scroll">
+        <main className=" md:px-4 lg:px-6 pt-0 pb-20 ">
           {children}
         </main>
       </div>

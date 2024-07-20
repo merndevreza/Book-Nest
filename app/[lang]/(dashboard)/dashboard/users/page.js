@@ -8,7 +8,7 @@ import AllUsersTable from "./_components/AllUsersTable";
 const UsersPage = ({params:{lang}}) => {
   return (
     <div>
-      <PageHeader />
+      <PageHeader lang={lang}/>
       <main className="grid flex-1 items-start gap-4    md:gap-8 mt-4 md:mt-0">
         <Tabs defaultValue="all">
           <div className="flex items-center">
@@ -16,7 +16,6 @@ const UsersPage = ({params:{lang}}) => {
               <TabsTrigger value="all">All</TabsTrigger>
               <TabsTrigger value="admin">Admin</TabsTrigger>
               <TabsTrigger value="author">Author</TabsTrigger>
-              <TabsTrigger value="publisher">Publisher</TabsTrigger>
               <TabsTrigger value="user">User</TabsTrigger>
             </TabsList>
             <div className="ml-auto flex items-center gap-2">

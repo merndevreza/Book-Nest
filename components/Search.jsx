@@ -78,7 +78,7 @@ const Search = ({className,dictionary}) => {
           className="bg-secondary focus-visible:ring-offset-0  focus-visible:ring-transparent rounded " 
         />
 
-        <Button type="submit" className=" w-20 bg-themePrimary text-themePrimary-foreground rounded-none border-none hover:bg-theme hidden md:block">
+        <Button type="submit" className="md:w-16 xl:w-20 bg-themePrimary text-themePrimary-foreground rounded-none border-none hover:bg-theme hidden md:block">
         <SearchIconMain className="mx-auto"  size={20}/>
         </Button> 
       </div>

@@ -24,7 +24,7 @@ const DashboardNav = ({ lang }) => {
         } `}
       >
         <LineChart className="h-5 w-5" />
-        Analytics
+        <span className="inline md:hidden xl:inline">Analytics</span>
       </Link>
       <Link
         href={`/${lang}/dashboard/orders`}
@@ -33,7 +33,8 @@ const DashboardNav = ({ lang }) => {
         }`}
       >
         <ShoppingCart className="h-5 w-5" />
-        Orders
+        <span className="inline md:hidden xl:inline">Orders</span>
+
         <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
           6
         </Badge>
@@ -45,7 +46,8 @@ const DashboardNav = ({ lang }) => {
         }`}
       >
         <Package className="h-5 w-5" />
-        Products
+        <span className="inline md:hidden xl:inline">Products</span>
+
         <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
           6
         </Badge>
@@ -57,7 +59,7 @@ const DashboardNav = ({ lang }) => {
         }`}
       >
         <Images className="h-5 w-5" />
-        Media
+        <span className="inline md:hidden xl:inline">Media</span>
       </Link>
       <Link
         href={`/${lang}/dashboard/add-product`}
@@ -66,7 +68,7 @@ const DashboardNav = ({ lang }) => {
         }`}
       >
         <PackagePlus className="h-5 w-5" />
-        Add Product
+        <span className="inline md:hidden xl:inline"> Add Product</span>
       </Link>
       <Link
         href={`/${lang}/dashboard/users`}
@@ -75,7 +77,8 @@ const DashboardNav = ({ lang }) => {
         }`}
       >
         <Users className="h-5 w-5" />
-        Users
+        <span className="inline md:hidden xl:inline">Users</span>
+
         <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
           6
         </Badge>
@@ -87,7 +90,7 @@ const DashboardNav = ({ lang }) => {
         }`}
       >
         <UserPlus className="h-5 w-5" />
-        Add User
+        <span className="inline md:hidden xl:inline">Add User</span>
       </Link>
     </nav>
   );

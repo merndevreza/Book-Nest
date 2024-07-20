@@ -12,7 +12,10 @@ const Navbar = ({ dictionary, lang }) => {
           toggleTitle={true}
           dictionary={dictionary}
         />
+        <div className=" hidden lg:block">
+
         <MainMenu lang={lang} mobile={false} />
+        </div>
         <div className="ml-auto flex gap-2 items-center">
           <Link
             className="text-base font-semibold text-foreground hover:text-themeSecondary whitespace-nowrap"

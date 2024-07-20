@@ -29,9 +29,9 @@ const Header = ({dictionary,lang}) => {
   return (
     <div className={`bg-secondary text-secondary-foreground sticky w-full left-0 top-0 z-50 ${isSticky && "shadow-lg"}`}>
       <div className="container py-5 md:py-3 grid grid-cols-5 items-center gap-3">
-        <MobileDrawer className="md:hidden block order-1" />
-        <Logo lang={lang} className="order-2 md:order-1 col-span-3 md:col-span-1 w-[120px] mx-auto md:mx-0" logoTextClassName="text-center" />
-        <Search dictionary={dictionary} className="order-4 md:order-2 col-span-5 md:col-span-3" />
+        <MobileDrawer className="lg:hidden block order-1" />
+        <Logo lang={lang} className="order-2 md:order-1 col-span-3 lg:col-span-1 w-[120px] mx-auto lg:mx-0" logoTextClassName="text-center" />
+        <Search dictionary={dictionary} className="order-4 lg:order-2 col-span-5 lg:col-span-3" />
 
         <div className="flex gap-4 justify-end order-3 col-span-1">
           <WishlistIcon lang={lang} />

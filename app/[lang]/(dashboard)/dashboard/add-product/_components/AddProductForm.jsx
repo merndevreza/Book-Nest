@@ -1,32 +1,77 @@
 "use client";
+import { Button } from "@/components/ui/button";
+import ProductDetailsInputs from "./ProductDetailsInputs";
+import ProductFormats from "./ProductFormats";
+import ProductInfoInputs from "./ProductInfoInputs";
+import SelectStatus from "./SelectStatus";
+import SelectAuthor from "./SelectAuthor";
+import SelectCategory from "./SelectCategory";
 import { useState } from "react";
+import UploadThumbnail from "./UploadThumbnail";
+import UploadReadingPDF from "./UploadReadingPDF";
 
 const AddProductForm = () => {
-  const [file, setFile] = useState(null);
+  const [formData, setFormData] = useState({
+    title: "",
+    shortDescription: "",
+    stock_printedNewBook: "",
+    regularPrice_printedNewBook: "",
+    discountedPrice_printedNewBook: "",
+    stock_printedOldBook: "",
+    regularPrice_printedOldBook: "",
+    discountedPrice_printedOldBook: "",
+    regularPrice_ebook: "",
+    discountedPrice_ebook: "",
+    upload_ebook: "",
+    regularPrice_audioBook: "",
+    discountedPrice_audioBook: "",
+    upload_audioBook: "",
+    sku: "",
+    edition: "",
+    publisher: "",
+    page: "",
+    language: "",
+    country: "",
+    status: "",
+    category: "",
+    author: "",
+    readingPDF: "",
+    thumbnail: "",
+  });
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.currentTarget.name]: e.currentTarget.value,
+    });
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!file) return;
-    try {
-      const data = new FormData();
-      data.set("file", file);
-      const res = await fetch("/api/upload", {
-        method: "POST",
-        body: data,
-      });
-      if (!res.ok) throw new Error(await res.text());
-    } catch (error) {
-      console.log(error);
-    }
+    console.log(formData);
   };
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        type="file"
-        name="file"
-        accept="application/pdf"
-        onChange={(e) => setFile(e.target.files?.[0])}
-      />
-      <input type="submit" value="submit" />
+      <div className="flex justify-end mb-4">
+        <Button type="submit" variant="themePrimary" size="sm">
+          Upload Product
+        </Button>
+      </div>
+      <div className="grid gap-4 md:grid-cols-[1fr_250px] lg:grid-cols-3 lg:gap-8">
+        <div className="grid auto-rows-max items-start gap-4 lg:col-span-2 lg:gap-8">
+          <ProductDetailsInputs
+            formData={formData}
+            handleChange={handleChange}
+          />
+          <ProductFormats formData={formData} handleChange={handleChange} />
+          <ProductInfoInputs formData={formData} handleChange={handleChange} />
+        </div>
+        <div className="grid auto-rows-max items-start gap-4 lg:gap-8">
+          <SelectStatus formData={formData} handleChange={handleChange} />
+          <SelectCategory formData={formData} handleChange={handleChange} />
+          <SelectAuthor formData={formData} handleChange={handleChange} />
+          <UploadReadingPDF formData={formData} handleChange={handleChange} />
+          <UploadThumbnail formData={formData} handleChange={handleChange} />
+        </div>
+      </div>
     </form>
   );
 };
