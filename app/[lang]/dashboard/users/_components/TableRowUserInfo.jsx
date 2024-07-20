@@ -17,19 +17,19 @@ const TableRowUserInfo = () => {
           width="64"
         />
       </TableCell>
-      <TableCell className="font-medium">
+      <TableCell className="font-medium px-2 sm:px-4">
         Rezaul Karim
       </TableCell>
-      <TableCell className="font-medium">
+      <TableCell className="font-medium hidden sm:table-cell">
         rezaulkarimpstu@gmail.com
       </TableCell>
-      <TableCell>
+      <TableCell className="px-2 sm:px-4">
         <Badge variant="outline">Admin</Badge>
       </TableCell>  
       <TableCell className="hidden md:table-cell">
         2023-07-12 10:42 AM
       </TableCell>
-      <TableCell>
+      <TableCell className="px-2 sm:px-4">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button
@@ -41,8 +41,7 @@ const TableRowUserInfo = () => {
               <span className="sr-only">Toggle menu</span>
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuLabel>Actions</DropdownMenuLabel>
+          <DropdownMenuContent align="end"> 
             <DropdownMenuItem>Edit</DropdownMenuItem>
             <DropdownMenuItem>Delete</DropdownMenuItem>
           </DropdownMenuContent>

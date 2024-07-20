@@ -1,6 +1,6 @@
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { FilterByAuthor } from "./FilterByAuthor";
-import { FilterByCategory } from "./FilterByCategory"; 
+import { FilterByCategory } from "./FilterByCategory";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import FilterByPrice from "./FilterByPrice";
@@ -11,7 +11,7 @@ const ShopSidebar = ({ dictionary }) => {
   return (
     <div className="h-auto lg:h-full lg:min-h-screen bg-muted/60 lg:p-5 p-2 w-full mb-6 lg:mb-0">
       <div className="space-y-3 hidden lg:block">
-        <FilterByFormat dictionary={dictionary}/>
+        <FilterByFormat dictionary={dictionary} />
         <FilterByCategory dictionary={dictionary} />
         <FilterByAuthor dictionary={dictionary} />
         <FilterByPrice dictionary={dictionary} />
@@ -28,6 +28,7 @@ const ShopSidebar = ({ dictionary }) => {
           <SheetContent side="left" className="flex flex-col overflow-y-scroll">
             <span className="font-semibold pl-2">{dictionary?.filter}</span>
             <div className="space-y-3">
+              <FilterByFormat dictionary={dictionary} />
               <FilterByCategory dictionary={dictionary} />
               <FilterByAuthor dictionary={dictionary} />
               <FilterByPrice dictionary={dictionary} />

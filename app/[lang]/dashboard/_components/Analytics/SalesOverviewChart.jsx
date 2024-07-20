@@ -36,10 +36,11 @@ const chartConfig = {
     color: "hsl(var(--chart-2))",
   },
 }  
+ 
 
-export function Chart() {
-  return (
-    <Card>
+const SalesOverviewChart = () => {
+   return (
+      <Card>
       <CardHeader>
         <CardTitle>Sales Overview</CardTitle>
         <CardDescription>January - June 2024</CardDescription>
@@ -98,5 +99,7 @@ export function Chart() {
         </div>
       </CardFooter>
     </Card>
-  )
-}
+   );
+};
+
+export default SalesOverviewChart;

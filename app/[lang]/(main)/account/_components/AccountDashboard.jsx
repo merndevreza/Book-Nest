@@ -1,5 +1,4 @@
 import { Menu } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import NotificationIconBtn from "./NotificationIconBtn";
@@ -31,8 +30,7 @@ export function AccountDashboard({ children,dictionary,lang }) {
                 <Menu className="h-5 w-5" />
                 <span className="sr-only">Toggle navigation menu</span>
               </Button>
-            </SheetTrigger>
-            <NotificationIconBtn className="md:hidden" />
+            </SheetTrigger> 
             <SheetContent side="left" className="flex flex-col">
               <span className="font-semibold pl-6">{dictionary?.myAccount}</span>
               <AccountDashboardNav  lang={lang} dictionary={dictionary}/>

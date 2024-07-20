@@ -24,7 +24,7 @@ const DashboardNav = ({ lang }) => {
         } `}
       >
         <LineChart className="h-5 w-5" />
-        <span className="inline md:hidden xl:inline">Analytics</span>
+        <span className="inline lg:hidden xl:inline">Analytics</span>
       </Link>
       <Link
         href={`/${lang}/dashboard/orders`}
@@ -33,9 +33,9 @@ const DashboardNav = ({ lang }) => {
         }`}
       >
         <ShoppingCart className="h-5 w-5" />
-        <span className="inline md:hidden xl:inline">Orders</span>
+        <span className="inline lg:hidden xl:inline">Orders</span>
 
-        <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
+        <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full lg:hidden xl:flex">
           6
         </Badge>
       </Link>
@@ -46,9 +46,9 @@ const DashboardNav = ({ lang }) => {
         }`}
       >
         <Package className="h-5 w-5" />
-        <span className="inline md:hidden xl:inline">Products</span>
+        <span className="inline lg:hidden xl:inline">Products</span>
 
-        <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
+        <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full  lg:hidden xl:flex">
           6
         </Badge>
       </Link>
@@ -59,7 +59,7 @@ const DashboardNav = ({ lang }) => {
         }`}
       >
         <Images className="h-5 w-5" />
-        <span className="inline md:hidden xl:inline">Media</span>
+        <span className="inline lg:hidden xl:inline">Media</span>
       </Link>
       <Link
         href={`/${lang}/dashboard/add-product`}
@@ -68,7 +68,7 @@ const DashboardNav = ({ lang }) => {
         }`}
       >
         <PackagePlus className="h-5 w-5" />
-        <span className="inline md:hidden xl:inline"> Add Product</span>
+        <span className="inline lg:hidden xl:inline"> Add Product</span>
       </Link>
       <Link
         href={`/${lang}/dashboard/users`}
@@ -77,9 +77,9 @@ const DashboardNav = ({ lang }) => {
         }`}
       >
         <Users className="h-5 w-5" />
-        <span className="inline md:hidden xl:inline">Users</span>
+        <span className="inline lg:hidden xl:inline">Users</span>
 
-        <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full">
+        <Badge className="ml-auto flex h-6 w-6 shrink-0 items-center justify-center rounded-full  lg:hidden xl:flex">
           6
         </Badge>
       </Link>
@@ -90,7 +90,7 @@ const DashboardNav = ({ lang }) => {
         }`}
       >
         <UserPlus className="h-5 w-5" />
-        <span className="inline md:hidden xl:inline">Add User</span>
+        <span className="inline lg:hidden xl:inline">Add User</span>
       </Link>
     </nav>
   );

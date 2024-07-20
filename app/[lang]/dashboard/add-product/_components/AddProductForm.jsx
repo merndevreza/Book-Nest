@@ -9,6 +9,8 @@ import SelectCategory from "./SelectCategory";
 import { useState } from "react";
 import UploadThumbnail from "./UploadThumbnail";
 import UploadReadingPDF from "./UploadReadingPDF";
+import ProductFormatsStyle1 from "./ProductFormatsStyle1";
+import ProductFormatsStyle2 from "./ProductFormatsStyle2";
 
 const AddProductForm = () => {
   const [formData, setFormData] = useState({
@@ -56,15 +58,24 @@ const AddProductForm = () => {
         </Button>
       </div>
       <div className="grid gap-4 md:grid-cols-[1fr_250px] lg:grid-cols-3 lg:gap-8">
-        <div className="grid auto-rows-max items-start gap-4 lg:col-span-2 lg:gap-8">
+        <div className="grid items-start gap-4 lg:col-span-2 lg:gap-8">
           <ProductDetailsInputs
             formData={formData}
             handleChange={handleChange}
           />
-          <ProductFormats formData={formData} handleChange={handleChange} />
+          <ProductFormatsStyle1
+            className="hidden sm:block"
+            formData={formData}
+            handleChange={handleChange}
+          />
+          <ProductFormatsStyle2
+            className="block sm:hidden"
+            formData={formData}
+            handleChange={handleChange}
+          />
           <ProductInfoInputs formData={formData} handleChange={handleChange} />
         </div>
-        <div className="grid auto-rows-max items-start gap-4 lg:gap-8">
+        <div className="flex flex-col gap-4 lg:gap-8">
           <SelectStatus formData={formData} handleChange={handleChange} />
           <SelectCategory formData={formData} handleChange={handleChange} />
           <SelectAuthor formData={formData} handleChange={handleChange} />

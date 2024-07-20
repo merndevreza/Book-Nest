@@ -14,7 +14,7 @@ const UploadThumbnail = ({ formData, handleChange }) => {
         <div className="grid gap-2">
           <Image
             alt="Product image"
-            className="aspect-square w-full rounded-md object-cover"
+            className="max-w-[200px]"
             height="300"
             src="/placeholder.svg"
             width="200"
