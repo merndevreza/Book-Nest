@@ -3,7 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import SpecificationTabContent from "./SpecificationTabContent";
 import AuthorTabContent from "./AuthorTabContent";
 
-const ProductDetailsTabs = ({dictionary}) => {
+const ProductDetailsTabs = ({book,dictionary}) => {
    return (
       <Tabs defaultValue="author" className="max-w-2xl">
       <TabsList className="grid w-full grid-cols-2 dark:bg-gray-600">
@@ -11,10 +11,10 @@ const ProductDetailsTabs = ({dictionary}) => {
         <TabsTrigger value="specification">{dictionary?.specification}</TabsTrigger> 
       </TabsList>
       <TabsContent value="author">
-       <AuthorTabContent/>
+       <AuthorTabContent author={book?.authorId}/>
       </TabsContent>
       <TabsContent value="specification">
-        <SpecificationTabContent  dictionary={dictionary}/>
+        <SpecificationTabContent book={book}  dictionary={dictionary}/>
       </TabsContent>
     </Tabs>
    );

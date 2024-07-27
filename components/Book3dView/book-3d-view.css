@@ -1,58 +1,30 @@
-
 .book-container {
-   @apply flex items-center justify-center; 
-   perspective: 600px;
- }
- 
- .book-sm {
-   @apply w-[160px] sm:w-[200px] h-[240px] sm:h-[300px] relative ease-linear duration-700 animate-[3d-book_1s_ease_1];
-   transform-style: preserve-3d;
-   transform: rotateY(0deg);
- }
- 
- .book-container:hover .book-sm, 
- .book-container:focus .book-sm {
-  transform: rotateY(-30deg);  
- }
- 
- .book-sm > :first-child {
-   @apply absolute left-0 top-0 bg-themePrimary w-[160px] sm:w-[200px] h-[240px] sm:h-[300px] ; 
-   transform: translateZ(15px);  
-   box-shadow: 5px 5px 20px #6666665c;
- }
- 
- .book-sm::before {
-   @apply absolute left-0 top-px w-[28px] h-[298px] bg-themePrimary content-none;
-   transform: translateX(184px) rotateY(90deg);
-   background: linear-gradient(90deg, 
-     #fff 0%,
-     #f9f9f9 5%,
-     #fff 10%,
-     #f9f9f9 15%,
-     #fff 20%,
-     #f9f9f9 25%,
-     #fff 30%,
-     #f9f9f9 35%,
-     #fff 40%,
-     #f9f9f9 45%,
-     #fff 50%,
-     #f9f9f9 55%,
-     #fff 60%,
-     #f9f9f9 65%,
-     #fff 70%,
-     #f9f9f9 75%,
-     #fff 80%,
-     #f9f9f9 85%,
-     #fff 90%,
-     #f9f9f9 95%,
-     #fff 100%
-     );
- }
- 
- .book-sm::after {
-   @apply absolute left-0 top-0 w-[160px] sm:w-[200px] h-[240px] sm:h-[300px] bg-gray-300; 
-   content: ' '; 
-   transform: translateZ(-15px);  
-   box-shadow: -10px 0 50px 10px #6666663c;
- }
- 
+  @apply flex items-center justify-center;
+  perspective: 800px;
+}
+.book {
+  @apply w-[200px] h-[300px] relative animate-[3d-book_1s_ease_1] duration-1000 ease-linear;
+  transform-style: preserve-3d;
+  transform: rotateY(-30deg);
+}
+.book-container:hover .book,
+.book-container:focus .book {
+  transform: rotateY(0deg);
+}
+.book > :first-child {
+  @apply absolute left-0 top-0 bg-themePrimary w-[200px] h-[300px];
+  transform: translateZ(25px);
+  border-radius: 0 1px 1px 0;
+  box-shadow: 5px 5px 20px #455265;
+}
+.book::before {
+  @apply absolute left-0 top-1 w-[38px] h-[296px]  bg-white;
+  content: " ";
+  transform: translateX(177px) rotateY(90deg);
+}
+.book::after {
+  @apply absolute left-0 top-0 w-[200px] h-[300px] bg-[#cdcdcd] rounded-[0_1px_1px_0];
+  content: " ";
+  transform: translateZ(-10px);
+  box-shadow: -10px 0 30px 1px #455265;
+}

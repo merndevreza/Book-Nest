@@ -1,7 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import ProductDetailsInputs from "./ProductDetailsInputs";
-import ProductFormats from "./ProductFormats";
 import ProductInfoInputs from "./ProductInfoInputs";
 import SelectStatus from "./SelectStatus";
 import SelectAuthor from "./SelectAuthor";

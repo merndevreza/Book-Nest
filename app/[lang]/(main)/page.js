@@ -14,7 +14,7 @@ export default async function Home({ params: { lang } }) {
     <main>
       <Hero lang={lang} dictionary={dictionary} />
       <BookFormatsSection lang={lang} dictionary={dictionary}/> 
-      {/* <FeaturedBooksSection lang={lang} dictionary={dictionary} /> */}
+      <FeaturedBooksSection lang={lang} dictionary={dictionary} />
       <NewArrivalsSection lang={lang} dictionary={dictionary} />
       <CTASection lang={lang} dictionary={dictionary} />
       <BestSellingBooksSection lang={lang} dictionary={dictionary} />

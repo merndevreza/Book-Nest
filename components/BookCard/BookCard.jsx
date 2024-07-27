@@ -1,13 +1,15 @@
 import { Card, CardContent, CardFooter } from "../ui/card";
 import AvailableTypes from "../AvailableTypes";
 import Link from "next/link";
-import Ratings from "../Ratings";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Book3dView from "../Book3dView/Book3dView";
 import PriceRange from "./PriceRange";
+import AverageRating from "../AverageRating";
+import { getReviewsByProductId } from "@/database/queries/reviews.queries";
 
-const BookCard = ({ book, dictionary, lang }) => {
+const BookCard = async ({ book, dictionary, lang }) => {
+  const reviewsResponse = await getReviewsByProductId(book?.id);
   return (
     <Card className="bg-secondary dark:bg-transparent flex flex-col items-center justify-between sm:h-full">
       <CardContent className="p-3 w-full">
@@ -22,7 +24,7 @@ const BookCard = ({ book, dictionary, lang }) => {
             alt={book?.title}
             className="p-0 block lg:hidden mx-auto"
           />
-          <div className="pt-3 ">
+          <div className="pt-3 md:pt-8">
             <div className="flex justify-center md:justify-between items-center">
               <div className="flex gap-2">
                 {book?.formats?.map((type) => (
@@ -30,7 +32,9 @@ const BookCard = ({ book, dictionary, lang }) => {
                 ))}
               </div>
               <div className="hidden md:block">
-                <Ratings ratingNumber={5} />
+                {reviewsResponse.success === true && (
+                  <AverageRating reviews={reviewsResponse?.data} />
+                )}
               </div>
             </div>
             <div className="w-full h-[2px] bg-gray-300 dark:bg-secondary  my-3"></div>

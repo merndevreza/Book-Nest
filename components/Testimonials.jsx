@@ -6,48 +6,13 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "./ui/carousel";
-import book1Front from "@/public/assets/images/books/img-01.jpg";
-import user1 from "@/public/assets/images/user-1.jpg";
+} from "./ui/carousel"; 
 import Book3dView from "./Book3dView/Book3dView";
 import Link from "next/link";
+import { getReviews } from "@/database/queries/reviews.queries";
 
-const testimonials = [
-  {
-    id: crypto.randomUUID(),
-    review:
-      "Adventures in the Kitchen is an absolute culinary masterpiece. The author descriptions transport you into a world of delectable flavors and fragrant aromas. This book is not just  a collection of recipes; Whether you are an experienced chef or a kitchen newbie, this book will ignite your passion for cooking and leave you hungry for more. A must-read for food enthusiasts and storytellers alike!",
-    bookThumbnail: book1Front,
-    bookTitle: "Green village",
-    author: "Rezaul Kairm",
-    authorId: crypto.randomUUID(),
-    rating: 4,
-    userId: crypto.randomUUID(),
-  },
-  {
-    id: crypto.randomUUID(),
-    review:
-      "Adventures in the Kitchen is an absolute culinary masterpiece. The author descriptions transport you into a world of delectable flavors and fragrant aromas. This book is not just  a collection of recipes; Whether you are an experienced chef or a kitchen newbie, this book will ignite your passion for cooking and leave you hungry for more. A must-read for food enthusiasts and storytellers alike!",
-    bookThumbnail: book1Front,
-    bookTitle: "Green village",
-    author: "Rezaul Kairm",
-    authorId: crypto.randomUUID(),
-    rating: 4,
-    userId: crypto.randomUUID(),
-  },
-  {
-    id: crypto.randomUUID(),
-    review:
-      "Adventures in the Kitchen is an absolute culinary masterpiece. The author descriptions transport you into a world of delectable flavors and fragrant aromas. This book is not just  a collection of recipes; Whether you are an experienced chef or a kitchen newbie, this book will ignite your passion for cooking and leave you hungry for more. A must-read for food enthusiasts and storytellers alike!",
-    bookThumbnail: book1Front,
-    bookTitle: "Green village",
-    author: "Rezaul Kairm",
-    authorId: crypto.randomUUID(),
-    rating: 4,
-    userId: crypto.randomUUID(),
-  },
-];
-const Testimonials = ({ lang }) => {
+const Testimonials = async ({ lang }) => {
+  const reviews = await getReviews(10);    
   return (
     <Carousel
       opts={{
@@ -56,14 +21,14 @@ const Testimonials = ({ lang }) => {
       className="container lg:max-w-5xl px-1 sm:px-10"
     >
       <CarouselContent>
-        {testimonials.map((testimonial) => (
-          <CarouselItem key={testimonial.id}>
+        {reviews?.data.map((review) => (
+          <CarouselItem key={review.id}>
             <div className="flex flex-col sm:flex-row p-4 pt-8 md:p-8 gap-8 rounded-md  bg-[#f7f7f7] dark:bg-secondary">
               <div className="flex justify-center items-center">
-                <Link href={`/${lang}/shop/01`}>
+                <Link href={`/${lang}/shop/${review?.productId?._id.toString()}`}> 
                   <Book3dView
-                    bookImg={testimonial?.bookThumbnail}
-                    bookAlt={testimonial?.bookTitle}
+                    bookImg={review?.productId?.thumbnail}
+                    bookAlt={review?.productId?.title}
                   />
                 </Link>
               </div>
@@ -71,29 +36,33 @@ const Testimonials = ({ lang }) => {
                 <div>
                   <div className="flex justify-between ">
                     <h2 className="text-xl mb-3 md:text-3xl text-themePrimary dark:text-white">
-                      <Link href={`/${lang}/shop/01`}>
-                        {testimonial?.bookTitle}
+                      <Link  href={`/${lang}/shop/${review?.productId?._id.toString()}`}>
+                        {review?.productId?.title}
                       </Link>
                     </h2>
                     <div className="text-xl">
-                      <Ratings ratingNumber={testimonial?.rating}></Ratings>
+                      <Ratings ratingNumber={review?.rating} />
                     </div>
                   </div>
                   <p className="capitalize font-bold text-xl dark:text-white -mt-2">
-                    By: {testimonial?.author}
+                    By: {review?.productId?.authorId?.userId?.firstName}{" "} 
+                    {review?.productId?.authorId?.userId?.lastName}
                   </p>
                 </div>
                 <div className="mt-8 bg-tertiary text-tertiary-foreground  p-5 rounded-lg ">
                   <div>
                     <Image
                       className="w-[70px] rounded-full h-[70px] object-cover"
-                      src={user1}
-                      alt="User"
+                      width={70}
+                      height={70}
+                      src={review?.userId?.avatar}
+                      alt={`${review?.userId?.firstName} ${review?.userId?.lastName}`}
                     />
                   </div>
-                  <p className="text-lg font-bold  mt-1">Sakib Al Hasan</p>
+                  <p className="text-lg font-bold  mt-1">{`${review?.userId?.firstName} ${review?.userId?.lastName}`}
+                  </p>
                   <p className="text-base font-bold  mt-4 text-foreground">
-                    {testimonial?.review}
+                    {review?.comment}
                   </p>
                 </div>
               </div>

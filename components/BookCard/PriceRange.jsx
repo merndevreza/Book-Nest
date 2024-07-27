@@ -18,7 +18,7 @@ const PriceRange = ({ price }) => {
   return (
     <div className="flex justify-center items-baseline mb-1 space-x-2">
       <p className="text-base sm:text-xl text-themePrimary dark:text-themeSecondary-foreground font-semibold">
-        ${maxPrice} - ${minPrice}
+        ${minPrice} - ${maxPrice}
       </p>
     </div>
   );

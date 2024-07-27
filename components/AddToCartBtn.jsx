@@ -1,8 +1,6 @@
 "use client"
-
 import { Button } from "./ui/button";
-
-const AddToCartBtn = ({bookId}) => {
+const AddToCartBtn = ({productId,format}) => {
    return (
       <Button variant="themePrimary" size="sm">Add to Cart</Button>
    );

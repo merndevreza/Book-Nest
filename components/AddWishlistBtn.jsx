@@ -11,7 +11,7 @@ import {
   TooltipTrigger,
 } from "./ui/tooltip";
 
-const AddWishlistBtn = () => {
+const AddWishlistBtn = ({productId,format}) => {
   const [isAdded, setIsAdded] = useState(false);
   const handleAddWishlist = () => {
     setIsAdded(!isAdded);

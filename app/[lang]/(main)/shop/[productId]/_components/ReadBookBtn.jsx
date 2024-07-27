@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 
-const ReadBookBtn = ({dictionary}) => {
+const ReadBookBtn = ({readingPDF,dictionary}) => {
    return (
       <Button variant="themePrimary" className="hover:before:dark:bg-themeSecondary" >
         {dictionary?.startReading}

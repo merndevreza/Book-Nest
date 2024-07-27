@@ -11,21 +11,21 @@ const SocialProfiles = ({ links, className }) => {
     >
       {links?.facebook && (
         <li>
-          <Link href={links?.facebook}>
+          <Link target="_blank" href={links?.facebook}>
             <Facebook size={20} />
           </Link>
         </li>
       )}
       {links?.twitter && (
         <li>
-          <Link href={links?.twitter}>
+          <Link target="_blank" href={links?.twitter}>
             <Twitter size={20} />
           </Link>
         </li>
       )}
       {links?.linkedIn && (
         <li>
-          <Link href={links?.linkedIn}>
+          <Link target="_blank" href={links?.linkedIn}>
             <Linkedin size={20} />
           </Link>
         </li>

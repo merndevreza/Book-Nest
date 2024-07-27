@@ -7,11 +7,11 @@ const Ratings = ({ratingNumber}) => {
    const countStars = (rating) => {
       const totalStars = 5;
       const stars = [];
-      for (let i = 0; i < totalStars; i++) {
-        if (i < rating) {
-          stars.push(<Image src={starIcon} alt="Star" key={i}/>);
+      for (let i = 1; i <= totalStars; i++) {
+        if (i <= rating) {
+          stars.push(<Image src={starIcon} alt="Star fill" key={i}/>);
         } else {
-          stars.push(<Image src={emptyStarIcon} alt="Star" key={i}/>);
+          stars.push(<Image src={emptyStarIcon} alt="Star empty" key={i}/>);
         }
       }
       return stars;

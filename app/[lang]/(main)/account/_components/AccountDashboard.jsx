@@ -37,7 +37,7 @@ export function AccountDashboard({ children,dictionary,lang }) {
             </SheetContent>
           </Sheet>
         </header>
-        <main className="py-4 md:px-4 lg:py-6 lg:px-6  max-h-screen overflow-y-scroll">
+        <main className="py-4 md:px-4 lg:py-6 lg:px-6  max-h-screen">
           {children}
         </main>
       </div>
