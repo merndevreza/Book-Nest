@@ -1,5 +1,4 @@
 "use server";
-
 import {
   replaceMongoIdInArray,
   replaceMongoIdInObject,
@@ -9,8 +8,7 @@ import { Products } from "../models/products-model";
 import { Authors } from "../models/author-model";
 import { Users } from "../models/users-model";
 import { Sales } from "../models/sales-model";
-import mongoose from "mongoose";
-import { Categories } from "../models/categories-model";
+import constructFilterPipeline from "@/utils/constructFilterPipeline";
 
 //Featured Products
 export async function getFeaturedProducts(limit) {
@@ -21,17 +19,7 @@ export async function getFeaturedProducts(limit) {
       featured: true,
     })
       .limit(limit)
-      .select(["title", "authorId", "formats", "price", "thumbnail"])
-      .populate({
-        path: "authorId",
-        model: Authors,
-        select: ["userId"],
-        populate: {
-          path: "userId",
-          model: Users,
-          select: ["firstName", "lastName"],
-        },
-      })
+      .select(["title", "author", "price", "thumbnail"])
       .lean();
     return {
       success: true,
@@ -51,17 +39,7 @@ export async function getLatestProducts(limit) {
     })
       .sort({ createdAt: -1 })
       .limit(limit)
-      .select(["title", "authorId", "formats", "price", "thumbnail"])
-      .populate({
-        path: "authorId",
-        model: Authors,
-        select: ["userId"],
-        populate: {
-          path: "userId",
-          model: Users,
-          select: ["firstName", "lastName"],
-        },
-      })
+      .select(["title", "author", "price", "thumbnail"])
       .lean();
     return {
       success: true,
@@ -84,17 +62,7 @@ export async function getBestSellingProducts(limit) {
       arraySet.map(async (id) => {
         const product = await Products.findById(id)
           .limit(limit)
-          .select(["title", "authorId", "formats", "price", "thumbnail"])
-          .populate({
-            path: "authorId",
-            model: Authors,
-            select: ["userId"],
-            populate: {
-              path: "userId",
-              model: Users,
-              select: ["firstName", "lastName"],
-            },
-          })
+          .select(["title", "author", "price", "thumbnail"])
           .lean();
         return product;
       })
@@ -116,56 +84,42 @@ export async function getProductDetails(id) {
     await connectMongo();
     const product = await Products.findById(id)
       .populate({
-        path: "authorId",
+        path: "author.details",
         model: Authors,
         populate: {
-          path: "userId",
+          path: "user",
           model: Users,
         },
-      })
-      .populate({
-        path: "categoryId",
-        model: Categories,
-        select: ["title"],
       })
       .lean();
     return {
       success: true,
-      message: "Best selling  Products",
+      message: "Product Details",
       data: replaceMongoIdInObject(product),
     };
   } catch (error) {
     return { success: false, message: error.message };
   }
 }
-//related products
 
-export async function getRelatedProductsByCategory(categoryId, limit) {
+
+//Shop page products
+export async function getAllProducts(searchParams) {
   try {
     await connectMongo();
-    const products = await Products.find({
+    const { filters, limit, sort } = constructFilterPipeline(searchParams);
+
+    const latestProducts = await Products.find({
       status: "published",
-      categoryId,
     })
+      .sort({ createdAt: -1 })
       .limit(limit)
-      .select(["title", "authorId", "formats", "price", "thumbnail"])
-      .populate({
-        path: "authorId",
-        model: Authors,
-        select: ["userId"],
-        populate: {
-          path: "userId",
-          model: Users,
-          select: ["firstName", "lastName"],
-        },
-      })
+      .select(["title", "author", "price", "thumbnail"])
       .lean();
-      return {
-        success: true,
-        message: "Related Products",
-        data: replaceMongoIdInArray(products),
-      };
-    } catch (error) {
-      return { success: false, message: error.message };
-    }
+    return {
+      success: true,
+      message: "All Products",
+      data: replaceMongoIdInArray(latestProducts),
+    };
+  } catch (error) {}
 }

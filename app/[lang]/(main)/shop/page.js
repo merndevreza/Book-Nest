@@ -8,7 +8,7 @@ const paths = [
     href: "shop",
   },
 ];
-const ShopPage = async ({ params: { lang } }) => {
+const ShopPage = async ({ params: { lang }, searchParams }) => {
   const dictionary = await getDictionary(lang);
   return (
     <main className="container px-1 sm:px-4 lg:px-8  py-4 lg:py-12">
@@ -16,11 +16,7 @@ const ShopPage = async ({ params: { lang } }) => {
       <div className="grid grid-cols-1 lg:grid-cols-4 lg:gap-6 items-start">
         <ShopSidebar dictionary={dictionary} />
         <ShopProducts
-          min={0}
-          max={0}
-          size={0}
-          category={0}
-          search={0}
+          searchParams={searchParams}
           lang={lang}
           dictionary={dictionary}
         />

@@ -15,7 +15,7 @@ import Logo from "../Logo";
 import { Separator } from "../ui/separator";
 import CategoryListMenu from "../CategoryListMenu";
  
-const CategoryListMenuDrawerMobile = ({dictionary,lang}) => {
+const CategoryListMenuDrawerMobile = ({categories,dictionary,lang}) => {
   return (
     <Drawer>
       <DrawerTrigger asChild className="bg-transparent  h-10 w-10 p-2">
@@ -30,7 +30,7 @@ const CategoryListMenuDrawerMobile = ({dictionary,lang}) => {
           <Separator className="mb-3" />
             <DrawerTitle>{dictionary?.allCategories}</DrawerTitle>
           </DrawerHeader>
-          <CategoryListMenu lang={lang}/>
+          <CategoryListMenu categories={categories} lang={lang}/>
           <DrawerFooter>
             <DrawerClose asChild>
               <Button variant="outline">Close</Button>

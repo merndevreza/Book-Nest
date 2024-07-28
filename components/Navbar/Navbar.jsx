@@ -3,18 +3,19 @@ import CategoriesMegaMenu from "./CategoriesMegaMenu";
 import LanguageSwitcher from "./LanguageSwitcher";
 import MainMenu from "./MainMenu";
 
-const Navbar = ({ dictionary, lang }) => {
+const Navbar = ({ categories, dictionary, lang }) => {
   return (
-    <nav className="bg-tertiary dark:bg-gray-600 text-tertiary-foreground dark:text-foreground  hidden md:block">
+    <nav className="bg-tertiary dark:bg-gray-600 text-tertiary-foreground dark:text-foreground  hidden md:block min-h-12 ">
       <div className="container flex justify-start items-center relative">
-        <CategoriesMegaMenu
-          lang={lang}
-          toggleTitle={true}
-          dictionary={dictionary}
-        />
-        <div className=" hidden lg:block">
+      <CategoriesMegaMenu
+              categories={categories}
+              lang={lang}
+              toggleTitle={true}
+              dictionary={dictionary}
+            />
 
-        <MainMenu lang={lang} mobile={false} />
+        <div className=" hidden lg:block">
+          <MainMenu lang={lang} mobile={false} />
         </div>
         <div className="ml-auto flex gap-2 items-center">
           <Link

@@ -6,13 +6,11 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "./ui/carousel"; 
+} from "./ui/carousel";
 import Book3dView from "./Book3dView/Book3dView";
 import Link from "next/link";
-import { getReviews } from "@/database/queries/reviews.queries";
 
-const Testimonials = async ({ lang }) => {
-  const reviews = await getReviews(10);    
+const Testimonials = ({ reviews, lang }) => {
   return (
     <Carousel
       opts={{
@@ -21,14 +19,14 @@ const Testimonials = async ({ lang }) => {
       className="container lg:max-w-5xl px-1 sm:px-10"
     >
       <CarouselContent>
-        {reviews?.data.map((review) => (
+        {reviews.map((review) => (
           <CarouselItem key={review.id}>
             <div className="flex flex-col sm:flex-row p-4 pt-8 md:p-8 gap-8 rounded-md  bg-[#f7f7f7] dark:bg-secondary">
               <div className="flex justify-center items-center">
-                <Link href={`/${lang}/shop/${review?.productId?._id.toString()}`}> 
+                <Link href={`/${lang}/shop/${review?.product?._id.toString()}`}>
                   <Book3dView
-                    bookImg={review?.productId?.thumbnail}
-                    bookAlt={review?.productId?.title}
+                    bookImg={review?.product?.thumbnail}
+                    bookAlt={review?.product?.title}
                   />
                 </Link>
               </div>
@@ -36,8 +34,10 @@ const Testimonials = async ({ lang }) => {
                 <div>
                   <div className="flex justify-between ">
                     <h2 className="text-xl mb-3 md:text-3xl text-themePrimary dark:text-white">
-                      <Link  href={`/${lang}/shop/${review?.productId?._id.toString()}`}>
-                        {review?.productId?.title}
+                      <Link
+                        href={`/${lang}/shop/${review?.product?._id.toString()}`}
+                      >
+                        {review?.product?.title}
                       </Link>
                     </h2>
                     <div className="text-xl">
@@ -45,8 +45,8 @@ const Testimonials = async ({ lang }) => {
                     </div>
                   </div>
                   <p className="capitalize font-bold text-xl dark:text-white -mt-2">
-                    By: {review?.productId?.authorId?.userId?.firstName}{" "} 
-                    {review?.productId?.authorId?.userId?.lastName}
+                    By: {review?.product?.author?.firstName}{" "}
+                    {review?.product?.author?.lastName}
                   </p>
                 </div>
                 <div className="mt-8 bg-tertiary text-tertiary-foreground  p-5 rounded-lg ">
@@ -55,11 +55,12 @@ const Testimonials = async ({ lang }) => {
                       className="w-[70px] rounded-full h-[70px] object-cover"
                       width={70}
                       height={70}
-                      src={review?.userId?.avatar}
-                      alt={`${review?.userId?.firstName} ${review?.userId?.lastName}`}
+                      src={review?.user?.avatar}
+                      alt={`${review?.user?.firstName} ${review?.user?.lastName}`}
                     />
                   </div>
-                  <p className="text-lg font-bold  mt-1">{`${review?.userId?.firstName} ${review?.userId?.lastName}`}
+                  <p className="text-lg font-bold  mt-1">
+                    {`${review?.user?.firstName} ${review?.user?.lastName}`}
                   </p>
                   <p className="text-base font-bold  mt-4 text-foreground">
                     {review?.comment}

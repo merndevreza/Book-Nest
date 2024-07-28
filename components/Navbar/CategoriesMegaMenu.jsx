@@ -1,4 +1,4 @@
-"use client"; 
+
 import { Menu } from "lucide-react";
 import ads1 from "@/public/assets/images/ads/product1.jpg";
 import ads2 from "@/public/assets/images/ads/product2.jpg";
@@ -26,7 +26,7 @@ const ads = [
     alt: "Ghost Book",
   },
 ];
-const CategoriesMegaMenu = ({ className, toggleTitle,dictionary,lang }) => {
+const CategoriesMegaMenu = ({ categories, className, toggleTitle,dictionary,lang }) => {
   return (
     <nav className={cn(`px-8 py-4 bg-themeSecondary flex category-center cursor-pointer group ${className}`)}>
       <div className="flex items-center">
@@ -39,7 +39,7 @@ const CategoriesMegaMenu = ({ className, toggleTitle,dictionary,lang }) => {
       </div>
       <div className="grid grid-cols-4 absolute w-full bg-themeSecondary dark:bg-secondary text-themeSecondary-foreground left-0 top-full shadow-md p-5 opacity-0 group-hover:opacity-100 transition duration-300 invisible group-hover:visible z-40 rounded">
         <div className="col-span-3 ">
-          <CategoryListMenu lang={lang}/>
+          <CategoryListMenu categories={categories} lang={lang}/>
         </div>
         <div>
           <ImageCarousel

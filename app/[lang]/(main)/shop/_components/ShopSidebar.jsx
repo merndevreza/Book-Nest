@@ -6,16 +6,20 @@ import { Menu } from "lucide-react";
 import FilterByPrice from "./FilterByPrice";
 import FilterByRating from "./FilterByRating";
 import { FilterByFormat } from "./FilterByFormat";
-
-const ShopSidebar = ({ dictionary }) => {
+import { getAllAuthors } from "@/database/queries/authors.queries";
+import { getAllCategories } from "@/database/queries/categories.queries";
+ 
+const ShopSidebar = async ({ dictionary }) => {
+  const categoriesResponse = await getAllCategories();
+  const authorsResponse = await getAllAuthors(); 
   return (
     <div className="h-auto lg:h-full lg:min-h-screen bg-muted/60 lg:p-5 p-2 w-full mb-6 lg:mb-0">
       <div className="space-y-3 hidden lg:block">
-        <FilterByFormat dictionary={dictionary} />
-        <FilterByCategory dictionary={dictionary} />
-        <FilterByAuthor dictionary={dictionary} />
-        <FilterByPrice dictionary={dictionary} />
-        <FilterByRating dictionary={dictionary} />
+        <AllFilters
+          dictionary={dictionary}
+          categoriesResponse={categoriesResponse}
+          authorsResponse={authorsResponse}
+        />
       </div>
       <div className="lg:hidden w-full">
         <Sheet>
@@ -28,11 +32,11 @@ const ShopSidebar = ({ dictionary }) => {
           <SheetContent side="left" className="flex flex-col overflow-y-scroll">
             <span className="font-semibold pl-2">{dictionary?.filter}</span>
             <div className="space-y-3">
-              <FilterByFormat dictionary={dictionary} />
-              <FilterByCategory dictionary={dictionary} />
-              <FilterByAuthor dictionary={dictionary} />
-              <FilterByPrice dictionary={dictionary} />
-              <FilterByRating dictionary={dictionary} />
+              <AllFilters
+                dictionary={dictionary}
+                categoriesResponse={categoriesResponse}
+                authorsResponse={authorsResponse}
+              />
             </div>
           </SheetContent>
         </Sheet>
@@ -40,5 +44,26 @@ const ShopSidebar = ({ dictionary }) => {
     </div>
   );
 };
+const AllFilters = ({ categoriesResponse, authorsResponse, dictionary }) => {
+  return (
+    <>
+      <FilterByFormat dictionary={dictionary} />
+      {categoriesResponse?.success === true && (
+        <FilterByCategory
+          categoriesResponse={categoriesResponse}
+          dictionary={dictionary}
+        />
+      )}
+      {authorsResponse?.success === true && (
+        <FilterByAuthor
+          authorsResponse={authorsResponse}
+          dictionary={dictionary}
+        />
+      )}
 
+      <FilterByPrice dictionary={dictionary} />
+      <FilterByRating dictionary={dictionary} />
+    </>
+  );
+};
 export default ShopSidebar;

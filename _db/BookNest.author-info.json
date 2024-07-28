@@ -3,7 +3,7 @@
     "_id": {
       "$oid": "668b6fa0829608c69a464e18"
     },
-    "userId": {
+    "user": {
       "$oid": "668b8402829608c69a464e36"
     },
     "bio": "John Smith is a renowned author known for his gripping thriller novels. His works have been translated into multiple languages and have garnered a massive international following.",
@@ -11,16 +11,16 @@
     "totalBooks": 12,
     "totalBooksSold": 1500000,
     "socialLinks": {
-      "facebook": "#",
-      "twitter": "#",
-      "linkedIn": "#"
+      "facebook": "https://www.facebook.com/",
+      "twitter": "https://www.twitter.com/",
+      "linkedIn": "https://www.linkedin.com/in/"
     }
   },
   {
     "_id": {
       "$oid": "668b6fa0829608c69a464e19"
     },
-    "userId": {
+    "user": {
       "$oid": "668b8402829608c69a464e37"
     },
     "bio": "Jane Doe is a celebrated writer of historical fiction. Her detailed and immersive narratives bring the past to life, engaging readers with rich, historically accurate depictions.",
@@ -28,16 +28,16 @@
     "totalBooks": 8,
     "totalBooksSold": 800000,
     "socialLinks": {
-      "facebook": "#",
-      "twitter": "#",
-      "linkedIn": "#"
+      "facebook": "https://www.facebook.com/",
+      "twitter": "https://www.twitter.com/",
+      "linkedIn": "https://www.linkedin.com/in/"
     }
   },
   {
     "_id": {
       "$oid": "668b6fa0829608c69a464e1a"
     },
-    "userId": {
+    "user": {
       "$oid": "668b8402829608c69a464e38"
     },
     "bio": "Michael Johnson is a prolific author in the science fiction genre. His futuristic and imaginative stories have earned him a dedicated fanbase and critical acclaim.",
@@ -45,16 +45,16 @@
     "totalBooks": 15,
     "totalBooksSold": 1200000,
     "socialLinks": {
-      "facebook": "#",
-      "twitter": "#",
-      "linkedIn": "#"
+      "facebook": null,
+      "twitter": "https://www.twitter.com/",
+      "linkedIn": "https://www.linkedin.com/in/"
     }
   },
   {
     "_id": {
       "$oid": "668b6fa0829608c69a464e1b"
     },
-    "userId": {
+    "user": {
       "$oid": "668b8402829608c69a464e39"
     },
     "bio": "Emily Davis is a best-selling author known for her contemporary romance novels. Her books often explore complex relationships and emotional journeys, resonating deeply with readers.",
@@ -62,16 +62,16 @@
     "totalBooks": 10,
     "totalBooksSold": 900000,
     "socialLinks": {
-      "facebook": "#",
-      "twitter": "#",
-      "linkedIn": "#"
+      "facebook": "https://www.facebook.com/",
+      "twitter": "https://www.twitter.com/",
+      "linkedIn": "https://www.linkedin.com/in/"
     }
   },
   {
     "_id": {
       "$oid": "668b6fa0829608c69a464e1c"
     },
-    "userId": {
+    "user": {
       "$oid": "668b8402829608c69a464e3a"
     },
     "bio": "William Brown is an esteemed writer of fantasy novels. His richly detailed worlds and epic tales of adventure have captivated readers and established him as a leading voice in fantasy literature.",
@@ -79,9 +79,9 @@
     "totalBooks": 18,
     "totalBooksSold": 2000000,
     "socialLinks": {
-      "facebook": "#",
-      "twitter": "#",
-      "linkedIn": "#"
+      "facebook": "https://www.facebook.com/",
+      "twitter": "https://www.twitter.com/",
+      "linkedIn": "https://www.linkedin.com/in/"
     }
   }
 ]

@@ -1,21 +1,11 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 
 const SpecificationTabContent = ({ book, dictionary }) => {
-  const { 
-    formats,
-    edition,
-    publisher,
-    page,
-    language,
-    country, 
-  } = book;
+  const { edition, publisher, page, language, country, price } = book;
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="text-xl">{dictionary?.specification}</CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-2">
+    <Card> 
+      <CardContent className="space-y-2 pt-8">
         <Table>
           <TableBody>
             <TableRow>
@@ -46,18 +36,24 @@ const SpecificationTabContent = ({ book, dictionary }) => {
               <TableCell className="w-1/4 font-medium ">
                 {dictionary?.format}:
               </TableCell>
-              <TableCell>
-                {formats
-                  .map((format) => {
-                    if (format === "printedBook") {
-                      return "Printed Book";
-                    } else if (format === "ebook") {
-                      return " Ebook";
-                    } else if (format === "audioBook") {
-                      return " Audio Book ";
-                    }
-                  })
-                  .toString()}
+              <TableCell className="flex gap-2">
+                {(price?.printedNewBook_regularPrice ||
+                  price?.printedOldBook_regularPrice) && (
+                  <span className="inline-block px-2 py-[2px] rounded-sm dark:bg-gray-600 bg-gray-200">
+                    Printed Book
+                  </span>
+                )}
+                {price?.ebook_regularPrice && (
+                  <span className="inline-block px-2 py-[2px] rounded-sm dark:bg-gray-600 bg-gray-200">
+                    Ebook
+                  </span>
+                )}
+
+                {price?.audioBook_regularPrice && (
+                  <span className="inline-block px-2 py-[2px] rounded-sm dark:bg-gray-600 bg-gray-200">
+                    Audio Book
+                  </span>
+                )}
               </TableCell>
             </TableRow>
             <TableRow>

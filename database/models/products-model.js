@@ -5,25 +5,41 @@ const productsSchema = new Schema({
     type: String,
     required: true,
   },
-  // stock has to be an object {}
   stock: {
-    type: Number,
-    required: true,
+    printedNewBook_stock: {
+      type: Number,
+      required: false,
+    },
+    printedOldBook_stock: {
+      type: Number,
+      required: false,
+    }
   },
-  categoryId: {
-    type: Schema.Types.ObjectId,
-    ref: "Category",
-    required: true,
+  category: {
+    name: {
+      type: String,
+      required: true,
+    },
+    details: {
+      type: Schema.Types.ObjectId,
+      ref: "Category",
+      required: true,
+    }
   },
-  authorId: {
-    type: Schema.Types.ObjectId,
-    ref: "Author",
-    required: true,
-  },
-  formats: {
-    type: [String],
-    required: true,
-    enum: ["printedBook", "ebook", "audioBook"],
+  author: {
+    firstName: {
+      type: String,
+      required: true,
+    },
+    lastName: {
+      type: String,
+      required: true,
+    },
+    details: {
+      type: Schema.Types.ObjectId,
+      ref: "Author",
+      required: true,
+    }
   },
   edition: {
     type: String,
@@ -50,45 +66,37 @@ const productsSchema = new Schema({
     required: true,
   },
   price: {
-    printedNewBook: {
-      regularPrice: {
-        type: Number,
-        required: false,
-      },
-      discountedPrice: {
-        type: Number,
-        required: false,
-      },
+    printedNewBook_regularPrice: {
+      type: Number,
+      required: false,
     },
-    printedOldBook: {
-      regularPrice: {
-        type: Number,
-        required: false,
-      },
-      discountedPrice: {
-        type: Number,
-        required: false,
-      },
+    printedNewBook_discountedPrice: {
+      type: Number,
+      required: false,
     },
-    ebook: {
-      regularPrice: {
-        type: Number,
-        required: false,
-      },
-      discountedPrice: {
-        type: Number,
-        required: false,
-      },
+    printedOldBook_regularPrice: {
+      type: Number,
+      required: false,
     },
-    audioBook: {
-      regularPrice: {
-        type: Number,
-        required: false,
-      },
-      discountedPrice: {
-        type: Number,
-        required: false,
-      },
+    printedOldBook_discountedPrice: {
+      type: Number,
+      required: false,
+    },
+    ebook_regularPrice: {
+      type: Number,
+      required: false,
+    },
+    ebook_discountedPrice: {
+      type: Number,
+      required: false,
+    },
+    audioBook_regularPrice: {
+      type: Number,
+      required: false,
+    },
+    audioBook_discountedPrice: {
+      type: Number,
+      required: false,
     },
   },
   sku: {
@@ -111,7 +119,7 @@ const productsSchema = new Schema({
   status: {
     type: String,
     required: true,
-    enum: ["published", "draft","archived"],
+    enum: ["published", "draft", "archived"],
   },
   readingPDF: {
     type: String,

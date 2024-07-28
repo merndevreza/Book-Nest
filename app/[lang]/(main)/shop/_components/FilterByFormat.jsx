@@ -54,9 +54,6 @@ export function FilterByFormat({ dictionary}) {
             >
               {item.label}
             </label>
-            {/* <div className="ml-auto md:text-gray-600 text-sm">
-              ({item.productsId.length})
-            </div> */}
           </div>
         ))}
       </CollapsibleContent>

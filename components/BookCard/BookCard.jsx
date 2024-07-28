@@ -27,9 +27,17 @@ const BookCard = async ({ book, dictionary, lang }) => {
           <div className="pt-3 md:pt-8">
             <div className="flex justify-center md:justify-between items-center">
               <div className="flex gap-2">
-                {book?.formats?.map((type) => (
-                  <AvailableTypes type={type} key={type} />
-                ))}
+                {(book?.price?.printedNewBook_regularPrice ||
+                  book?.price?.printedOldBook_regularPrice) && (
+                  <AvailableTypes type="printedBook" />
+                )}
+                {book?.price?.ebook_regularPrice && (
+                  <AvailableTypes type="ebook" />
+                )}
+
+                {book?.price?.audioBook_regularPrice && (
+                  <AvailableTypes type="audioBook" />
+                )}
               </div>
               <div className="hidden md:block">
                 {reviewsResponse.success === true && (
@@ -43,8 +51,7 @@ const BookCard = async ({ book, dictionary, lang }) => {
                 <Link href={`/${lang}/shop/${book?.id}`}>{book?.title}</Link>
               </h2>
               <p className=" inline-block px-3 py-1  bg-gray-300 dark:bg-secondary text-themeSecondary dark:text-themeSecondary-foreground  text-sm rounded-full font-semibold ">
-                By:{" "}
-                {`${book?.authorId?.userId?.firstName} ${book?.authorId?.userId?.lastName}`}
+                By: {`${book?.author?.firstName} ${book?.author?.lastName}`}
               </p>
             </div>
           </div>

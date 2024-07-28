@@ -1,14 +1,14 @@
 const PriceRange = ({ price }) => {
   // Extract all price values into an array
   const prices = [
-    price?.printedNewBook?.regularPrice,
-    price?.printedNewBook?.discountedPrice,
-    price?.printedOldBook?.regularPrice,
-    price?.printedOldBook?.discountedPrice,
-    price?.ebook?.regularPrice,
-    price?.ebook?.discountedPrice,
-    price?.audioBook?.regularPrice,
-    price?.audioBook?.discountedPrice,
+    price?.printedNewBook_regularPrice,
+    price?.printedNewBook_discountedPrice,
+    price?.printedOldBook_regularPrice,
+    price?.printedOldBook_discountedPrice,
+    price?.ebook_regularPrice,
+    price?.ebook_discountedPrice,
+    price?.audioBook_regularPrice,
+    price?.audioBook_discountedPrice,
   ].filter((p) => p !== null); // Filter out null values
 
   // Calculate the minimum and maximum prices

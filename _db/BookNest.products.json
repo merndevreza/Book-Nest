@@ -4,14 +4,23 @@
       "$oid": "668b7435829608c69a464e1f"
     },
     "title": "The Great Adventure",
-    "stock": 12,
-    "categoryId": {
-      "$oid": "668b553017617fce4a589c68"
+    "stock": {
+      "printedNewBook_stock": 25,
+      "printedOldBook_stock": 15
     },
-    "authorId": {
-      "$oid": "668b6fa0829608c69a464e1c"
+    "category": {
+      "name": "Fiction",
+      "details": {
+        "$oid": "668b553017617fce4a589c68"
+      }
     },
-    "formats": ["printedBook", "ebook"],
+    "author": {
+      "firstName": "William",
+      "lastName": "Brown",
+      "details": {
+        "$oid": "668b6fa0829608c69a464e1c"
+      }
+    },
     "edition": "1st",
     "publisher": "Adventure Publishing",
     "page": 350,
@@ -19,22 +28,14 @@
     "country": "USA",
     "featured": true,
     "price": {
-      "printedNewBook": {
-        "regularPrice": 25.99,
-        "discountedPrice": 20.99
-      },
-      "printedOldBook": {
-        "regularPrice": 15.99,
-        "discountedPrice": 12.99
-      },
-      "ebook": {
-        "regularPrice": 9.99,
-        "discountedPrice": 7.99
-      },
-      "audioBook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      }
+      "printedNewBook_regularPrice": 25.99,
+      "printedNewBook_discountedPrice": 20.99,
+      "printedOldBook_regularPrice": 15.99,
+      "printedOldBook_discountedPrice": 12.99,
+      "ebook_regularPrice": 9.99,
+      "ebook_discountedPrice": 7.99,
+      "audioBook_regularPrice": null,
+      "audioBook_discountedPrice": null
     },
     "sku": "BOOK001",
     "shortDescription": "An exhilarating journey through uncharted territories.",
@@ -43,19 +44,29 @@
     "status": "published",
     "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
   },
+
   {
     "_id": {
       "$oid": "668b7435829608c69a464e20"
     },
     "title": "Mystery of the Old Manor",
-    "stock": 8,
-    "categoryId": {
-      "$oid": "668b553017617fce4a589c68"
+    "stock": {
+      "printedNewBook_stock": 25,
+      "printedOldBook_stock": 15
     },
-    "authorId": {
-      "$oid": "668b6fa0829608c69a464e18"
+    "category": {
+      "name": "Fiction",
+      "details": {
+        "$oid": "668b553017617fce4a589c68"
+      }
     },
-    "formats": ["printedBook", "audioBook"],
+    "author": {
+      "firstName": "William",
+      "lastName": "Brown",
+      "details": {
+        "$oid": "668b6fa0829608c69a464e1c"
+      }
+    },
     "edition": "2nd",
     "publisher": "Mystery House",
     "page": 280,
@@ -63,22 +74,14 @@
     "country": "UK",
     "featured": true,
     "price": {
-      "printedNewBook": {
-        "regularPrice": 19.99,
-        "discountedPrice": 14.99
-      },
-      "printedOldBook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      },
-      "ebook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      },
-      "audioBook": {
-        "regularPrice": 12.99,
-        "discountedPrice": 9.99
-      }
+      "printedNewBook_regularPrice": 25.99,
+      "printedNewBook_discountedPrice": 20.99,
+      "printedOldBook_regularPrice": null,
+      "printedOldBook_discountedPrice": null,
+      "ebook_regularPrice": 9.99,
+      "ebook_discountedPrice": 7.99,
+      "audioBook_regularPrice": null,
+      "audioBook_discountedPrice": null
     },
     "sku": "BOOK002",
     "shortDescription": "A chilling mystery set in an ancient manor.",
@@ -92,14 +95,23 @@
       "$oid": "668b7435829608c69a464e21"
     },
     "title": "Science Fiction Galaxy",
-    "stock": 20,
-    "categoryId": {
-      "$oid": "668b553017617fce4a589c68"
+    "stock": {
+      "printedNewBook_stock": 25,
+      "printedOldBook_stock": 15
     },
-    "authorId": {
-      "$oid": "668b6fa0829608c69a464e18"
+    "category": {
+      "name": "Fiction",
+      "details": {
+        "$oid": "668b553017617fce4a589c68"
+      }
     },
-    "formats": ["printedBook", "ebook"],
+    "author": {
+      "firstName": "William",
+      "lastName": "Brown",
+      "details": {
+        "$oid": "668b6fa0829608c69a464e1c"
+      }
+    },
     "edition": "1st",
     "publisher": "Sci-Fi World",
     "page": 420,
@@ -107,22 +119,14 @@
     "country": "Canada",
     "featured": true,
     "price": {
-      "printedNewBook": {
-        "regularPrice": 27.99,
-        "discountedPrice": 21.99
-      },
-      "printedOldBook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      },
-      "ebook": {
-        "regularPrice": 11.99,
-        "discountedPrice": 8.99
-      },
-      "audioBook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      }
+      "printedNewBook_regularPrice": 25.99,
+      "printedNewBook_discountedPrice": 20.99,
+      "printedOldBook_regularPrice": null,
+      "printedOldBook_discountedPrice": null,
+      "ebook_regularPrice": 9.99,
+      "ebook_discountedPrice": 7.99,
+      "audioBook_regularPrice": null,
+      "audioBook_discountedPrice": null
     },
     "sku": "BOOK003",
     "shortDescription": "A thrilling journey across the galaxy.",
@@ -136,14 +140,23 @@
       "$oid": "668b7435829608c69a464e22"
     },
     "title": "The Fantasy Realm",
-    "stock": 15,
-    "categoryId": {
-      "$oid": "668b553017617fce4a589c69"
+    "stock": {
+      "printedNewBook_stock": 25,
+      "printedOldBook_stock": 15
     },
-    "authorId": {
-      "$oid": "668b6fa0829608c69a464e18"
+    "category": {
+      "name": "Fiction",
+      "details": {
+        "$oid": "668b553017617fce4a589c68"
+      }
     },
-    "formats": ["printedBook", "ebook", "audioBook"],
+    "author": {
+      "firstName": "William",
+      "lastName": "Brown",
+      "details": {
+        "$oid": "668b6fa0829608c69a464e1c"
+      }
+    },
     "edition": "3rd",
     "publisher": "Fantasy Books",
     "page": 500,
@@ -151,22 +164,14 @@
     "country": "Australia",
     "featured": true,
     "price": {
-      "printedNewBook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      },
-      "printedOldBook": {
-        "regularPrice": 18.99,
-        "discountedPrice": 14.99
-      },
-      "ebook": {
-        "regularPrice": 9.99,
-        "discountedPrice": 7.99
-      },
-      "audioBook": {
-        "regularPrice": 14.99,
-        "discountedPrice": 11.99
-      }
+      "printedNewBook_regularPrice": null,
+      "printedNewBook_discountedPrice": null,
+      "printedOldBook_regularPrice": 25.99,
+      "printedOldBook_discountedPrice": 20.99,
+      "ebook_regularPrice": 9.99,
+      "ebook_discountedPrice": 7.99,
+      "audioBook_regularPrice": 40,
+      "audioBook_discountedPrice": 33
     },
     "sku": "BOOK004",
     "shortDescription": "An epic tale of fantasy and adventure.",
@@ -180,37 +185,38 @@
       "$oid": "668b7435829608c69a464e23"
     },
     "title": "Biography of a Legend",
-    "stock": 10,
-    "categoryId": {
-      "$oid": "668b553017617fce4a589c69"
+    "stock": {
+      "printedNewBook_stock": 25,
+      "printedOldBook_stock": 15
     },
-    "authorId": {
-      "$oid": "668b6fa0829608c69a464e18"
+    "category": {
+      "name": "Fiction",
+      "details": {
+        "$oid": "668b553017617fce4a589c68"
+      }
     },
-    "formats": ["printedBook", "audioBook"],
+    "author": {
+      "firstName": "William",
+      "lastName": "Brown",
+      "details": {
+        "$oid": "668b6fa0829608c69a464e1c"
+      }
+    },
     "edition": "1st",
     "publisher": "Biography Press",
     "page": 320,
     "language": "English",
     "country": "USA",
     "featured": true,
-    "price": {
-      "printedNewBook": {
-        "regularPrice": 22.99,
-        "discountedPrice": 18.99
-      },
-      "printedOldBook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      },
-      "ebook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      },
-      "audioBook": {
-        "regularPrice": 13.99,
-        "discountedPrice": 10.99
-      }
+    "price":  {
+      "printedNewBook_regularPrice": null,
+      "printedNewBook_discountedPrice": null,
+      "printedOldBook_regularPrice": 25.99,
+      "printedOldBook_discountedPrice": 20.99,
+      "ebook_regularPrice": 9.99,
+      "ebook_discountedPrice": 7.99,
+      "audioBook_regularPrice": 22,
+      "audioBook_discountedPrice": null
     },
     "sku": "BOOK005",
     "shortDescription": "The life story of a remarkable individual.",
@@ -224,37 +230,39 @@
       "$oid": "668b7435829608c69a464e24"
     },
     "title": "History Unveiled",
-    "stock": 7,
-    "categoryId": {
-      "$oid": "668b553017617fce4a589c69"
+    "stock": {
+      "printedNewBook_stock": 25,
+      "printedOldBook_stock": 15
     },
-    "authorId": {
-      "$oid": "668b6fa0829608c69a464e1c"
+    "category": {
+      "name": "Fiction",
+      "details": {
+        "$oid": "668b553017617fce4a589c68"
+      }
     },
-    "formats": ["printedBook"],
+    "author": {
+      "firstName": "William",
+      "lastName": "Brown",
+      "details": {
+        "$oid": "668b6fa0829608c69a464e1c"
+      }
+    },
+
     "edition": "2nd",
     "publisher": "History House",
     "page": 400,
     "language": "English",
     "country": "UK",
     "featured": true,
-    "price": {
-      "printedNewBook": {
-        "regularPrice": 24.99,
-        "discountedPrice": 19.99
-      },
-      "printedOldBook": {
-        "regularPrice": 14.99,
-        "discountedPrice": 11.99
-      },
-      "ebook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      },
-      "audioBook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      }
+    "price":  {
+      "printedNewBook_regularPrice": 35,
+      "printedNewBook_discountedPrice": 30,
+      "printedOldBook_regularPrice": 25.99,
+      "printedOldBook_discountedPrice": 20.99,
+      "ebook_regularPrice": null,
+      "ebook_discountedPrice": null,
+      "audioBook_regularPrice": 43,
+      "audioBook_discountedPrice": 35
     },
     "sku": "BOOK006",
     "shortDescription": "A deep dive into historical events.",
@@ -268,37 +276,38 @@
       "$oid": "668b7435829608c69a464e25"
     },
     "title": "Self-Help Guide",
-    "stock": 25,
-    "categoryId": {
-      "$oid": "668b553017617fce4a589c69"
+    "stock": {
+      "printedNewBook_stock": 25,
+      "printedOldBook_stock": 15
     },
-    "authorId": {
-      "$oid": "668b6fa0829608c69a464e1c"
+    "category": {
+      "name": "Fiction",
+      "details": {
+        "$oid": "668b553017617fce4a589c68"
+      }
     },
-    "formats": ["ebook", "audioBook"],
+    "author": {
+      "firstName": "William",
+      "lastName": "Brown",
+      "details": {
+        "$oid": "668b6fa0829608c69a464e1c"
+      }
+    },
     "edition": "1st",
     "publisher": "Self-Help Publishers",
     "page": 150,
     "language": "English",
     "country": "Canada",
     "featured": true,
-    "price": {
-      "printedNewBook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      },
-      "printedOldBook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      },
-      "ebook": {
-        "regularPrice": 8.99,
-        "discountedPrice": 5.99
-      },
-      "audioBook": {
-        "regularPrice": 11.99,
-        "discountedPrice": 8.99
-      }
+    "price":  {
+      "printedNewBook_regularPrice": 80,
+      "printedNewBook_discountedPrice": null,
+      "printedOldBook_regularPrice": 25.99,
+      "printedOldBook_discountedPrice": 20.99,
+      "ebook_regularPrice": 9.99,
+      "ebook_discountedPrice": 7.99,
+      "audioBook_regularPrice": 44,
+      "audioBook_discountedPrice": null
     },
     "sku": "BOOK007",
     "shortDescription": "A practical guide to personal growth.",
@@ -312,37 +321,39 @@
       "$oid": "668b7435829608c69a464e26"
     },
     "title": "Romantic Tales",
-    "stock": 18,
-    "categoryId": {
-      "$oid": "668b553017617fce4a589c6a"
+    "stock": {
+      "printedNewBook_stock": 25,
+      "printedOldBook_stock": 15
     },
-    "authorId": {
-      "$oid": "668b6fa0829608c69a464e19"
+    "category": {
+      "name": "Fiction",
+      "details": {
+        "$oid": "668b553017617fce4a589c68"
+      }
     },
-    "formats": ["printedBook", "ebook"],
+    "author": {
+      "firstName": "William",
+      "lastName": "Brown",
+      "details": {
+        "$oid": "668b6fa0829608c69a464e1c"
+      }
+    },
+
     "edition": "4th",
     "publisher": "Romance Reads",
     "page": 380,
     "language": "English",
     "country": "USA",
     "featured": true,
-    "price": {
-      "printedNewBook": {
-        "regularPrice": 26.99,
-        "discountedPrice": 22.99
-      },
-      "printedOldBook": {
-        "regularPrice": 16.99,
-        "discountedPrice": 13.99
-      },
-      "ebook": {
-        "regularPrice": 9.99,
-        "discountedPrice": 7.99
-      },
-      "audioBook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      }
+    "price":  {
+      "printedNewBook_regularPrice": null,
+      "printedNewBook_discountedPrice": null,
+      "printedOldBook_regularPrice": 25.99,
+      "printedOldBook_discountedPrice": 20.99,
+      "ebook_regularPrice": 9.99,
+      "ebook_discountedPrice": 7.99,
+      "audioBook_regularPrice": null,
+      "audioBook_discountedPrice": null
     },
     "sku": "BOOK008",
     "shortDescription": "A collection of heartwarming romance stories.",
@@ -356,37 +367,39 @@
       "$oid": "668b7435829608c69a464e27"
     },
     "title": "Thriller Nights",
-    "stock": 22,
-    "categoryId": {
-      "$oid": "668b553017617fce4a589c6a"
+    "stock": {
+      "printedNewBook_stock": 25,
+      "printedOldBook_stock": 15
     },
-    "authorId": {
-      "$oid": "668b6fa0829608c69a464e19"
+    "category": {
+      "name": "Fiction",
+      "details": {
+        "$oid": "668b553017617fce4a589c68"
+      }
     },
-    "formats": ["printedBook", "ebook", "audioBook"],
+    "author": {
+      "firstName": "William",
+      "lastName": "Brown",
+      "details": {
+        "$oid": "668b6fa0829608c69a464e1c"
+      }
+    },
+
     "edition": "3rd",
     "publisher": "Thriller Publishers",
     "page": 450,
     "language": "English",
     "country": "UK",
     "featured": true,
-    "price": {
-      "printedNewBook": {
-        "regularPrice": 28.99,
-        "discountedPrice": 24.99
-      },
-      "printedOldBook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      },
-      "ebook": {
-        "regularPrice": 12.99,
-        "discountedPrice": 9.99
-      },
-      "audioBook": {
-        "regularPrice": 15.99,
-        "discountedPrice": 12.99
-      }
+    "price":  {
+      "printedNewBook_regularPrice": 90,
+      "printedNewBook_discountedPrice": null,
+      "printedOldBook_regularPrice": 25.99,
+      "printedOldBook_discountedPrice": 20.99,
+      "ebook_regularPrice": 9.99,
+      "ebook_discountedPrice": 7.99,
+      "audioBook_regularPrice": null,
+      "audioBook_discountedPrice": null
     },
     "sku": "BOOK009",
     "shortDescription": "A spine-chilling collection of thrillers.",
@@ -399,37 +412,38 @@
       "$oid": "668b7435829608c69a464e28"
     },
     "title": "Children's Fairy Tales",
-    "stock": 30,
-    "categoryId": {
-      "$oid": "668b553017617fce4a589c6c"
+    "stock": {
+      "printedNewBook_stock": 25,
+      "printedOldBook_stock": 15
     },
-    "authorId": {
-      "$oid": "668b6fa0829608c69a464e19"
+    "category": {
+      "name": "Fiction",
+      "details": {
+        "$oid": "668b553017617fce4a589c68"
+      }
     },
-    "formats": ["printedBook", "ebook"],
+    "author": {
+      "firstName": "William",
+      "lastName": "Brown",
+      "details": {
+        "$oid": "668b6fa0829608c69a464e1c"
+      }
+    },
     "edition": "1st",
     "publisher": "Kids Books",
     "page": 120,
     "language": "English",
     "country": "Australia",
     "featured": true,
-    "price": {
-      "printedNewBook": {
-        "regularPrice": 18.99,
-        "discountedPrice": 15.99
-      },
-      "printedOldBook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      },
-      "ebook": {
-        "regularPrice": 7.99,
-        "discountedPrice": 5.99
-      },
-      "audioBook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      }
+    "price":  {
+      "printedNewBook_regularPrice": 43,
+      "printedNewBook_discountedPrice": null,
+      "printedOldBook_regularPrice": 25.99,
+      "printedOldBook_discountedPrice": 20.99,
+      "ebook_regularPrice": 9.99,
+      "ebook_discountedPrice": 7.99,
+      "audioBook_regularPrice": null,
+      "audioBook_discountedPrice": null
     },
     "sku": "BOOK010",
     "shortDescription": "Enchanting fairy tales for children.",
@@ -443,14 +457,24 @@
       "$oid": "668b7435829608c69a464e29"
     },
     "title": "Young Adult Adventures",
-    "stock": 17,
-    "categoryId": {
-      "$oid": "668b553017617fce4a589c6b"
+    "stock": {
+      "printedNewBook_stock": 25,
+      "printedOldBook_stock": 15
     },
-    "authorId": {
-      "$oid": "668b6fa0829608c69a464e19"
+    "category": {
+      "name": "Fiction",
+      "details": {
+        "$oid": "668b553017617fce4a589c68"
+      }
     },
-    "formats": ["printedBook", "printedBook", "ebook"],
+    "author": {
+      "firstName": "William",
+      "lastName": "Brown",
+      "details": {
+        "$oid": "668b6fa0829608c69a464e1c"
+      }
+    },
+
     "edition": "2nd",
     "publisher": "YA Reads",
     "page": 360,
@@ -458,22 +482,14 @@
     "country": "USA",
     "featured": true,
     "price": {
-      "printedNewBook": {
-        "regularPrice": 23.99,
-        "discountedPrice": 19.99
-      },
-      "printedOldBook": {
-        "regularPrice": 13.99,
-        "discountedPrice": 10.99
-      },
-      "ebook": {
-        "regularPrice": 8.99,
-        "discountedPrice": 6.99
-      },
-      "audioBook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      }
+      "printedNewBook_regularPrice": 33,
+      "printedNewBook_discountedPrice": null,
+      "printedOldBook_regularPrice": 25.99,
+      "printedOldBook_discountedPrice": 20.99,
+      "ebook_regularPrice": 9.99,
+      "ebook_discountedPrice": 7.99,
+      "audioBook_regularPrice": null,
+      "audioBook_discountedPrice": null
     },
     "sku": "BOOK011",
     "shortDescription": "Exciting adventures for young adults.",
@@ -487,37 +503,39 @@
       "$oid": "668b7435829608c69a464e2a"
     },
     "title": "Classic Literature",
-    "stock": 5,
-    "categoryId": {
-      "$oid": "668b553017617fce4a589c6b"
+    "stock": {
+      "printedNewBook_stock": 25,
+      "printedOldBook_stock": 15
     },
-    "authorId": {
-      "$oid": "668b6fa0829608c69a464e19"
+    "category": {
+      "name": "Fiction",
+      "details": {
+        "$oid": "668b553017617fce4a589c68"
+      }
     },
-    "formats": ["printedBook"],
+    "author": {
+      "firstName": "William",
+      "lastName": "Brown",
+      "details": {
+        "$oid": "668b6fa0829608c69a464e1c"
+      }
+    },
+
     "edition": "1st",
     "publisher": "Literary Classics",
     "page": 700,
     "language": "English",
     "country": "UK",
     "featured": true,
-    "price": {
-      "printedNewBook": {
-        "regularPrice": 29.99,
-        "discountedPrice": 25.99
-      },
-      "printedOldBook": {
-        "regularPrice": 19.99,
-        "discountedPrice": 16.99
-      },
-      "ebook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      },
-      "audioBook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      }
+    "price":  {
+      "printedNewBook_regularPrice": 55,
+      "printedNewBook_discountedPrice": null,
+      "printedOldBook_regularPrice": 25.99,
+      "printedOldBook_discountedPrice": 20.99,
+      "ebook_regularPrice": 9.99,
+      "ebook_discountedPrice": 7.99,
+      "audioBook_regularPrice": null,
+      "audioBook_discountedPrice": null
     },
     "sku": "BOOK012",
     "shortDescription": "Timeless classics of literature.",
@@ -531,37 +549,39 @@
       "$oid": "668b7435829608c69a464e2b"
     },
     "title": "Modern Fiction",
-    "stock": 20,
-    "categoryId": {
-      "$oid": "668b553017617fce4a589c6c"
+    "stock": {
+      "printedNewBook_stock": 25,
+      "printedOldBook_stock": 15
     },
-    "authorId": {
-      "$oid": "668b6fa0829608c69a464e1a"
+    "category": {
+      "name": "Fiction",
+      "details": {
+        "$oid": "668b553017617fce4a589c68"
+      }
     },
-    "formats": ["printedBook", "ebook"],
+    "author": {
+      "firstName": "William",
+      "lastName": "Brown",
+      "details": {
+        "$oid": "668b6fa0829608c69a464e1c"
+      }
+    },
+
     "edition": "1st",
     "publisher": "Fiction Press",
     "page": 340,
     "language": "English",
     "country": "Canada",
     "featured": true,
-    "price": {
-      "printedNewBook": {
-        "regularPrice": 22.99,
-        "discountedPrice": 18.99
-      },
-      "printedOldBook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      },
-      "ebook": {
-        "regularPrice": 9.99,
-        "discountedPrice": 7.99
-      },
-      "audioBook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      }
+    "price":  {
+      "printedNewBook_regularPrice": 44,
+      "printedNewBook_discountedPrice": null,
+      "printedOldBook_regularPrice": 25.99,
+      "printedOldBook_discountedPrice": 20.99,
+      "ebook_regularPrice": 9.99,
+      "ebook_discountedPrice": 7.99,
+      "audioBook_regularPrice": null,
+      "audioBook_discountedPrice": null
     },
     "sku": "BOOK013",
     "shortDescription": "Compelling modern fiction stories.",
@@ -575,37 +595,38 @@
       "$oid": "668b7435829608c69a464e2c"
     },
     "title": "Epic Fantasy",
-    "stock": 12,
-    "categoryId": {
-      "$oid": "668b553017617fce4a589c6d"
+    "stock": {
+      "printedNewBook_stock": 25,
+      "printedOldBook_stock": 15
     },
-    "authorId": {
-      "$oid": "668b6fa0829608c69a464e1a"
+    "category": {
+      "name": "Fiction",
+      "details": {
+        "$oid": "668b553017617fce4a589c68"
+      }
     },
-    "formats": ["printedBook", "ebook", "audioBook"],
+    "author": {
+      "firstName": "William",
+      "lastName": "Brown",
+      "details": {
+        "$oid": "668b6fa0829608c69a464e1c"
+      }
+    },
     "edition": "1st",
     "publisher": "Epic Reads",
     "page": 600,
     "language": "English",
     "country": "Australia",
     "featured": true,
-    "price": {
-      "printedNewBook": {
-        "regularPrice": 27.99,
-        "discountedPrice": 23.99
-      },
-      "printedOldBook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      },
-      "ebook": {
-        "regularPrice": 12.99,
-        "discountedPrice": 9.99
-      },
-      "audioBook": {
-        "regularPrice": 15.99,
-        "discountedPrice": 12.99
-      }
+    "price":  {
+      "printedNewBook_regularPrice": 33,
+      "printedNewBook_discountedPrice": null,
+      "printedOldBook_regularPrice": 25.99,
+      "printedOldBook_discountedPrice": 20.99,
+      "ebook_regularPrice": 9.99,
+      "ebook_discountedPrice": 7.99,
+      "audioBook_regularPrice": null,
+      "audioBook_discountedPrice": null
     },
     "sku": "BOOK014",
     "shortDescription": "An epic saga of fantasy and magic.",
@@ -619,37 +640,39 @@
       "$oid": "668b7435829608c69a464e2d"
     },
     "title": "Biography of a Pioneer",
-    "stock": 9,
-    "categoryId": {
-      "$oid": "668b553017617fce4a589c73"
+    "stock": {
+      "printedNewBook_stock": 25,
+      "printedOldBook_stock": 15
     },
-    "authorId": {
-      "$oid": "668b6fa0829608c69a464e1a"
+    "category": {
+      "name": "Fiction",
+      "details": {
+        "$oid": "668b553017617fce4a589c68"
+      }
     },
-    "formats": ["printedBook"],
+    "author": {
+      "firstName": "William",
+      "lastName": "Brown",
+      "details": {
+        "$oid": "668b6fa0829608c69a464e1c"
+      }
+    },
+
     "edition": "2nd",
     "publisher": "Biography House",
     "page": 320,
     "language": "English",
     "country": "UK",
-    "featured": true,
-    "price": {
-      "printedNewBook": {
-        "regularPrice": 23.99,
-        "discountedPrice": 19.99
-      },
-      "printedOldBook": {
-        "regularPrice": 14.99,
-        "discountedPrice": 11.99
-      },
-      "ebook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      },
-      "audioBook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      }
+    "featured": false,
+    "price":  {
+      "printedNewBook_regularPrice": 54,
+      "printedNewBook_discountedPrice": 50,
+      "printedOldBook_regularPrice": 25.99,
+      "printedOldBook_discountedPrice": 20.99,
+      "ebook_regularPrice": 9.99,
+      "ebook_discountedPrice": 7.99,
+      "audioBook_regularPrice": null,
+      "audioBook_discountedPrice": null
     },
     "sku": "BOOK015",
     "shortDescription": "The inspiring biography of a trailblazer.",
@@ -663,37 +686,38 @@
       "$oid": "668b7435829608c69a464e2e"
     },
     "title": "Historical Insights",
-    "stock": 14,
-    "categoryId": {
-      "$oid": "668b553017617fce4a589c73"
+    "stock": {
+      "printedNewBook_stock": 25,
+      "printedOldBook_stock": 15
     },
-    "authorId": {
-      "$oid": "668b6fa0829608c69a464e1b"
+    "category": {
+      "name": "Fiction",
+      "details": {
+        "$oid": "668b553017617fce4a589c68"
+      }
     },
-    "formats": ["printedBook", "ebook"],
+    "author": {
+      "firstName": "William",
+      "lastName": "Brown",
+      "details": {
+        "$oid": "668b6fa0829608c69a464e1c"
+      }
+    },
     "edition": "3rd",
     "publisher": "History Publishers",
     "page": 410,
     "language": "English",
     "country": "Canada",
     "featured": true,
-    "price": {
-      "printedNewBook": {
-        "regularPrice": 26.99,
-        "discountedPrice": 22.99
-      },
-      "printedOldBook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      },
-      "ebook": {
-        "regularPrice": 10.99,
-        "discountedPrice": 8.99
-      },
-      "audioBook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      }
+    "price":  {
+      "printedNewBook_regularPrice": null,
+      "printedNewBook_discountedPrice": null,
+      "printedOldBook_regularPrice": 25.99,
+      "printedOldBook_discountedPrice": 20.99,
+      "ebook_regularPrice": 9.99,
+      "ebook_discountedPrice": 7.99,
+      "audioBook_regularPrice": null,
+      "audioBook_discountedPrice": null
     },
     "sku": "BOOK016",
     "shortDescription": "Deep insights into historical events.",
@@ -707,37 +731,39 @@
       "$oid": "668b7435829608c69a464e2f"
     },
     "title": "Guide to Self-Improvement",
-    "stock": 22,
-    "categoryId": {
-      "$oid": "668b553017617fce4a589c72"
+    "stock": {
+      "printedNewBook_stock": 25,
+      "printedOldBook_stock": 15
     },
-    "authorId": {
-      "$oid": "668b6fa0829608c69a464e1b"
+    "category": {
+      "name": "Fiction",
+      "details": {
+        "$oid": "668b553017617fce4a589c68"
+      }
     },
-    "formats": ["printedBook", "ebook"],
+    "author": {
+      "firstName": "William",
+      "lastName": "Brown",
+      "details": {
+        "$oid": "668b6fa0829608c69a464e1c"
+      }
+    },
+
     "edition": "1st",
     "publisher": "Self-Help Press",
     "page": 200,
     "language": "English",
     "country": "USA",
     "featured": true,
-    "price": {
-      "printedNewBook": {
-        "regularPrice": 20.99,
-        "discountedPrice": 17.99
-      },
-      "printedOldBook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      },
-      "ebook": {
-        "regularPrice": 9.99,
-        "discountedPrice": 6.99
-      },
-      "audioBook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      }
+    "price":  {
+      "printedNewBook_regularPrice": null,
+      "printedNewBook_discountedPrice": null,
+      "printedOldBook_regularPrice": 25.99,
+      "printedOldBook_discountedPrice": 20.99,
+      "ebook_regularPrice": 9.99,
+      "ebook_discountedPrice": 7.99,
+      "audioBook_regularPrice": null,
+      "audioBook_discountedPrice": null
     },
     "sku": "BOOK017",
     "shortDescription": "Steps and strategies for self-improvement.",
@@ -751,14 +777,24 @@
       "$oid": "668b7435829608c69a464e30"
     },
     "title": "Romance Chronicles",
-    "stock": 15,
-    "categoryId": {
-      "$oid": "668b553017617fce4a589c72"
+    "stock": {
+      "printedNewBook_stock": 25,
+      "printedOldBook_stock": 15
     },
-    "authorId": {
-      "$oid": "668b6fa0829608c69a464e1b"
+    "category": {
+      "name": "Fiction",
+      "details": {
+        "$oid": "668b553017617fce4a589c68"
+      }
     },
-    "formats": ["printedBook", "audioBook"],
+    "author": {
+      "firstName": "William",
+      "lastName": "Brown",
+      "details": {
+        "$oid": "668b6fa0829608c69a464e1c"
+      }
+    },
+
     "edition": "4th",
     "publisher": "Romance Chronicles",
     "page": 380,
@@ -766,22 +802,14 @@
     "country": "Australia",
     "featured": true,
     "price": {
-      "printedNewBook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      },
-      "printedOldBook": {
-        "regularPrice": 17.99,
-        "discountedPrice": 14.99
-      },
-      "ebook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      },
-      "audioBook": {
-        "regularPrice": 14.99,
-        "discountedPrice": 11.99
-      }
+      "printedNewBook_regularPrice": null,
+      "printedNewBook_discountedPrice": null,
+      "printedOldBook_regularPrice": 25.99,
+      "printedOldBook_discountedPrice": 20.99,
+      "ebook_regularPrice": 9.99,
+      "ebook_discountedPrice": 7.99,
+      "audioBook_regularPrice": null,
+      "audioBook_discountedPrice": null
     },
     "sku": "BOOK018",
     "shortDescription": "Romantic stories through the ages.",
@@ -795,14 +823,24 @@
       "$oid": "668b7435829608c69a464e31"
     },
     "title": "Thrills and Chills",
-    "stock": 8,
-    "categoryId": {
-      "$oid": "668b553017617fce4a589c70"
+    "stock": {
+      "printedNewBook_stock": 25,
+      "printedOldBook_stock": 15
     },
-    "authorId": {
-      "$oid": "668b6fa0829608c69a464e1c"
+    "category": {
+      "name": "Fiction",
+      "details": {
+        "$oid": "668b553017617fce4a589c68"
+      }
     },
-    "formats": ["printedBook"],
+    "author": {
+      "firstName": "William",
+      "lastName": "Brown",
+      "details": {
+        "$oid": "668b6fa0829608c69a464e1c"
+      }
+    },
+
     "edition": "1st",
     "publisher": "Thrill Seekers",
     "page": 360,
@@ -810,22 +848,14 @@
     "country": "UK",
     "featured": true,
     "price": {
-      "printedNewBook": {
-        "regularPrice": 25.99,
-        "discountedPrice": 21.99
-      },
-      "printedOldBook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      },
-      "ebook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      },
-      "audioBook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      }
+      "printedNewBook_regularPrice": null,
+      "printedNewBook_discountedPrice": null,
+      "printedOldBook_regularPrice": 25.99,
+      "printedOldBook_discountedPrice": 20.99,
+      "ebook_regularPrice": 9.99,
+      "ebook_discountedPrice": 7.99,
+      "audioBook_regularPrice": null,
+      "audioBook_discountedPrice": null
     },
     "sku": "BOOK019",
     "shortDescription": "Heart-pounding thrillers for the brave.",
@@ -839,37 +869,38 @@
       "$oid": "668b7435829608c69a464e32"
     },
     "title": "Kids' Magical Stories",
-    "stock": 28,
-    "categoryId": {
-      "$oid": "668b553017617fce4a589c70"
+    "stock": {
+      "printedNewBook_stock": 25,
+      "printedOldBook_stock": 15
     },
-    "authorId": {
-      "$oid": "668b6fa0829608c69a464e1c"
+    "category": {
+      "name": "Fiction",
+      "details": {
+        "$oid": "668b553017617fce4a589c68"
+      }
     },
-    "formats": ["printedBook", "ebook"],
+    "author": {
+      "firstName": "William",
+      "lastName": "Brown",
+      "details": {
+        "$oid": "668b6fa0829608c69a464e1c"
+      }
+    },
     "edition": "2nd",
     "publisher": "Magic Kids",
     "page": 110,
     "language": "English",
     "country": "USA",
     "featured": true,
-    "price": {
-      "printedNewBook": {
-        "regularPrice": 19.99,
-        "discountedPrice": 16.99
-      },
-      "printedOldBook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      },
-      "ebook": {
-        "regularPrice": 6.99,
-        "discountedPrice": 4.99
-      },
-      "audioBook": {
-        "regularPrice": null,
-        "discountedPrice": null
-      }
+    "price":  {
+      "printedNewBook_regularPrice": null,
+      "printedNewBook_discountedPrice": null,
+      "printedOldBook_regularPrice": 25.99,
+      "printedOldBook_discountedPrice": 20.99,
+      "ebook_regularPrice": 9.99,
+      "ebook_discountedPrice": 7.99,
+      "audioBook_regularPrice": null,
+      "audioBook_discountedPrice": null
     },
     "sku": "BOOK020",
     "shortDescription": "Magical stories for children.",

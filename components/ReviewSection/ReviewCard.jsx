@@ -8,8 +8,8 @@ const ReviewCard = ({ review }) => {
       <CardHeader className="p-2">
         <div className="flex flex-col sm:flex-row justify-center sm:justify-start items-center gap-3">
           <Image
-            src={review?.userId?.avatar}
-            alt={`${review?.userId?.firstName} ${review?.userId?.lastName}`}
+            src={review?.user?.avatar}
+            alt={`${review?.user?.firstName} ${review?.user?.lastName}`}
             width={44}
             height={44}
             className="w-11 h-11 object-cover rounded-full"
@@ -17,7 +17,7 @@ const ReviewCard = ({ review }) => {
           <div>
             <CardTitle className="text-lg text-themePrimary">
               {" "}
-              {`${review?.userId?.firstName} ${review?.userId?.lastName}`}
+              {`${review?.user?.firstName} ${review?.user?.lastName}`}
             </CardTitle>
             <Ratings ratingNumber={review?.rating} />
           </div>

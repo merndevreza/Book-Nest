@@ -1,33 +1,21 @@
 import { replaceMongoIdInArray } from "@/utils/replaceMongoID";
-import { Authors } from "../models/author-model";
 import { Products } from "../models/products-model";
 import { Reviews } from "../models/reviews-model";
 import { Users } from "../models/users-model";
 import connectMongo from "../services/connectMongo";
-import mongoose from "mongoose";
 
 export async function getReviews(limit) {
   try {
     await connectMongo();
-    const reviews = await Reviews.find()
-      .select(["productId", "userId", "rating", "comment", "createdAt"])
+    const reviews = await Reviews.find({})
+      .select(["product", "user", "rating", "comment", "createdAt"])
       .populate({
-        path: "productId",
+        path: "product",
         model: Products,
-        select: ["title", "thumbnail", "authorId"],
-        populate: {
-          path: "authorId",
-          model: Authors,
-          select: ["userId"],
-          populate: {
-            path: "userId",
-            model: Users,
-            select: ["firstName", "lastName"],
-          },
-        },
+        select: ["title", "thumbnail", "author"],
       })
       .populate({
-        path: "userId",
+        path: "user",
         model: Users,
         select: ["firstName", "lastName", "avatar"],
       })
@@ -36,7 +24,7 @@ export async function getReviews(limit) {
       .lean();
     return {
       success: true,
-      message: "Featured Testimonials",
+      message: "Testimonials",
       data: replaceMongoIdInArray(reviews),
     };
   } catch (error) {
@@ -48,10 +36,10 @@ export async function getReviewsByProductId(id) {
   try {
     await connectMongo();  
     const reviews = await Reviews.find({
-      productId: id,
-    }).select(["userId", "rating", "comment", "createdAt"])
+      product: id,
+    }).select(["user", "rating", "comment", "createdAt"])
       .populate({
-        path: "userId",
+        path: "user",
         model: Users,
         select: ["firstName", "lastName", "avatar"],
       })
