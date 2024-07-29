@@ -102,31 +102,10 @@ export async function getProductDetails(id) {
   }
 }
 
-//Shop page products
-export async function getAllProducts(searchParams) {
-  try {
-    await connectMongo();
-    const { filters, limit, sort } = constructFilterPipeline(searchParams);
-
-    const latestProducts = await Products.find({
-      status: "published",
-    })
-      .sort({ createdAt: -1 })
-      .limit(limit)
-      .select(["title", "author", "price","averageRating", "thumbnail"])
-      .lean();
-    return {
-      success: true,
-      message: "All Products",
-      data: replaceMongoIdInArray(latestProducts),
-    };
-  } catch (error) {}
-}
 //Shop page
 export async function getAllProductsShop(searchparams) {
   try {
-    const { filter } = constructFilterPipeline(searchparams); 
-    console.log("filter",filter);
+    const { filter } = constructFilterPipeline(searchparams);  
     await connectMongo();
     const response = await Products.find(filter)
       .select(["title", "author", "price","averageRating", "thumbnail"])
@@ -139,4 +118,19 @@ export async function getAllProductsShop(searchparams) {
   } catch (error) {
     return { success: false, message: error.message };
   }
+}
+export async function countPublishedProducts(){
+try {
+  await connectMongo()
+  const count= await Products.countDocuments({
+    status: "published",
+  })
+  return {
+    success: true,
+    message: "Count Published Products",
+    data:count,
+  };
+} catch (error) {
+  return { success: false, message: error.message };
+}
 }

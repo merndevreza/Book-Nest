@@ -11,7 +11,9 @@ export const constructFilterPipeline = (fields) => {
 
   const searchQueryRegex = search ? new RegExp(search, "i") : undefined;
 
-  const filter = {};
+  const filter = {
+    status: "published",
+  };
 
   // Search using product name, description, category name, or author name
   if (searchQueryRegex) {

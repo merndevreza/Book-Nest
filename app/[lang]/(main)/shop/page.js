@@ -1,4 +1,5 @@
 import { getDictionary } from "../../dictionary/dictionary";
+import ShopPagination from "./_components/ShopPagination";
 import ShopProducts from "./_components/ShopProducts";
 import ShopSidebar from "./_components/ShopSidebar";
 import BreadCrumb from "@/components/BreadCrumb";
@@ -15,11 +16,14 @@ const ShopPage = async ({ params: { lang }, searchParams }) => {
       <BreadCrumb lang={lang} paths={paths} />
       <div className="grid grid-cols-1 lg:grid-cols-4 lg:gap-6 items-start">
         <ShopSidebar dictionary={dictionary} />
-        <ShopProducts
-          searchParams={searchParams}
-          lang={lang}
-          dictionary={dictionary}
-        />
+        <div className="col-span-3">
+          <ShopProducts
+            searchParams={searchParams}
+            lang={lang}
+            dictionary={dictionary}
+          />
+          <ShopPagination />
+        </div>
       </div>
     </main>
   );
