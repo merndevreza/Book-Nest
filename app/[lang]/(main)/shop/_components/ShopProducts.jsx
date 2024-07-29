@@ -1,9 +1,10 @@
 import BookCard from "@/components/BookCard/BookCard";
-import { getLatestProducts } from "@/database/queries/products.queries";
+import { getAllProductsShop, getLatestProducts } from "@/database/queries/products.queries";
+import createSearchParamsObjectForProducts from "@/utils/createSearchParamsObjectForProducts";
 
 const ShopProducts = async ({ searchParams, dictionary, lang }) => {
-
-  const response = await getLatestProducts();
+const response=await getAllProductsShop(createSearchParamsObjectForProducts(searchParams))
+  // const response = await getLatestProducts();
   if (response?.success === false) {
     return <p>Error Occurred: {response?.message}</p>;
   }

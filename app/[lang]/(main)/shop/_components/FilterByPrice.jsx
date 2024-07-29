@@ -17,10 +17,10 @@ const FilterByPrice = ({dictionary}) => {
 
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  const { replace } = useRouter();
+  const router= useRouter();
 
   const params = new URLSearchParams(searchParams);
-
+//input change handler
   const handleChange = (event) => {
     event.preventDefault();
     const name = event.target.name;
@@ -29,6 +29,7 @@ const FilterByPrice = ({dictionary}) => {
     setQuery((prev) => ({ ...prev, [name]: value }));
   };
 
+  //check the url first and update query state
   useEffect(() => {
     const minPrice = params.get("min");
     const maxPrice = params.get("max");
@@ -36,8 +37,9 @@ const FilterByPrice = ({dictionary}) => {
     if (minPrice && maxPrice) {
       setQuery({ min: minPrice, max: maxPrice });
     }
-  }, [params]);
+  }, []);
 
+  //set or delete in the params
   useEffect(() => {
     if (query.min && query.max) {
       params.set("min", query.min);
@@ -46,8 +48,8 @@ const FilterByPrice = ({dictionary}) => {
       params.delete("min");
       params.delete("max");
     }
-    replace(`${pathname}?${params.toString()}`);
-  }, [query, pathname, replace,params]);
+    router.replace(`${pathname}?${params.toString()}`);
+  }, [query, pathname, router]);
   return (
     <Collapsible open={isOpen} onOpenChange={setIsOpen}>
       <CollapsibleTrigger className="rounded-lg px-3 py-2 bg-muted text-primary w-full flex justify-between items-center">

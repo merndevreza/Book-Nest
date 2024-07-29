@@ -1,7 +1,7 @@
 import { ThemeProvider } from "@/components/Header/ThemeProvider";
 import { asul, sulphur } from "./fonts";
 import "./globals.css";
-// import connectMongo from "@/database/services/connectMongo";
+import connectMongo from "@/database/services/connectMongo";
 
 export const metadata = {
   title: "Book Nest",
@@ -9,7 +9,7 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-  // await connectMongo();
+  await connectMongo();
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body className={`${asul.variable} ${sulphur.variable}`}>

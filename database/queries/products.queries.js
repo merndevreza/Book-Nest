@@ -102,7 +102,6 @@ export async function getProductDetails(id) {
   }
 }
 
-
 //Shop page products
 export async function getAllProducts(searchParams) {
   try {
@@ -122,4 +121,23 @@ export async function getAllProducts(searchParams) {
       data: replaceMongoIdInArray(latestProducts),
     };
   } catch (error) {}
+}
+//Shop page
+export async function getAllProductsShop(searchparams) {
+  try {
+    const { filter } = constructFilterPipeline(searchparams);
+    console.log("filter", filter);
+    await connectMongo();
+    const response = await Products.find(filter)
+      .select(["title", "author", "price", "thumbnail"])
+      .lean(); 
+    console.log("response", response);
+    return {
+      success: true,
+      message: "Filtered Products",
+      data: replaceMongoIdInArray(response),
+    };
+  } catch (error) {
+    return { success: false, message: error.message };
+  }
 }

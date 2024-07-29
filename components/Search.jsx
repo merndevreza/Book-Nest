@@ -1,14 +1,18 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Input } from "./ui/input";
 import Typewriter from "typewriter-effect/dist/core";
-import { Search as SearchIconMain } from "lucide-react"; 
+import { Search as SearchIconMain } from "lucide-react";
 import { Button } from "./ui/button";
+import { useRouter, useSearchParams } from "next/navigation";
 
-const Search = ({className,dictionary}) => {
+const Search = ({ lang, className, dictionary }) => {
   const inputRef = useRef(null);
   const typewriterRef = useRef(null);
-
+  const [searchTerm, setSearchTerm] = useState("");
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  //Type Writer
   useEffect(() => {
     const input = inputRef.current;
     // Add character
@@ -68,19 +72,36 @@ const Search = ({className,dictionary}) => {
       input.removeEventListener("blur", handleBlur);
     };
   }, []);
+  //Search
+  const handleSearch = (e) => {
+    e.preventDefault(); 
+    
+    const params = new URLSearchParams(searchParams);
+    params.set("search", searchTerm);
 
+    const query = params.toString();
+    router.replace(`${process.env.NEXT_PUBLIC_BASE_URL}/${lang}/shop?${query}`);
+
+    setSearchTerm("")
+  };
   return (
-    <form action="" className={className} >
-      <div className="flex justify-center items-center border-2 border-themePrimary  rounded-md">  
+    <form onSubmit={handleSearch} className={className}>
+      <div className="flex justify-center items-center border-2 border-themePrimary  rounded-md">
         <Input
           ref={inputRef}
           type="search"
-          className="bg-secondary focus-visible:ring-offset-0  focus-visible:ring-transparent rounded " 
+          name="search"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.currentTarget.value)}
+          className="bg-secondary focus-visible:ring-offset-0  focus-visible:ring-transparent rounded "
         />
 
-        <Button type="submit" className="md:w-16 xl:w-20 bg-themePrimary text-themePrimary-foreground rounded-none border-none hover:bg-theme hidden md:block">
-        <SearchIconMain className="mx-auto"  size={20}/>
-        </Button> 
+        <Button
+          type="submit"
+          className="md:w-16 xl:w-20 bg-themePrimary text-themePrimary-foreground rounded-none border-none hover:bg-theme hidden md:block"
+        >
+          <SearchIconMain className="mx-auto" size={20} />
+        </Button>
       </div>
     </form>
   );

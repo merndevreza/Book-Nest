@@ -10,8 +10,8 @@ import { getAllAuthors } from "@/database/queries/authors.queries";
 import { getAllCategories } from "@/database/queries/categories.queries";
  
 const ShopSidebar = async ({ dictionary }) => {
-  const categoriesResponse = await getAllCategories();
-  const authorsResponse = await getAllAuthors(); 
+  const categoriesResponse = await getAllCategories({withCount:true});
+  const authorsResponse = await getAllAuthors({withCount:true});  
   return (
     <div className="h-auto lg:h-full lg:min-h-screen bg-muted/60 lg:p-5 p-2 w-full mb-6 lg:mb-0">
       <div className="space-y-3 hidden lg:block">
@@ -48,15 +48,15 @@ const AllFilters = ({ categoriesResponse, authorsResponse, dictionary }) => {
   return (
     <>
       <FilterByFormat dictionary={dictionary} />
-      {categoriesResponse?.success === true && (
+      {categoriesResponse?.success === true && categoriesResponse?.data.length > 0 && (
         <FilterByCategory
-          categoriesResponse={categoriesResponse}
+          categories={categoriesResponse?.data}
           dictionary={dictionary}
         />
       )}
-      {authorsResponse?.success === true && (
+      {authorsResponse?.success === true && authorsResponse?.data.length>0 && (
         <FilterByAuthor
-          authorsResponse={authorsResponse}
+          authors={authorsResponse?.data}
           dictionary={dictionary}
         />
       )}

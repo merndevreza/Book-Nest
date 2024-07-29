@@ -9,7 +9,7 @@ const CategoryListMenu = ({ categories, lang }) => {
             className="hover:text-themePrimary text-base"
             href={`/${lang}/shop/?category=${category?.id}`}
           >
-            {category?.title}
+            {category?.name}
           </Link>
         </li>
       ))}
