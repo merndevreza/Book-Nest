@@ -1,14 +1,15 @@
 "use client";
+import { Button } from "@/components/ui/button";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, RefreshCcw } from "lucide-react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const FilterByPrice = ({dictionary}) => {
+const FilterByPrice = ({ dictionary }) => {
   const [isOpen, setIsOpen] = useState(true);
   const [query, setQuery] = useState({
     min: "",
@@ -17,10 +18,10 @@ const FilterByPrice = ({dictionary}) => {
 
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  const router= useRouter();
+  const router = useRouter();
 
   const params = new URLSearchParams(searchParams);
-//input change handler
+  //input change handler
   const handleChange = (event) => {
     event.preventDefault();
     const name = event.target.name;
@@ -52,12 +53,31 @@ const FilterByPrice = ({dictionary}) => {
   }, [query, pathname, router]);
   return (
     <Collapsible open={isOpen} onOpenChange={setIsOpen}>
-      <CollapsibleTrigger className="rounded-lg px-3 py-2 bg-muted text-primary w-full flex justify-between items-center">
-        <span>{dictionary?.price}</span>
-        <span className="w-7 h-7 border rounded-full flex justify-center items-center">
-          {isOpen ? <ChevronDown size={20} /> : <ChevronUp size={20} />}
-        </span>
-      </CollapsibleTrigger>
+      <div className="flex gap-2">
+        <CollapsibleTrigger className="rounded-lg px-3 py-2 bg-muted text-primary w-full flex justify-between items-center">
+          <span>{dictionary?.price}</span>
+          <span className="w-7 h-7 border rounded-full flex justify-center items-center">
+            {isOpen ? <ChevronDown size={20} /> : <ChevronUp size={20} />}
+          </span>
+        </CollapsibleTrigger>
+        <div>
+          <Button
+            variant="secondary"
+            disabled={query.min==="" || query.max==="" } 
+            onClick={() =>
+              setQuery({
+                min: "",
+                max: "",
+              })
+            }
+            className="w-10 px-2"
+            size="lg"
+          >
+            <RefreshCcw size={20} />
+          </Button>
+        </div>
+      </div>
+
       <CollapsibleContent className="mt-3 pl-3">
         <div className="mt-4 flex items-center">
           <input

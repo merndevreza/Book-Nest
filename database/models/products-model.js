@@ -121,6 +121,16 @@ const productsSchema = new Schema({
     required: true,
     enum: ["published", "draft", "archived"],
   },
+  averageRating:{
+    type:Number,
+    required: false,
+    default:0
+  },
+  reviewsCount:{
+    type:Number,
+    required: false,
+    default:0
+  },
   readingPDF: {
     type: String,
     required: false,

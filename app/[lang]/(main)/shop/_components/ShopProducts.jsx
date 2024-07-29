@@ -1,5 +1,5 @@
 import BookCard from "@/components/BookCard/BookCard";
-import { getAllProductsShop, getLatestProducts } from "@/database/queries/products.queries";
+import { getAllProductsShop } from "@/database/queries/products.queries";
 import createSearchParamsObjectForProducts from "@/utils/createSearchParamsObjectForProducts";
 
 const ShopProducts = async ({ searchParams, dictionary, lang }) => {

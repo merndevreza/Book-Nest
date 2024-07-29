@@ -19,7 +19,7 @@ export async function getFeaturedProducts(limit) {
       featured: true,
     })
       .limit(limit)
-      .select(["title", "author", "price", "thumbnail"])
+      .select(["title", "author", "price","averageRating", "thumbnail"])
       .lean();
     return {
       success: true,
@@ -39,7 +39,7 @@ export async function getLatestProducts(limit) {
     })
       .sort({ createdAt: -1 })
       .limit(limit)
-      .select(["title", "author", "price", "thumbnail"])
+      .select(["title", "author", "price","averageRating", "thumbnail"])
       .lean();
     return {
       success: true,
@@ -62,7 +62,7 @@ export async function getBestSellingProducts(limit) {
       arraySet.map(async (id) => {
         const product = await Products.findById(id)
           .limit(limit)
-          .select(["title", "author", "price", "thumbnail"])
+          .select(["title", "author", "price", "averageRating", "thumbnail"])
           .lean();
         return product;
       })
@@ -113,7 +113,7 @@ export async function getAllProducts(searchParams) {
     })
       .sort({ createdAt: -1 })
       .limit(limit)
-      .select(["title", "author", "price", "thumbnail"])
+      .select(["title", "author", "price","averageRating", "thumbnail"])
       .lean();
     return {
       success: true,
@@ -125,13 +125,12 @@ export async function getAllProducts(searchParams) {
 //Shop page
 export async function getAllProductsShop(searchparams) {
   try {
-    const { filter } = constructFilterPipeline(searchparams);
-    console.log("filter", filter);
+    const { filter } = constructFilterPipeline(searchparams); 
+    console.log("filter",filter);
     await connectMongo();
     const response = await Products.find(filter)
-      .select(["title", "author", "price", "thumbnail"])
-      .lean(); 
-    console.log("response", response);
+      .select(["title", "author", "price","averageRating", "thumbnail"])
+      .lean();  
     return {
       success: true,
       message: "Filtered Products",

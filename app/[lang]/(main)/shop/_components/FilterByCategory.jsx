@@ -5,9 +5,10 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { useEffect, useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, RefreshCcw } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { Button } from "@/components/ui/button";
 
 export function FilterByCategory({ categories, dictionary }) {
   const [isOpen, setIsOpen] = useState(true);
@@ -51,12 +52,19 @@ export function FilterByCategory({ categories, dictionary }) {
   
   return (
     <Collapsible open={isOpen} onOpenChange={setIsOpen}>
+      <div className="flex gap-2">
       <CollapsibleTrigger className="rounded-lg px-3 py-2 bg-muted text-primary w-full flex justify-between items-center">
         <span>{dictionary?.category}</span>
         <span className="w-7 h-7 border rounded-full flex justify-center items-center">
           {isOpen ? <ChevronDown size={20} /> : <ChevronUp size={20} />}
         </span>
       </CollapsibleTrigger>
+      <div>
+          <Button variant="secondary" onClick={()=>setQuery([])}  disabled={query.length===0}  className="w-10 px-2" size="lg">
+            <RefreshCcw size={20} />
+          </Button>
+        </div>
+      </div>
       <CollapsibleContent className="mt-3 pl-3">
         {categories.map((category) => (
           <div key={category.id} className="flex items-center gap-2">

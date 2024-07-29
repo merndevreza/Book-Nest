@@ -1,13 +1,21 @@
 import { Progress } from "@/components/ui/progress";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import ProductDetailsTabs from "./ProductDetailsTabs";
-import AverageRating from "@/components/AverageRating";
+import ProductDetailsTabs from "./ProductDetailsTabs"; 
 import calculateInPercentage from "@/utils/calculateInPercentage";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-const ProductDetails = ({ reviewsResponse, book, dictionary }) => {
-  const { title, stock, author, shortDescription, category } = book;
+import Ratings from "@/components/Ratings";
+const ProductDetails = ({ book, dictionary }) => {
+  const {
+    title,
+    stock,
+    author,
+    shortDescription,
+    category,
+    reviewsCount,
+    averageRating,
+  } = book;
 
   return (
     <Card className="bg-transparent border-none shadow-none">
@@ -16,26 +24,30 @@ const ProductDetails = ({ reviewsResponse, book, dictionary }) => {
           <CardTitle className="dark:text-white col-span-5 xl:col-span-4 leading-normal text-lg md:text-xl lg:text-2xl">
             {title}
           </CardTitle>
-          {reviewsResponse.success === true && (
-            <AverageRating
-              reviews={reviewsResponse?.data}
-              showTotalReviews={true}
-            />
-          )}
+          <div className="flex items-center gap-2 min-w-36">
+            <Ratings ratingNumber={averageRating} />
+            <span className="inline-block">({reviewsCount})</span>
+          </div>
         </div>
         <div>
           <h2>
-            <span className="mr-2 inline-block font-semibold"> {dictionary?.author}:</span>{" "}
+            <span className="mr-2 inline-block font-semibold">
+              {" "}
+              {dictionary?.author}:
+            </span>{" "}
             <span>{`${author.firstName} ${author.lastName}`}</span>
           </h2>
           <p>
-            <span className="mr-2 inline-block font-semibold"> {dictionary?.category}:</span>{" "}
-            <span>{category?.name}</span> 
+            <span className="mr-2 inline-block font-semibold">
+              {" "}
+              {dictionary?.category}:
+            </span>{" "}
+            <span>{category?.name}</span>
           </p>
           <p>
             <span className="mr-2 inline-block font-semibold"> Summary:</span>{" "}
-            <span>{shortDescription}</span> 
-          </p> 
+            <span>{shortDescription}</span>
+          </p>
         </div>
       </CardHeader>
       <CardContent className="space-y-6 p-0">

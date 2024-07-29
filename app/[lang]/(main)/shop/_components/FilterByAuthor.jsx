@@ -5,9 +5,10 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { useEffect, useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, RefreshCcw } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { Button } from "@/components/ui/button";
 
 export function FilterByAuthor({ authors, dictionary }) {
   const [isOpen, setIsOpen] = useState(true);
@@ -50,12 +51,19 @@ export function FilterByAuthor({ authors, dictionary }) {
   }, [query, pathname, router]);
   return (
     <Collapsible open={isOpen} onOpenChange={setIsOpen}>
-      <CollapsibleTrigger className="rounded-lg px-3 py-2 bg-muted text-primary w-full flex justify-between items-center">
-        <span>{dictionary?.author}</span>
-        <span className="w-7 h-7 border rounded-full flex justify-center items-center">
-          {isOpen ? <ChevronDown size={20} /> : <ChevronUp size={20} />}
-        </span>
-      </CollapsibleTrigger>
+      <div className="flex gap-2">
+        <CollapsibleTrigger className="rounded-lg px-3 py-2 bg-muted text-primary w-full flex justify-between items-center">
+          <span>{dictionary?.author}</span>
+          <span className="w-7 h-7 border rounded-full flex justify-center items-center">
+            {isOpen ? <ChevronDown size={20} /> : <ChevronUp size={20} />}
+          </span>
+        </CollapsibleTrigger>
+        <div>
+          <Button disabled={query.length===0} onClick={()=>setQuery([])} variant="secondary" className="w-10 px-2" size="lg">
+            <RefreshCcw size={20} />
+          </Button>
+        </div>
+      </div>
       <CollapsibleContent className="mt-3 pl-3">
         {authors.map((author) => (
           <div key={author.id} className="flex items-center gap-2">

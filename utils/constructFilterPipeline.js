@@ -6,7 +6,8 @@ const isValidObjectId = (id) => {
 };
 
 export const constructFilterPipeline = (fields) => {
-  const { search, formats, categories, authors, ratings, min, max } = fields ?? {};
+  const { search, formats, categories, authors, ratings, min, max } =
+    fields ?? {};
 
   const searchQueryRegex = search ? new RegExp(search, "i") : undefined;
 
@@ -24,8 +25,10 @@ export const constructFilterPipeline = (fields) => {
   }
 
   // Filter by category.details id
-  if (categories) {
-    const validCategories = categories.filter(isValidObjectId).map(id => new ObjectId(id));
+  if (categories.length > 0 && categories[0] !== "undefined") {
+    const validCategories = categories
+      .filter(isValidObjectId)
+      .map((id) => new ObjectId(id));
     if (validCategories.length > 0) {
       filter["category.details"] = {
         $in: validCategories,
@@ -34,8 +37,10 @@ export const constructFilterPipeline = (fields) => {
   }
 
   // Filter by author.details id
-  if (authors) {
-    const validAuthors = authors.filter(isValidObjectId).map(id => new ObjectId(id));
+  if (authors.length > 0 && authors[0] !== "undefined") {
+    const validAuthors = authors
+      .filter(isValidObjectId)
+      .map((id) => new ObjectId(id));
     if (validAuthors.length > 0) {
       filter["author.details"] = {
         $in: validAuthors,
@@ -68,19 +73,22 @@ export const constructFilterPipeline = (fields) => {
       );
     }
     if (formats.includes("ebook")) {
-      formatFilters.push(
-        { "price.ebook_regularPrice": { $ne: null } }
-      );
+      formatFilters.push({ "price.ebook_regularPrice": { $ne: null } });
     }
     if (formats.includes("audioBook")) {
-      formatFilters.push(
-        { "price.audioBook_regularPrice": { $ne: null } }
-      );
+      formatFilters.push({ "price.audioBook_regularPrice": { $ne: null } });
     }
     if (formatFilters.length > 0) {
       filter.$and = filter.$and || [];
       filter.$and.push({ $or: formatFilters });
     }
+  }
+  //Filter by ratings
+  if (ratings.length > 0 && ratings[0] !== "undefined") {
+    const ratingsInNumber = ratings.map(Number);
+    filter.$or = ratingsInNumber.map((rating) => {
+      return { averageRating: { $gte: rating, $lt: rating + 1 } };
+    });
   }
   return { filter };
 };

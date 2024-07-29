@@ -4,12 +4,10 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Book3dView from "../Book3dView/Book3dView";
-import PriceRange from "./PriceRange";
-import AverageRating from "../AverageRating";
-import { getReviewsByProductId } from "@/database/queries/reviews.queries";
+import PriceRange from "./PriceRange"; 
+import Ratings from "../Ratings";
 
 const BookCard = async ({ book, dictionary, lang }) => {
-  const reviewsResponse = await getReviewsByProductId(book?.id);
   return (
     <Card className="bg-secondary dark:bg-transparent flex flex-col items-center justify-between sm:h-full">
       <CardContent className="p-3 w-full">
@@ -40,9 +38,7 @@ const BookCard = async ({ book, dictionary, lang }) => {
                 )}
               </div>
               <div className="hidden md:block">
-                {reviewsResponse.success === true && (
-                  <AverageRating reviews={reviewsResponse?.data} />
-                )}
+              <Ratings ratingNumber={book?.averageRating} />
               </div>
             </div>
             <div className="w-full h-[2px] bg-gray-300 dark:bg-secondary  my-3"></div>

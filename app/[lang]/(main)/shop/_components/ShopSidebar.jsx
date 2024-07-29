@@ -7,7 +7,7 @@ import FilterByPrice from "./FilterByPrice";
 import FilterByRating from "./FilterByRating";
 import { FilterByFormat } from "./FilterByFormat";
 import { getAllAuthors } from "@/database/queries/authors.queries";
-import { getAllCategories } from "@/database/queries/categories.queries";
+import { getAllCategories } from "@/database/queries/categories.queries"; 
  
 const ShopSidebar = async ({ dictionary }) => {
   const categoriesResponse = await getAllCategories({withCount:true});
@@ -62,7 +62,7 @@ const AllFilters = ({ categoriesResponse, authorsResponse, dictionary }) => {
       )}
 
       <FilterByPrice dictionary={dictionary} />
-      <FilterByRating dictionary={dictionary} />
+      <FilterByRating dictionary={dictionary} /> 
     </>
   );
 };
