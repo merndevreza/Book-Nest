@@ -121,12 +121,11 @@ export async function getAllProductsShop(searchparams) {
     return { success: false, message: error.message };
   }
 }
-export async function countPublishedProducts() {
+export async function countProducts(searchparams) {
   try {
     await connectMongo();
-    const count = await Products.countDocuments({
-      status: "published",
-    });
+    const { filter } = constructFilterPipeline(searchparams);  
+    const count = await Products.countDocuments(filter);
     return {
       success: true,
       message: "Count Published Products",

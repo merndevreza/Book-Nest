@@ -1,9 +1,10 @@
-import { countPublishedProducts } from "@/database/queries/products.queries";
+import { countProducts } from "@/database/queries/products.queries";
 import { getDictionary } from "../../dictionary/dictionary";
 import ShopPagination from "./_components/ShopPagination";
 import ShopProducts from "./_components/ShopProducts";
 import ShopSidebar from "./_components/ShopSidebar";
 import BreadCrumb from "@/components/BreadCrumb";
+import createSearchParamsObjectForProducts from "@/utils/createSearchParamsObjectForProducts";
 const paths = [
   {
     label: "Shop",
@@ -12,7 +13,8 @@ const paths = [
 ];
 const ShopPage = async ({ params: { lang }, searchParams }) => {
   const dictionary = await getDictionary(lang);
-  const responseProductsCount = await countPublishedProducts();
+  const responseProductsCount = await countProducts(createSearchParamsObjectForProducts(searchParams)); 
+  
   return (
     <main className="container px-1 sm:px-4 lg:px-8  py-4 lg:py-12">
       <BreadCrumb lang={lang} paths={paths} />
