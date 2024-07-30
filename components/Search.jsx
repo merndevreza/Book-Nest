@@ -22,11 +22,11 @@ const Search = ({ lang, className, dictionary }) => {
 
     setSearchTerm("");
   }, 500);
-  
+
   //typewriter-effect (package)
   useEffect(() => {
     const input = inputRef.current;
-  
+
     // Add character
     const customNodeCreator = function (character) {
       if (input) {
@@ -34,14 +34,14 @@ const Search = ({ lang, className, dictionary }) => {
       }
       return null;
     };
-  
+
     // Remove character
     const onRemoveNode = function () {
       if (input && input.placeholder) {
         input.placeholder = input.placeholder.slice(0, -1);
       }
     };
-  
+
     const initializeTypewriter = () => {
       typewriterRef.current = new Typewriter(null, {
         loop: true,
@@ -49,7 +49,7 @@ const Search = ({ lang, className, dictionary }) => {
         onCreateTextNode: customNodeCreator,
         onRemoveNode: onRemoveNode,
       });
-  
+
       typewriterRef.current
         .typeString(dictionary?.searchPlaceholder1)
         .pauseFor(1000)
@@ -62,28 +62,28 @@ const Search = ({ lang, className, dictionary }) => {
         .deleteAll()
         .start();
     };
-  
+
     initializeTypewriter();
-  
+
     const handleFocus = () => {
       if (typewriterRef.current) {
         typewriterRef.current.stop();
       }
       if (input) {
-        input.placeholder = "";  
+        input.placeholder = "";
       }
     };
-  
+
     const handleBlur = () => {
       if (typewriterRef.current) {
         typewriterRef.current.stop();
       }
-      initializeTypewriter();  
+      initializeTypewriter();
     };
-  
+
     input.addEventListener("focus", handleFocus);
     input.addEventListener("blur", handleBlur);
-  
+
     return () => {
       if (typewriterRef.current) {
         typewriterRef.current.stop();
@@ -91,7 +91,11 @@ const Search = ({ lang, className, dictionary }) => {
       input.removeEventListener("focus", handleFocus);
       input.removeEventListener("blur", handleBlur);
     };
-  }, []);
+  }, [
+    dictionary?.searchPlaceholder1,
+    dictionary?.searchPlaceholder2,
+    dictionary?.searchPlaceholder3,
+  ]);
   //Search
   const handleSearch = (e) => {
     const value = e.currentTarget.value;
