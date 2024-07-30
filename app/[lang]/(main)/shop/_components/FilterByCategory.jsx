@@ -16,7 +16,7 @@ export function FilterByCategory({ categories, dictionary }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const router = useRouter();
-  const params = new URLSearchParams(searchParams);
+ 
 
   //checkbox handler
   const handleChange = (e) => {
@@ -33,22 +33,24 @@ export function FilterByCategory({ categories, dictionary }) {
   };
   //check the url first and update query state
   useEffect(() => {
+    const params = new URLSearchParams(searchParams.toString());
     const categories = params.get("category");
     if (categories) {
       const decodedCategories = decodeURI(categories);
       const categoriesArray = decodedCategories.split("|");
       setQuery(categoriesArray);
     }
-  }, []);
+  }, [searchParams]);
   //set or delete query in the search params
-  useEffect(() => {
+  useEffect(() => { 
+    const params = new URLSearchParams(searchParams.toString());
     if (query.length > 0) {
       params.set("category", encodeURI(query.join("|")));
     } else {
       params.delete("category");
     }
     router.replace(`${pathname}?${params.toString()}`);
-  }, [query, pathname, router]);
+  }, [query, pathname, router,searchParams]);
   
   return (
     <Collapsible open={isOpen} onOpenChange={setIsOpen}>

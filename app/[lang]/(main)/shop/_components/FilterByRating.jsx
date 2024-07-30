@@ -17,7 +17,6 @@ const FilterByRating = ({ dictionary }) => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
-  const params = new URLSearchParams(searchParams);
 
   //checkbox handler
   const handleChange = (e) => {
@@ -34,22 +33,24 @@ const FilterByRating = ({ dictionary }) => {
   };
   //check the url first and update query state
   useEffect(() => {
+    const params = new URLSearchParams(searchParams.toString());
     const ratings = params.get("rating");
     if (ratings) {
       const decodedRatings = decodeURI(ratings);
       const ratingsArray = decodedRatings.split("|");
       setQuery(ratingsArray);
     }
-  }, []);
+  }, [searchParams]);
   //set or delete in params
   useEffect(() => {
+    const params = new URLSearchParams(searchParams.toString());
     if (query.length > 0) {
       params.set("rating", encodeURI(query.join("|")));
     } else {
       params.delete("rating");
     }
     router.replace(`${pathname}?${params.toString()}`);
-  }, [query, pathname, router]);
+  }, [query, pathname, router, searchParams]);
   return (
     <Collapsible open={isOpen} onOpenChange={setIsOpen}>
       <div className="flex gap-2">
@@ -60,7 +61,13 @@ const FilterByRating = ({ dictionary }) => {
           </span>
         </CollapsibleTrigger>
         <div>
-          <Button variant="secondary" onClick={()=>setQuery([])}   disabled={query.length===0} className="w-10 px-2" size="lg">
+          <Button
+            variant="secondary"
+            onClick={() => setQuery([])}
+            disabled={query.length === 0}
+            className="w-10 px-2"
+            size="lg"
+          >
             <RefreshCcw size={20} />
           </Button>
         </div>

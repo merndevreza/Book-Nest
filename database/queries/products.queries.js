@@ -19,7 +19,7 @@ export async function getFeaturedProducts(limit) {
       featured: true,
     })
       .limit(limit)
-      .select(["title", "author", "price","averageRating", "thumbnail"])
+      .select(["title", "author", "price", "averageRating", "thumbnail"])
       .lean();
     return {
       success: true,
@@ -39,7 +39,7 @@ export async function getLatestProducts(limit) {
     })
       .sort({ createdAt: -1 })
       .limit(limit)
-      .select(["title", "author", "price","averageRating", "thumbnail"])
+      .select(["title", "author", "price", "averageRating", "thumbnail"])
       .lean();
     return {
       success: true,
@@ -105,11 +105,13 @@ export async function getProductDetails(id) {
 //Shop page
 export async function getAllProductsShop(searchparams) {
   try {
-    const { filter } = constructFilterPipeline(searchparams);  
+    const { filter, skip, limit } = constructFilterPipeline(searchparams);
     await connectMongo();
     const response = await Products.find(filter)
-      .select(["title", "author", "price","averageRating", "thumbnail"])
-      .lean();  
+      .skip(skip)
+      .limit(limit)
+      .select(["title", "author", "price", "averageRating", "thumbnail"])
+      .lean();
     return {
       success: true,
       message: "Filtered Products",
@@ -119,18 +121,18 @@ export async function getAllProductsShop(searchparams) {
     return { success: false, message: error.message };
   }
 }
-export async function countPublishedProducts(){
-try {
-  await connectMongo()
-  const count= await Products.countDocuments({
-    status: "published",
-  })
-  return {
-    success: true,
-    message: "Count Published Products",
-    data:count,
-  };
-} catch (error) {
-  return { success: false, message: error.message };
-}
+export async function countPublishedProducts() {
+  try {
+    await connectMongo();
+    const count = await Products.countDocuments({
+      status: "published",
+    });
+    return {
+      success: true,
+      message: "Count Published Products",
+      data: count,
+    };
+  } catch (error) {
+    return { success: false, message: error.message };
+  }
 }

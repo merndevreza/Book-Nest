@@ -7,8 +7,7 @@ import { Products } from "../models/products-model";
 export async function getAllCategories(withCount) {
   try {
     await connectMongo();
-    const response = await Categories.find({}).select(["title"]).lean();
-   
+    const response = await Categories.find({}).select(["title"]).lean(); 
     let result = response.map(category=>{
       return {
         id:category?._id.toString(),

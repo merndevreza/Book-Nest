@@ -19,8 +19,7 @@ const FilterByPrice = ({ dictionary }) => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
-
-  const params = new URLSearchParams(searchParams);
+ 
   //input change handler
   const handleChange = (event) => {
     event.preventDefault();
@@ -32,16 +31,18 @@ const FilterByPrice = ({ dictionary }) => {
 
   //check the url first and update query state
   useEffect(() => {
+    const params = new URLSearchParams(searchParams.toString());
     const minPrice = params.get("min");
     const maxPrice = params.get("max");
 
     if (minPrice && maxPrice) {
       setQuery({ min: minPrice, max: maxPrice });
     }
-  }, []);
+  }, [searchParams]);
 
   //set or delete in the params
   useEffect(() => {
+    const params = new URLSearchParams(searchParams.toString());
     if (query.min && query.max) {
       params.set("min", query.min);
       params.set("max", query.max);
@@ -50,7 +51,7 @@ const FilterByPrice = ({ dictionary }) => {
       params.delete("max");
     }
     router.replace(`${pathname}?${params.toString()}`);
-  }, [query, pathname, router]);
+  }, [query, pathname, router,searchParams]);
   return (
     <Collapsible open={isOpen} onOpenChange={setIsOpen}>
       <div className="flex gap-2">

@@ -33,8 +33,6 @@ export function FilterByFormat({ dictionary }) {
   const searchParams = useSearchParams();
   const router = useRouter();
 
-  const params = new URLSearchParams(searchParams);
-
   //checkbox handler
   const handleChange = (e) => {
     const name = e.currentTarget.name;
@@ -50,22 +48,24 @@ export function FilterByFormat({ dictionary }) {
   };
   //Check query if already in the params
   useEffect(() => {
+    const params = new URLSearchParams(searchParams.toString());
     const formats = params.get("format");
     if (formats) {
       const decodedFormats = decodeURI(formats);
       const formatsArray = decodedFormats.split("|");
       setQuery(formatsArray);
     }
-  }, []);
+  }, [searchParams]);
   //set or delete query
   useEffect(() => {
+    const params = new URLSearchParams(searchParams.toString());
     if (query.length > 0) {
       params.set("format", encodeURI(query.join("|")));
     } else {
       params.delete("format");
     }
     router.replace(`${pathname}?${params.toString()}`);
-  }, [query, pathname, router]);
+  }, [query, pathname, router,searchParams]);
 
   return (
     <Collapsible open={isOpen} onOpenChange={setIsOpen}>

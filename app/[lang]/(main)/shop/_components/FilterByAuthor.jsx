@@ -16,7 +16,6 @@ export function FilterByAuthor({ authors, dictionary }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const router = useRouter();
-  const params = new URLSearchParams(searchParams);
 
   //checkbox handler
   const handleChange = (e) => {
@@ -33,22 +32,24 @@ export function FilterByAuthor({ authors, dictionary }) {
   };
   //check the url first and update query state
   useEffect(() => {
+    const params = new URLSearchParams(searchParams.toString());
     const ids = params.get("author");
     if (ids) {
       const decodedIds = decodeURI(ids);
       const idsArray = decodedIds.split("|");
       setQuery(idsArray);
     }
-  }, []);
+  }, [searchParams]);
   //set or delete in the params
   useEffect(() => {
+    const params = new URLSearchParams(searchParams.toString());
     if (query.length > 0) {
       params.set("author", encodeURI(query.join("|")));
     } else {
       params.delete("author");
     }
     router.replace(`${pathname}?${params.toString()}`);
-  }, [query, pathname, router]);
+  }, [query, pathname, router,searchParams]);
   return (
     <Collapsible open={isOpen} onOpenChange={setIsOpen}>
       <div className="flex gap-2">

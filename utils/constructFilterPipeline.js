@@ -6,8 +6,17 @@ const isValidObjectId = (id) => {
 };
 
 export const constructFilterPipeline = (fields) => {
-  const { search, formats, categories, authors, ratings, min, max } =
-    fields ?? {};
+  const {
+    search,
+    formats,
+    categories,
+    authors,
+    ratings,
+    min,
+    max,
+    skip = 0,
+    limit = 8,
+  } = fields ?? {};
 
   const searchQueryRegex = search ? new RegExp(search, "i") : undefined;
 
@@ -92,6 +101,6 @@ export const constructFilterPipeline = (fields) => {
       return { averageRating: { $gte: rating, $lt: rating + 1 } };
     });
   }
-  return { filter };
+  return { filter,skip,limit };
 };
 export default constructFilterPipeline;
