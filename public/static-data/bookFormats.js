@@ -1,7 +1,7 @@
 
-import printedBooks from "@/public/assets/images/book-types/printed-book-front.png";
-import ebooks from "@/public/assets/images/book-types/ebook-front.png";
-import audioBooks from "@/public/assets/images/book-types/audiobook-front.png"; 
+import printedBooks from "@/public/assets/images/banners/printed-book-front.png";
+import ebooks from "@/public/assets/images/banners/ebook-front.png";
+import audioBooks from "@/public/assets/images/banners/audiobook-front.png"; 
 
 
 export default function getBookFormatsContent(dictionary){

@@ -1,7 +1,7 @@
 
-import banner1 from "@/public/assets/images/ads/free-book-nest.png";
-import banner2 from "@/public/assets/images/ads/banner-2.png";
-import banner3 from "@/public/assets/images/ads/req-a-book.png";
+import banner1 from "@/public/assets/images/banners/cta-1.png";
+import banner2 from "@/public/assets/images/banners/cta-2.png";
+import banner3 from "@/public/assets/images/banners/cta-3.png";
 
 export default function getCTAContent(dictionary){
    const content = [

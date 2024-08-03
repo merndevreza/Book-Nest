@@ -1,7 +1,7 @@
 import { Progress } from "@/components/ui/progress";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import ProductDetailsTabs from "./ProductDetailsTabs"; 
+import ProductDetailsTabs from "./ProductDetailsTabs";
 import calculateInPercentage from "@/utils/calculateInPercentage";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
@@ -15,6 +15,7 @@ const ProductDetails = ({ book, dictionary }) => {
     category,
     reviewsCount,
     averageRating,
+    price,
   } = book;
 
   return (
@@ -54,30 +55,40 @@ const ProductDetails = ({ book, dictionary }) => {
         <div className="border rounded-lg bg-white dark:bg-[#030712] p-4 ">
           <h3>Stocks:</h3>
           <Separator className="h-[2px] mt-1 mb-3" />
-          <div className="grid grid-cols-5 items-center gap-2">
-            <p className="md:whitespace-nowrap col-span-1">Printed new: </p>
-            <div className="col-span-3">
-              <Progress
-                value={calculateInPercentage(stock?.printedNewBook_stock, 100)}
-                className="h-2"
-              />
+          {price?.printedNewBook_regularPrice && (
+            <div className="grid grid-cols-5 items-center gap-2">
+              <p className="md:whitespace-nowrap col-span-1">Printed new: </p>
+              <div className="col-span-3">
+                <Progress
+                  value={calculateInPercentage(
+                    stock?.printedNewBook_stock,
+                    100
+                  )}
+                  className="h-2"
+                />
+              </div>
+              <div className="col-span-1">
+                <Badge variant="outline">{stock?.printedNewBook_stock}</Badge>
+              </div>
             </div>
-            <div className="col-span-1">
-              <Badge variant="outline">{stock?.printedNewBook_stock}</Badge>
+          )}
+          {price?.printedOldBook_regularPrice && (
+            <div className="grid grid-cols-5 items-center gap-2">
+              <p className="md:whitespace-nowrap col-span-1">Printed old: </p>
+              <div className="col-span-3">
+                <Progress
+                  value={calculateInPercentage(
+                    stock?.printedOldBook_stock,
+                    100
+                  )}
+                  className="h-2"
+                />
+              </div>
+              <div className="col-span-1">
+                <Badge variant="outline">{stock?.printedOldBook_stock}</Badge>
+              </div>
             </div>
-          </div>
-          <div className="grid grid-cols-5 items-center gap-2">
-            <p className="md:whitespace-nowrap col-span-1">Printed old: </p>
-            <div className="col-span-3">
-              <Progress
-                value={calculateInPercentage(stock?.printedOldBook_stock, 100)}
-                className="h-2"
-              />
-            </div>
-            <div className="col-span-1">
-              <Badge variant="outline">{stock?.printedOldBook_stock}</Badge>
-            </div>
-          </div>
+          )}
         </div>
         <ProductDetailsTabs book={book} dictionary={dictionary} />
       </CardContent>

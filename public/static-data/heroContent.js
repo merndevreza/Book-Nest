@@ -1,6 +1,6 @@
 import banner1 from "@/public/assets/images/banners/banner-1.png";
 import banner2 from "@/public/assets/images/banners/banner-3.png";
-import banner3 from "@/public/assets/images/banners/banner-2.png";
+import banner3 from "@/public/assets/images/banners/banner-4.png";
 export default function getHeroContent(dictionary) {
   const banners = [
     {

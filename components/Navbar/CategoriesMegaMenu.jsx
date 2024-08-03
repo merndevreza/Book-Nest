@@ -1,9 +1,9 @@
 
 import { Menu } from "lucide-react";
-import ads1 from "@/public/assets/images/ads/product1.jpg";
-import ads2 from "@/public/assets/images/ads/product2.jpg";
-import ads3 from "@/public/assets/images/ads/product3.jpg";
-import ads4 from "@/public/assets/images/ads/product4.jpg"; 
+import ads1 from "@/public/assets/images/banners/add-1.jpg";
+import ads2 from "@/public/assets/images/banners/add-2.jpg";
+import ads3 from "@/public/assets/images/banners/add-3.jpg";
+import ads4 from "@/public/assets/images/banners/add-4.jpg";
 import CategoryListMenu from "../CategoryListMenu";
 import ImageCarousel from "../ImageCarousel";
 import { cn } from "@/lib/utils";
