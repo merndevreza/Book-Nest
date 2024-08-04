@@ -2,6 +2,7 @@ import Link from "next/link";
 import GoHomeBtn from "../_components/GoHomeBtn";
 import LoginForm from "./_components/LoginForm";
 import { getDictionary } from "../../dictionary/dictionary";
+import SocialLogin from "../_components/SocialLogin";
 
 const LoginPage = async({params:{lang}}) => {
   const dictionary=await getDictionary(lang)
@@ -17,6 +18,7 @@ const LoginPage = async({params:{lang}}) => {
             <p className="text-lg">{dictionary?.welcomeBack}</p>
           </div>
           <LoginForm dictionary={dictionary}/>
+          <SocialLogin  dictionary={dictionary}/>
         </div>
         <div className="bg-white dark:bg-gray-700 px-6 md:px-12 py-6 ">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
