@@ -67,31 +67,32 @@ export const {
         token.email = user.email;
         token.firstName = user.firstName;
         token.lastName = user.lastName;
-        token.role = user.role;
+        token.role = user.role || "user";
+ 
       } else if (account && user) {
         await connectMongo();
 
         try {
           let existingUser = await Users.findOne({ email: profile.email });
-
+ 
           if (existingUser) {
             token.id = existingUser._id;
             token.email = existingUser.email;
             token.firstName = existingUser.firstName;
             token.lastName = existingUser.lastName;
-            token.role = existingUser.role;
+            token.role = existingUser.role || "user"; 
           } else {
             const newUser = await Users.create({
               email: profile.email,
               firstName: profile.given_name,
               lastName: profile.family_name,
-              role: "user", 
+              role: "user",
             });
             token.id = newUser._id;
             token.email = newUser.email;
             token.firstName = newUser.firstName;
             token.lastName = newUser.lastName;
-            token.role = newUser.role;
+            token.role = newUser.role || "user"; 
           }
         } catch (error) {
           console.error("Error linking OAuth account:", error);
@@ -103,6 +104,8 @@ export const {
         token.email = profile.email;
         token.firstName = profile.given_name;
         token.lastName = profile.family_name;
+        token.name = profile.name;
+        token.role = profile.role || "user"; 
       }
       return token;
     },
@@ -112,7 +115,8 @@ export const {
       session.user.firstName = token.firstName;
       session.user.lastName = token.lastName;
       session.user.role = token.role;
-      session.user.name = token.name;
+      session.user.name = token.name; 
+
       return session;
     },
     async redirect({ baseUrl }) {

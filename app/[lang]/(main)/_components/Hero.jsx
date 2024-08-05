@@ -61,7 +61,7 @@ const Hero = ({ dictionary, lang }) => {
                   href={`/${lang}/${item?.path}`}
                   className="primary-btn self-start mx-auto sm:mx-0 h-11 rounded-md px-8"
                 >
-                  {dictionary?.explore}
+                  Shop
                 </Link>
               </div>
             </div>

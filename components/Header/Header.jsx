@@ -8,7 +8,7 @@ import { ThemeToggle } from "./ThemeToggle";
 import UserIcon from "./UserIcon";
 import WishlistIcon from "./WishlistIcon";
 
-const Header = ({dictionary,lang}) => {
+const Header = ({session, dictionary,lang}) => {
   const [isSticky, setIsSticky] = useState(false);  
 
   const handleScroll = () => {
@@ -36,7 +36,7 @@ const Header = ({dictionary,lang}) => {
         <div className="flex gap-4 justify-end order-3 col-span-1">
           <WishlistIcon lang={lang} />
           <CartIcon className="hidden md:block" lang={lang} />
-          <UserIcon lang={lang} />
+          <UserIcon  session={session}  lang={lang} />
           <ThemeToggle className="hidden md:inline-flex  bg-tertiary hover:bg-tertiary text-tertiary-foreground min-w-10 min-h-10" />
         </div>
       </div>

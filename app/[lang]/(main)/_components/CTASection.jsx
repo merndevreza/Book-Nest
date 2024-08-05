@@ -27,7 +27,7 @@ const CTASection = ({ dictionary, lang }) => {
                 </h2>
                 <p className="text-base  text-foreground dark:text-[#f6f6f6]">{item?.subtitle}</p>
                 <Link
-                  href={`/${lang}/${item?.path}`}
+                  href={`/${lang}/#`}
                   className="primary-btn self-start mx-auto sm:mx-0 h-11 rounded-md px-8"
                 >
                   {item?.buttonTitle}

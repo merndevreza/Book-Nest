@@ -12,13 +12,16 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import LogoutBtn from "../LogOut";
 
-const UserIcon = ({ lang }) => {
+const UserIcon = ({ session, lang }) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild className="hidden md:block">
         <Button variant="secondary" size="icon" className="rounded-full">
           <Avatar>
-            <AvatarImage src="" alt="user name" />
+            <AvatarImage
+              src={session ? session?.user.image : ""}
+              alt="user name"
+            />
             <AvatarFallback className="dark:bg-gray-600 bg-tertiary">
               <CircleUser className="h-5 w-5" />
             </AvatarFallback>
@@ -39,10 +42,14 @@ const UserIcon = ({ lang }) => {
         <DropdownMenuItem>
           <Link href={`/${lang}/dashboard`}>Dashboard</Link>
         </DropdownMenuItem>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem>
-          <LogoutBtn variant="ghost" className="h-5 pl-0" />
-        </DropdownMenuItem>
+        {session && (
+          <>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>
+              <LogoutBtn variant="ghost" className="h-5 pl-0" />
+            </DropdownMenuItem>
+          </>
+        )}
       </DropdownMenuContent>
     </DropdownMenu>
   );
