@@ -1,3 +1,4 @@
+import { authConfig } from "./auth.config";
 import { MongoDBAdapter } from "@auth/mongodb-adapter";
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
@@ -15,9 +16,7 @@ export const {
   signOut,
 } = NextAuth({
   adapter: MongoDBAdapter(client, { databaseName: "BookNest" }),
-  session: {
-    strategy: "jwt",
-  },
+  ...authConfig,
   providers: [
     CredentialProvider({
       credentials: {
@@ -88,7 +87,6 @@ export const {
               lastName: profile.family_name,
               role: "user", 
             });
-
             token.id = newUser._id;
             token.email = newUser.email;
             token.firstName = newUser.firstName;

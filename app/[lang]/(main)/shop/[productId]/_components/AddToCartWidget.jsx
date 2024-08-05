@@ -1,8 +1,16 @@
+import { auth } from "@/auth";
 import AddToCartBtn from "@/components/AddToCartBtn";
 import AddWishlistBtn from "@/components/AddWishlistBtn";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-const AddToCartWidget = ({ productId,regularPrice, discountedPrice, format, title }) => { 
+const AddToCartWidget = async ({
+  productId,
+  regularPrice,
+  discountedPrice,
+  format,
+  title,
+}) => {
+  const session = await auth();
   return (
     <Card>
       <CardHeader className="p-2 lg:p-4">
@@ -31,8 +39,16 @@ const AddToCartWidget = ({ productId,regularPrice, discountedPrice, format, titl
         </div>
 
         <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-2">
-          <AddToCartBtn productId={productId} format={format} />
-          <AddWishlistBtn productId={productId} format={format} />
+          <AddToCartBtn
+            isLoggedIn={session ? true : false}
+            productId={productId}
+            format={format}
+          />
+          <AddWishlistBtn
+            isLoggedIn={session ? true : false}
+            productId={productId}
+            format={format}
+          />
         </div>
       </CardContent>
     </Card>

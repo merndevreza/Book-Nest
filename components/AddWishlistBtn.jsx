@@ -10,12 +10,19 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "./ui/tooltip";
+import { useRouter } from "next/navigation";
 
-const AddWishlistBtn = ({productId,format}) => {
+const AddWishlistBtn = ({isLoggedIn, productId,format}) => {
+  const router = useRouter();
   const [isAdded, setIsAdded] = useState(false);
   const handleAddWishlist = () => {
+    if (!isLoggedIn) {
+      return router.push("/login");
+    }
     setIsAdded(!isAdded);
   };
+ 
+  
   return (
     <TooltipProvider>
       <Tooltip>
