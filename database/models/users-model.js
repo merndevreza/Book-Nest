@@ -17,11 +17,11 @@ const usersSchema = new Schema({
   },
   password: {
     type: String,
-    required: true,
+    required: false,
   },
   role: {
     type: String,
-    enum: ["author", "admin", "user"],
+    enum: [ "admin", "user"],
     default: "user",
     required: true,
   },

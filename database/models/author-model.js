@@ -1,10 +1,15 @@
 import mongoose, { Schema } from "mongoose";
 
 const authorSchema = new Schema({
-  user: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
+  firstName: {
+    type: String,
     required: true,
+    trim: true,
+  },
+  lastName: {
+    type: String,
+    required: true,
+    trim: true,
   },
   bio: {
     type: String,
@@ -23,6 +28,10 @@ const authorSchema = new Schema({
     type: Number,
     required: true,
     min: 0,
+  },
+  avatar: {
+    type: String,
+    required: false,
   },
   socialLinks: {
     facebook: {

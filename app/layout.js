@@ -11,9 +11,9 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   await connectMongo();
-  const session=await auth()
+  const session = await auth();
   console.log(session);
-  
+
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body className={`${asul.variable} ${sulphur.variable}`}>

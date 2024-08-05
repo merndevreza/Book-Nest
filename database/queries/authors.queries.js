@@ -8,19 +8,13 @@ import connectMongo from "../services/connectMongo";
 export async function getAllAuthors(withCount) {
   try {
     await connectMongo();
-    const response = await Authors.find({})
-      .select(["user"])
-      .populate({
-        path: "user",
-        model: Users,
-        select: ["firstName", "lastName"],
-      })
+    const response = await Authors.find({}) 
       .lean();
     let result = response.map((item) => {
       return {
         id: item?._id.toString(),
-        firstName: item?.user?.firstName,
-        lastName: item?.user?.lastName,
+        firstName: item?.firstName,
+        lastName: item?.lastName,
       };
     });
     if (withCount) {
@@ -35,8 +29,8 @@ export async function getAllAuthors(withCount) {
         const count=authorsIds.filter(id=>item?._id.toString()===id).length;
         return {
           id: item?._id.toString(),
-          firstName: item?.user?.firstName,
-          lastName: item?.user?.lastName,
+          firstName: item?.firstName,
+          lastName: item?.lastName,
           count
         };
       });

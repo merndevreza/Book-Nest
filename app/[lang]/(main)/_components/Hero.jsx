@@ -47,6 +47,8 @@ const Hero = ({ dictionary, lang }) => {
                 className="h-[280px] lg:h-[380px] mx-auto sm:mr-auto mt-auto object-contain order-2 sm:order-1 col-span-3 sm:col-span-1"
                 src={item.src}
                 alt={item.title}
+                height={380}
+                width="auto"
               />
               <div className="col-span-3 sm:col-span-2 flex flex-col justify-center gap-2 sm:gap-4 order-1 sm:order-2 p-5 pt-8 md:p-0 text-center sm:text-left">
                 <h2 className="text-2xl md:text-4xl xl:text-5xl font-semibold text-themeSecondary dark:text-themeSecondary-foreground">

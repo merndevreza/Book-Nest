@@ -16,6 +16,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 const FormSchema = z
   .object({
@@ -54,6 +56,8 @@ const FormSchema = z
   );
 
 export default function RegistrationForm({ dictionary }) {
+  const router = useRouter();
+  const [error, setError] = useState("");
   const form = useForm({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -66,26 +70,93 @@ export default function RegistrationForm({ dictionary }) {
     },
   });
 
-  function onSubmit(data) {
-    console.log("form Submitted", data);
+  async function onSubmit(data) {
+    try {
+      const response = await fetch("/api/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          firstName: data?.firstName,
+          lastName: data?.lastName,
+          email: data?.email,
+          password: data?.password,
+        }),
+      });
+      const result = await response.json();
+
+      if (response.ok && result.status === 201) { 
+        router.push("/login");
+      } else if (result.status === 409) {
+        setError(result.message);
+      } else {
+        setError(result.message);
+      }
+    } catch (error) {
+      setError(error.message);
+    }
   }
 
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
-        <div className="flex  gap-2 ">
+    <>
+      {error && <p className="text-red-500 text-lg">{error}</p>}
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
+          <div className="flex  gap-2 ">
+            <FormField
+              control={form.control}
+              name="firstName"
+              render={({ field }) => (
+                <FormItem className="w-full">
+                  <FormLabel className="text-base font-semibold">
+                    {dictionary?.firstName}
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      className="w-full"
+                      placeholder="First name"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="lastName"
+              render={({ field }) => (
+                <FormItem className="w-full">
+                  <FormLabel className="text-base font-semibold">
+                    {dictionary?.lastName}
+                  </FormLabel>
+                  <FormControl>
+                    <Input
+                      className="w-full"
+                      placeholder="Last name"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+
           <FormField
             control={form.control}
-            name="firstName"
+            name="email"
             render={({ field }) => (
-              <FormItem className="w-full">
+              <FormItem>
                 <FormLabel className="text-base font-semibold">
-                  {dictionary?.firstName}
+                  {dictionary?.email}
                 </FormLabel>
                 <FormControl>
                   <Input
+                    type="email"
                     className="w-full"
-                    placeholder="First name"
+                    placeholder="Email Address"
                     {...field}
                   />
                 </FormControl>
@@ -95,16 +166,17 @@ export default function RegistrationForm({ dictionary }) {
           />
           <FormField
             control={form.control}
-            name="lastName"
+            name="password"
             render={({ field }) => (
-              <FormItem className="w-full">
+              <FormItem>
                 <FormLabel className="text-base font-semibold">
-                  {dictionary?.lastName}
+                  {dictionary?.password}
                 </FormLabel>
                 <FormControl>
                   <Input
+                    type="password"
                     className="w-full"
-                    placeholder="Last name"
+                    placeholder="Create password"
                     {...field}
                   />
                 </FormControl>
@@ -112,93 +184,53 @@ export default function RegistrationForm({ dictionary }) {
               </FormItem>
             )}
           />
-        </div>
 
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="text-base font-semibold">
-                {dictionary?.email}
-              </FormLabel>
-              <FormControl>
-                <Input
-                  type="email"
-                  className="w-full"
-                  placeholder="Email Address"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="password"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="text-base font-semibold">
-                {dictionary?.password}
-              </FormLabel>
-              <FormControl>
-                <Input
-                  type="password"
-                  className="w-full"
-                  placeholder="Create password"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="passwordConfirm"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="text-base font-semibold">{dictionary?.confirmPassword}
-              </FormLabel>
-              <FormControl>
-                <Input
-                  type="password"
-                  className="w-full"
-                  placeholder="Re-enter the password"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="checkbox"
-          render={({ field }) => (
-            <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-3 shadow">
-              <FormControl>
-                <Checkbox
-                  checked={field.value}
-                  onCheckedChange={field.onChange}
-                />
-              </FormControl>
-              <div className="space-y-1 leading-none">
-                <FormLabel> 
-                  <Link className="font-semibold underline" href="#">
-                    {dictionary?.acceptTermsAndConditions}
-                  </Link>
+          <FormField
+            control={form.control}
+            name="passwordConfirm"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-base font-semibold">
+                  {dictionary?.confirmPassword}
                 </FormLabel>
-              </div>
-            </FormItem>
-          )}
-        />
-        <Button variant="themePrimary" type="submit">
-          {dictionary?.submit}
-        </Button>
-      </form>
-    </Form>
+                <FormControl>
+                  <Input
+                    type="password"
+                    className="w-full"
+                    placeholder="Re-enter the password"
+                    {...field}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="checkbox"
+            render={({ field }) => (
+              <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-3 shadow">
+                <FormControl>
+                  <Checkbox
+                    checked={field.value}
+                    onCheckedChange={field.onChange}
+                  />
+                </FormControl>
+                <div className="space-y-1 leading-none">
+                  <FormLabel>
+                    <Link className="font-semibold underline" href="#">
+                      {dictionary?.acceptTermsAndConditions}
+                    </Link>
+                  </FormLabel>
+                </div>
+              </FormItem>
+            )}
+          />
+          <Button variant="themePrimary" type="submit">
+            {dictionary?.submit}
+          </Button>
+        </form>
+      </Form>
+    </>
   );
 }

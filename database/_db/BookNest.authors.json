@@ -1,0 +1,86 @@
+[{
+  "_id": {
+    "$oid": "668b6fa0829608c69a464e18"
+  },
+  "firstName": "John",
+  "lastName": "Smith", 
+  "bio": "John Smith is a renowned author known for his gripping thriller novels. His works have been translated into multiple languages and have garnered a massive international following.",
+  "about": "John Smith started his writing career at a young age and has published over ten best-selling novels. His unique storytelling and complex characters have captivated readers worldwide.",
+  "totalBooks": 12,
+  "totalBooksSold": 1500000,
+  "avatar": "https://i.ibb.co/4ppfJrw/alexander-hipp-i-EEBWg-Y-6l-A-unsplash.jpg",
+  "socialLinks": {
+    "facebook": "https://www.facebook.com/",
+    "twitter": "https://www.twitter.com/",
+    "linkedIn": "https://www.linkedin.com/in/"
+  }
+  
+},
+{
+  "_id": {
+    "$oid": "668b6fa0829608c69a464e19"
+  },
+  "firstName": "Jane",
+  "lastName": "Doe",
+  "bio": "Jane Doe is a celebrated writer of historical fiction. Her detailed and immersive narratives bring the past to life, engaging readers with rich, historically accurate depictions.",
+  "about": "Jane Doe has a passion for history and storytelling. With a background in history and literature, she has authored numerous best-selling novels that transport readers to different eras.",
+  "totalBooks": 8,
+  "totalBooksSold": 800000,
+  "avatar": "https://i.ibb.co/4ppfJrw/alexander-hipp-i-EEBWg-Y-6l-A-unsplash.jpg",
+  "socialLinks": {
+    "facebook": "https://www.facebook.com/",
+    "twitter": "https://www.twitter.com/",
+    "linkedIn": "https://www.linkedin.com/in/"
+  }
+},
+{
+  "_id": {
+    "$oid": "668b6fa0829608c69a464e1a"
+  },
+  "firstName": "Michael",
+  "lastName": "Johnson",
+  "bio": "Michael Johnson is a prolific author in the science fiction genre. His futuristic and imaginative stories have earned him a dedicated fanbase and critical acclaim.",
+  "about": "Michael Johnson combines his love for technology and storytelling to create thought-provoking science fiction novels. He has published over fifteen novels, many of which have won prestigious awards.",
+  "totalBooks": 15,
+  "totalBooksSold": 1200000,
+  "avatar": "https://i.ibb.co/4ppfJrw/alexander-hipp-i-EEBWg-Y-6l-A-unsplash.jpg",
+  "socialLinks": {
+    "facebook": null,
+    "twitter": "https://www.twitter.com/",
+    "linkedIn": "https://www.linkedin.com/in/"
+  }
+},
+{
+  "_id": {
+    "$oid": "668b6fa0829608c69a464e1b"
+  },
+ "firstName": "Emily",
+  "lastName": "Davis",
+  "bio": "Emily Davis is a best-selling author known for her contemporary romance novels. Her books often explore complex relationships and emotional journeys, resonating deeply with readers.",
+  "about": "Emily Davis has a talent for crafting relatable and heartfelt stories. With over ten books published, she has become a favorite among romance readers and continues to write compelling love stories.",
+  "avatar": "https://i.ibb.co/4ppfJrw/alexander-hipp-i-EEBWg-Y-6l-A-unsplash.jpg",
+  "totalBooks": 10,
+  "totalBooksSold": 900000,
+  "socialLinks": {
+    "facebook": "https://www.facebook.com/",
+    "twitter": "https://www.twitter.com/",
+    "linkedIn": "https://www.linkedin.com/in/"
+  }
+},
+{
+  "_id": {
+    "$oid": "668b6fa0829608c69a464e1c"
+  },
+  "firstName": "William",
+  "lastName": "Brown",
+  "bio": "William Brown is an esteemed writer of fantasy novels. His richly detailed worlds and epic tales of adventure have captivated readers and established him as a leading voice in fantasy literature.",
+  "about": "William Brown has been writing fantasy novels for over two decades. His books often feature intricate plots and memorable characters, earning him numerous awards and a loyal readership.",
+  "totalBooks": 18,
+  "totalBooksSold": 2000000,
+  "avatar": "https://i.ibb.co/4ppfJrw/alexander-hipp-i-EEBWg-Y-6l-A-unsplash.jpg",
+  "socialLinks": {
+    "facebook": "https://www.facebook.com/",
+    "twitter": "https://www.twitter.com/",
+    "linkedIn": "https://www.linkedin.com/in/"
+  }
+}]

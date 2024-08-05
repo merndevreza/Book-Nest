@@ -1,0 +1,24 @@
+[
+  {
+    "_id": {
+      "$oid": "668b862a829608c69a464e3d"
+    },
+    "firstName": "Rezaul",
+    "lastName": "Karim",
+    "email": "rezaulkarimpstu@gmail.com",
+    "password": "664400",
+    "role": "admin",
+    "avatar": "https://i.ibb.co/w6BRVsX/Photo2.jpg"
+  },
+  {
+    "_id": {
+      "$oid": "668b862a829608c69a464e3e"
+    },
+    "firstName": "Tanjila",
+    "lastName": "Islam",
+    "email": "tanjila5339@gmail.com",
+    "password": "1234",
+    "role": "user",
+    "avatar": "https://i.ibb.co/s6xJpyr/christopher-campbell-r-DEOVt-E7v-Os-unsplash.jpg"
+  }
+]

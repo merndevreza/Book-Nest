@@ -5,8 +5,7 @@ import {
 } from "@/utils/replaceMongoID";
 import connectMongo from "../services/connectMongo";
 import { Products } from "../models/products-model";
-import { Authors } from "../models/author-model";
-import { Users } from "../models/users-model";
+import { Authors } from "../models/author-model"; 
 import { Sales } from "../models/sales-model";
 import constructFilterPipeline from "@/utils/constructFilterPipeline";
 
@@ -85,11 +84,7 @@ export async function getProductDetails(id) {
     const product = await Products.findById(id)
       .populate({
         path: "author.details",
-        model: Authors,
-        populate: {
-          path: "user",
-          model: Users,
-        },
+        model: Authors, 
       })
       .lean();
     return {

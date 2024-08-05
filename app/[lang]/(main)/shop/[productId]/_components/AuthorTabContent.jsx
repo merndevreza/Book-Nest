@@ -5,8 +5,7 @@ import { BookOpen, Heart } from "lucide-react";
 import Image from "next/image";
 
 const AuthorTabContent = ({ author }) => {
-  const { bio, about, totalBooks, totalBooksSold, socialLinks } = author?.details;
-  const { firstName, lastName, avatar } = author?.details?.user;
+  const { bio, about, totalBooks, totalBooksSold, socialLinks,firstName, lastName, avatar } = author?.details; 
   return (
     <Card className="px-4">
       <CardHeader>
