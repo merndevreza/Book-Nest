@@ -1,4 +1,4 @@
-import AddToCartWidget from "./AddToCartWidget";
+import AddToCartWidget from "@/components/AddToCartWidget/AddToCartWidget";
 
 const ProductPrices = ({ price,id,dictionary }) => {
   const {

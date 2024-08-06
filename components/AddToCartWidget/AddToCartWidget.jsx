@@ -1,7 +1,10 @@
+import {
+  checkProductInCart,
+  checkWishlist,
+} from "@/app/actions/products.actions";
 import { auth } from "@/auth";
-import AddToCartBtn from "@/components/AddToCartBtn";
-import AddWishlistBtn from "@/components/AddWishlistBtn";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import AddToCartWidgetActions from "./AddToCartWidgetActions";
 
 const AddToCartWidget = async ({
   productId,
@@ -11,6 +14,21 @@ const AddToCartWidget = async ({
   title,
 }) => {
   const session = await auth();
+
+  let wishlistResponse;
+  let cartResponse;
+
+  if (session) {
+    wishlistResponse = await checkWishlist(session?.user.id, productId, format);
+  }
+  if (session && (format === "ebook" || format === "audioBook")) {
+    cartResponse = await checkProductInCart(
+      session?.user.id,
+      productId,
+      format
+    );
+  }
+
   return (
     <Card>
       <CardHeader className="p-2 lg:p-4">
@@ -38,18 +56,16 @@ const AddToCartWidget = async ({
           )}
         </div>
 
-        <div className="flex flex-col-reverse md:flex-row justify-center items-center gap-2">
-          <AddToCartBtn
-            isLoggedIn={session ? true : false}
-            productId={productId}
-            format={format}
-          />
-          <AddWishlistBtn
-            isLoggedIn={session ? true : false}
-            productId={productId}
-            format={format}
-          />
-        </div>
+        <AddToCartWidgetActions
+          isLoggedIn={session ? true : false}
+          userId={session ? session?.user.id : null}
+          productId={productId}
+          format={format}
+          isFoundInCart={cartResponse?.success ? cartResponse?.isFound : false}
+          isFoundInWishlist={
+            wishlistResponse?.success ? wishlistResponse?.isFound : false
+          }
+        />
       </CardContent>
     </Card>
   );

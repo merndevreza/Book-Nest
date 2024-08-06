@@ -1,5 +1,4 @@
-"use client";
-import { Button } from "./ui/button";
+"use client"; 
 import heartEmpty from "@/public/assets/images/heart-empty.svg";
 import heartFilled from "@/public/assets/images/heart-filled.svg";
 import Image from "next/image";
@@ -9,20 +8,24 @@ import {
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "./ui/tooltip";
+} from "../ui/tooltip";
 import { useRouter } from "next/navigation";
+import { addToWishlist } from "@/app/actions/products.actions";
+import { Button } from "../ui/button";
 
-const AddWishlistBtn = ({isLoggedIn, productId,format}) => {
+const AddWishlistBtn = ({isFoundInWishlist,isLoggedIn,userId, productId,format}) => {
   const router = useRouter();
-  const [isAdded, setIsAdded] = useState(false);
-  const handleAddWishlist = () => {
+  const [isAdded, setIsAdded] = useState(isFoundInWishlist);
+  const handleAddWishlist = async() => {
     if (!isLoggedIn) {
       return router.push("/login");
     }
-    setIsAdded(!isAdded);
+    const response=await addToWishlist(userId,productId,format)
+    if (response?.success) {
+      setIsAdded(!isAdded);
+    } 
   };
- 
-  
+   
   return (
     <TooltipProvider>
       <Tooltip>
