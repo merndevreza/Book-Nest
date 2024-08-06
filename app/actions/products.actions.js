@@ -123,3 +123,28 @@ export async function checkProductInCart(userId, productId, format) {
     };
   }
 }
+export async function removeFromWishlist(item){
+  try {
+    await connectMongo();
+    const found = await Wishlist.deleteOne(item);
+    if (found) {
+      return {
+        success: true,
+        message: "Product found in the wishlists",
+        
+      };
+    } else {
+      return {
+        success: true,
+        message: "Product is not found in the wishlists",
+        isFound: false,
+      };
+    }
+  } catch (error) {
+    return {
+      success: false,
+      message: error.message,
+      status: 500,
+    };
+  }
+} 

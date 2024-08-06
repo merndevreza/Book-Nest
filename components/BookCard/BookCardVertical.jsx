@@ -1,50 +1,36 @@
+"use client";
 import RemoveFromWishlistBtn from "@/app/[lang]/(main)/wishlist/_components/RemoveFromWishlistBtn";
 import { Card, CardContent } from "../ui/card";
 import Image from "next/image";
 import AddToCartBtn from "../AddToCartWidget/AddToCartBtn";
-import SinglePrice from "../SinglePrice";
 import { camelCaseToCapitalized } from "@/utils/camelCaseToCapitalized";
 import { checkProductInCart } from "@/app/actions/products.actions";
+import Price from "./Price";
+import { useEffect, useState } from "react";
 
-const BookCardVertical = async ({ book, userId, isLoggedIn }) => {
-  const {
-    printedNewBook_regularPrice,
-    printedNewBook_discountedPrice,
-    printedOldBook_regularPrice,
-    printedOldBook_discountedPrice,
-    ebook_regularPrice,
-    ebook_discountedPrice,
-    audioBook_regularPrice,
-    audioBook_discountedPrice,
-  } = book?.productId?.price;
-  let discountedPrice;
-  let regularPrice;
-  if (book?.format === "printedNewBook") {
-    discountedPrice = printedNewBook_discountedPrice;
-    regularPrice = printedNewBook_regularPrice;
-  } else if (book?.format === "printedOldBook") {
-    discountedPrice = printedOldBook_discountedPrice;
-    regularPrice = printedOldBook_regularPrice;
-  } else if (book?.format === "ebook") {
-    discountedPrice = ebook_discountedPrice;
-    regularPrice = ebook_regularPrice;
-  } else if (book?.format === "audioBook") {
-    discountedPrice = audioBook_discountedPrice;
-    regularPrice = audioBook_regularPrice;
-  }
+const BookCardVertical = ({ book, userId, isLoggedIn, setBooks }) => {
+  const [found, setFound] = useState(false);
 
-  let cartResponse; 
-
-  if (
-    isLoggedIn &&
-    (book?.format === "ebook" || book?.format === "audioBook")
-  ) {
-    cartResponse = await checkProductInCart(
-      userId,
-      book?.productId?._id.toString(),
-      book?.format
-    );
-  }
+  useEffect(() => {
+    async function getIsInCart() {
+      if (
+        isLoggedIn &&
+        (book?.format === "ebook" || book?.format === "audioBook")
+      ) {
+        const cartResponse = await checkProductInCart(
+          userId,
+          book?.productId?.id,
+          book?.format
+        );
+        if (cartResponse?.success) {
+          setFound(cartResponse?.isFound);
+        } else {
+          setFound(false);
+        }
+      }
+    }
+    getIsInCart();
+  }, []);
 
   return (
     <Card className="bg-secondary dark:bg-transparent flex flex-col items-center justify-between sm:h-full">
@@ -65,10 +51,9 @@ const BookCardVertical = async ({ book, userId, isLoggedIn }) => {
                 By: {book?.productId?.author.firstName}{" "}
                 {book?.productId?.author.lastName}
               </p>
-              <SinglePrice
-                className="justify-start"
-                discountedPrice={discountedPrice}
-                regularPrice={regularPrice}
+              <Price
+                format={book?.format}
+                productPrice={book?.productId?.price}
               />
               <p className="inline-block px-2 py-0 dark:bg-themeSecondary bg-tertiary text-black">
                 Format: {camelCaseToCapitalized(book?.format)}
@@ -76,19 +61,21 @@ const BookCardVertical = async ({ book, userId, isLoggedIn }) => {
             </div>
             <div className="flex items-center gap-2">
               <AddToCartBtn
-                isFoundInCart={
-                  cartResponse?.success ? cartResponse?.isFound : false
-                }
+                isFoundInCart={found}
                 isLoggedIn={isLoggedIn}
                 userId={userId}
-                productId={book?.productId?._id.toString()}
+                productId={book?.productId?.id}
                 format={book?.format}
                 quantity={1}
               />
-              <RemoveFromWishlistBtn isLoggedIn={isLoggedIn}
+              <RemoveFromWishlistBtn
+              itemId={book?.id}
+                setBooks={setBooks}
+                isLoggedIn={isLoggedIn}
                 userId={userId}
-                productId={book?.productId?._id.toString()}
-                format={book?.format}/>
+                productId={book?.productId?.id}
+                format={book?.format}
+              />
             </div>
           </div>
         </div>

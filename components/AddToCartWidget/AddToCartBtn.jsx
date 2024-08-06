@@ -35,7 +35,7 @@ const AddToCartBtn = ({
       variant="themePrimary"
       size="sm"
     >
-      {found ? "Purchased" : "Add to Cart"}
+      {found ? "Added" : "Add to Cart"}
     </Button>
   );
 };
