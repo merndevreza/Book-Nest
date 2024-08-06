@@ -19,7 +19,7 @@ const QuantityInput = ({quantity,setQuantity}) => {
   };
 
   return (
-    <div className="flex border border-gray-300 text-gray-600 divide-x divide-gray-300 w-max">
+    <div className="flex border border-gray-300 text-gray-600 divide-x divide-gray-300 w-max rounded">
       <button
         className="h-7 w-7 text-xl select-none inline-block dark:text-themePrimary  border-r border-gray-300"
         onClick={handleDecrease}

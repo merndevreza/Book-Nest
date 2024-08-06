@@ -16,7 +16,7 @@ const AddToCartWidgetActions = ({
   return (
     <>
       <div className="flex flex-col-reverse md:flex-row justify-center items-end gap-2">
-        <div className="space-y-4">
+        <div className="space-y-3">
           {format !== "ebook" && format !== "audioBook" && (
            <div className="flex justify-center">
              <QuantityInput quantity={quantity} setQuantity={setQuantity} />

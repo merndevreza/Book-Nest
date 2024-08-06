@@ -5,6 +5,7 @@ import {
 import { auth } from "@/auth";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import AddToCartWidgetActions from "./AddToCartWidgetActions";
+import SinglePrice from "../SinglePrice";
 
 const AddToCartWidget = async ({
   productId,
@@ -37,25 +38,10 @@ const AddToCartWidget = async ({
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-2 px-2 lg:px-4 pb-2 lg:pb-4">
-        <div className="flex justify-center items-baseline mb-1 space-x-2">
-          {discountedPrice ? (
-            <>
-              <p className="text-base sm:text-lg text-themePrimary dark:text-themeSecondary-foreground  font-semibold">
-                ${discountedPrice}
-              </p>
-              <p className="text-sm text-gray-400 line-through">
-                ${regularPrice}
-              </p>
-            </>
-          ) : (
-            <>
-              <p className="text-base sm:text-lg text-themePrimary dark:text-themeSecondary-foreground  font-semibold">
-                ${regularPrice}
-              </p>
-            </>
-          )}
-        </div>
-
+        <SinglePrice
+          discountedPrice={discountedPrice}
+          regularPrice={regularPrice}
+        /> 
         <AddToCartWidgetActions
           isLoggedIn={session ? true : false}
           userId={session ? session?.user.id : null}

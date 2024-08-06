@@ -5,9 +5,10 @@ import {
 } from "@/utils/replaceMongoID";
 import connectMongo from "../services/connectMongo";
 import { Products } from "../models/products-model";
-import { Authors } from "../models/author-model"; 
+import { Authors } from "../models/author-model";
 import { Sales } from "../models/sales-model";
 import constructFilterPipeline from "@/utils/constructFilterPipeline";
+import { Wishlist } from "../models/users-wishlist";
 
 //Featured Products
 export async function getFeaturedProducts(limit) {
@@ -84,7 +85,7 @@ export async function getProductDetails(id) {
     const product = await Products.findById(id)
       .populate({
         path: "author.details",
-        model: Authors, 
+        model: Authors,
       })
       .lean();
     return {
@@ -119,12 +120,40 @@ export async function getAllProductsShop(searchparams) {
 export async function countProducts(searchparams) {
   try {
     await connectMongo();
-    const { filter } = constructFilterPipeline(searchparams);  
+    const { filter } = constructFilterPipeline(searchparams);
     const count = await Products.countDocuments(filter);
     return {
       success: true,
       message: "Count Published Products",
       data: count,
+    };
+  } catch (error) {
+    return { success: false, message: error.message };
+  }
+}
+
+//Wishlist Page
+export async function getWishlist(userId) {
+  try {
+    await connectMongo();
+    const response = await Wishlist.find({ userId })
+      .populate({
+        path: "productId",
+        model: Products,
+        select: [
+          "title",
+          "author.firstName",
+          "author.lastName",
+          "price",
+          "thumbnail",
+        ],
+      })
+      .select(["productId", "format"])
+      .lean();
+    return {
+      success: true,
+      message: "Wishlist Products",
+      data: replaceMongoIdInArray(response),
     };
   } catch (error) {
     return { success: false, message: error.message };
