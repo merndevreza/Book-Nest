@@ -2,7 +2,8 @@
 import { useRouter } from "next/navigation";
 import { Button } from "../ui/button";
 import { addToCart } from "@/app/actions/products.actions";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import useCartCount from "@/app/hooks/useCartCount";
 const AddToCartBtn = ({
   isFoundInCart,
   isLoggedIn,
@@ -12,21 +13,26 @@ const AddToCartBtn = ({
   quantity,
 }) => {
   const router = useRouter();
-  const [found, setFound] = useState(isFoundInCart);
+  const [found, setFound] = useState(false);
+  const { setCartCount } = useCartCount();
+
+  useEffect(() => {
+    setFound(isFoundInCart);
+  }, [isFoundInCart]);
 
   const handleAddToCart = async () => {
     if (!isLoggedIn) {
       return router.push("/login");
     }
-    const newCartItem = { userId, productId, format, quantity };
-    const response = await addToCart(newCartItem);
-
+    const response = await addToCart(userId, productId, format, quantity);
     if (response?.success) {
+      setCartCount((prev) => prev + quantity);
       if (format === "ebook" || format === "audioBook") {
         setFound(true);
       }
     }
   };
+
   return (
     <Button
       disabled={found}

@@ -1,8 +1,7 @@
 import BreadCrumb from "@/components/BreadCrumb";
 import { getWishlist } from "@/database/queries/products.queries";
 import { auth } from "@/auth";
-import WishlistProductsList from "./_components/WishlistProductsList";
-import { replaceMongoIdInObject } from "@/utils/replaceMongoID";
+import WishlistProductsList from "./_components/WishlistProductsList"; 
 const paths = [{ href: "wishlist", label: "Wishlist" }];
 
 const WishlistPage = async ({ params: { lang } }) => {
@@ -14,13 +13,7 @@ const WishlistPage = async ({ params: { lang } }) => {
 
   let products;
   if (response.success) {
-    products = response.data.map((item) => {
-      const product = replaceMongoIdInObject(item.productId);
-      return {
-        ...item,
-        productId: product,
-      };
-    });
+    products = response.data;
   }
 
   return (

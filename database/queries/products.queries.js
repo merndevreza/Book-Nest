@@ -9,6 +9,7 @@ import { Authors } from "../models/author-model";
 import { Sales } from "../models/sales-model";
 import constructFilterPipeline from "@/utils/constructFilterPipeline";
 import { Wishlist } from "../models/users-wishlist";
+import { Cart } from "../models/users-cart";
 
 //Featured Products
 export async function getFeaturedProducts(limit) {
@@ -150,10 +151,145 @@ export async function getWishlist(userId) {
       })
       .select(["productId", "format"])
       .lean();
+    // replace product Id
+    const products = response.map((item) => {
+      const product = replaceMongoIdInObject(item.productId);
+      return {
+        ...item,
+        productId: product,
+      };
+    });
+    const productsWithFinalPrice = products.map((item) => {
+      const {
+        printedNewBook_regularPrice,
+        printedNewBook_discountedPrice,
+        printedOldBook_regularPrice,
+        printedOldBook_discountedPrice,
+        ebook_regularPrice,
+        ebook_discountedPrice,
+        audioBook_regularPrice,
+        audioBook_discountedPrice,
+      } = item?.productId?.price;
+
+      let discountedPrice;
+      let regularPrice;
+      if (item?.format === "printedNewBook") {
+        discountedPrice = printedNewBook_discountedPrice;
+        regularPrice = printedNewBook_regularPrice;
+      } else if (item?.format === "printedOldBook") {
+        discountedPrice = printedOldBook_discountedPrice;
+        regularPrice = printedOldBook_regularPrice;
+      } else if (item?.format === "ebook") {
+        discountedPrice = ebook_discountedPrice;
+        regularPrice = ebook_regularPrice;
+      } else if (item?.format === "audioBook") {
+        discountedPrice = audioBook_discountedPrice;
+        regularPrice = audioBook_regularPrice;
+      }
+
+      const finalPrice = {
+        discountedPrice,
+        regularPrice,
+      };
+      const product = { ...item?.productId, price: finalPrice };
+      return { ...item, productId: product };
+    });
+
     return {
       success: true,
       message: "Wishlist Products",
-      data: replaceMongoIdInArray(response),
+      data: replaceMongoIdInArray(productsWithFinalPrice),
+    };
+  } catch (error) {
+    return { success: false, message: error.message };
+  }
+}
+
+//Cart Page
+export async function getCartProductsList(userId) {
+  try {
+    await connectMongo();
+    const response = await Cart.find({ userId })
+      .populate({
+        path: "productId",
+        model: Products,
+        select: [
+          "title",
+          "author.firstName",
+          "author.lastName",
+          "stock",
+          "price",
+          "thumbnail",
+        ],
+      })
+      .select(["productId", "format", "quantity", "addedAt"])
+      .lean();
+
+    // replace product Id
+    const products = response.map((item) => {
+      const product = replaceMongoIdInObject(item.productId);
+      return {
+        ...item,
+        productId: product,
+      };
+    });
+    // keep product price based on it's chosen format.
+    const productsWithFinalPrice = products.map((item) => {
+      const {
+        printedNewBook_regularPrice,
+        printedNewBook_discountedPrice,
+        printedOldBook_regularPrice,
+        printedOldBook_discountedPrice,
+        ebook_regularPrice,
+        ebook_discountedPrice,
+        audioBook_regularPrice,
+        audioBook_discountedPrice,
+      } = item?.productId?.price;
+
+      let discountedPrice;
+      let regularPrice;
+
+      if (item?.format === "printedNewBook") {
+        discountedPrice = printedNewBook_discountedPrice;
+        regularPrice = printedNewBook_regularPrice;
+      } else if (item?.format === "printedOldBook") {
+        discountedPrice = printedOldBook_discountedPrice;
+        regularPrice = printedOldBook_regularPrice;
+      } else if (item?.format === "ebook") {
+        discountedPrice = ebook_discountedPrice;
+        regularPrice = ebook_regularPrice;
+      } else if (item?.format === "audioBook") {
+        discountedPrice = audioBook_discountedPrice;
+        regularPrice = audioBook_regularPrice;
+      }
+      const finalPrice = {
+        discountedPrice,
+        regularPrice,
+      };
+      const product = { ...item?.productId, price: finalPrice };
+      return { ...item, productId: product };
+    });
+    return {
+      success: true,
+      message: "Cart Products",
+      data: replaceMongoIdInArray(productsWithFinalPrice),
+    };
+  } catch (error) {
+    return { success: false, message: error.message };
+  }
+}
+
+export async function getCartProductsCount(userId) {
+  try {
+    await connectMongo();
+    const response = await Cart.find({ userId });
+    const count=response.reduce((sum,currentItem)=>{
+      return sum + currentItem.quantity
+    },0)
+    return {
+      success: true,
+      message: "Count products in cart",
+      data: count,
     };
   } catch (error) {
     return { success: false, message: error.message };

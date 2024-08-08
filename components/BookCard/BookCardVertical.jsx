@@ -4,24 +4,26 @@ import { Card, CardContent } from "../ui/card";
 import Image from "next/image";
 import AddToCartBtn from "../AddToCartWidget/AddToCartBtn";
 import { camelCaseToCapitalized } from "@/utils/camelCaseToCapitalized";
-import { checkProductInCart } from "@/app/actions/products.actions";
-import Price from "./Price";
+import { checkDigitalProductInCart } from "@/app/actions/products.actions";
 import { useEffect, useState } from "react";
+import SinglePrice from "../SinglePrice";
+import QuantityInput from "../QuantityInput";
 
 const BookCardVertical = ({ book, userId, isLoggedIn, setBooks }) => {
   const [found, setFound] = useState(false);
-
+  const [quantity, setQuantity] = useState(1);
   useEffect(() => {
     async function getIsInCart() {
       if (
         isLoggedIn &&
         (book?.format === "ebook" || book?.format === "audioBook")
       ) {
-        const cartResponse = await checkProductInCart(
+        const cartResponse = await checkDigitalProductInCart(
           userId,
           book?.productId?.id,
           book?.format
         );
+
         if (cartResponse?.success) {
           setFound(cartResponse?.isFound);
         } else {
@@ -51,25 +53,36 @@ const BookCardVertical = ({ book, userId, isLoggedIn, setBooks }) => {
                 By: {book?.productId?.author.firstName}{" "}
                 {book?.productId?.author.lastName}
               </p>
-              <Price
-                format={book?.format}
-                productPrice={book?.productId?.price}
+              <SinglePrice
+                className="justify-start"
+                discountedPrice={book?.productId?.price?.discountedPrice}
+                regularPrice={book?.productId?.price?.regularPrice}
               />
               <p className="inline-block px-2 py-0 dark:bg-themeSecondary bg-tertiary text-black">
                 Format: {camelCaseToCapitalized(book?.format)}
               </p>
             </div>
-            <div className="flex items-center gap-2">
-              <AddToCartBtn
-                isFoundInCart={found}
-                isLoggedIn={isLoggedIn}
-                userId={userId}
-                productId={book?.productId?.id}
-                format={book?.format}
-                quantity={1}
-              />
+            <div className="flex items-center gap-4">
+              <div className="space-y-2">
+                <div className="flex justify-center">
+                {book?.format !== "ebook" && book?.format !== "audioBook" && (
+                  <QuantityInput
+                    quantity={quantity}
+                    setQuantity={setQuantity}
+                  />
+                )}
+                </div>
+                <AddToCartBtn
+                  isFoundInCart={found}
+                  isLoggedIn={isLoggedIn}
+                  userId={userId}
+                  productId={book?.productId?.id}
+                  format={book?.format}
+                  quantity={quantity}
+                />
+              </div> 
               <RemoveFromWishlistBtn
-              itemId={book?.id}
+                itemId={book?.id}
                 setBooks={setBooks}
                 isLoggedIn={isLoggedIn}
                 userId={userId}

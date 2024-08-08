@@ -1,5 +1,5 @@
 import {
-  checkProductInCart,
+  checkDigitalProductInCart,
   checkWishlist,
 } from "@/app/actions/products.actions";
 import { auth } from "@/auth";
@@ -23,7 +23,7 @@ const AddToCartWidget = async ({
     wishlistResponse = await checkWishlist(session?.user.id, productId, format);
   }
   if (session && (format === "ebook" || format === "audioBook")) {
-    cartResponse = await checkProductInCart(
+    cartResponse = await checkDigitalProductInCart(
       session?.user.id,
       productId,
       format

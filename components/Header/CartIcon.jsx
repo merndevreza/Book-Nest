@@ -1,9 +1,25 @@
-import { ShoppingCart } from "lucide-react"; 
+"use client";
+import { ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Badge } from "../ui/badge";
+import useCartCount from "@/app/hooks/useCartCount";
+import { useEffect } from "react";
+import { getCartProductsCount } from "@/database/queries/products.queries";
 
-const CartIcon = ({ className, showTitle,lang }) => {
+const CartIcon = ({ session, className, showTitle, lang }) => {
+  const { cartCount, setCartCount } = useCartCount();
+  useEffect(() => {
+    async function getCartCount() {
+      if (session?.user) {
+        const response = await getCartProductsCount(session?.user.id);
+        if (response.success) {
+          setCartCount(response.data);
+        }
+      }
+    }
+    getCartCount();
+  }, []);
   return (
     <div>
       <Link
@@ -14,10 +30,11 @@ const CartIcon = ({ className, showTitle,lang }) => {
       >
         <span className="relative inline-block">
           <ShoppingCart size={24} />
-
-          <Badge className=" w-5 h-5 rounded-full bg-themeSecondary text-themeSecondary-foreground absolute -top-2 -right-3 text-sm text-center flex justify-center items-center">
-            6
-          </Badge>
+          {cartCount && (
+            <Badge className=" w-5 h-5 rounded-full bg-themeSecondary text-themeSecondary-foreground absolute -top-2 -right-3 text-sm text-center flex justify-center items-center">
+              {cartCount}
+            </Badge>
+          )}
         </span>
         {showTitle && <span className="font-semibold">Cart</span>}
       </Link>

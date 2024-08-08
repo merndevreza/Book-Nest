@@ -1,8 +1,8 @@
-import CartProductsTable from "./_components/CartProductsTable";
-import CartSummary from "./_components/CartSummary";
 import BreadCrumb from "@/components/BreadCrumb";
-import { getDictionary } from "../../dictionary/dictionary"; 
-import getBooks from "@/public/static-data/books";
+import { getDictionary } from "../../dictionary/dictionary";
+import { auth } from "@/auth";
+import { getCartProductsList } from "@/database/queries/products.queries";
+import CartPageContainer from "./_components/CartPageContainer";
 
 const paths = [
   {
@@ -10,17 +10,26 @@ const paths = [
     href: "cart",
   },
 ];
-const books=getBooks()
-const CartPage = async({params:{lang}}) => {
-  const dictionary=await getDictionary(lang)
+const CartPage = async ({ params: { lang } }) => {
+  const dictionary = await getDictionary(lang);
+  const session = await auth();
+  let products;
+  if (session) {
+    const response = await getCartProductsList(session?.user?.id);
+    if (response.success) {
+      products = response.data;
+    }
+  } 
+  
   return (
     <main className="px-1 sm:px-16 lg:px-8  container section-padding">
       <BreadCrumb lang={lang} paths={paths} />
-
-      <div className=" grid grid-cols-5 gap-8 xl:gap-16 ">
-        <CartProductsTable className="col-span-5 lg:col-span-3" books={books} dictionary={dictionary} lang={lang}/>
-        <CartSummary books={books} dictionary={dictionary} lang={lang} />
-      </div>
+      <CartPageContainer
+        products={products}
+        userId={session?.user?.id}
+        dictionary={dictionary}
+        lang={lang}
+      />
     </main>
   );
 };

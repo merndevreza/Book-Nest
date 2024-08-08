@@ -2,7 +2,7 @@ import { ThemeProvider } from "@/components/Header/ThemeProvider";
 import { asul, sulphur } from "./fonts";
 import "./globals.css";
 import connectMongo from "@/database/services/connectMongo";
-import { auth } from "@/auth";
+import { auth } from "@/auth"; 
 
 export const metadata = {
   title: "Book Nest",
@@ -23,7 +23,7 @@ export default async function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+           {children} 
         </ThemeProvider>
       </body>
     </html>

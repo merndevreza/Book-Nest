@@ -8,14 +8,14 @@ import {
 } from "@/components/ui/table";
 import RemoveFromCartBtn from "./RemoveFromCartBtn";
 import CartBookInfo from "./CartBookInfo";
-import QuantityInput from "@/components/QuantityInput";
-import AvailableTypes from "@/components/AvailableTypes";
 import Link from "next/link";
-const CartProductsTable = ({ books, className, dictionary,lang }) => {
+import Subtotal from "./Subtotal";
+import { camelCaseToCapitalized } from "@/utils/camelCaseToCapitalized";
+const CartProductsTable = ({ books, setBooks, userId, dictionary, lang }) => {
   return (
-    <div className={className}>
+    <div className="col-span-5 lg:col-span-3">
       <Table>
-        <TableHeader className="text-lg">
+        <TableHeader className="text-lg bg-secondary">
           <TableRow>
             <TableHead></TableHead>
             <TableHead className="text-left">{dictionary?.book}</TableHead>
@@ -31,30 +31,30 @@ const CartProductsTable = ({ books, className, dictionary,lang }) => {
           {books.map((book) => (
             <TableRow key={book.id} className="hover:bg-secondary">
               <TableCell className="font-medium pl-1 pr-0 sm:p-4">
-                <RemoveFromCartBtn />
+                <RemoveFromCartBtn 
+                  setBooks={setBooks}
+                  itemId={book?.id}
+                />
               </TableCell>
-              <TableCell className=" pl-1 pr-0 sm:p-4">
-                <Link href={`/${lang}/shop/01`}>
-                  <CartBookInfo book={book} />
-                </Link>
+              <TableCell className=" pl-1 pr-0 sm:p-4"> 
+                  <CartBookInfo book={book} lang={lang}/> 
               </TableCell>
               <TableCell className="hidden md:table-cell">
                 <div className="flex gap-2 justify-center my-2">
-                  {book?.types.map((type) => (
-                    <AvailableTypes type={type} key={type} />
-                  ))}
+                  <p>{camelCaseToCapitalized(book?.format)}</p>
                 </div>
               </TableCell>
               <TableCell className="text-center">
                 <div className="flex gap-2 justify-center my-2 md:hidden">
-                  {book?.types.map((type) => (
-                    <AvailableTypes type={type} key={type} />
-                  ))}
+                  <p>{camelCaseToCapitalized(book?.format)}</p>
                 </div>
-                <p className="text-base sm:text-xl mb-2 dark:text-themePrimary font-semibold">
-                  ${book?.discountedPrice || book?.regularPrice}
-                </p>
-                <QuantityInput />
+                <Subtotal
+                book={book}
+                  books={books}
+                  setBooks={setBooks}
+                  format={book?.format}
+                  productPrice={book?.productId?.price}
+                />
               </TableCell>
             </TableRow>
           ))}
