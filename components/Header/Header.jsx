@@ -34,7 +34,7 @@ const Header = ({session, dictionary,lang}) => {
         <Search lang={lang} dictionary={dictionary} className="order-4 lg:order-2 col-span-5 lg:col-span-3" />
 
         <div className="flex gap-4 justify-end order-3 col-span-1">
-          <WishlistIcon lang={lang} />
+          <WishlistIcon session={session} lang={lang} />
           <CartIcon session={session} className="hidden md:block" lang={lang} />
           <UserIcon  session={session}  lang={lang} />
           <ThemeToggle className="hidden md:inline-flex  bg-tertiary hover:bg-tertiary text-tertiary-foreground min-w-10 min-h-10" />

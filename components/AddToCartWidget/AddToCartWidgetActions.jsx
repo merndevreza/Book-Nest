@@ -25,6 +25,7 @@ const AddToCartWidgetActions = ({
 
           <AddToCartBtn
             quantity={quantity}
+            setQuantity={setQuantity}
             userId={userId}
             isLoggedIn={isLoggedIn}
             isFoundInCart={isFoundInCart}

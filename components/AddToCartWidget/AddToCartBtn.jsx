@@ -4,6 +4,9 @@ import { Button } from "../ui/button";
 import { addToCart } from "@/app/actions/products.actions";
 import { useEffect, useState } from "react";
 import useCartCount from "@/app/hooks/useCartCount";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const AddToCartBtn = ({
   isFoundInCart,
   isLoggedIn,
@@ -11,6 +14,7 @@ const AddToCartBtn = ({
   productId,
   format,
   quantity,
+  setQuantity
 }) => {
   const router = useRouter();
   const [found, setFound] = useState(false);
@@ -30,6 +34,17 @@ const AddToCartBtn = ({
       if (format === "ebook" || format === "audioBook") {
         setFound(true);
       }
+      setQuantity(1)
+      toast.success("Added in cart.", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
     }
   };
 

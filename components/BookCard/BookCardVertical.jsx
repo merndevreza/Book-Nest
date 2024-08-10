@@ -79,6 +79,7 @@ const BookCardVertical = ({ book, userId, isLoggedIn, setBooks }) => {
                   productId={book?.productId?.id}
                   format={book?.format}
                   quantity={quantity}
+                  setQuantity={setQuantity}
                 />
               </div> 
               <RemoveFromWishlistBtn

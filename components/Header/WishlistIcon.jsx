@@ -1,10 +1,9 @@
 import { Heart } from "lucide-react";
-import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Badge } from "../ui/badge";
 
-const WishlistIcon = ({ className, showTitle,lang }) => {
+const WishlistIcon = ({session, className, showTitle, lang }) => {
   return (
     <Link
       href={`/${lang}/wishlist`}
@@ -14,10 +13,11 @@ const WishlistIcon = ({ className, showTitle,lang }) => {
     >
       <span className="relative inline-block">
         <Heart size={24} />
-
-        <Badge className=" w-5 h-5 rounded-full bg-themeSecondary text-themeSecondary-foreground absolute -top-2 -right-3 text-sm text-center flex justify-center items-center">
-          6
-        </Badge>
+        {session && (
+          <Badge className=" w-5 h-5 rounded-full bg-themeSecondary text-themeSecondary-foreground absolute -top-2 -right-3 text-sm text-center flex justify-center items-center">
+            6
+          </Badge>
+        )}
       </span>
       {showTitle && <span className="font-semibold">Wishlist</span>}
     </Link>

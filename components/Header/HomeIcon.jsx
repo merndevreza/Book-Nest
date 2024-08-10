@@ -1,9 +1,9 @@
 import { House } from "lucide-react";
 import Link from "next/link";
 
-const HomeIcon = ({showTitle,lang}) => {
+const HomeIcon = ({showTitle}) => {
    return (
-      <Link className=" flex flex-col items-center  text-sm" href={`/${lang}`} >
+      <Link className=" flex flex-col items-center  text-sm" href="/" >
          <House size={24}/>
          {
             showTitle && <span className="font-semibold">Home</span>

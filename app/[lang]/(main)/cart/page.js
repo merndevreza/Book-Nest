@@ -3,6 +3,7 @@ import { getDictionary } from "../../dictionary/dictionary";
 import { auth } from "@/auth";
 import { getCartProductsList } from "@/database/queries/products.queries";
 import CartPageContainer from "./_components/CartPageContainer";
+import ReqUserToLogin from "@/components/ReqUserToLogin";
 
 const paths = [
   {
@@ -19,17 +20,22 @@ const CartPage = async ({ params: { lang } }) => {
     if (response.success) {
       products = response.data;
     }
-  } 
-  
+  }
+
   return (
     <main className="px-1 sm:px-16 lg:px-8  container section-padding">
-      <BreadCrumb lang={lang} paths={paths} />
-      <CartPageContainer
-        products={products}
-        userId={session?.user?.id}
-        dictionary={dictionary}
-        lang={lang}
-      />
+      {!session && <ReqUserToLogin lang={lang} />}
+      {session && (
+        <>
+          <BreadCrumb lang={lang} paths={paths} />
+          <CartPageContainer
+            products={products}
+            userId={session?.user?.id}
+            dictionary={dictionary}
+            lang={lang}
+          />
+        </>
+      )}
     </main>
   );
 };

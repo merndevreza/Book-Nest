@@ -33,6 +33,7 @@ export default async function MainLayout({ children, params: { lang } }) {
         <MobileSecondaryHeader
           categories={categoriesResponse?.data}
           lang={lang}
+          session={session}
           dictionary={dictionary}
         />
         {children}

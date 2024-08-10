@@ -1,52 +1,5 @@
 [{
   "_id": {
-    "$oid": "668b7435829608c69a464e1f"
-  },
-  "title": "The Great Adventure",
-  "stock": {
-    "printedNewBook_stock": 25,
-    "printedOldBook_stock": 15
-  },
-  "category": {
-    "name": "Fiction",
-    "details": {
-      "$oid": "668b553017617fce4a589c68"
-    }
-  },
-  "author": {
-    "firstName": "William",
-    "lastName": "Brown",
-    "details": {
-      "$oid": "668b6fa0829608c69a464e1c"
-    }
-  },
-  "edition": "1st",
-  "publisher": "Adventure Publishing",
-  "page": 350,
-  "language": "English",
-  "country": "USA",
-  "featured": true,
-  "price": {
-    "printedNewBook_regularPrice": 25.99,
-    "printedNewBook_discountedPrice": 20.99,
-    "printedOldBook_regularPrice": 15.99,
-    "printedOldBook_discountedPrice": 12.99,
-    "ebook_regularPrice": 9.99,
-    "ebook_discountedPrice": 7.99,
-    "audioBook_regularPrice": null,
-    "audioBook_discountedPrice": null
-  },
-  "sku": "BOOK001",
-  "shortDescription": "An exhilarating journey through uncharted territories.",
-  "thumbnail": "https://i.ibb.co/NS5Y6HJ/book-1.jpg",
-  "createdAt": "2023-01-01T00:00:00Z",
-  "status": "published",
-  "averageRating":4.5,
-  "reviewsCount": 150,
-  "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
-},
-{
-  "_id": {
     "$oid": "668b7435829608c69a464e20"
   },
   "title": "Mystery of the Old Manor",
@@ -61,10 +14,10 @@
     }
   },
   "author": {
-    "firstName": "William",
-    "lastName": "Brown",
+    "firstName": "Emily",
+    "lastName": "Davis",
     "details": {
-      "$oid": "668b6fa0829608c69a464e1c"
+      "$oid": "668b6fa0829608c69a464e1b"
     }
   },
   "edition": "2nd",
@@ -88,7 +41,7 @@
   "thumbnail": "https://i.ibb.co/wsw1c5G/book-2.jpg",
   "createdAt": "2023-02-14T00:00:00Z",
   "status": "published",
-  "averageRating":4.5,
+  "averageRating": 5,
   "reviewsCount": 150,
   "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
 },
@@ -102,16 +55,16 @@
     "printedOldBook_stock": 15
   },
   "category": {
-    "name": "Fiction",
+    "name": "Non-Fiction",
     "details": {
-      "$oid": "668b553017617fce4a589c68"
+      "$oid": "668b553017617fce4a589c69"
     }
   },
   "author": {
-    "firstName": "William",
-    "lastName": "Brown",
+    "firstName": "Emily",
+    "lastName": "Davis",
     "details": {
-      "$oid": "668b6fa0829608c69a464e1c"
+      "$oid": "668b6fa0829608c69a464e1b"
     }
   },
   "edition": "1st",
@@ -135,15 +88,15 @@
   "thumbnail": "https://i.ibb.co/72t9vMX/book-3.jpg",
   "createdAt": "2023-03-10T00:00:00Z",
   "status": "published",
-  "averageRating":4.5,
+  "averageRating": 4,
   "reviewsCount": 150,
   "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
 },
 {
   "_id": {
-    "$oid": "668b7435829608c69a464e22"
+    "$oid": "668b7435829608c69a464e2a"
   },
-  "title": "The Fantasy Realm",
+  "title": "Classic Literature",
   "stock": {
     "printedNewBook_stock": 25,
     "printedOldBook_stock": 15
@@ -155,128 +108,81 @@
     }
   },
   "author": {
-    "firstName": "William",
-    "lastName": "Brown",
+    "firstName": "Emily",
+    "lastName": "Davis",
     "details": {
-      "$oid": "668b6fa0829608c69a464e1c"
-    }
-  },
-  "edition": "3rd",
-  "publisher": "Fantasy Books",
-  "page": 500,
-  "language": "English",
-  "country": "Australia",
-  "featured": true,
-  "price": {
-    "printedNewBook_regularPrice": null,
-    "printedNewBook_discountedPrice": null,
-    "printedOldBook_regularPrice": 25.99,
-    "printedOldBook_discountedPrice": 20.99,
-    "ebook_regularPrice": 9.99,
-    "ebook_discountedPrice": 7.99,
-    "audioBook_regularPrice": 40,
-    "audioBook_discountedPrice": 33
-  },
-  "sku": "BOOK004",
-  "shortDescription": "An epic tale of fantasy and adventure.",
-  "thumbnail": "https://i.ibb.co/dLq1YVr/book-4.jpg",
-  "createdAt": "2023-04-05T00:00:00Z",
-  "status": "published",
-  "averageRating":4.5,
-  "reviewsCount": 150,
-  "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
-},
-{
-  "_id": {
-    "$oid": "668b7435829608c69a464e23"
-  },
-  "title": "Biography of a Legend",
-  "stock": {
-    "printedNewBook_stock": 25,
-    "printedOldBook_stock": 15
-  },
-  "category": {
-    "name": "Fiction",
-    "details": {
-      "$oid": "668b553017617fce4a589c68"
-    }
-  },
-  "author": {
-    "firstName": "William",
-    "lastName": "Brown",
-    "details": {
-      "$oid": "668b6fa0829608c69a464e1c"
+      "$oid": "668b6fa0829608c69a464e1b"
     }
   },
   "edition": "1st",
-  "publisher": "Biography Press",
-  "page": 320,
-  "language": "English",
-  "country": "USA",
-  "featured": true,
-  "price": {
-    "printedNewBook_regularPrice": null,
-    "printedNewBook_discountedPrice": null,
-    "printedOldBook_regularPrice": 25.99,
-    "printedOldBook_discountedPrice": 20.99,
-    "ebook_regularPrice": 9.99,
-    "ebook_discountedPrice": 7.99,
-    "audioBook_regularPrice": 22,
-    "audioBook_discountedPrice": null
-  },
-  "sku": "BOOK005",
-  "shortDescription": "The life story of a remarkable individual.",
-  "thumbnail": "https://i.ibb.co/jWvbkZW/book-5.jpg",
-  "createdAt": "2023-05-01T00:00:00Z",
-  "status": "published",
-  "averageRating":4.5,
-  "reviewsCount": 150,
-  "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
-},
-{
-  "_id": {
-    "$oid": "668b7435829608c69a464e24"
-  },
-  "title": "History Unveiled",
-  "stock": {
-    "printedNewBook_stock": 25,
-    "printedOldBook_stock": 15
-  },
-  "category": {
-    "name": "Fiction",
-    "details": {
-      "$oid": "668b553017617fce4a589c68"
-    }
-  },
-  "author": {
-    "firstName": "William",
-    "lastName": "Brown",
-    "details": {
-      "$oid": "668b6fa0829608c69a464e1c"
-    }
-  },
-  "edition": "2nd",
-  "publisher": "History House",
-  "page": 400,
+  "publisher": "Literary Classics",
+  "page": 700,
   "language": "English",
   "country": "UK",
   "featured": true,
   "price": {
-    "printedNewBook_regularPrice": 35,
-    "printedNewBook_discountedPrice": 30,
+    "printedNewBook_regularPrice": 55,
+    "printedNewBook_discountedPrice": null,
     "printedOldBook_regularPrice": 25.99,
     "printedOldBook_discountedPrice": 20.99,
-    "ebook_regularPrice": null,
-    "ebook_discountedPrice": null,
-    "audioBook_regularPrice": 43,
-    "audioBook_discountedPrice": 35
+    "ebook_regularPrice": 9.99,
+    "ebook_discountedPrice": 7.99,
+    "audioBook_regularPrice": null,
+    "audioBook_discountedPrice": null
   },
-  "sku": "BOOK006",
-  "shortDescription": "A deep dive into historical events.",
-  "thumbnail": "https://i.ibb.co/4FB103c/book-6.jpg",
-  "createdAt": "2023-06-15T00:00:00Z",
+  "sku": "BOOK012",
+  "shortDescription": "Timeless classics of literature.",
+  "thumbnail": "https://i.ibb.co/n6QHbhb/book-12.jpg",
+  "createdAt": "2023-12-15T00:00:00Z",
   "status": "published",
-  "averageRating":4.5,
+  "averageRating": 3,
+  "reviewsCount": 150,
+  "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
+},
+{
+  "_id": {
+    "$oid": "668b7435829608c69a464e2c"
+  },
+  "title": "Epic Fantasy",
+  "stock": {
+    "printedNewBook_stock": 25,
+    "printedOldBook_stock": 15
+  },
+  "category": {
+    "name": "Non-Fiction",
+    "details": {
+      "$oid": "668b553017617fce4a589c69"
+    }
+  },
+  "author": {
+    "firstName": "Emily",
+    "lastName": "Davis",
+    "details": {
+      "$oid": "668b6fa0829608c69a464e1b"
+    }
+  },
+  "edition": "1st",
+  "publisher": "Epic Reads",
+  "page": 600,
+  "language": "English",
+  "country": "Australia",
+  "featured": true,
+  "price": {
+    "printedNewBook_regularPrice": 33,
+    "printedNewBook_discountedPrice": null,
+    "printedOldBook_regularPrice": 25.99,
+    "printedOldBook_discountedPrice": 20.99,
+    "ebook_regularPrice": 9.99,
+    "ebook_discountedPrice": 7.99,
+    "audioBook_regularPrice": null,
+    "audioBook_discountedPrice": null
+  },
+  "sku": "BOOK014",
+  "shortDescription": "An epic saga of fantasy and magic.",
+  "thumbnail": "https://i.ibb.co/3Cv5Q7G/book-14.jpg",
+  "createdAt": "2024-02-05T00:00:00Z",
+  "status": "published",
+  "averageRating": 5,
   "reviewsCount": 150,
   "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
 },
@@ -290,16 +196,16 @@
     "printedOldBook_stock": 15
   },
   "category": {
-    "name": "Fiction",
+    "name": "Non-Fiction",
     "details": {
-      "$oid": "668b553017617fce4a589c68"
+      "$oid": "668b553017617fce4a589c69"
     }
   },
   "author": {
-    "firstName": "William",
-    "lastName": "Brown",
+    "firstName": "Jane",
+    "lastName": "Doe",
     "details": {
-      "$oid": "668b6fa0829608c69a464e1c"
+      "$oid": "668b6fa0829608c69a464e19"
     }
   },
   "edition": "1st",
@@ -323,54 +229,7 @@
   "thumbnail": "https://i.ibb.co/ZSyBpFF/book-7.jpg",
   "createdAt": "2023-07-20T00:00:00Z",
   "status": "published",
-  "averageRating":4.5,
-  "reviewsCount": 150,
-  "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
-},
-{
-  "_id": {
-    "$oid": "668b7435829608c69a464e26"
-  },
-  "title": "Romantic Tales",
-  "stock": {
-    "printedNewBook_stock": 25,
-    "printedOldBook_stock": 15
-  },
-  "category": {
-    "name": "Fiction",
-    "details": {
-      "$oid": "668b553017617fce4a589c68"
-    }
-  },
-  "author": {
-    "firstName": "William",
-    "lastName": "Brown",
-    "details": {
-      "$oid": "668b6fa0829608c69a464e1c"
-    }
-  },
-  "edition": "4th",
-  "publisher": "Romance Reads",
-  "page": 380,
-  "language": "English",
-  "country": "USA",
-  "featured": true,
-  "price": {
-    "printedNewBook_regularPrice": null,
-    "printedNewBook_discountedPrice": null,
-    "printedOldBook_regularPrice": 25.99,
-    "printedOldBook_discountedPrice": 20.99,
-    "ebook_regularPrice": 9.99,
-    "ebook_discountedPrice": 7.99,
-    "audioBook_regularPrice": null,
-    "audioBook_discountedPrice": null
-  },
-  "sku": "BOOK008",
-  "shortDescription": "A collection of heartwarming romance stories.",
-  "thumbnail": "https://i.ibb.co/pyYysbt/book-8.jpg",
-  "createdAt": "2023-08-05T00:00:00Z",
-  "status": "published",
-  "averageRating":4.5,
+  "averageRating": 1,
   "reviewsCount": 150,
   "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
 },
@@ -384,16 +243,16 @@
     "printedOldBook_stock": 15
   },
   "category": {
-    "name": "Fiction",
+    "name": "Mystery",
     "details": {
-      "$oid": "668b553017617fce4a589c68"
+      "$oid": "668b553017617fce4a589c6a"
     }
   },
   "author": {
-    "firstName": "William",
-    "lastName": "Brown",
+    "firstName": "Jane",
+    "lastName": "Doe",
     "details": {
-      "$oid": "668b6fa0829608c69a464e1c"
+      "$oid": "668b6fa0829608c69a464e19"
     }
   },
   "edition": "3rd",
@@ -417,7 +276,7 @@
   "thumbnail": "https://i.ibb.co/J3FkBTp/book-9.jpg",
   "createdAt": "2023-09-12T00:00:00Z",
   "status": "draft",
-  "averageRating":4.5,
+  "averageRating": 4.5,
   "reviewsCount": 150
 },
 {
@@ -430,16 +289,16 @@
     "printedOldBook_stock": 15
   },
   "category": {
-    "name": "Fiction",
+    "name": "Mystery",
     "details": {
-      "$oid": "668b553017617fce4a589c68"
+      "$oid": "668b553017617fce4a589c6a"
     }
   },
   "author": {
-    "firstName": "William",
-    "lastName": "Brown",
+    "firstName": "Jane",
+    "lastName": "Doe",
     "details": {
-      "$oid": "668b6fa0829608c69a464e1c"
+      "$oid": "668b6fa0829608c69a464e19"
     }
   },
   "edition": "1st",
@@ -463,7 +322,336 @@
   "thumbnail": "https://i.ibb.co/5G2sknV/book-10.jpg",
   "createdAt": "2023-10-01T00:00:00Z",
   "status": "published",
-  "averageRating":4.5,
+  "averageRating": 4.5,
+  "reviewsCount": 150,
+  "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
+},
+{
+  "_id": {
+    "$oid": "668b7435829608c69a464e2b"
+  },
+  "title": "Modern Fiction",
+  "stock": {
+    "printedNewBook_stock": 25,
+    "printedOldBook_stock": 15
+  },
+  "category": {
+    "name": "Science Fiction",
+    "details": {
+      "$oid": "668b553017617fce4a589c6b"
+    }
+  },
+  "author": {
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "details": {
+      "$oid": "668b6fa0829608c69a464e19"
+    }
+  },
+  "edition": "1st",
+  "publisher": "Fiction Press",
+  "page": 340,
+  "language": "English",
+  "country": "Canada",
+  "featured": true,
+  "price": {
+    "printedNewBook_regularPrice": 44,
+    "printedNewBook_discountedPrice": null,
+    "printedOldBook_regularPrice": 25.99,
+    "printedOldBook_discountedPrice": 20.99,
+    "ebook_regularPrice": 9.99,
+    "ebook_discountedPrice": 7.99,
+    "audioBook_regularPrice": null,
+    "audioBook_discountedPrice": null
+  },
+  "sku": "BOOK013",
+  "shortDescription": "Compelling modern fiction stories.",
+  "thumbnail": "https://i.ibb.co/XYVGphZ/book-13.jpg",
+  "createdAt": "2024-01-10T00:00:00Z",
+  "status": "published",
+  "averageRating": 5,
+  "reviewsCount": 150,
+  "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
+},
+{
+  "_id": {
+    "$oid": "668b7435829608c69a464e2d"
+  },
+  "title": "Biography of a Pioneer",
+  "stock": {
+    "printedNewBook_stock": 25,
+    "printedOldBook_stock": 15
+  },
+  "category": {
+    "name": "Science Fiction",
+    "details": {
+      "$oid": "668b553017617fce4a589c6b"
+    }
+  },
+  "author": {
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "details": {
+      "$oid": "668b6fa0829608c69a464e19"
+    }
+  },
+  "edition": "2nd",
+  "publisher": "Biography House",
+  "page": 320,
+  "language": "English",
+  "country": "UK",
+  "featured": false,
+  "price": {
+    "printedNewBook_regularPrice": 54,
+    "printedNewBook_discountedPrice": 50,
+    "printedOldBook_regularPrice": 25.99,
+    "printedOldBook_discountedPrice": 20.99,
+    "ebook_regularPrice": 9.99,
+    "ebook_discountedPrice": 7.99,
+    "audioBook_regularPrice": null,
+    "audioBook_discountedPrice": null
+  },
+  "sku": "BOOK015",
+  "shortDescription": "The inspiring biography of a trailblazer.",
+  "thumbnail": "https://i.ibb.co/GHH3Z20/book-15.jpg",
+  "createdAt": "2024-03-10T00:00:00Z",
+  "status": "published",
+  "averageRating": 5,
+  "reviewsCount": 150,
+  "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
+},
+{
+  "_id": {
+    "$oid": "668b7435829608c69a464e2e"
+  },
+  "title": "Historical Insights",
+  "stock": {
+    "printedNewBook_stock": 25,
+    "printedOldBook_stock": 15
+  },
+  "category": {
+    "name": "Fantasy",
+    "details": {
+      "$oid": "668b553017617fce4a589c6c"
+    }
+  },
+  "author": {
+    "firstName": "Michael",
+    "lastName": "Johnson",
+    "details": {
+      "$oid": "668b6fa0829608c69a464e1a"
+    }
+  },
+  "edition": "3rd",
+  "publisher": "History Publishers",
+  "page": 410,
+  "language": "English",
+  "country": "Canada",
+  "featured": true,
+  "price": {
+    "printedNewBook_regularPrice": null,
+    "printedNewBook_discountedPrice": null,
+    "printedOldBook_regularPrice": 25.99,
+    "printedOldBook_discountedPrice": 20.99,
+    "ebook_regularPrice": 9.99,
+    "ebook_discountedPrice": 7.99,
+    "audioBook_regularPrice": null,
+    "audioBook_discountedPrice": null
+  },
+  "sku": "BOOK016",
+  "shortDescription": "Deep insights into historical events.",
+  "thumbnail": "https://i.ibb.co/wcpmvMv/book-16.jpg",
+  "createdAt": "2024-04-15T00:00:00Z",
+  "status": "published",
+  "averageRating": 4.5,
+  "reviewsCount": 150,
+  "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
+},
+{
+  "_id": {
+    "$oid": "668b7435829608c69a464e2f"
+  },
+  "title": "Guide to Self-Improvement",
+  "stock": {
+    "printedNewBook_stock": 25,
+    "printedOldBook_stock": 15
+  },
+  "category": {
+    "name": "Fantasy",
+    "details": {
+      "$oid": "668b553017617fce4a589c6c"
+    }
+  },
+  "author": {
+    "firstName": "Michael",
+    "lastName": "Johnson",
+    "details": {
+      "$oid": "668b6fa0829608c69a464e1a"
+    }
+  },
+  "edition": "1st",
+  "publisher": "Self-Help Press",
+  "page": 200,
+  "language": "English",
+  "country": "USA",
+  "featured": true,
+  "price": {
+    "printedNewBook_regularPrice": null,
+    "printedNewBook_discountedPrice": null,
+    "printedOldBook_regularPrice": 25.99,
+    "printedOldBook_discountedPrice": 20.99,
+    "ebook_regularPrice": 9.99,
+    "ebook_discountedPrice": 7.99,
+    "audioBook_regularPrice": null,
+    "audioBook_discountedPrice": null
+  },
+  "sku": "BOOK017",
+  "shortDescription": "Steps and strategies for self-improvement.",
+  "thumbnail": "https://i.ibb.co/2KkVztN/book-17.jpg",
+  "createdAt": "2024-05-05T00:00:00Z",
+  "status": "published",
+  "averageRating": 3,
+  "reviewsCount": 150,
+  "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
+},
+{
+  "_id": {
+    "$oid": "668b7435829608c69a464e23"
+  },
+  "title": "Biography of a Legend",
+  "stock": {
+    "printedNewBook_stock": 25,
+    "printedOldBook_stock": 15
+  },
+  "category": {
+    "name": "Biography",
+    "details": {
+      "$oid": "668b553017617fce4a589c6d"
+    }
+  },
+  "author": {
+    "firstName": "Michael",
+    "lastName": "Johnson",
+    "details": {
+      "$oid": "668b6fa0829608c69a464e1a"
+    }
+  },
+  "edition": "1st",
+  "publisher": "Biography Press",
+  "page": 320,
+  "language": "English",
+  "country": "USA",
+  "featured": true,
+  "price": {
+    "printedNewBook_regularPrice": null,
+    "printedNewBook_discountedPrice": null,
+    "printedOldBook_regularPrice": 25.99,
+    "printedOldBook_discountedPrice": 20.99,
+    "ebook_regularPrice": 9.99,
+    "ebook_discountedPrice": 7.99,
+    "audioBook_regularPrice": 22,
+    "audioBook_discountedPrice": null
+  },
+  "sku": "BOOK005",
+  "shortDescription": "The life story of a remarkable individual.",
+  "thumbnail": "https://i.ibb.co/jWvbkZW/book-5.jpg",
+  "createdAt": "2023-05-01T00:00:00Z",
+  "status": "published",
+  "averageRating": 4.3,
+  "reviewsCount": 150,
+  "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
+},
+{
+  "_id": {
+    "$oid": "668b7435829608c69a464e24"
+  },
+  "title": "History Unveiled",
+  "stock": {
+    "printedNewBook_stock": 25,
+    "printedOldBook_stock": 15
+  },
+  "category": {
+    "name": "Biography",
+    "details": {
+      "$oid": "668b553017617fce4a589c6d"
+    }
+  },
+  "author": {
+    "firstName": "Michael",
+    "lastName": "Johnson",
+    "details": {
+      "$oid": "668b6fa0829608c69a464e1a"
+    }
+  },
+  "edition": "2nd",
+  "publisher": "History House",
+  "page": 400,
+  "language": "English",
+  "country": "UK",
+  "featured": true,
+  "price": {
+    "printedNewBook_regularPrice": 35,
+    "printedNewBook_discountedPrice": 30,
+    "printedOldBook_regularPrice": 25.99,
+    "printedOldBook_discountedPrice": 20.99,
+    "ebook_regularPrice": null,
+    "ebook_discountedPrice": null,
+    "audioBook_regularPrice": 43,
+    "audioBook_discountedPrice": 35
+  },
+  "sku": "BOOK006",
+  "shortDescription": "A deep dive into historical events.",
+  "thumbnail": "https://i.ibb.co/4FB103c/book-6.jpg",
+  "createdAt": "2023-06-15T00:00:00Z",
+  "status": "published",
+  "averageRating": 2.5,
+  "reviewsCount": 150,
+  "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
+},
+{
+  "_id": {
+    "$oid": "668b7435829608c69a464e26"
+  },
+  "title": "Romantic Tales",
+  "stock": {
+    "printedNewBook_stock": 25,
+    "printedOldBook_stock": 15
+  },
+  "category": {
+    "name": "History",
+    "details": {
+      "$oid": "668b553017617fce4a589c6e"
+    }
+  },
+  "author": {
+    "firstName": "Michael",
+    "lastName": "Johnson",
+    "details": {
+      "$oid": "668b6fa0829608c69a464e1a"
+    }
+  },
+  "edition": "4th",
+  "publisher": "Romance Reads",
+  "page": 380,
+  "language": "English",
+  "country": "USA",
+  "featured": true,
+  "price": {
+    "printedNewBook_regularPrice": null,
+    "printedNewBook_discountedPrice": null,
+    "printedOldBook_regularPrice": 25.99,
+    "printedOldBook_discountedPrice": 20.99,
+    "ebook_regularPrice": 9.99,
+    "ebook_discountedPrice": 7.99,
+    "audioBook_regularPrice": null,
+    "audioBook_discountedPrice": null
+  },
+  "sku": "BOOK008",
+  "shortDescription": "A collection of heartwarming romance stories.",
+  "thumbnail": "https://i.ibb.co/pyYysbt/book-8.jpg",
+  "createdAt": "2023-08-05T00:00:00Z",
+  "status": "published",
+  "averageRating": 2,
   "reviewsCount": 150,
   "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
 },
@@ -476,10 +664,10 @@
     "printedNewBook_stock": 25,
     "printedOldBook_stock": 15
   },
-  "category": {
-    "name": "Fiction",
+"category": {
+    "name": "History",
     "details": {
-      "$oid": "668b553017617fce4a589c68"
+      "$oid": "668b553017617fce4a589c6e"
     }
   },
   "author": {
@@ -510,383 +698,7 @@
   "thumbnail": "https://i.ibb.co/hySY0DP/book-11.jpg",
   "createdAt": "2023-11-20T00:00:00Z",
   "status": "published",
-  "averageRating":4.5,
-  "reviewsCount": 150,
-  "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
-},
-{
-  "_id": {
-    "$oid": "668b7435829608c69a464e2a"
-  },
-  "title": "Classic Literature",
-  "stock": {
-    "printedNewBook_stock": 25,
-    "printedOldBook_stock": 15
-  },
-  "category": {
-    "name": "Fiction",
-    "details": {
-      "$oid": "668b553017617fce4a589c68"
-    }
-  },
-  "author": {
-    "firstName": "William",
-    "lastName": "Brown",
-    "details": {
-      "$oid": "668b6fa0829608c69a464e1c"
-    }
-  },
-  "edition": "1st",
-  "publisher": "Literary Classics",
-  "page": 700,
-  "language": "English",
-  "country": "UK",
-  "featured": true,
-  "price": {
-    "printedNewBook_regularPrice": 55,
-    "printedNewBook_discountedPrice": null,
-    "printedOldBook_regularPrice": 25.99,
-    "printedOldBook_discountedPrice": 20.99,
-    "ebook_regularPrice": 9.99,
-    "ebook_discountedPrice": 7.99,
-    "audioBook_regularPrice": null,
-    "audioBook_discountedPrice": null
-  },
-  "sku": "BOOK012",
-  "shortDescription": "Timeless classics of literature.",
-  "thumbnail": "https://i.ibb.co/n6QHbhb/book-12.jpg",
-  "createdAt": "2023-12-15T00:00:00Z",
-  "status": "published",
-  "averageRating":4.5,
-  "reviewsCount": 150,
-  "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
-},
-{
-  "_id": {
-    "$oid": "668b7435829608c69a464e2b"
-  },
-  "title": "Modern Fiction",
-  "stock": {
-    "printedNewBook_stock": 25,
-    "printedOldBook_stock": 15
-  },
-  "category": {
-    "name": "Fiction",
-    "details": {
-      "$oid": "668b553017617fce4a589c68"
-    }
-  },
-  "author": {
-    "firstName": "William",
-    "lastName": "Brown",
-    "details": {
-      "$oid": "668b6fa0829608c69a464e1c"
-    }
-  },
-  "edition": "1st",
-  "publisher": "Fiction Press",
-  "page": 340,
-  "language": "English",
-  "country": "Canada",
-  "featured": true,
-  "price": {
-    "printedNewBook_regularPrice": 44,
-    "printedNewBook_discountedPrice": null,
-    "printedOldBook_regularPrice": 25.99,
-    "printedOldBook_discountedPrice": 20.99,
-    "ebook_regularPrice": 9.99,
-    "ebook_discountedPrice": 7.99,
-    "audioBook_regularPrice": null,
-    "audioBook_discountedPrice": null
-  },
-  "sku": "BOOK013",
-  "shortDescription": "Compelling modern fiction stories.",
-  "thumbnail": "https://i.ibb.co/XYVGphZ/book-13.jpg",
-  "createdAt": "2024-01-10T00:00:00Z",
-  "status": "published",
-  "averageRating":4.5,
-  "reviewsCount": 150,
-  "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
-},
-{
-  "_id": {
-    "$oid": "668b7435829608c69a464e2c"
-  },
-  "title": "Epic Fantasy",
-  "stock": {
-    "printedNewBook_stock": 25,
-    "printedOldBook_stock": 15
-  },
-  "category": {
-    "name": "Fiction",
-    "details": {
-      "$oid": "668b553017617fce4a589c68"
-    }
-  },
-  "author": {
-    "firstName": "William",
-    "lastName": "Brown",
-    "details": {
-      "$oid": "668b6fa0829608c69a464e1c"
-    }
-  },
-  "edition": "1st",
-  "publisher": "Epic Reads",
-  "page": 600,
-  "language": "English",
-  "country": "Australia",
-  "featured": true,
-  "price": {
-    "printedNewBook_regularPrice": 33,
-    "printedNewBook_discountedPrice": null,
-    "printedOldBook_regularPrice": 25.99,
-    "printedOldBook_discountedPrice": 20.99,
-    "ebook_regularPrice": 9.99,
-    "ebook_discountedPrice": 7.99,
-    "audioBook_regularPrice": null,
-    "audioBook_discountedPrice": null
-  },
-  "sku": "BOOK014",
-  "shortDescription": "An epic saga of fantasy and magic.",
-  "thumbnail": "https://i.ibb.co/3Cv5Q7G/book-14.jpg",
-  "createdAt": "2024-02-05T00:00:00Z",
-  "status": "published",
-  "averageRating":4.5,
-  "reviewsCount": 150,
-  "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
-},
-{
-  "_id": {
-    "$oid": "668b7435829608c69a464e2d"
-  },
-  "title": "Biography of a Pioneer",
-  "stock": {
-    "printedNewBook_stock": 25,
-    "printedOldBook_stock": 15
-  },
-  "category": {
-    "name": "Fiction",
-    "details": {
-      "$oid": "668b553017617fce4a589c68"
-    }
-  },
-  "author": {
-    "firstName": "William",
-    "lastName": "Brown",
-    "details": {
-      "$oid": "668b6fa0829608c69a464e1c"
-    }
-  },
-  "edition": "2nd",
-  "publisher": "Biography House",
-  "page": 320,
-  "language": "English",
-  "country": "UK",
-  "featured": false,
-  "price": {
-    "printedNewBook_regularPrice": 54,
-    "printedNewBook_discountedPrice": 50,
-    "printedOldBook_regularPrice": 25.99,
-    "printedOldBook_discountedPrice": 20.99,
-    "ebook_regularPrice": 9.99,
-    "ebook_discountedPrice": 7.99,
-    "audioBook_regularPrice": null,
-    "audioBook_discountedPrice": null
-  },
-  "sku": "BOOK015",
-  "shortDescription": "The inspiring biography of a trailblazer.",
-  "thumbnail": "https://i.ibb.co/GHH3Z20/book-15.jpg",
-  "createdAt": "2024-03-10T00:00:00Z",
-  "status": "published",
-  "averageRating":4.5,
-  "reviewsCount": 150,
-  "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
-},
-{
-  "_id": {
-    "$oid": "668b7435829608c69a464e2e"
-  },
-  "title": "Historical Insights",
-  "stock": {
-    "printedNewBook_stock": 25,
-    "printedOldBook_stock": 15
-  },
-  "category": {
-    "name": "Fiction",
-    "details": {
-      "$oid": "668b553017617fce4a589c68"
-    }
-  },
-  "author": {
-    "firstName": "William",
-    "lastName": "Brown",
-    "details": {
-      "$oid": "668b6fa0829608c69a464e1c"
-    }
-  },
-  "edition": "3rd",
-  "publisher": "History Publishers",
-  "page": 410,
-  "language": "English",
-  "country": "Canada",
-  "featured": true,
-  "price": {
-    "printedNewBook_regularPrice": null,
-    "printedNewBook_discountedPrice": null,
-    "printedOldBook_regularPrice": 25.99,
-    "printedOldBook_discountedPrice": 20.99,
-    "ebook_regularPrice": 9.99,
-    "ebook_discountedPrice": 7.99,
-    "audioBook_regularPrice": null,
-    "audioBook_discountedPrice": null
-  },
-  "sku": "BOOK016",
-  "shortDescription": "Deep insights into historical events.",
-  "thumbnail": "https://i.ibb.co/wcpmvMv/book-16.jpg",
-  "createdAt": "2024-04-15T00:00:00Z",
-  "status": "published",
-  "averageRating":4.5,
-  "reviewsCount": 150,
-  "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
-},
-{
-  "_id": {
-    "$oid": "668b7435829608c69a464e2f"
-  },
-  "title": "Guide to Self-Improvement",
-  "stock": {
-    "printedNewBook_stock": 25,
-    "printedOldBook_stock": 15
-  },
-  "category": {
-    "name": "Fiction",
-    "details": {
-      "$oid": "668b553017617fce4a589c68"
-    }
-  },
-  "author": {
-    "firstName": "William",
-    "lastName": "Brown",
-    "details": {
-      "$oid": "668b6fa0829608c69a464e1c"
-    }
-  },
-  "edition": "1st",
-  "publisher": "Self-Help Press",
-  "page": 200,
-  "language": "English",
-  "country": "USA",
-  "featured": true,
-  "price": {
-    "printedNewBook_regularPrice": null,
-    "printedNewBook_discountedPrice": null,
-    "printedOldBook_regularPrice": 25.99,
-    "printedOldBook_discountedPrice": 20.99,
-    "ebook_regularPrice": 9.99,
-    "ebook_discountedPrice": 7.99,
-    "audioBook_regularPrice": null,
-    "audioBook_discountedPrice": null
-  },
-  "sku": "BOOK017",
-  "shortDescription": "Steps and strategies for self-improvement.",
-  "thumbnail": "https://i.ibb.co/2KkVztN/book-17.jpg",
-  "createdAt": "2024-05-05T00:00:00Z",
-  "status": "published",
-  "averageRating":4.5,
-  "reviewsCount": 150,
-  "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
-},
-{
-  "_id": {
-    "$oid": "668b7435829608c69a464e30"
-  },
-  "title": "Romance Chronicles",
-  "stock": {
-    "printedNewBook_stock": 25,
-    "printedOldBook_stock": 15
-  },
-  "category": {
-    "name": "Fiction",
-    "details": {
-      "$oid": "668b553017617fce4a589c68"
-    }
-  },
-  "author": {
-    "firstName": "William",
-    "lastName": "Brown",
-    "details": {
-      "$oid": "668b6fa0829608c69a464e1c"
-    }
-  },
-  "edition": "4th",
-  "publisher": "Romance Chronicles",
-  "page": 380,
-  "language": "English",
-  "country": "Australia",
-  "featured": true,
-  "price": {
-    "printedNewBook_regularPrice": null,
-    "printedNewBook_discountedPrice": null,
-    "printedOldBook_regularPrice": 25.99,
-    "printedOldBook_discountedPrice": 20.99,
-    "ebook_regularPrice": 9.99,
-    "ebook_discountedPrice": 7.99,
-    "audioBook_regularPrice": null,
-    "audioBook_discountedPrice": null
-  },
-  "sku": "BOOK018",
-  "shortDescription": "Romantic stories through the ages.",
-  "thumbnail": "https://i.ibb.co/mN9M4Cj/book-18.jpg",
-  "createdAt": "2024-06-01T00:00:00Z",
-  "status": "published",
-  "averageRating":4.5,
-  "reviewsCount": 150,
-  "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
-},
-{
-  "_id": {
-    "$oid": "668b7435829608c69a464e31"
-  },
-  "title": "Thrills and Chills",
-  "stock": {
-    "printedNewBook_stock": 25,
-    "printedOldBook_stock": 15
-  },
-  "category": {
-    "name": "Fiction",
-    "details": {
-      "$oid": "668b553017617fce4a589c68"
-    }
-  },
-  "author": {
-    "firstName": "William",
-    "lastName": "Brown",
-    "details": {
-      "$oid": "668b6fa0829608c69a464e1c"
-    }
-  },
-  "edition": "1st",
-  "publisher": "Thrill Seekers",
-  "page": 360,
-  "language": "English",
-  "country": "UK",
-  "featured": true,
-  "price": {
-    "printedNewBook_regularPrice": null,
-    "printedNewBook_discountedPrice": null,
-    "printedOldBook_regularPrice": 25.99,
-    "printedOldBook_discountedPrice": 20.99,
-    "ebook_regularPrice": 9.99,
-    "ebook_discountedPrice": 7.99,
-    "audioBook_regularPrice": null,
-    "audioBook_discountedPrice": null
-  },
-  "sku": "BOOK019",
-  "shortDescription": "Heart-pounding thrillers for the brave.",
-  "thumbnail": "https://i.ibb.co/51Yj14p/book-19.jpg",
-  "createdAt": "2024-07-01T00:00:00Z",
-  "status": "published",
-  "averageRating":4.5,
+  "averageRating": 4.5,
   "reviewsCount": 150,
   "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
 },
@@ -899,10 +711,10 @@
     "printedNewBook_stock": 25,
     "printedOldBook_stock": 15
   },
-  "category": {
-    "name": "Fiction",
+"category": {
+    "name": "History",
     "details": {
-      "$oid": "668b553017617fce4a589c68"
+      "$oid": "668b553017617fce4a589c6e"
     }
   },
   "author": {
@@ -933,7 +745,195 @@
   "thumbnail": "https://i.ibb.co/k9JpSG5/book-20.jpg",
   "createdAt": "2024-08-10T00:00:00Z",
   "status": "published",
-  "averageRating":4.5,
+  "averageRating": 1.2,
+  "reviewsCount": 150,
+  "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
+},
+{
+  "_id": {
+    "$oid": "668b7435829608c69a464e1f"
+  },
+  "title": "The Great Adventure",
+  "stock": {
+    "printedNewBook_stock": 25,
+    "printedOldBook_stock": 15
+  },
+  "category": {
+    "name": "Romance",
+    "details": {
+      "$oid": "668b553017617fce4a589c70"
+    }
+  },
+  "author": {
+    "firstName": "William",
+    "lastName": "Brown",
+    "details": {
+      "$oid": "668b6fa0829608c69a464e1c"
+    }
+  },
+  "edition": "1st",
+  "publisher": "Adventure Publishing",
+  "page": 350,
+  "language": "English",
+  "country": "USA",
+  "featured": true,
+  "price": {
+    "printedNewBook_regularPrice": 25.99,
+    "printedNewBook_discountedPrice": 20.99,
+    "printedOldBook_regularPrice": 15.99,
+    "printedOldBook_discountedPrice": 12.99,
+    "ebook_regularPrice": 9.99,
+    "ebook_discountedPrice": 7.99,
+    "audioBook_regularPrice": null,
+    "audioBook_discountedPrice": null
+  },
+  "sku": "BOOK001",
+  "shortDescription": "An exhilarating journey through uncharted territories.",
+  "thumbnail": "https://i.ibb.co/NS5Y6HJ/book-1.jpg",
+  "createdAt": "2023-01-01T00:00:00Z",
+  "status": "published",
+  "averageRating": 3.5,
+  "reviewsCount": 150,
+  "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
+},
+{
+  "_id": {
+    "$oid": "668b7435829608c69a464e22"
+  },
+  "title": "The Fantasy Realm",
+  "stock": {
+    "printedNewBook_stock": 25,
+    "printedOldBook_stock": 15
+  },
+  "category": {
+    "name": "Romance",
+    "details": {
+      "$oid": "668b553017617fce4a589c70"
+    }
+  },
+  "author": {
+    "firstName": "William",
+    "lastName": "Brown",
+    "details": {
+      "$oid": "668b6fa0829608c69a464e1c"
+    }
+  },
+  "edition": "3rd",
+  "publisher": "Fantasy Books",
+  "page": 500,
+  "language": "English",
+  "country": "Australia",
+  "featured": true,
+  "price": {
+    "printedNewBook_regularPrice": null,
+    "printedNewBook_discountedPrice": null,
+    "printedOldBook_regularPrice": 25.99,
+    "printedOldBook_discountedPrice": 20.99,
+    "ebook_regularPrice": 9.99,
+    "ebook_discountedPrice": 7.99,
+    "audioBook_regularPrice": 40,
+    "audioBook_discountedPrice": 33
+  },
+  "sku": "BOOK004",
+  "shortDescription": "An epic tale of fantasy and adventure.",
+  "thumbnail": "https://i.ibb.co/dLq1YVr/book-4.jpg",
+  "createdAt": "2023-04-05T00:00:00Z",
+  "status": "published",
+  "averageRating": 3,
+  "reviewsCount": 150,
+  "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
+},
+{
+  "_id": {
+    "$oid": "668b7435829608c69a464e30"
+  },
+  "title": "Romance Chronicles",
+  "stock": {
+    "printedNewBook_stock": 25,
+    "printedOldBook_stock": 15
+  },
+  "category": {
+    "name": "Romance",
+    "details": {
+      "$oid": "668b553017617fce4a589c70"
+    }
+  },
+  "author": {
+    "firstName": "William",
+    "lastName": "Brown",
+    "details": {
+      "$oid": "668b6fa0829608c69a464e1c"
+    }
+  },
+  "edition": "4th",
+  "publisher": "Romance Chronicles",
+  "page": 380,
+  "language": "English",
+  "country": "Australia",
+  "featured": true,
+  "price": {
+    "printedNewBook_regularPrice": null,
+    "printedNewBook_discountedPrice": null,
+    "printedOldBook_regularPrice": 25.99,
+    "printedOldBook_discountedPrice": 20.99,
+    "ebook_regularPrice": 9.99,
+    "ebook_discountedPrice": 7.99,
+    "audioBook_regularPrice": null,
+    "audioBook_discountedPrice": null
+  },
+  "sku": "BOOK018",
+  "shortDescription": "Romantic stories through the ages.",
+  "thumbnail": "https://i.ibb.co/mN9M4Cj/book-18.jpg",
+  "createdAt": "2024-06-01T00:00:00Z",
+  "status": "published",
+  "averageRating": 4,
+  "reviewsCount": 150,
+  "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
+},
+{
+  "_id": {
+    "$oid": "668b7435829608c69a464e31"
+  },
+  "title": "Thrills and Chills",
+  "stock": {
+    "printedNewBook_stock": 25,
+    "printedOldBook_stock": 15
+  },
+  "category": {
+    "name": "Romance",
+    "details": {
+      "$oid": "668b553017617fce4a589c70"
+    }
+  },
+  "author": {
+    "firstName": "William",
+    "lastName": "Brown",
+    "details": {
+      "$oid": "668b6fa0829608c69a464e1c"
+    }
+  },
+  "edition": "1st",
+  "publisher": "Thrill Seekers",
+  "page": 360,
+  "language": "English",
+  "country": "UK",
+  "featured": true,
+  "price": {
+    "printedNewBook_regularPrice": null,
+    "printedNewBook_discountedPrice": null,
+    "printedOldBook_regularPrice": 25.99,
+    "printedOldBook_discountedPrice": 20.99,
+    "ebook_regularPrice": 9.99,
+    "ebook_discountedPrice": 7.99,
+    "audioBook_regularPrice": null,
+    "audioBook_discountedPrice": null
+  },
+  "sku": "BOOK019",
+  "shortDescription": "Heart-pounding thrillers for the brave.",
+  "thumbnail": "https://i.ibb.co/51Yj14p/book-19.jpg",
+  "createdAt": "2024-07-01T00:00:00Z",
+  "status": "published",
+  "averageRating": 4,
   "reviewsCount": 150,
   "readingPDF": "https://gyqsjwvpydv7dr9h.public.blob.vercel-storage.com/React%20Resume-bcGXDTt6KXSOgIrlpSLu8OZtsQ8smX.pdf"
 }]

@@ -2,7 +2,8 @@ import { ThemeProvider } from "@/components/Header/ThemeProvider";
 import { asul, sulphur } from "./fonts";
 import "./globals.css";
 import connectMongo from "@/database/services/connectMongo";
-import { auth } from "@/auth"; 
+import { auth } from "@/auth";
+import { ToastContainer } from "react-toastify";
 
 export const metadata = {
   title: "Book Nest",
@@ -23,7 +24,19 @@ export default async function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
-           {children} 
+          {children}
+        <ToastContainer
+          position="bottom-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="dark"
+        />
         </ThemeProvider>
       </body>
     </html>

@@ -30,7 +30,8 @@ const CartIcon = ({ session, className, showTitle, lang }) => {
       >
         <span className="relative inline-block">
           <ShoppingCart size={24} />
-          {cartCount && (
+          
+          {session && cartCount >0 && (
             <Badge className=" w-5 h-5 rounded-full bg-themeSecondary text-themeSecondary-foreground absolute -top-2 -right-3 text-sm text-center flex justify-center items-center">
               {cartCount}
             </Badge>

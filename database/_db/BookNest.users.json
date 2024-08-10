@@ -1,24 +1,27 @@
-[
-  {
-    "_id": {
-      "$oid": "668b862a829608c69a464e3d"
-    },
-    "firstName": "Rezaul",
-    "lastName": "Karim",
-    "email": "rezaulkarimpstu@gmail.com",
-    "password": "664400",
-    "role": "admin",
-    "avatar": "https://i.ibb.co/w6BRVsX/Photo2.jpg"
+[{
+  "_id": {
+    "$oid": "66b04d8800177e176ea2bd21"
   },
-  {
-    "_id": {
-      "$oid": "668b862a829608c69a464e3e"
-    },
-    "firstName": "Tanjila",
-    "lastName": "Islam",
-    "email": "tanjila5339@gmail.com",
-    "password": "1234",
-    "role": "user",
-    "avatar": "https://i.ibb.co/s6xJpyr/christopher-campbell-r-DEOVt-E7v-Os-unsplash.jpg"
-  }
-]
+  "name": "Rezaul Karim",
+  "email": "merndevreza@gmail.com",
+  "image": "https://lh3.googleusercontent.com/a/ACg8ocJwgG2NyfMEvIxbgHrSVJEVEYnUZB8GQUy6b17QC1FWCTmOI94=s96-c",
+  "emailVerified": null
+},
+{
+  "_id": {
+    "$oid": "66b055aa00177e176ea2bd7f"
+  },
+  "name": "Rezaul Karim",
+  "email": "rezaulkarimpstu@gmail.com",
+  "image": "https://lh3.googleusercontent.com/a/ACg8ocJUkRgUgNW2Sz9tow-WqqzLVoE93dlVOp63_R0l9ksL7oBpOyo=s96-c",
+  "emailVerified": null
+},
+{
+  "_id": {
+    "$oid": "66b1c8d61850fbdfa1e5c531"
+  },
+  "name": "Tanjila Islam",
+  "email": "tanjila5339@gmail.com",
+  "image": "https://lh3.googleusercontent.com/a/ACg8ocK2BeTYeaSD7EJ99YUAWHbcr0ZctJwMplI-iCXHE7IkOE05uQ=s96-c",
+  "emailVerified": null
+}]

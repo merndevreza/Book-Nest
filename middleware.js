@@ -47,6 +47,8 @@ export default auth((request) => {
     `${localizedRoot}/login`,
     `${localizedRoot}/register`,
     `${localizedRoot}/shop`,
+    `${localizedRoot}/cart`,
+    `${localizedRoot}/wishlist`,
     `${localizedRoot}/track-order`,
   ];
 

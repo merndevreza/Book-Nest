@@ -9,6 +9,8 @@ import {
 } from "@/components/ui/tooltip";
 import { Button } from "@/components/ui/button";
 import { removeFromCart } from "@/app/actions/products.actions";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const RemoveFromCartBtn = ({ itemId, setBooks }) => {
   const handleRemove = async () => {
@@ -16,6 +18,16 @@ const RemoveFromCartBtn = ({ itemId, setBooks }) => {
     if (response.success) {
       setBooks((prev) => {
         return prev.filter((book) => book.id !== itemId);
+      });
+      toast.success("Removed successfully.", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
       });
     }
   };

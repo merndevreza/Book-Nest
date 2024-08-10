@@ -28,7 +28,7 @@ const CartProductsTable = ({ books, setBooks, userId, dictionary, lang }) => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {books.map((book) => (
+          {books?.map((book) => (
             <TableRow key={book.id} className="hover:bg-secondary">
               <TableCell className="font-medium pl-1 pr-0 sm:p-4">
                 <RemoveFromCartBtn 
