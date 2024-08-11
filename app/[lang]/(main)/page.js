@@ -7,6 +7,7 @@ import Hero from "./_components/Hero";
 import NewArrivalsSection from "./_components/NewArrivalsSection";
 import TestimonialSection from "./_components/TestimonialSection";
 
+export const revalidate = 3600;
 export default async function Home({ params: { lang } }) {
   const dictionary = await getDictionary(lang);
 
@@ -21,4 +22,7 @@ export default async function Home({ params: { lang } }) {
       <TestimonialSection lang={lang} dictionary={dictionary} />
     </main>
   );
+}
+export async function generateStaticParams() {
+  return ["en", "bn"];
 }

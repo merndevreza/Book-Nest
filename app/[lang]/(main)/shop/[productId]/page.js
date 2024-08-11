@@ -11,7 +11,10 @@ import BookCard from "@/components/BookCard/BookCard";
 import { getDictionary } from "@/app/[lang]/dictionary/dictionary";
 import SocialShare from "@/components/SocialShare";
 import ProductPrices from "./_components/ProductPrices";
-import { getProductDetails } from "@/database/queries/products.queries";
+import {
+  getAllProductsIds,
+  getProductDetails,
+} from "@/database/queries/products.queries";
 import { getProductsByCategory } from "@/database/queries/categories.queries";
 import { getReviewsByProductId } from "@/database/queries/reviews.queries";
 
@@ -95,3 +98,15 @@ const ProductDetailsPage = async ({ params: { lang, productId } }) => {
 };
 
 export default ProductDetailsPage;
+
+export async function generateStaticParams() {
+  const response = await getAllProductsIds();
+  if (response.success) {
+    return response?.data.map((product) => ({
+      productId: product._id.toString(),
+    }));
+  } else {
+    console.log(response.message);
+    return null;
+  }
+}

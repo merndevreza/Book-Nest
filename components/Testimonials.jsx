@@ -52,15 +52,19 @@ const Testimonials = ({ reviews, lang }) => {
                 <div className="mt-8 bg-tertiary text-tertiary-foreground  p-5 rounded-lg ">
                   <div>
                     <Image
-                      className="w-[70px] rounded-full h-[70px] object-cover"
-                      width={70}
-                      height={70}
-                      src={review?.user?.avatar}
-                      alt={`${review?.user?.firstName} ${review?.user?.lastName}`}
+                      className="w-[60px] rounded-full h-[60px] object-cover"
+                      width={60}
+                      height={60}
+                      src={review?.user?.avatar || review?.user?.image}
+                      alt= {`${review?.user?.firstName || review?.user?.name} ${
+                        review?.user?.lastName || ""
+                      }`}
                     />
                   </div>
                   <p className="text-lg font-bold  mt-1">
-                    {`${review?.user?.firstName} ${review?.user?.lastName}`}
+                    {`${review?.user?.firstName || review?.user?.name} ${
+                      review?.user?.lastName || ""
+                    }`}
                   </p>
                   <p className="text-base font-bold  mt-4 text-foreground">
                     {review?.comment}

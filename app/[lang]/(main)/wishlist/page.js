@@ -4,7 +4,6 @@ import { auth } from "@/auth";
 import WishlistProductsList from "./_components/WishlistProductsList";
 import ReqUserToLogin from "@/components/ReqUserToLogin";
 const paths = [{ href: "wishlist", label: "Wishlist" }];
-
 const WishlistPage = async ({ params: { lang } }) => {
   const session = await auth();
   let products;

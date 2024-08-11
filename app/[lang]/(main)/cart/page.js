@@ -10,7 +10,7 @@ const paths = [
     label: "Cart",
     href: "cart",
   },
-];
+]; 
 const CartPage = async ({ params: { lang } }) => {
   const dictionary = await getDictionary(lang);
   const session = await auth();

@@ -295,3 +295,17 @@ export async function getCartProductsCount(userId) {
     return { success: false, message: error.message };
   }
 }
+// get all products Ids
+export async function getAllProductsIds(){
+  try {
+    await connectMongo()
+    const response=await Products.find({}).select(["_id"]).lean()  
+    return {
+      success: true,
+      message: "All Products Ids",
+      data: response,
+    };
+  } catch (error) {
+    return { success: false, message: error.message };
+  }
+} 

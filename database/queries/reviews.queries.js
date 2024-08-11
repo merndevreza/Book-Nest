@@ -17,11 +17,12 @@ export async function getReviews(limit) {
       .populate({
         path: "user",
         model: Users,
-        select: ["firstName", "lastName", "avatar"],
+        select: ["firstName", "lastName", "avatar","name","image"],
       })
       .sort({ createdAt: -1 })
       .limit(limit)
-      .lean();
+      .lean(); 
+      
     return {
       success: true,
       message: "Testimonials",
@@ -41,7 +42,7 @@ export async function getReviewsByProductId(id) {
       .populate({
         path: "user",
         model: Users,
-        select: ["firstName", "lastName", "avatar"],
+        select: ["firstName", "lastName", "avatar","name","image"],
       })
       .sort({ createdAt: -1 })
       .lean();

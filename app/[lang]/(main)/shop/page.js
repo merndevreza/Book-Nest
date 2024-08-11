@@ -11,6 +11,9 @@ const paths = [
     href: "shop",
   },
 ];
+
+export const revalidate = 3600;
+
 const ShopPage = async ({ params: { lang }, searchParams }) => {
   const dictionary = await getDictionary(lang);
   const responseProductsCount = await countProducts(createSearchParamsObjectForProducts(searchParams)); 
@@ -36,3 +39,6 @@ const ShopPage = async ({ params: { lang }, searchParams }) => {
 };
 
 export default ShopPage;
+export async function generateStaticParams() {
+  return ["en", "bn"];
+}
