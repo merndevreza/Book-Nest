@@ -23,6 +23,7 @@ export default async function Home({ params: { lang } }) {
     </main>
   );
 }
+
 export async function generateStaticParams() {
-  return ["en", "bn"];
+  return [{ lang: "en" }, { lang: "bn" }];
 }

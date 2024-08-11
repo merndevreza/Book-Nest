@@ -14,10 +14,15 @@ const paths = [
 
 export const revalidate = 3600;
 
+export async function generateStaticParams() {
+  return [{ lang: "en" }, { lang: "bn" }];
+}
 const ShopPage = async ({ params: { lang }, searchParams }) => {
   const dictionary = await getDictionary(lang);
-  const responseProductsCount = await countProducts(createSearchParamsObjectForProducts(searchParams)); 
-  
+  const responseProductsCount = await countProducts(
+    createSearchParamsObjectForProducts(searchParams)
+  );
+
   return (
     <main className="container px-1 sm:px-4 lg:px-8  py-4 lg:py-12">
       <BreadCrumb lang={lang} paths={paths} />
@@ -39,6 +44,3 @@ const ShopPage = async ({ params: { lang }, searchParams }) => {
 };
 
 export default ShopPage;
-export async function generateStaticParams() {
-  return ["en", "bn"];
-}

@@ -18,6 +18,25 @@ import {
 import { getProductsByCategory } from "@/database/queries/categories.queries";
 import { getReviewsByProductId } from "@/database/queries/reviews.queries";
 
+export const revalidate = 3600;
+
+export async function generateStaticParams() {
+  const response = await getAllProductsIds();
+  const langs = ["en", "bn"];
+  let result = [];
+  if (response.success) {
+    for (const product of response?.data) {
+      for (const language of langs) {
+        result.push({
+          lang: language,
+          productId: product._id.toString(),
+        });
+      }
+    }
+  }
+  return result;
+}
+
 const ProductDetailsPage = async ({ params: { lang, productId } }) => {
   const dictionary = await getDictionary(lang);
 
@@ -98,15 +117,3 @@ const ProductDetailsPage = async ({ params: { lang, productId } }) => {
 };
 
 export default ProductDetailsPage;
-
-export async function generateStaticParams() {
-  const response = await getAllProductsIds();
-  if (response.success) {
-    return response?.data.map((product) => ({
-      productId: product._id.toString(),
-    }));
-  } else {
-    console.log(response.message);
-    return null;
-  }
-}
