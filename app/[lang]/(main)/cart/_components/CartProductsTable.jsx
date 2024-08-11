@@ -34,6 +34,7 @@ const CartProductsTable = ({ books, setBooks, userId, dictionary, lang }) => {
                 <RemoveFromCartBtn 
                   setBooks={setBooks}
                   itemId={book?.id}
+                  itemQuantity={book?.quantity}
                 />
               </TableCell>
               <TableCell className=" pl-1 pr-0 sm:p-4"> 

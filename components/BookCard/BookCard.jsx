@@ -4,12 +4,12 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Book3dView from "../Book3dView/Book3dView";
-import PriceRange from "./PriceRange"; 
+import PriceRange from "./PriceRange";
 import Ratings from "../Ratings";
 
 const BookCard = async ({ book, dictionary, lang }) => {
   return (
-    <Card className="bg-secondary dark:bg-transparent flex flex-col items-center justify-between sm:h-full">
+    <Card className="bg-transparent flex flex-col items-center justify-between sm:h-full">
       <CardContent className="p-3 w-full">
         <div className="book-card">
           <div className="hidden lg:block">
@@ -38,15 +38,15 @@ const BookCard = async ({ book, dictionary, lang }) => {
                 )}
               </div>
               <div className="hidden md:block">
-              <Ratings ratingNumber={book?.averageRating} />
+                <Ratings ratingNumber={book?.averageRating} />
               </div>
             </div>
             <div className="w-full h-[2px] bg-gray-300 dark:bg-secondary  my-3"></div>
-            <div className="text-center space-y-2">
-              <h2 className="text-lg sm:text-xl font-bold text-themeSecondary">
+            <div className="text-center space-y-3">
+              <h2 className="text-lg sm:text-xl font-bold text-themePrimary">
                 <Link href={`/${lang}/shop/${book?.id}`}>{book?.title}</Link>
               </h2>
-              <p className=" inline-block px-3 py-1  bg-gray-300 dark:bg-secondary text-themeSecondary dark:text-themeSecondary-foreground  text-sm rounded-full font-semibold ">
+              <p className=" inline-block px-3 py-1  bg-tertiary dark:bg-secondary text-gray-700 dark:text-themeSecondary-foreground  text-sm rounded-full font-semibold ">
                 By: {`${book?.author?.firstName} ${book?.author?.lastName}`}
               </p>
             </div>

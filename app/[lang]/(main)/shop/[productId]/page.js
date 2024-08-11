@@ -18,7 +18,7 @@ import {
 import { getProductsByCategory } from "@/database/queries/categories.queries";
 import { getReviewsByProductId } from "@/database/queries/reviews.queries";
 
-export const revalidate = 3600;
+export const revalidate = 3600; //1 hour
 
 export async function generateStaticParams() {
   const response = await getAllProductsIds();

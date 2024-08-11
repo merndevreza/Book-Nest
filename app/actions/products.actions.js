@@ -77,7 +77,15 @@ export async function checkWishlist(userId, productId, format) {
 
 export async function addToCart(userId, productId, format, quantity) {
   try {
-    await connectMongo();  
+    await connectMongo(); 
+    // Update product
+    // if (format!=="ebook" && format!=="audioBook") { 
+    //   if (format==="printedNewBook") {
+        
+    //   }else if(format==="printedOldBook"){
+
+    //   }
+    // } 
     // Find if the product already exists in the cart for the user
     const existingCartItem = await Cart.findOne({ userId, productId, format });
 

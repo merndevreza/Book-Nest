@@ -12,7 +12,7 @@ const paths = [
   },
 ];
 
-export const revalidate = 3600;
+export const revalidate = 3600; //1hr
 
 export async function generateStaticParams() {
   return [{ lang: "en" }, { lang: "bn" }];
