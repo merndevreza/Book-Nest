@@ -12,7 +12,7 @@ import WishlistProvider from "@/app/context-provider/providers/WIshlistProvider"
 export default async function MainLayout({ children, params: { lang } }) {
   const dictionary = await getDictionary(lang);
   const categoriesResponse = await getAllCategories();
-  const session = await auth();
+  const session = await auth(); 
 
   return (
     <>
