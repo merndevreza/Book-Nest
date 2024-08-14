@@ -39,16 +39,18 @@ export async function generateStaticParams() {
 
 const ProductDetailsPage = async ({ params: { lang, productId } }) => {
   const dictionary = await getDictionary(lang);
-
+  //product
   const response = await getProductDetails(productId);
   if (response.success === false) {
     return <p>Error Occurred: {response?.message}</p>;
   }
   const { id, title, category, price, thumbnail, readingPDF } = response?.data;
+  //related products
   const relatedProductsResponse = await getProductsByCategory(
     category?.details.toString(),
     10
   );
+  //reviews
   const reviewsResponse = await getReviewsByProductId(id);
   return (
     <main className="container px-1 sm:px-4 lg:px-8  py-4 lg:py-12 space-y-16">
@@ -76,7 +78,10 @@ const ProductDetailsPage = async ({ params: { lang, productId } }) => {
           </div>
         </div>
         <div className="col-span-4 lg:col-span-1 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-1 self-start gap-3">
-          <ProductPrices price={price} id={id} dictionary={dictionary} />
+          <ProductPrices
+            book={response?.data} 
+            dictionary={dictionary}
+          />
         </div>
       </section>
       {reviewsResponse.success && reviewsResponse?.data.length > 0 && (

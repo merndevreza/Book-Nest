@@ -1,34 +1,30 @@
 "use client";
-
-import { useEffect, useState } from "react";
 import CartProductsTable from "./CartProductsTable";
 import CartSummary from "./CartSummary";
-import { getCartProductsList } from "@/database/queries/products.queries";
+import NoProductsFound from "@/components/NoProductsFound";
+import BreadCrumb from "@/components/BreadCrumb";
+import useCart from "@/app/hooks/useCart";
 
-const CartPageContainer = ({ userId, dictionary, lang }) => {
-  const [books, setBooks] = useState([]);
-  useEffect(() => {
-    async function getUserCartProducts() {
-      if (userId) {
-        const response = await getCartProductsList(userId);
-        if (response.success) {
-          setBooks(response.data);
-        }
-      }
-    }
-    getUserCartProducts();
-  }, [userId]);
+const CartPageContainer = ({ dictionary, lang, paths }) => {
+  const { cartProducts } = useCart();
   return (
-    <div className=" grid grid-cols-5 gap-8 xl:gap-16 ">
-      <CartProductsTable
-        userId={userId}
-        books={books}
-        setBooks={setBooks}
-        dictionary={dictionary}
-        lang={lang}
-      />
-      <CartSummary books={books} dictionary={dictionary} lang={lang} />
-    </div>
+    <>
+      {!cartProducts.length > 0 ? (
+        <NoProductsFound
+          title="Your cart is empty !"
+          subtitle="Please visit our shop"
+          lang={lang}
+        />
+      ) : (
+        <>
+          <BreadCrumb lang={lang} paths={paths} />
+          <div className=" grid grid-cols-5 gap-8 xl:gap-16 ">
+            <CartProductsTable dictionary={dictionary} lang={lang} />
+            <CartSummary dictionary={dictionary} lang={lang} />
+          </div>
+        </>
+      )}
+    </>
   );
 };
 

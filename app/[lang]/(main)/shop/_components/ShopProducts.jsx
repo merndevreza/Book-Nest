@@ -1,4 +1,5 @@
 import BookCard from "@/components/BookCard/BookCard";
+import NoProductsFound from "@/components/NoProductsFound";
 import { getAllProductsShop } from "@/database/queries/products.queries";
 import createSearchParamsObjectForProducts from "@/utils/createSearchParamsObjectForProducts";
 
@@ -22,7 +23,12 @@ const response=await getAllProductsShop(createSearchParamsObjectForProducts(sear
           ))}
         </div>
       ) : (
-        <p>No Products Found</p>
+        <NoProductsFound
+        title="No products matched."
+        subtitle="Please reload"
+        lang={lang}
+        isShopPage={true}
+      />
       )}
     </>
   );

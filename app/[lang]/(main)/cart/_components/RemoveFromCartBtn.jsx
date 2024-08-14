@@ -10,28 +10,19 @@ import {
 import { Button } from "@/components/ui/button";
 import { removeFromCart } from "@/app/actions/products.actions";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import useCartCount from "@/app/hooks/useCartCount";
+import "react-toastify/dist/ReactToastify.css";  
+import useCart from "@/app/hooks/useCart";
 
-const RemoveFromCartBtn = ({ itemQuantity, itemId, setBooks }) => {
-  const { cartCount, setCartCount } = useCartCount();
+const RemoveFromCartBtn = ({ itemQuantity, itemId }) => {
+  const { cartCount, setCartCount,setCartProducts } = useCart();
   const handleRemove = async () => {
     const response = await removeFromCart(itemId);
     if (response.success) {
-      setBooks((prev) => {
+      setCartProducts((prev) => {
         return prev.filter((book) => book.id !== itemId);
       });
       setCartCount(cartCount - itemQuantity);
-      toast.success("Removed successfully.", {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      });
+      toast.success("Removed successfully.");
     }
   };
   return (

@@ -1,5 +1,10 @@
-const CartTotalPrice = ({ books }) => {
-  const total = books.reduce((sum, currentItem) => {
+"use client"
+
+import useCart from "@/app/hooks/useCart";
+
+const CartTotalPrice = () => {
+  const {cartProducts}=useCart()
+  const total = cartProducts.reduce((sum, currentItem) => {
     const unitPrice =
       currentItem?.productId?.price?.discountedPrice ||
       currentItem?.productId?.price?.regularPrice;

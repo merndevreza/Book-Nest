@@ -1,4 +1,4 @@
-"use client"; 
+"use client";
 import heartEmpty from "@/public/assets/images/heart-empty.svg";
 import heartFilled from "@/public/assets/images/heart-filled.svg";
 import Image from "next/image";
@@ -15,30 +15,40 @@ import { Button } from "../ui/button";
 
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
+import useWishlist from "@/app/hooks/useWishlist"; 
 
-const AddWishlistBtn = ({isFoundInWishlist,isLoggedIn,userId, productId,format}) => {
+const AddWishlistBtn = ({
+  isFoundInWishlist,
+  isLoggedIn,
+  userId,
+  productId,
+  format,
+  productInfoForWishlistContext,
+}) => { 
+  
   const router = useRouter();
   const [isAdded, setIsAdded] = useState(isFoundInWishlist);
-  const handleAddWishlist = async() => {
+  const { setWishlistCount, setWishlistProducts } = useWishlist();
+  const handleAddWishlist = async () => {
     if (!isLoggedIn) {
       return router.push("/login");
     }
-    const response=await addToWishlist(userId,productId,format)
+    const response = await addToWishlist(userId, productId, format);
     if (response?.success) {
-      setIsAdded(!isAdded);
-      toast.success("Added in wishlist", {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      });
-    } 
+      if (isAdded) {
+        setWishlistCount((prev) => prev - 1);
+        setIsAdded(false);
+        toast.success("Removed from wishlist");
+      } else {
+        setWishlistCount((prev) => prev + 1);
+        //add the product in wishlist context
+        setWishlistProducts((prev) => [...prev, productInfoForWishlistContext]);
+        setIsAdded(true);
+        toast.success("Added in wishlist");
+      }
+    }
   };
-   
+
   return (
     <TooltipProvider>
       <Tooltip>
@@ -62,3 +72,23 @@ const AddWishlistBtn = ({isFoundInWishlist,isLoggedIn,userId, productId,format})
 };
 
 export default AddWishlistBtn;
+/**
+ * 
+ {
+    "id": "66b988166e5d8dcf26cbb4a2",
+    "productId": {
+        "id": "668b7435829608c69a464e23",
+        "title": "Biography of a Legend",
+        "author": {
+            "firstName": "Michael",
+            "lastName": "Johnson"
+        },
+        "price": {
+            "discountedPrice": 7.99,
+            "regularPrice": 9.99
+        },
+        "thumbnail": "https://i.ibb.co/jWvbkZW/book-5.jpg"
+    },
+    "format": "ebook"
+}
+*/

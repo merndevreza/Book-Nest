@@ -3,13 +3,14 @@ import RemoveFromWishlistBtn from "@/app/[lang]/(main)/wishlist/_components/Remo
 import { Card, CardContent } from "../ui/card";
 import Image from "next/image";
 import AddToCartBtn from "../AddToCartWidget/AddToCartBtn";
-import { camelCaseToCapitalized } from "@/utils/camelCaseToCapitalized";
-import { checkDigitalProductInCart } from "@/app/actions/products.actions";
+import { camelCaseToCapitalized } from "@/utils/camelCaseToCapitalized"; 
 import { useEffect, useState } from "react";
 import SinglePrice from "../SinglePrice";
 import QuantityInput from "../QuantityInput";
+import Link from "next/link";
+import { checkProductInCart } from "@/app/actions/products.actions";
 
-const BookCardVertical = ({ book, userId, isLoggedIn, setBooks }) => {
+const BookCardVertical = ({ book, userId, isLoggedIn,  lang }) => {
   const [found, setFound] = useState(false);
   const [quantity, setQuantity] = useState(1);
   useEffect(() => {
@@ -18,7 +19,7 @@ const BookCardVertical = ({ book, userId, isLoggedIn, setBooks }) => {
         isLoggedIn &&
         (book?.format === "ebook" || book?.format === "audioBook")
       ) {
-        const cartResponse = await checkDigitalProductInCart(
+        const cartResponse = await checkProductInCart(
           userId,
           book?.productId?.id,
           book?.format
@@ -38,16 +39,21 @@ const BookCardVertical = ({ book, userId, isLoggedIn, setBooks }) => {
     <Card className="bg-secondary dark:bg-transparent flex flex-col items-center justify-between sm:h-full">
       <CardContent className="p-3">
         <div className="book-card grid grid-cols-5 gap-6 lg:gap-10 items-center">
-          <Image
-            src={book?.productId?.thumbnail}
-            alt={book?.productId?.title}
-            width={150}
-            height={200}
-          />
+          <Link href={`/${lang}/shop/${book?.productId?.id}`}>
+            <Image
+              src={book?.productId?.thumbnail}
+              alt={book?.productId?.title}
+              width={150}
+              height={200}
+            />
+          </Link>
+
           <div className="col-span-3 sm:col-span-4 flex flex-col lg:flex-row gap-3 justify-between items-start lg:items-center">
             <div className="space-y-2">
               <h2 className="text-lg sm:text-xl font-bold text-themeSecondary dark:text-themePrimary">
-                {book?.productId?.title}
+                <Link href={`/${lang}/shop/${book?.productId?.id}`}>
+                  {book?.productId?.title}
+                </Link>
               </h2>
               <p className="text-lg text-foreground font-bold ">
                 By: {book?.productId?.author.firstName}{" "}
@@ -65,12 +71,12 @@ const BookCardVertical = ({ book, userId, isLoggedIn, setBooks }) => {
             <div className="flex items-center gap-4">
               <div className="space-y-2">
                 <div className="flex justify-center">
-                {book?.format !== "ebook" && book?.format !== "audioBook" && (
-                  <QuantityInput
-                    quantity={quantity}
-                    setQuantity={setQuantity}
-                  />
-                )}
+                  {book?.format !== "ebook" && book?.format !== "audioBook" && (
+                    <QuantityInput
+                      quantity={quantity}
+                      setQuantity={setQuantity}
+                    />
+                  )}
                 </div>
                 <AddToCartBtn
                   isFoundInCart={found}
@@ -81,10 +87,9 @@ const BookCardVertical = ({ book, userId, isLoggedIn, setBooks }) => {
                   quantity={quantity}
                   setQuantity={setQuantity}
                 />
-              </div> 
+              </div>
               <RemoveFromWishlistBtn
-                itemId={book?.id}
-                setBooks={setBooks}
+                itemId={book?.id} 
                 isLoggedIn={isLoggedIn}
                 userId={userId}
                 productId={book?.productId?.id}

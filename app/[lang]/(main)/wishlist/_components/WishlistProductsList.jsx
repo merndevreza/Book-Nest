@@ -1,22 +1,37 @@
 "use client";
+import useWishlist from "@/app/hooks/useWishlist";
 import BookCardVertical from "@/components/BookCard/BookCardVertical";
-import { useState } from "react";
+import BreadCrumb from "@/components/BreadCrumb";
+import NoProductsFound from "@/components/NoProductsFound";
 
-const WishlistProductsList = ({ products, session }) => {
-  const [books, setBooks] = useState(products);
+const WishlistProductsList = ({ session, lang, paths }) => {
+  const { wishlistProducts } = useWishlist(); 
 
-  return (
-    <div className="space-y-3">
-      {books.map((book) => (
-        <BookCardVertical
-          setBooks={setBooks}
-          key={book.id}
-          isLoggedIn={session ? true : false}
-          userId={session?.user.id}
-          book={book}
+  return ( 
+    <>
+      {!wishlistProducts.length > 0 ? (
+        <NoProductsFound
+          title="Your wishlist is empty !"
+          subtitle="Please visit our shop"
+          lang={lang}
         />
-      ))}
-    </div>
+      ) : (
+        <>
+          <BreadCrumb lang={lang} paths={paths} />
+          <div className="space-y-3">
+            {wishlistProducts.map((book) => (
+              <BookCardVertical
+                key={book.id}
+                isLoggedIn={session ? true : false}
+                userId={session?.user.id}
+                book={book}
+                lang={lang}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </>
   );
 };
 

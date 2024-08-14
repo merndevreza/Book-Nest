@@ -3,15 +3,18 @@ import Link from "next/link";
 import CartItemPrice from "./CartItemPrice";
 import CartTotalPrice from "./CartTotalPrice";
 import { useEffect, useState } from "react";
+import useCart from "@/app/hooks/useCart";
 
-const CartSummary = ({ books, dictionary, lang }) => {
+const CartSummary = ({dictionary, lang }) => {
+  
+  const {cartProducts}=useCart()
   const [isAllDigitalBooks, setIsAllDigitalBooks] = useState(false);
   useEffect(() => {
-    const checkFormat = books.every(
+    const checkFormat = cartProducts.every(
        (item) => item.format === "ebook" || item.format === "audioBook"
     );
     setIsAllDigitalBooks(checkFormat);
-  }, [books]);
+  }, [cartProducts]);
 
   return (
     <div className="col-span-5 lg:col-span-2">
@@ -20,8 +23,8 @@ const CartSummary = ({ books, dictionary, lang }) => {
           {dictionary?.orderSummary}
         </h4>
         <div className="space-y-2">
-          {books.length > 0 ? (
-            books.map((book) => (
+          {cartProducts.length > 0 ? (
+            cartProducts.map((book) => (
               <div key={book?.id} className="flex justify-between">
                 <div>
                   <h5 className="text-themePrimary-foreground font-medium">
@@ -47,7 +50,7 @@ const CartSummary = ({ books, dictionary, lang }) => {
 
         <div className="flex justify-between  font-medium py-3 mt-3 uppercase border-t border-gray-200">
           <p className="font-semibold">Total</p>
-          <CartTotalPrice books={books} />
+          <CartTotalPrice />
         </div>
 
         <Link

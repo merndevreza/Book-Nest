@@ -4,6 +4,7 @@ import "./globals.css";
 import connectMongo from "@/database/services/connectMongo";
 import { auth } from "@/auth";
 import { ToastContainer } from "react-toastify";
+import AuthProvider from "./context-provider/providers/AuthProvider";
 
 export const metadata = {
   title: "Book Nest",
@@ -12,8 +13,7 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   await connectMongo();
-  const session = await auth();
-  console.log(session);
+  const session = await auth(); 
 
   return (
     <html lang="en" suppressHydrationWarning={true}>
@@ -24,19 +24,19 @@ export default async function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
-          {children}
-        <ToastContainer
-          position="bottom-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="dark"
-        />
+          <AuthProvider session={session}>{children}</AuthProvider>
+          <ToastContainer
+            position="bottom-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+          />
         </ThemeProvider>
       </body>
     </html>

@@ -1,5 +1,5 @@
-import {
-  checkDigitalProductInCart,
+import { 
+  checkProductInCart,
   checkWishlist,
 } from "@/app/actions/products.actions";
 import { auth } from "@/auth";
@@ -8,11 +8,11 @@ import AddToCartWidgetActions from "./AddToCartWidgetActions";
 import SinglePrice from "../SinglePrice";
 
 const AddToCartWidget = async ({
-  productId,
   regularPrice,
   discountedPrice,
   format,
   title,
+  book,
 }) => {
   const session = await auth();
 
@@ -20,16 +20,47 @@ const AddToCartWidget = async ({
   let cartResponse;
 
   if (session) {
-    wishlistResponse = await checkWishlist(session?.user.id, productId, format);
+    wishlistResponse = await checkWishlist(session?.user.id, book?.id, format);
   }
   if (session && (format === "ebook" || format === "audioBook")) {
-    cartResponse = await checkDigitalProductInCart(
+    cartResponse = await checkProductInCart(
       session?.user.id,
-      productId,
+      book?.id,
       format
     );
   }
-
+  // product info as needed for cart and wishlist context
+  const productInfoForWishlistContext = {
+    id: crypto.randomUUID(),
+    format,
+    productId: {
+      id: book?.id,
+      title: book?.title,
+      author: {
+        firstName: book?.author.firstName,
+        lastName: book?.author.lastName,
+      },
+      price: { regularPrice, discountedPrice },
+      thumbnail: book?.thumbnail,
+    },
+  };
+  // product info as needed for cart and wishlist context
+  const productInfoForCartContext = {
+    id: crypto.randomUUID(),
+    format,
+    addedAt: Date.now(),
+    productId: {
+      id: book?.id,
+      title: book?.title,
+      author: {
+        firstName: book?.author.firstName,
+        lastName: book?.author.lastName,
+      },
+      price: { regularPrice, discountedPrice },
+      thumbnail: book?.thumbnail,
+      stock: book?.stock,
+    },
+  };
   return (
     <Card>
       <CardHeader className="p-2 lg:p-4">
@@ -41,11 +72,13 @@ const AddToCartWidget = async ({
         <SinglePrice
           discountedPrice={discountedPrice}
           regularPrice={regularPrice}
-        /> 
+        />
         <AddToCartWidgetActions
+          productInfoForWishlistContext={productInfoForWishlistContext}
+          productInfoForCartContext={productInfoForCartContext}
           isLoggedIn={session ? true : false}
           userId={session ? session?.user.id : null}
-          productId={productId}
+          productId={book?.id}
           format={format}
           isFoundInCart={cartResponse?.success ? cartResponse?.isFound : false}
           isFoundInWishlist={

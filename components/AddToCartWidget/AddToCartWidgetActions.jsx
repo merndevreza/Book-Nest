@@ -11,6 +11,8 @@ const AddToCartWidgetActions = ({
   format,
   isFoundInWishlist,
   isFoundInCart,
+  productInfoForWishlistContext,
+  productInfoForCartContext,
 }) => {
   const [quantity, setQuantity] = useState(1);
   return (
@@ -24,6 +26,7 @@ const AddToCartWidgetActions = ({
           )}
 
           <AddToCartBtn
+          productInfoForCartContext={productInfoForCartContext}
             quantity={quantity}
             setQuantity={setQuantity}
             userId={userId}
@@ -34,6 +37,7 @@ const AddToCartWidgetActions = ({
           />
         </div>
         <AddWishlistBtn
+          productInfoForWishlistContext={productInfoForWishlistContext}
           userId={userId}
           isLoggedIn={isLoggedIn}
           isFoundInWishlist={isFoundInWishlist}

@@ -2,6 +2,7 @@ import { Heart } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Badge } from "../ui/badge";
+import WishlistBadge from "./WishlistBadge";
 
 const WishlistIcon = ({session, className, showTitle, lang }) => {
   return (
@@ -14,9 +15,7 @@ const WishlistIcon = ({session, className, showTitle, lang }) => {
       <span className="relative inline-block">
         <Heart size={24} />
         {session && (
-          <Badge className=" w-5 h-5 rounded-full bg-themeSecondary text-themeSecondary-foreground absolute -top-2 -right-3 text-sm text-center flex justify-center items-center">
-            6
-          </Badge>
+         <WishlistBadge/>
         )}
       </span>
       {showTitle && <span className="font-semibold">Wishlist</span>}

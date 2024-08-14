@@ -7,11 +7,11 @@ import FilterByPrice from "./FilterByPrice";
 import FilterByRating from "./FilterByRating";
 import { FilterByFormat } from "./FilterByFormat";
 import { getAllAuthors } from "@/database/queries/authors.queries";
-import { getAllCategories } from "@/database/queries/categories.queries"; 
- 
+import { getAllCategories } from "@/database/queries/categories.queries";
+
 const ShopSidebar = async ({ dictionary }) => {
-  const categoriesResponse = await getAllCategories({withCount:true});
-  const authorsResponse = await getAllAuthors({withCount:true});  
+  const categoriesResponse = await getAllCategories({ withCount: true });
+  const authorsResponse = await getAllAuthors({ withCount: true });
   return (
     <div className="h-auto lg:h-full lg:min-h-screen bg-muted/60 lg:p-5 p-2 w-full mb-6 lg:mb-0">
       <div className="space-y-3 hidden lg:block">
@@ -48,21 +48,24 @@ const AllFilters = ({ categoriesResponse, authorsResponse, dictionary }) => {
   return (
     <>
       <FilterByFormat dictionary={dictionary} />
-      {categoriesResponse?.success === true && categoriesResponse?.data.length > 0 && (
-        <FilterByCategory
-          categories={categoriesResponse?.data}
-          dictionary={dictionary}
-        />
-      )}
-      {authorsResponse?.success === true && authorsResponse?.data.length>0 && (
-        <FilterByAuthor
-          authors={authorsResponse?.data}
-          dictionary={dictionary}
-        />
-      )}
+
+      {authorsResponse?.success === true &&
+        authorsResponse?.data.length > 0 && (
+          <FilterByAuthor
+            authors={authorsResponse?.data}
+            dictionary={dictionary}
+          />
+        )}
+      {categoriesResponse?.success === true &&
+        categoriesResponse?.data.length > 0 && (
+          <FilterByCategory
+            categories={categoriesResponse?.data}
+            dictionary={dictionary}
+          />
+        )}
 
       <FilterByPrice dictionary={dictionary} />
-      <FilterByRating dictionary={dictionary} /> 
+      <FilterByRating dictionary={dictionary} />
     </>
   );
 };

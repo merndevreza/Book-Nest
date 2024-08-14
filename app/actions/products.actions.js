@@ -125,7 +125,7 @@ export async function addToCart(userId, productId, format, quantity) {
     };
   }
 }
-export async function checkDigitalProductInCart(userId, productId, format) {
+export async function checkProductInCart(userId, productId, format) {
   try {
     await connectMongo();
     const found = await Cart.findOne({ userId, productId, format });

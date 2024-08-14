@@ -1,3 +1,4 @@
+"use client";
 import {
   Table,
   TableBody,
@@ -8,10 +9,12 @@ import {
 } from "@/components/ui/table";
 import RemoveFromCartBtn from "./RemoveFromCartBtn";
 import CartBookInfo from "./CartBookInfo";
-import Link from "next/link";
 import Subtotal from "./Subtotal";
 import { camelCaseToCapitalized } from "@/utils/camelCaseToCapitalized";
-const CartProductsTable = ({ books, setBooks, userId, dictionary, lang }) => {
+import useCart from "@/app/hooks/useCart";
+const CartProductsTable = ({ dictionary, lang }) => {
+  const { cartProducts } = useCart(); 
+  
   return (
     <div className="col-span-5 lg:col-span-3">
       <Table>
@@ -28,17 +31,16 @@ const CartProductsTable = ({ books, setBooks, userId, dictionary, lang }) => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {books?.map((book) => (
+          {cartProducts?.map((book) => (
             <TableRow key={book.id} className="hover:bg-secondary">
               <TableCell className="font-medium pl-1 pr-0 sm:p-4">
-                <RemoveFromCartBtn 
-                  setBooks={setBooks}
+                <RemoveFromCartBtn
                   itemId={book?.id}
                   itemQuantity={book?.quantity}
                 />
               </TableCell>
-              <TableCell className=" pl-1 pr-0 sm:p-4"> 
-                  <CartBookInfo book={book} lang={lang}/> 
+              <TableCell className=" pl-1 pr-0 sm:p-4">
+                <CartBookInfo book={book} lang={lang} />
               </TableCell>
               <TableCell className="hidden md:table-cell">
                 <div className="flex gap-2 justify-center my-2">
@@ -50,9 +52,7 @@ const CartProductsTable = ({ books, setBooks, userId, dictionary, lang }) => {
                   <p>{camelCaseToCapitalized(book?.format)}</p>
                 </div>
                 <Subtotal
-                book={book}
-                  books={books}
-                  setBooks={setBooks}
+                  book={book}
                   format={book?.format}
                   productPrice={book?.productId?.price}
                 />

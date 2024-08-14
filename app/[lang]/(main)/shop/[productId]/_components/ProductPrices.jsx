@@ -1,6 +1,6 @@
 import AddToCartWidget from "@/components/AddToCartWidget/AddToCartWidget";
 
-const ProductPrices = ({ price,id,dictionary }) => {
+const ProductPrices = ({ dictionary, book }) => {
   const {
     printedNewBook_regularPrice,
     printedNewBook_discountedPrice,
@@ -10,21 +10,22 @@ const ProductPrices = ({ price,id,dictionary }) => {
     ebook_discountedPrice,
     audioBook_regularPrice,
     audioBook_discountedPrice,
-  } = price;
+  } = book?.price;
+  //
   return (
     <>
       {printedNewBook_regularPrice && (
         <AddToCartWidget
-          productId={id}
+          book={book}
           regularPrice={printedNewBook_regularPrice}
           discountedPrice={printedNewBook_discountedPrice}
           format="printedNewBook"
           title={dictionary?.printedNewBook}
         />
       )}
-      { printedOldBook_regularPrice && (
+      {printedOldBook_regularPrice && (
         <AddToCartWidget
-          productId={id}
+          book={book}
           format="printedOldBook"
           regularPrice={printedOldBook_regularPrice}
           discountedPrice={printedOldBook_discountedPrice}
@@ -33,7 +34,7 @@ const ProductPrices = ({ price,id,dictionary }) => {
       )}
       {ebook_regularPrice && (
         <AddToCartWidget
-          productId={id}
+          book={book}
           format="ebook"
           regularPrice={ebook_regularPrice}
           discountedPrice={ebook_discountedPrice}
@@ -42,7 +43,7 @@ const ProductPrices = ({ price,id,dictionary }) => {
       )}
       {audioBook_regularPrice && (
         <AddToCartWidget
-          productId={id}
+          book={book}
           format="audioBook"
           regularPrice={audioBook_regularPrice}
           discountedPrice={audioBook_discountedPrice}

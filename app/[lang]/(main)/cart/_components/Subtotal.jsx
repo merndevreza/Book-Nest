@@ -2,18 +2,20 @@
 import QuantityInput from "@/components/QuantityInput";
 import { useEffect, useState } from "react";
 import CartItemPrice from "./CartItemPrice";
+import useCart from "@/app/hooks/useCart";
 
-const Subtotal = ({ book, books, setBooks }) => {
+const Subtotal = ({ book}) => {
+  const {cartProducts,setCartProducts}=useCart()
   const [quantity, setQuantity] = useState(book?.quantity);
   useEffect(() => {
-    const bookIndex = books.findIndex(
+    const bookIndex = cartProducts.findIndex(
       (item) => item.productId === book.productId && item.format === book.format
     );
     if (bookIndex !== -1) {
-      const updatedBooks = [...books];
+      const updatedBooks = [...cartProducts];
       const updatedBook = { ...book, quantity };
       updatedBooks[bookIndex] = updatedBook;
-      setBooks(updatedBooks);
+      setCartProducts(updatedBooks);
     }
   }, [quantity]);
 

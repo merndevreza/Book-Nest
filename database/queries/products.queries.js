@@ -283,9 +283,9 @@ export async function getCartProductsCount(userId) {
   try {
     await connectMongo();
     const response = await Cart.find({ userId });
-    const count=response.reduce((sum,currentItem)=>{
-      return sum + currentItem.quantity
-    },0)
+    const count = response.reduce((sum, currentItem) => {
+      return sum + currentItem.quantity;
+    }, 0);
     return {
       success: true,
       message: "Count products in cart",
@@ -296,10 +296,10 @@ export async function getCartProductsCount(userId) {
   }
 }
 // get all products Ids
-export async function getAllProductsIds(){
+export async function getAllProductsIds() {
   try {
-    await connectMongo()
-    const response=await Products.find({}).select(["_id"]).lean()  
+    await connectMongo();
+    const response = await Products.find({}).select(["_id"]).lean();
     return {
       success: true,
       message: "All Products Ids",
@@ -308,4 +308,19 @@ export async function getAllProductsIds(){
   } catch (error) {
     return { success: false, message: error.message };
   }
-} 
+}
+
+//wishlist
+export async function getWishlistCount(userId) {
+  try {
+    await connectMongo();
+    const response = await Wishlist.find({ userId });  
+    return {
+      success: true,
+      message: "Wishlist products length",
+      data: response.length,
+    };
+  } catch (error) {
+    return { success: false, message: error.message };
+  }
+}
