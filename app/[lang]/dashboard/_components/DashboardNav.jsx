@@ -92,6 +92,15 @@ const DashboardNav = ({ lang }) => {
         <UserPlus className="h-5 w-5" />
         <span className="inline lg:hidden xl:inline">Add User</span>
       </Link>
+      <Link
+        href={`/${lang}/dashboard/data-analysis`}
+        className={`flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary ${
+          pathname.includes("add-user") && " bg-muted text-primary"
+        }`}
+      >
+        <UserPlus className="h-5 w-5" />
+        <span className="inline lg:hidden xl:inline">Data Analysis</span>
+      </Link>
     </nav>
   );
 };

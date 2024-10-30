@@ -8,7 +8,8 @@ const AddProductFormBlob = () => {
   const handleSubmit = async (e) => {
     e.preventDefault(); 
     try {
-      const file = inputFileRef.current.files?.[0];
+      const file = inputFileRef.current.files?.[0]; 
+      
       const response = await fetch(`/api/upload-blob?filename=${file.name}`, {
         method: "POST",
         body: file,
@@ -17,7 +18,7 @@ const AddProductFormBlob = () => {
       const newBlob = await response.json();
 
       setBlob(newBlob);
-      if (!res.ok) throw new Error(await res.text());
+      if (!response.ok) throw new Error(await response.text());
     } catch (error) {
       console.log(error);
     }
@@ -26,7 +27,7 @@ const AddProductFormBlob = () => {
     <>
       <form onSubmit={handleSubmit}>
         <input name="file" ref={inputFileRef} type="file" required />
-        <input type="submit" value="submit" />
+        <input className="bg-themePrimary px-3 py-1 rounded" type="submit" value="Upload" />
       </form>
       {blob && (
         <div>

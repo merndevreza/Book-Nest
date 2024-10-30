@@ -64,7 +64,7 @@ export default auth((request) => {
     return NextResponse.redirect(new URL(localizedLogin, url));
   }
 
-  // Proceed to the next middleware or handler
+  // Proceed to the next 
   return NextResponse.next();
 });
 
